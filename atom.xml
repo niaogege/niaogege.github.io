@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-01-09T15:47:07.563Z</updated>
+  <updated>2017-01-11T16:19:04.653Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GIT one :how to use git</title>
+    <link href="http://niaogege.site/2017/01/11/GIT-one-how-to-use-git/"/>
+    <id>http://niaogege.site/2017/01/11/GIT-one-how-to-use-git/</id>
+    <published>2017-01-11T15:58:17.000Z</published>
+    <updated>2017-01-11T16:19:04.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>git与github紧密相连，git一定要回使用！git 常用操作以及快捷键，学习来源 <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰老师官方网站</a>，廖老师讲得很是不错的，对于初学者很实用！</p>
+<a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir  casework   //创建一个名为‘casework’文件夹</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> casework</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">pwd</span> //显示当前目录</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init   //把这个目录变成git可以管理的工具</div></pre></td></tr></table></figure>
+<p>在当前目录下，新建一个readme.txt</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt   //把readme.txt增加到暂存区</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"write a readme file"</span>  //把暂存区的readme提交到master分支下</div></pre></td></tr></table></figure>
+<p>修改当前的readme.txt文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status  //查看当前仓库的状态</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git diff   //查看修改的内容</div></pre></td></tr></table></figure>
+<p>再次修改readme文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add readme.txt   //把readme.txt增加到暂存区</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m <span class="string">"append GPL"</span>  //把暂存区的readme提交到master分支下</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span> //用git查看历史版本或者git <span class="built_in">log</span> --pretty = oneline</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$git</span> reset --hard HEAD^ //HEAD表示当前的版本，回到上一个版本HEAD^</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat readme.txt //查看内容</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">log</span>  //查看现在版本库的状态</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --hard 382412 //又回到之前的最新版本</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog  //查看记录每次版本的id</div></pre></td></tr></table></figure>
+<h4 id="In-conclusion"><a href="#In-conclusion" class="headerlink" title="In conclusion:"></a>In conclusion:</h4><blockquote>
+<ul>
+<li>HEAD表示当前的版本，回到上一个版本HEAD^,HEAD用于版本之间历史的穿梭 git reset –hard commit_id</li>
+<li>穿梭前用git log ，这样能知道会退到哪一个版本</li>
+<li>重返未来用git reflog </li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git与github紧密相连，git一定要回使用！git 常用操作以及快捷键，学习来源 &lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot;&gt;廖雪峰老师官方网站&lt;/a&gt;，廖老师讲得很是不错的，对于初学者很实用！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="http://niaogege.site/categories/Git/"/>
+    
+    
+      <category term="GIT" scheme="http://niaogege.site/tags/GIT/"/>
+    
+      <category term="版本控制工具" scheme="http://niaogege.site/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>图片的一扫而过的闪影</title>
@@ -47,11 +99,11 @@
       <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
     
     
-      <category term="css" scheme="http://niaogege.site/tags/css/"/>
-    
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    
+      <category term="css" scheme="http://niaogege.site/tags/css/"/>
     
   </entry>
   
@@ -130,9 +182,9 @@
     
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
-    
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
+    
+      <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
   </entry>
   
