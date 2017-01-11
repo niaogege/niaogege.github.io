@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>开到荼蘼</title>
+  <subtitle>幸福就像花季，开到荼蘼</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://niaogege.site/"/>
+  <updated>2017-01-09T15:47:07.563Z</updated>
+  <id>http://niaogege.site/</id>
+  
+  <author>
+    <name>鸟哥哥</name>
+    <email>291003932@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图片的一扫而过的闪影</title>
+    <link href="http://niaogege.site/2017/01/09/%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%80%E6%89%AB%E8%80%8C%E8%BF%87%E7%9A%84%E9%97%AA%E5%BD%B1/"/>
+    <id>http://niaogege.site/2017/01/09/图片的一扫而过的闪影/</id>
+    <published>2017-01-09T14:22:11.000Z</published>
+    <updated>2017-01-09T15:47:07.563Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>一些网站的logo采用的这种效果</p>
+</blockquote>
+<p>这里用到的依然是伪元素，<code>:before</code>和<code>:after</code>，这里需要注意的一点的是用到了<code>position:absolute</code>，只有设定了位移，幻影才能随之漂浮！</p>
+<a id="more"></a>
+<h4 id="实例一"><a href="#实例一" class="headerlink" title="实例一"></a>实例一</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line"> .banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;position:relative;&#125;</div><div class="line"> .banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 300px;</div><div class="line">	height: 15px;outline:px solid red;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">	-webkit-animation: searchLights 1s ease-in 0.5s infinite;</div><div class="line">	-o-animation: searchLights 1.s ease-in 0.5s infinite;</div><div class="line">	animation: searchLights 1s ease-in 0.5s infinite;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>其实，就是一个：before加上css中的animation效果，这里我将<em>animation-duration</em>的时间改为0.8，即完成动画所花费的时间缩短了0.2s,but阴影的宽度加长了15px</p>
+<h4 id="示例二"><a href="#示例二" class="headerlink" title="示例二"></a>示例二</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">.banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;&#125;</div><div class="line">.banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">-webkit-animation: searchLights 0.8s ease-in 0.5s infinite;</div><div class="line"></div><div class="line">	-o-animation: searchLights 0.8.s ease-in 0.5s infinite;</div><div class="line">	animation: searchLights 0.8s ease-in 0.5s infinite;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="实例三"><a href="#实例三" class="headerlink" title="实例三"></a>实例三</h4><p> 这里的<u>animation: searchLights 0.8s ease-in 0.5s infinite</u>;中的<em>infinite</em>是无限次播放，把它去掉或者设置1次就能实现只闪一下的效果，并且还把animation: searchLights 0.8s ease-in 0.5s infinite;中的延时播放animation-delay:：0.5s去掉，就是一跳转就实现</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">.banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;&#125;</div><div class="line">.banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">-webkit-animation: searchLights 0.8s ease-in  1;</div><div class="line">	-o-animation: searchLights 0.8.s ease-in .1;</div><div class="line">	animation: searchLights 0.8s ease-in  1;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;一些网站的logo采用的这种效果&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这里用到的依然是伪元素，&lt;code&gt;:before&lt;/code&gt;和&lt;code&gt;:after&lt;/code&gt;，这里需要注意的一点的是用到了&lt;code&gt;position:absolute&lt;/code&gt;，只有设定了位移，幻影才能随之漂浮！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+    
+      <category term="css" scheme="http://niaogege.site/tags/css/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>伪元素：：before和after的梯形效果</title>
+    <link href="http://niaogege.site/2017/01/08/%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%9A%EF%BC%9Abefore%E5%92%8Cafter%E7%9A%84%E6%A2%AF%E5%BD%A2%E6%95%88%E6%9E%9C/"/>
+    <id>http://niaogege.site/2017/01/08/伪元素：：before和after的梯形效果/</id>
+    <published>2017-01-08T02:59:30.000Z</published>
+    <updated>2017-01-08T10:08:24.433Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="伪元素介绍"><a href="#伪元素介绍" class="headerlink" title="伪元素介绍"></a>伪元素介绍</h3><blockquote>
+<p>CSS 伪元素用于向某些选择器设置特殊效果</p>
+</blockquote>
+<p> 伪元素的语法：<br> selector:pseudo-element {property:value;}</p>
+<ul>
+<li>“:before” 伪元素可以在元素的内容前面插入新内容。</li>
+<li>“:after” 伪元素可以在元素的内容之后插入新内容。</li>
+</ul>
+<a id="more"></a>
+<h3 id="伪元素的梯形特效"><a href="#伪元素的梯形特效" class="headerlink" title="伪元素的梯形特效"></a>伪元素的梯形特效</h3><h4 id="实例一："><a href="#实例一：" class="headerlink" title="实例一："></a>实例一：</h4><pre><code>&lt;style&gt;
+#con_right_tit5{display: block;height:45px;position:absolute;font-size: 18px;line-height: 45px;background: #6e80be;color:white;padding: 0 38px 0 18px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;top:70px;}
+#con_right_tit5 a{color: white;}
+#con_right_tit5:hover{background: black;}
+#con_right_tit5::after{content: &quot;&quot;;border-left: solid 22px rgba(0, 0, 0, 0);border-top: rgb(249, 247, 246) 20px solid;position: absolute;right: 0;top: 0;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;con_right_tit5&quot;&gt;教育资讯&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>其实，这里只是一个正方形盖在了div上面，border的边框其中还带有opacity:0,如</p>
+<h4 id="实例二："><a href="#实例二：" class="headerlink" title="实例二："></a>实例二：</h4><pre><code>&lt;style&gt;
+#con_right_tit5{display: block;height:45px;position:absolute;font-size: 18px;line-height: 45px;background: #6e80be;color:white;padding: 0 38px 0 18px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;top:70px;}
+#con_right_tit5 a{color: white;}
+#con_right_tit5:hover{background: black;}
+#con_right_tit5::after{content: &quot;&quot;;border-left: solid 22px yellow;border-top: red 20px solid;position: absolute;right: 0;top: 0;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;con_right_tit5&quot;&gt;教育资讯&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><h3 id="优化与改进"><a href="#优化与改进" class="headerlink" title="优化与改进"></a>优化与改进</h3><blockquote>
+<p>至于为什么：：after里的边框border—left和border-top会是这种两个三角形组成的长方形，我也是搞不明白。不过，这里的三角形可以根据透明度（opacity属性）来调整相应的透明度</p>
+</blockquote>
+<h4 id="实例三："><a href="#实例三：" class="headerlink" title="实例三："></a>实例三：</h4><pre><code>&lt;style&gt;
+#con_right_tit5{display: block;height:45px;position:absolute;font-size: 18px;line-height: 45px;background: #6e80be;color:white;padding: 0 38px 0 18px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;top:70px;}
+#con_right_tit5 a{color: white;}
+#con_right_tit5:hover{background: black;}
+#con_right_tit5::after{content: &quot;&quot;;border-left: solid 22px rgba(0,0,0,0.9);border-top: white 20px solid;position: absolute;right: 0;top: 0;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;con_right_tit5&quot;&gt;教育资讯&lt;/div&gt;
+&lt;/body&gt;
+</code></pre><p>最近访客</p>
+<div class="ds-recent-visitors" data-num-items="39" data-avatar-size="40" id="ds-recent-visitors"></div>
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;伪元素介绍&quot;&gt;&lt;a href=&quot;#伪元素介绍&quot; class=&quot;headerlink&quot; title=&quot;伪元素介绍&quot;&gt;&lt;/a&gt;伪元素介绍&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;CSS 伪元素用于向某些选择器设置特殊效果&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; 伪元素的语法：&lt;br&gt; selector:pseudo-element {property:value;}&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“:before” 伪元素可以在元素的内容前面插入新内容。&lt;/li&gt;
+&lt;li&gt;“:after” 伪元素可以在元素的内容之后插入新内容。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="html+css" scheme="http://niaogege.site/categories/html-css/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/categories/html-css/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    
+      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人网站 搭建经历</title>
+    <link href="http://niaogege.site/2017/01/06/hello-world/"/>
+    <id>http://niaogege.site/2017/01/06/hello-world/</id>
+    <published>2017-01-06T12:40:04.353Z</published>
+    <updated>2017-01-08T10:46:03.656Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is My very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h3 id="建立个人站点经过"><a href="#建立个人站点经过" class="headerlink" title="建立个人站点经过"></a>建立个人站点经过</h3><p>从去年10月份某天晚上，看过几位前端大牛，比如我非常钦佩的 <a href="http://zhangwenli.com/" target="_blank" rel="external">张雯莉</a> ，还有 <a href="http://ghmagical.com/" target="_blank" rel="external">IronPans</a>等，自己的站点建得很棒，心血来潮，也想尝试一下。后来得知有一种搭建个人站点的Hexo框架很方便也很省事。经过2天的深挖，看 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">技术文档</a>，这里不得不佩服，这位来自厦门的hexo+next主题的创始人 <a href="http://notes.iissnan.com/" target="_blank" rel="external">iissnan</a>，年轻有为，好好学习！</p>
+<p>本人主要参考的文章来自 简书 <a href="http://www.jianshu.com/p/f9b213097c42" target="_blank" rel="external">使用Github搭建Hexo技术博客托管在GitHub Pages上–安装教程</a></p>
+<a id="more"></a>
+<h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>建个人站点前段时间，也有点迷茫，因为自己对于后端、服务器的相关知识一点不了解。现在建起来了，还是对后端有点一无所知，只是对域名、域名解析、git的使用操作有了更深刻的了解吧。<br>关于hexo+github建站的教程网上很多，这里我推荐简书的<a href="http://www.jianshu.com/p/f9b213097c42" target="_blank" rel="external">使用Github搭建Hexo技术博客托管在GitHub Pages上–安装教程</a> ，这里就不多阐述。这里主要讲讲自己踩过的坑</p>
+<h3 id="Git与github的绑定"><a href="#Git与github的绑定" class="headerlink" title="Git与github的绑定"></a>Git与github的绑定</h3><p>Git是分布式的代码管理工具，远程的代码管理是基于ssh的，所以要使用远程的git则需要ssh的配置。<br>github的ssh配置如下：</p>
+<ul>
+<li><p>设置git的user name和email：<br>$ git config –global user.name “xuhaiyan”<br>$ git config –global user.email “haiyan.xu.vip@gmail.com”</p>
+</li>
+<li><p>生成SSH密钥过程：<br>1.查看是否已经有了ssh密钥：cd ~/.ssh,如果没有密钥则不会有此文件夹，有则备份删除<br>2.生存密钥：$ ssh-keygen -t rsa -C “your@gmail.com”<br>按3个回车，密码为空。</p>
+</li>
+<li><p>在github上添加ssh密钥，这要添加的是”id_rsa.pub’里面的公钥。</p>
+</li>
+<li><p>测试：ssh git@github.com</p>
+</li>
+</ul>
+<h3 id="域名创建和域名解析"><a href="#域名创建和域名解析" class="headerlink" title="域名创建和域名解析"></a>域名创建和域名解析</h3><p>自己是在自己阿里云买的，很便宜，当然如果顶级域名以.cn或者.com费用还是可以的，域名买好之后，还得去搞个服务器吧，好存储资源，阿里云服务器还是有点小贵的，所以只能把本地代码托管在github上，这也是为什么要用git的原因。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>安装地址：<a href="http://nodejs.cn/" target="_blank" rel="external">nodejs</a>,nodejs是一个基于 Chrome V8 引擎的 JavaScript 运行环境。Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。Node.js 的包管理器 npm，是全球最大的开源库生态系统。妈的，nodejs学问太过深奥，我估计得等到明年在慢慢磨，这里只是借用nodejs的npm安装hexo和 next</p>
+<h3 id="安装和部署Hexo"><a href="#安装和部署Hexo" class="headerlink" title="安装和部署Hexo"></a>安装和部署Hexo</h3><p> 打开git客户端,Git bash Here</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure>
+<p>######注：这个命令会初始化博客的目录，所以，执行这个命令时，在你想创建的目录下执行，就自动生成到对应目录下。</p>
+<p> Hexo命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"wendang title"</span>       <span class="comment">#新建,default有三种布局，post、page、draft，后面加文字标题</span></div><div class="line">hexo new page <span class="string">"pageName"</span>  <span class="comment">#新建页面</span></div><div class="line">hexo generate             <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo server               <span class="comment">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div><div class="line">hexo deploy               <span class="comment">#将.deploy目录部署到GitHub</span></div></pre></td></tr></table></figure>
+<h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h4 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><blockquote>
+<p>有些东西看似很复杂，但是如果有毅力坚持去磨的话还是有希望攻破的，加油！niaogege</p>
+</blockquote>
+<p>最近访客</p>
+<div class="ds-recent-visitors" data-num-items="39" data-avatar-size="40" id="ds-recent-visitors"></div>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is My very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;建立个人站点经过&quot;&gt;&lt;a href=&quot;#建立个人站点经过&quot; class=&quot;headerlink&quot; title=&quot;建立个人站点经过&quot;&gt;&lt;/a&gt;建立个人站点经过&lt;/h3&gt;&lt;p&gt;从去年10月份某天晚上，看过几位前端大牛，比如我非常钦佩的 &lt;a href=&quot;http://zhangwenli.com/&quot;&gt;张雯莉&lt;/a&gt; ，还有 &lt;a href=&quot;http://ghmagical.com/&quot;&gt;IronPans&lt;/a&gt;等，自己的站点建得很棒，心血来潮，也想尝试一下。后来得知有一种搭建个人站点的Hexo框架很方便也很省事。经过2天的深挖，看 &lt;a href=&quot;http://theme-next.iissnan.com/&quot;&gt;技术文档&lt;/a&gt;，这里不得不佩服，这位来自厦门的hexo+next主题的创始人 &lt;a href=&quot;http://notes.iissnan.com/&quot;&gt;iissnan&lt;/a&gt;，年轻有为，好好学习！&lt;/p&gt;
+&lt;p&gt;本人主要参考的文章来自 简书 &lt;a href=&quot;http://www.jianshu.com/p/f9b213097c42&quot;&gt;使用Github搭建Hexo技术博客托管在GitHub Pages上–安装教程&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="http://niaogege.site/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="记录" scheme="http://niaogege.site/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="生活" scheme="http://niaogege.site/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="快捷方式" scheme="http://niaogege.site/tags/%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F/"/>
+    
+  </entry>
+  
+</feed>
