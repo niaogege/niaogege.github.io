@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-01-15T12:10:40.621Z</updated>
+  <updated>2017-01-15T13:59:18.161Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随笔：大海我的故乡</title>
+    <link href="http://niaogege.site/2017/01/15/%E9%9A%8F%E7%AC%94%EF%BC%9A%E5%A4%A7%E6%B5%B7%E6%88%91%E7%9A%84%E6%95%85%E4%B9%A1/"/>
+    <id>http://niaogege.site/2017/01/15/随笔：大海我的故乡/</id>
+    <published>2017-01-15T13:53:15.000Z</published>
+    <updated>2017-01-15T13:59:18.161Z</updated>
+    
+    <content type="html"><![CDATA[<p> 从小习惯了腥鱼烂虾的味道，每次回家都感觉特别温暖！<br><img src="http://ojjsl7zpc.bkt.clouddn.com/jaixiang2.jpg?e=1484492145&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:0Uk-0qZ0aK1S31HiAEDXzyjb6DU"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt; 从小习惯了腥鱼烂虾的味道，每次回家都感觉特别温暖！&lt;br&gt;&lt;img src=&quot;http://ojjsl7zpc.bkt.clouddn.com/jaixiang2.jpg?e=1484492145&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7n
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="摄影" scheme="http://niaogege.site/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>goast button,幽灵按钮特效</title>
@@ -242,9 +267,9 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/categories/html-css/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
-    
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
