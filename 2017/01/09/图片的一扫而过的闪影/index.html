@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,前端,伪元素," />
+  <meta name="keywords" content="前端,伪元素,css," />
 
 
 
@@ -98,12 +98,14 @@
 <meta property="og:description" content="一些网站的logo采用的这种效果
 
 这里用到的依然是伪元素，:before和:after，这里需要注意的一点的是用到了position:absolute，只有设定了位移，幻影才能随之漂浮！">
-<meta property="og:updated_time" content="2017-01-09T15:47:07.563Z">
+<meta property="og:image" content="http://ojjsl7zpc.bkt.clouddn.com/shine.gif?e=1484486283&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:lGv67YfM5nFvTyefJ0jMxSBtb5E">
+<meta property="og:updated_time" content="2017-01-15T12:19:19.916Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片的一扫而过的闪影">
 <meta name="twitter:description" content="一些网站的logo采用的这种效果
 
 这里用到的依然是伪元素，:before和:after，这里需要注意的一点的是用到了position:absolute，只有设定了位移，幻影才能随之漂浮！">
+<meta name="twitter:image" content="http://ojjsl7zpc.bkt.clouddn.com/shine.gif?e=1484486283&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:lGv67YfM5nFvTyefJ0jMxSBtb5E">
 
 
 
@@ -439,7 +441,7 @@
         <blockquote>
 <p>一些网站的logo采用的这种效果</p>
 </blockquote>
-<p>这里用到的依然是伪元素，<code>:before</code>和<code>:after</code>，这里需要注意的一点的是用到了<code>position:absolute</code>，只有设定了位移，幻影才能随之漂浮！</p>
+<p><img src="http://ojjsl7zpc.bkt.clouddn.com/shine.gif?e=1484486283&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:lGv67YfM5nFvTyefJ0jMxSBtb5E"><br>这里用到的依然是伪元素，<code>:before</code>和<code>:after</code>，这里需要注意的一点的是用到了<code>position:absolute</code>，只有设定了位移，幻影才能随之漂浮！</p>
 <a id="more"></a>
 <h4 id="实例一"><a href="#实例一" class="headerlink" title="实例一"></a>实例一</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line"> .banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;position:relative;&#125;</div><div class="line"> .banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 300px;</div><div class="line">	height: 15px;outline:px solid red;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">	-webkit-animation: searchLights 1s ease-in 0.5s infinite;</div><div class="line">	-o-animation: searchLights 1.s ease-in 0.5s infinite;</div><div class="line">	animation: searchLights 1s ease-in 0.5s infinite;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p>其实，就是一个：before加上css中的animation效果，这里我将<em>animation-duration</em>的时间改为0.8，即完成动画所花费的时间缩短了0.2s,but阴影的宽度加长了15px</p>
@@ -489,11 +491,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
-          
             <a href="/tags/前端/" rel="tag"># 前端</a>
           
             <a href="/tags/伪元素/" rel="tag"># 伪元素</a>
+          
+            <a href="/tags/css/" rel="tag"># css</a>
           
         </div>
       
