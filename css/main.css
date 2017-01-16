@@ -847,9 +847,9 @@ pre .javascript .function {
 }
 .btn:hover,
 .post-more-link .btn:hover {
-  border-color: #222;
-  color: #fff;
-  background: #222;
+/*border-color: $btn-default-hover-border-color;*/
+  color: #000;
+  background: #fff;
 }
 .btn-bar {
   display: block;
@@ -1720,6 +1720,23 @@ pre .javascript .function {
   max-width: 120px;
   height: auto;
   border: 1px solid #eee;
+  border-radius: 50%;
+  webkit-transition: 1.4s all;
+  moz-transition: 1.4s all;
+  ms-transition: 1.4s all;
+  transition: 1.4s all;
+}
+.site-author-image:hover {
+  cursor: pointer;
+  background-color: #fff;
+  webkit-transform: rotate(360deg) scale(1.1);
+  moz-transform: rotate(360deg) scale(1.1);
+  ms-transform: rotate(360deg) scale(1.1);
+  -webkit-transform: rotate(360deg) scale(1.1);
+  -moz-transform: rotate(360deg) scale(1.1);
+  -ms-transform: rotate(360deg) scale(1.1);
+  -o-transform: rotate(360deg) scale(1.1);
+  transform: rotate(360deg) scale(1.1);
 }
 .site-author-name {
   margin: 0;
@@ -1801,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2444ff;
+  background: #18c30d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2658,14 +2675,14 @@ a.search-result {
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     border-radius: initial;
   }
 }
 @media (max-width: 767px) {
   .content-wrap {
     width: 100%;
-    padding: 20px;
+    padding: 15px;
     min-height: auto;
     border-radius: initial;
   }
