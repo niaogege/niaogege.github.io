@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-01-16T14:41:40.202Z</updated>
+  <updated>2017-01-16T16:07:56.585Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://niaogege.site/2017/01/16/%E5%8E%9F%E7%94%9Fjs%E6%89%93%E5%8D%B0%E6%95%88%E6%9E%9C/"/>
     <id>http://niaogege.site/2017/01/16/原生js打印效果/</id>
     <published>2017-01-16T14:32:10.000Z</published>
-    <updated>2017-01-16T14:41:40.202Z</updated>
+    <updated>2017-01-16T16:07:56.585Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ojjsl7zpc.bkt.clouddn.com/typewriter.gif?e=1484580861&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:9In0pZrZcnrbc80EJoST46IzsFA"></p>
 <h4 id="原生js打印效果，主要用到以下几个知识点："><a href="#原生js打印效果，主要用到以下几个知识点：" class="headerlink" title="原生js打印效果，主要用到以下几个知识点："></a>原生js打印效果，主要用到以下几个知识点：</h4><ul>
-<li><p>1.&nbsp; 半角的不断行的空白格（推荐使用）2.&ensp;  半角的空格 3.&emsp;  全角的空格</p>
+<li><p>1.nbsp;半角的不断行的空白格（推荐使用）2.ensp;  半角的空格 3.emsp;  全角的空格,每个字符前面都加上&amp;</p>
 </li>
 <li><p>2.<code>string.charAt()</code>返回指定位置的字符</p>
 </li>
@@ -44,7 +44,7 @@
     
       &lt;p&gt;&lt;img src=&quot;http://ojjsl7zpc.bkt.clouddn.com/typewriter.gif?e=1484580861&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:9In0pZrZcnrbc80EJoST46IzsFA&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;原生js打印效果，主要用到以下几个知识点：&quot;&gt;&lt;a href=&quot;#原生js打印效果，主要用到以下几个知识点：&quot; class=&quot;headerlink&quot; title=&quot;原生js打印效果，主要用到以下几个知识点：&quot;&gt;&lt;/a&gt;原生js打印效果，主要用到以下几个知识点：&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.&amp;nbsp; 半角的不断行的空白格（推荐使用）2.&amp;ensp;  半角的空格 3.&amp;emsp;  全角的空格&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;1.nbsp;半角的不断行的空白格（推荐使用）2.ensp;  半角的空格 3.emsp;  全角的空格,每个字符前面都加上&amp;amp;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;2.&lt;code&gt;string.charAt()&lt;/code&gt;返回指定位置的字符&lt;/p&gt;
 &lt;/li&gt;
