@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-01-16T16:07:56.585Z</updated>
+  <updated>2017-01-18T13:23:43.220Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://niaogege.site/2017/01/16/%E5%8E%9F%E7%94%9Fjs%E6%89%93%E5%8D%B0%E6%95%88%E6%9E%9C/"/>
     <id>http://niaogege.site/2017/01/16/原生js打印效果/</id>
     <published>2017-01-16T14:32:10.000Z</published>
-    <updated>2017-01-16T16:07:56.585Z</updated>
+    <updated>2017-01-18T13:23:43.220Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://ojjsl7zpc.bkt.clouddn.com/typewriter.gif?e=1484580861&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:9In0pZrZcnrbc80EJoST46IzsFA"></p>
 <h4 id="原生js打印效果，主要用到以下几个知识点："><a href="#原生js打印效果，主要用到以下几个知识点：" class="headerlink" title="原生js打印效果，主要用到以下几个知识点："></a>原生js打印效果，主要用到以下几个知识点：</h4><ul>
@@ -54,11 +54,7 @@
     
     </summary>
     
-      <category term="javascript" scheme="http://niaogege.site/categories/javascript/"/>
-    
-      <category term="特效" scheme="http://niaogege.site/categories/javascript/%E7%89%B9%E6%95%88/"/>
-    
-      <category term="原生js" scheme="http://niaogege.site/categories/javascript/%E7%89%B9%E6%95%88/%E5%8E%9F%E7%94%9Fjs/"/>
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
@@ -97,7 +93,7 @@
     <link href="http://niaogege.site/2017/01/15/goast-button-%E5%B9%BD%E7%81%B5%E6%8C%89%E9%92%AE%E7%89%B9%E6%95%88/"/>
     <id>http://niaogege.site/2017/01/15/goast-button-幽灵按钮特效/</id>
     <published>2017-01-15T11:42:24.000Z</published>
-    <updated>2017-01-15T12:10:40.621Z</updated>
+    <updated>2017-01-18T13:23:12.272Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>有时候能看到这种效果的按钮，效果很棒，请看下图</p>
@@ -141,16 +137,14 @@ var f = pos - dis;&lt;/code&gt;
     
     </summary>
     
-      <category term="特效" scheme="http://niaogege.site/categories/%E7%89%B9%E6%95%88/"/>
-    
-      <category term="animation" scheme="http://niaogege.site/categories/%E7%89%B9%E6%95%88/animation/"/>
-    
-      <category term="css3" scheme="http://niaogege.site/categories/%E7%89%B9%E6%95%88/animation/css3/"/>
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
     
       <category term="animation" scheme="http://niaogege.site/tags/animation/"/>
+    
+      <category term="css3" scheme="http://niaogege.site/tags/css3/"/>
     
   </entry>
   
@@ -211,7 +205,7 @@ var f = pos - dis;&lt;/code&gt;
     <link href="http://niaogege.site/2017/01/09/%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%80%E6%89%AB%E8%80%8C%E8%BF%87%E7%9A%84%E9%97%AA%E5%BD%B1/"/>
     <id>http://niaogege.site/2017/01/09/图片的一扫而过的闪影/</id>
     <published>2017-01-09T14:22:11.000Z</published>
-    <updated>2017-01-15T12:19:19.916Z</updated>
+    <updated>2017-01-18T13:23:23.649Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>一些网站的logo采用的这种效果</p>
@@ -235,8 +229,6 @@ var f = pos - dis;&lt;/code&gt;
     
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
-    
     
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
@@ -251,7 +243,7 @@ var f = pos - dis;&lt;/code&gt;
     <link href="http://niaogege.site/2017/01/08/%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%9A%EF%BC%9Abefore%E5%92%8Cafter%E7%9A%84%E6%A2%AF%E5%BD%A2%E6%95%88%E6%9E%9C/"/>
     <id>http://niaogege.site/2017/01/08/伪元素：：before和after的梯形效果/</id>
     <published>2017-01-08T02:59:30.000Z</published>
-    <updated>2017-01-08T10:08:24.433Z</updated>
+    <updated>2017-01-18T13:23:31.501Z</updated>
     
     <content type="html"><![CDATA[<h3 id="伪元素介绍"><a href="#伪元素介绍" class="headerlink" title="伪元素介绍"></a>伪元素介绍</h3><blockquote>
 <p>CSS 伪元素用于向某些选择器设置特殊效果</p>
@@ -314,9 +306,7 @@ var f = pos - dis;&lt;/code&gt;
     
     </summary>
     
-      <category term="html+css" scheme="http://niaogege.site/categories/html-css/"/>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/html-css/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
