@@ -835,9 +835,9 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #fff;
-  background: #222;
-  border: 2px solid #555;
+  color: #2d9fb3;
+  background: #fff;
+  border: 2px solid #49b3c8;
   text-decoration: none;
   border-radius: 0;
   transition-property: background-color;
@@ -847,9 +847,9 @@ pre .javascript .function {
 }
 .btn:hover,
 .post-more-link .btn:hover {
-/*border-color: $btn-default-hover-border-color;*/
-  color: #000;
-  background: #fff;
+  border-color: #49b3c8;
+  color: #fff;
+  background: #49b3c8;
 }
 .btn-bar {
   display: block;
@@ -985,7 +985,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #49b3c8;
 }
 .site-meta {
   margin: 0;
@@ -1019,12 +1019,13 @@ pre .javascript .function {
   line-height: 36px;
   font-size: 20px;
   font-weight: normal;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-family: 'kaiti' !important;
 }
 .site-subtitle {
   margin-top: 10px;
   font-size: 13px;
   color: #ddd;
+  font-family: 'kaiti' !important;
 }
 .use-motion .brand {
   opacity: 0;
@@ -1747,8 +1748,8 @@ pre .javascript .function {
 .site-description {
   margin-top: 0;
   text-align: center;
-  font-size: 15px;
-  color: #222;
+  font-size: 14px;
+  color: #999;
 }
 .site-state {
   overflow: hidden;
@@ -1817,8 +1818,8 @@ pre .javascript .function {
   content: " ";
   width: 4px;
   height: 4px;
-  border-radius: 50%;
-  background: #20fff0;
+  border-radius: 100%;
+  background: #ff8f8f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1931,6 +1932,7 @@ pre .javascript .function {
 .footer {
   font-size: 14px;
   color: #999;
+  padding-top: 10px;
 }
 .footer img {
   border: none;
@@ -2609,7 +2611,7 @@ a.search-result {
   padding: 0;
   width: 240px;
   background: #fff;
-  box-shadow: initial;
+/*box-shadow: 0 0 10px 2px hsla(0,90%,40%,0.5);*/
   border-radius: initial;
 }
 @media (min-width: 1600px) {
@@ -2748,7 +2750,7 @@ a.search-result {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #2d9fb3;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2803,6 +2805,7 @@ a.search-result {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
+  color: #2d9fb3;
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
@@ -2876,10 +2879,10 @@ a.search-result {
   clear: both;
 }
 .sidebar a {
-  color: #555;
+  color: #49b3c8;
 }
 .sidebar a:hover {
-  color: #222;
+  color: #2c9bae;
 }
 .links-of-author-item a:before {
   display: none;
