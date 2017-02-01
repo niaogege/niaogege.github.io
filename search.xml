@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Jquery中each()方法的使用指南]]></title>
+      <url>%2F2017%2F02%2F01%2Fjquery%E4%B8%AD-%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%2F</url>
+      <content type="text"><![CDATA[$.each()与$(selector).each()不同, 后者专用于jquery对象的遍历前者可用于遍历任何的集合(无论是数组或对象),如果是数组,回调函数每次传入数组的索引和对应的值(值亦可以通过this 关键字获取,但javascript总会包装this 值作为一个对象—尽管是一个字符串或是一个数字),方法会返回被遍历对象的第一参数.each()方法能使DOM循环结构简洁，不容易出错。each()函数封装了十分强大的遍历功能，使用也很方便，它可以遍历一维数组、多维数组、DOM, JSON 等等在javaScript开发过程中使用$each可以大大的减轻我们的工作量。 下面提一下each的几种常用的用法 each处理一维数组 12345var arr1 = [ "aaa", "bbb", "ccc" ]; $.each(arr1, function(i,val)&#123; alert(i); alert(val);&#125;); each处理二维数组 12345 var arr2 = [['a', 'aa', 'aaa'], ['b', 'bb', 'bbb'], ['c', 'cc', 'ccc']] $.each(arr, function(i, item)&#123; alert(i); alert(item); &#125;); 对此二位数组的处理稍作变更之后 1234567var arr = [['a', 'aa', 'aaa'], ['b', 'bb', 'bbb'], ['c', 'cc', 'ccc']] $.each(arr, function(i, item)&#123; $.each(item,function(j,val)&#123; alert(j); alert(val); &#125;); &#125;); 如果你dom中有一段这样的代码 1234&lt;input name="aaa" type="hidden" value="111" /&gt;&lt;input name="bbb" type="hidden" value="222" /&gt;&lt;input name="ccc" type="hidden" value="333" /&gt;&lt;input name="ddd" type="hidden" value="444"/&gt; 然后你使用each如下 123456$.each($("input:hidden"), function(i,val)&#123; alert(val);alert(i);alert(val.name);alert(val.value); &#125;); 如果将以上面一段代码改变成如下的形式 12345$("input:hidden").each(function(i,val)&#123;alert(i);alert(val.name);alert(val.value); &#125;);]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[随笔：2017新春快乐！]]></title>
       <url>%2F2017%2F01%2F27%2F2017%E6%96%B0%E6%98%A5%E5%BF%AB%E4%B9%90%EF%BC%81%2F</url>
       <content type="text"><![CDATA[祝贺大家新春快乐，鸡年吉祥，恭喜发财！]]></content>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-01-27T04:33:15.921Z</updated>
+  <updated>2017-02-01T14:27:51.077Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jquery中each()方法的使用指南</title>
+    <link href="http://niaogege.site/2017/02/01/jquery%E4%B8%AD-%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://niaogege.site/2017/02/01/jquery中-方法的使用指南/</id>
+    <published>2017-02-01T13:57:03.000Z</published>
+    <updated>2017-02-01T14:27:51.077Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="each-与-selector-each-不同-后者专用于jquery对象的遍历"><a href="#each-与-selector-each-不同-后者专用于jquery对象的遍历" class="headerlink" title="$.each()与$(selector).each()不同, 后者专用于jquery对象的遍历"></a>$.each()与$(selector).each()不同, 后者专用于jquery对象的遍历</h4><p>前者可用于遍历任何的集合(无论是数组或对象),如果是数组,回调函数每次传入数组的索引和对应的值(值亦可以通过this 关键字获取,但javascript总会包装this 值作为一个对象—尽管是一个字符串或是一个数字),方法会返回被遍历对象的第一参数.<br><a id="more"></a><br>each()方法能使DOM循环结构简洁，不容易出错。each()函数封装了十分强大的遍历功能，使用也很方便，它可以遍历一维数组、多维数组、DOM, JSON 等等<br>在javaScript开发过程中使用$each可以大大的减轻我们的工作量。</p>
+<h4 id="下面提一下each的几种常用的用法"><a href="#下面提一下each的几种常用的用法" class="headerlink" title="下面提一下each的几种常用的用法"></a>下面提一下each的几种常用的用法</h4><ul>
+<li>each处理一维数组</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var arr1 = [ <span class="string">"aaa"</span>, <span class="string">"bbb"</span>, <span class="string">"ccc"</span> ]; </div><div class="line">$.each(arr1, <span class="keyword">function</span>(i,val)&#123; </div><div class="line">alert(i); </div><div class="line">alert(val);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li><p>each处理二维数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">　var arr2 = [[<span class="string">'a'</span>, <span class="string">'aa'</span>, <span class="string">'aaa'</span>], [<span class="string">'b'</span>, <span class="string">'bb'</span>, <span class="string">'bbb'</span>], [<span class="string">'c'</span>, <span class="string">'cc'</span>, <span class="string">'ccc'</span>]] </div><div class="line">　　$.each(arr, <span class="keyword">function</span>(i, item)&#123; </div><div class="line">alert(i); </div><div class="line">alert(item); </div><div class="line">　　&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>对此二位数组的处理稍作变更之后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [[<span class="string">'a'</span>, <span class="string">'aa'</span>, <span class="string">'aaa'</span>], [<span class="string">'b'</span>, <span class="string">'bb'</span>, <span class="string">'bbb'</span>], [<span class="string">'c'</span>, <span class="string">'cc'</span>, <span class="string">'ccc'</span>]] </div><div class="line">　　$.each(arr, <span class="keyword">function</span>(i, item)&#123; </div><div class="line">　　$.each(item,<span class="keyword">function</span>(j,val)&#123;</div><div class="line">　　　　 alert(j);</div><div class="line">　　　　alert(val);</div><div class="line">　&#125;); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果你dom中有一段这样的代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;input name=<span class="string">"aaa"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"111"</span> /&gt;</div><div class="line">&lt;input name=<span class="string">"bbb"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"222"</span> /&gt;</div><div class="line">&lt;input name=<span class="string">"ccc"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"333"</span> /&gt;</div><div class="line">&lt;input name=<span class="string">"ddd"</span> <span class="built_in">type</span>=<span class="string">"hidden"</span> value=<span class="string">"444"</span>/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后你使用each如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$.each($(<span class="string">"input:hidden"</span>), <span class="keyword">function</span>(i,val)&#123; </div><div class="line">alert(val);</div><div class="line">alert(i);</div><div class="line">alert(val.name);</div><div class="line">alert(val.value); </div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果将以上面一段代码改变成如下的形式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"input:hidden"</span>).each(<span class="keyword">function</span>(i,val)&#123;</div><div class="line">alert(i);</div><div class="line">alert(val.name);</div><div class="line">alert(val.value); </div><div class="line">&#125;);</div></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;each-与-selector-each-不同-后者专用于jquery对象的遍历&quot;&gt;&lt;a href=&quot;#each-与-selector-each-不同-后者专用于jquery对象的遍历&quot; class=&quot;headerlink&quot; title=&quot;$.each()与$(selector).each()不同, 后者专用于jquery对象的遍历&quot;&gt;&lt;/a&gt;$.each()与$(selector).each()不同, 后者专用于jquery对象的遍历&lt;/h4&gt;&lt;p&gt;前者可用于遍历任何的集合(无论是数组或对象),如果是数组,回调函数每次传入数组的索引和对应的值(值亦可以通过this 关键字获取,但javascript总会包装this 值作为一个对象—尽管是一个字符串或是一个数字),方法会返回被遍历对象的第一参数.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+    
+    
+      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+    
+      <category term="jQuery" scheme="http://niaogege.site/tags/jQuery/"/>
+    
+  </entry>
   
   <entry>
     <title>随笔：2017新春快乐！</title>
@@ -280,11 +325,11 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="css" scheme="http://niaogege.site/tags/css/"/>
-    
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    
+      <category term="css" scheme="http://niaogege.site/tags/css/"/>
     
   </entry>
   
