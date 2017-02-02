@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[GIT Two :Learn How to Use Git (二)]]></title>
+      <url>%2F2017%2F02%2F02%2FGIT-TWO-learn-how-to-use-git-%E4%BA%8C%2F</url>
+      <content type="text"><![CDATA[working Directory :工作区 ；repository 版本库 包含stage/index(暂存区)，master branch; common knowledge change or discard change 管理或者撤销修改 1.git commit 只负责把暂存区的修改提交，如果之前没有用add 命令,git commit 不会提交 2.git checkout – file to discard changes in working directory,撤销修改 3.改乱了内容，还添加到了stage,第一步用命令 git reset HEAD file ,第二步再用git checkout – file 4.版本回退，git log &gt; git reset –hard 版本号 5.command git rm file 用于删除一个文件，如果一个文件已经提交到版本库里，不要担心误删，但是只能恢复到最新版本，会丢失最近一次提交后修改的内容，从版本库里删除需用到git rm,并且git commit remote repository git remote add origin git@github.com:niaogege/works.git git push -u origin master(第一次推送master分支的内容) 每次本地提交后，只要有必要，使用命令git push origin master 从remote repository download ,ues this command:git clone git@github.com:niaogege/works.git 创建、合并、删除分支 git checkout -b dev 相当于git branch dev 并且切换git checkout dev git branch 列出所有分支，当前分支用*表示 git checkout 切换分支 git merge dev 合并dev分支到当前分支 git branch -d 删除分支 git –graph 查看分支合并图 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。 git merge –no-ff -m “merge with no-ff” dev:准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward：]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Jquery中each()方法的使用指南]]></title>
       <url>%2F2017%2F02%2F01%2Fjquery%E4%B8%AD-%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%2F</url>
       <content type="text"><![CDATA[$.each()与$(selector).each()不同, 后者专用于jquery对象的遍历前者可用于遍历任何的集合(无论是数组或对象),如果是数组,回调函数每次传入数组的索引和对应的值(值亦可以通过this 关键字获取,但javascript总会包装this 值作为一个对象—尽管是一个字符串或是一个数字),方法会返回被遍历对象的第一参数.each()方法能使DOM循环结构简洁，不容易出错。each()函数封装了十分强大的遍历功能，使用也很方便，它可以遍历一维数组、多维数组、DOM, JSON 等等在javaScript开发过程中使用$each可以大大的减轻我们的工作量。 下面提一下each的几种常用的用法 each处理一维数组 12345var arr1 = [ "aaa", "bbb", "ccc" ]; $.each(arr1, function(i,val)&#123; alert(i); alert(val);&#125;); each处理二维数组 12345 var arr2 = [['a', 'aa', 'aaa'], ['b', 'bb', 'bbb'], ['c', 'cc', 'ccc']] $.each(arr, function(i, item)&#123; alert(i); alert(item); &#125;); 对此二位数组的处理稍作变更之后 1234567var arr = [['a', 'aa', 'aaa'], ['b', 'bb', 'bbb'], ['c', 'cc', 'ccc']] $.each(arr, function(i, item)&#123; $.each(item,function(j,val)&#123; alert(j); alert(val); &#125;); &#125;); 如果你dom中有一段这样的代码 1234&lt;input name="aaa" type="hidden" value="111" /&gt;&lt;input name="bbb" type="hidden" value="222" /&gt;&lt;input name="ccc" type="hidden" value="333" /&gt;&lt;input name="ddd" type="hidden" value="444"/&gt; 然后你使用each如下 123456$.each($("input:hidden"), function(i,val)&#123; alert(val);alert(i);alert(val.name);alert(val.value); &#125;); 如果将以上面一段代码改变成如下的形式 12345$("input:hidden").each(function(i,val)&#123;alert(i);alert(val.name);alert(val.value); &#125;);]]></content>
