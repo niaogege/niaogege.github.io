@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-03T15:16:22.448Z</updated>
+  <updated>2017-02-04T15:54:00.772Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端成长必备：Js继承(1)</title>
+    <link href="http://niaogege.site/2017/02/04/%E5%89%8D%E7%AB%AF%E6%88%90%E9%95%BF%E5%BF%85%E5%A4%87%EF%BC%9Ajs%E7%BB%A7%E6%89%BF-1/"/>
+    <id>http://niaogege.site/2017/02/04/前端成长必备：js继承-1/</id>
+    <published>2017-02-04T15:50:44.000Z</published>
+    <updated>2017-02-04T15:54:00.772Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1-apply-与call"><a href="#1-apply-与call" class="headerlink" title="1.apply()与call()"></a>1.apply()与call()</h4><p>函数 两个非继承而来的方法,用途是在特定的作用域中调用函数，实际上等于设置函数体内的this对象的值</p>
+<ul>
+<li>apply(1.运行函数的作用域，2.参数数组)<br>function sum(n1,n2){<br>  return n1+n2;<br>}<br>function callSum1(n1,n2){<br>  return sum.apply(this,arguments);<br>}<br>function callSum2(n1,n2){<br>  return sum.apply(this,[n1,n2]);<br>}<br>console.log(callSum1(10,20));<br>console.log(callSum1(20,30));</li>
+<li>call(1.运行函数的作用域，2.参数必须逐个列举)<br>function sum(num1,num2){return num1+num2;}<br>function callSum(q1,q2){return sum.call(this,q1,q2)} //sum.call()，传递给函数的参数必须逐个列举出来<br>alert(callSum(5,3));</li>
+<li>传递参数并非apply和call用武之地，真正强大的地方是能够扩充函数赖以运行的作用域<a id="more"></a>
+window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<br>  alert(this.color);<br>}<br>sayColor();<br>sayColor.call(o);//blue<br>o.sayColor = sayColor;<br>o.sayColor();<br>使用apply和calL扩充作用域的最大好处是对象不需要与方法有任何的耦合关系</li>
+</ul>
+<h4 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h4><p>function Super(){this.name = ‘Super’;this.arr = [1,2,3,4];}//数组是引用类型值<br>Super.prototype.sayName = function(){return this.name;}<br>function Sub(){this.age = 12;}<br>Sub.prototype = new Super();<br>var test= new Sub();<br>test.arr.push(‘black’);<br>console.log(test.arr); //[1, 2, 3, 4, “black”]<br>var test2 =new Sub();<br>console.log(test2.arr);//[1, 2, 3, 4, “black”]*/</p>
+<p>//原型链 》 test-Super实例-Super.prototype,改变子类的prototype,使其指向父类的一个实例<br>//所有函数的默认原型都是Object的实例，因此默认原型都会包含一个内部指针，这也是自定义类型都会继承toString()、valueOf()方法的根本原因<br>//原型链的问题1.引用类型值的原型属性会被所有实例共享2.创建子类型实例时，不能向父类型的构造函数中传递参数</p>
+<h4 id="借用构造函数-constructor-stealing-或者伪造对象-或者经典继承"><a href="#借用构造函数-constructor-stealing-或者伪造对象-或者经典继承" class="headerlink" title="借用构造函数 constructor stealing 或者伪造对象 或者经典继承"></a>借用构造函数 constructor stealing 或者伪造对象 或者经典继承</h4><p>function Super(){<br>    this.arr = [‘blue’,’red’,’green’];<br>}<br>function Suber(){<br>    Super.call(this);<br>}<br>var instance1 = new Suber();<br>instance1.arr.push(‘black’);<br>console.log(instance1.arr);<br>var instance2 = new Suber();<br>console.log(instance2.arr);<br>//通过借用构造函数，通过使用call或者apply(),我们实际上在新创建的实例环境下调用Super构造函数，这样在新Suber()函数中定义的所有对象初始化代码<br>//2.传递参数<br>function Super1(name){this.name = name;}<br>function Suber1(){Super1.call(this,’chenpeng’);<br>this.age = 29;}<br>var instance = new Suber1();<br>console.log(instance.name);<br>console.log(instance.age)</p>
+<p>//借用构造函数的问题：方法都在构造函数中，无法复用</p>
+<h4 id="组合继承-combination-inheritance-或者伪经典继承-背后的思路是使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承"><a href="#组合继承-combination-inheritance-或者伪经典继承-背后的思路是使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承" class="headerlink" title="组合继承(combination inheritance)或者伪经典继承,背后的思路是使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承"></a>组合继承(combination inheritance)或者伪经典继承,背后的思路是使用原型链实现对原型属性和方法的继承，通过借用构造函数来实现对实例属性的继承</h4><p>function Super2(name){this.name = name;this.colors = [‘red’,’blue’,’green’];}<br>Super2.prototype.sayName = function(){console.log(this.name);}<br>function Suber2(name,age){Super2.call(this,name);<br>    this.age = age;<br>}<br>Suber2.prototype = new Super2();<br>Suber2.prototype.constructor = Suber2;<br>Suber2.prototype.sayAge = function(){console.log(this.age);}<br>var instance1 = new Suber2(‘chenpeng’,26);<br>instance1.colors.push(‘black’);<br>console.log(instance1.colors);<br>instance1.sayName();<br>instance1.sayAge(); </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1-apply-与call&quot;&gt;&lt;a href=&quot;#1-apply-与call&quot; class=&quot;headerlink&quot; title=&quot;1.apply()与call()&quot;&gt;&lt;/a&gt;1.apply()与call()&lt;/h4&gt;&lt;p&gt;函数 两个非继承而来的方法,用途是在特定的作用域中调用函数，实际上等于设置函数体内的this对象的值&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;apply(1.运行函数的作用域，2.参数数组)&lt;br&gt;function sum(n1,n2){&lt;br&gt;  return n1+n2;&lt;br&gt;}&lt;br&gt;function callSum1(n1,n2){&lt;br&gt;  return sum.apply(this,arguments);&lt;br&gt;}&lt;br&gt;function callSum2(n1,n2){&lt;br&gt;  return sum.apply(this,[n1,n2]);&lt;br&gt;}&lt;br&gt;console.log(callSum1(10,20));&lt;br&gt;console.log(callSum1(20,30));&lt;/li&gt;
+&lt;li&gt;call(1.运行函数的作用域，2.参数必须逐个列举)&lt;br&gt;function sum(num1,num2){return num1+num2;}&lt;br&gt;function callSum(q1,q2){return sum.call(this,q1,q2)} //sum.call()，传递给函数的参数必须逐个列举出来&lt;br&gt;alert(callSum(5,3));&lt;/li&gt;
+&lt;li&gt;传递参数并非apply和call用武之地，真正强大的地方是能够扩充函数赖以运行的作用域
+    
+    </summary>
+    
+      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/categories/js/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>Bootstrap One:table and Form</title>
@@ -496,9 +538,9 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
-    
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
