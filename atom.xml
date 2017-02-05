@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-04T15:54:00.772Z</updated>
+  <updated>2017-02-05T08:25:28.500Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Bootstrap-Two:0205 Button and Image-Study</title>
+    <link href="http://niaogege.site/2017/02/05/bootstrap-two-0205-button-study/"/>
+    <id>http://niaogege.site/2017/02/05/bootstrap-two-0205-button-study/</id>
+    <published>2017-02-05T07:27:26.000Z</published>
+    <updated>2017-02-05T08:25:28.500Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="button-按钮"><a href="#button-按钮" class="headerlink" title="button 按钮"></a>button 按钮</h4><ul>
+<li><p>default button<br>.btn-primary:首选项 .btn-default .btn-info 一般信息</p>
+</li>
+<li><p>button sizes<br>.btn-lg .btn-default .btn-sm .btn-xs .btn-block(将其拉伸为父元素的100%宽度)</p>
+</li>
+<li><p>disabled  and active state<br>1.anchor element disabled</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href=<span class="string">"#"</span> class=<span class="string">"btn btn-large btn-primary disabled"</span>&gt;Primary link&lt;/a&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.button element<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button <span class="built_in">type</span>=<span class="string">"button"</span> class=<span class="string">"btn btn-default btn-lg active"</span>&gt;Button&lt;/button&gt;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h4 id="image-图片"><a href="#image-图片" class="headerlink" title="image 图片"></a>image 图片</h4><p>Add classes to an <img> element to easily style images in any project.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"..."</span> alt=<span class="string">"..."</span> class=<span class="string">"img-rounded"</span>&gt; 圆角图片</div><div class="line">&lt;img src=<span class="string">"..."</span> alt=<span class="string">"..."</span> class=<span class="string">"img-circle"</span>&gt; 圆形图片 </div><div class="line">&lt;img src=<span class="string">"..."</span> alt=<span class="string">"..."</span> class=<span class="string">"img-thumbnail"</span>&gt;</div><div class="line">&lt;img src=<span class="string">""</span> alt=<span class="string">""</span> class=<span class="string">"img-responsive"</span>&gt;</div></pre></td></tr></table></figure></p>
+<h4 id="form"><a href="#form" class="headerlink" title="form"></a>form</h4><ul>
+<li>.form-inline 内联表单，可以通过为label设置.sr-only类将其隐藏</li>
+<li><p>.input-group </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=<span class="string">"input-group"</span>&gt;</div><div class="line">  &lt;div class=<span class="string">"input-group-addon"</span>&gt;$&lt;/div&gt;</div><div class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span> id=<span class="string">"exampleInputAmount"</span> placeholder=<span class="string">"Amount"</span>&gt;</div><div class="line">  &lt;div class=<span class="string">"input-group-addon"</span>&gt;.00&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>.form-horizontal 水平排列的表单，并联合使用 Bootstrap 预置的栅格类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;form class=<span class="string">"form-horizontal"</span>&gt;</div><div class="line">  &lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"inputEmail3"</span> class=<span class="string">"col-sm-2 control-label"</span>&gt;Email&lt;/label&gt; </div><div class="line">    &lt;div class=<span class="string">"col-sm-10"</span>&gt;</div><div class="line">      &lt;input <span class="built_in">type</span>=<span class="string">"email"</span> class=<span class="string">"form-control"</span> id=<span class="string">"inputEmail3"</span> placeholder=<span class="string">"Email"</span>&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">    &lt;label <span class="keyword">for</span>=<span class="string">"inputPassword3"</span> class=<span class="string">"col-sm-2 control-label"</span>&gt;Password&lt;/label&gt;</div><div class="line">    &lt;div class=<span class="string">"col-sm-10"</span>&gt;</div><div class="line">      &lt;input <span class="built_in">type</span>=<span class="string">"password"</span> class=<span class="string">"form-control"</span> id=<span class="string">"inputPassword3"</span> placeholder=<span class="string">"Password"</span>&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">    &lt;div class=<span class="string">"col-sm-offset-2 col-sm-10"</span>&gt; //列偏移,对齐</div><div class="line">      &lt;div class=<span class="string">"checkbox"</span>&gt;</div><div class="line">        &lt;label&gt;</div><div class="line">          &lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span>&gt; Remember me</div><div class="line">        &lt;/label&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">    &lt;div class=<span class="string">"col-sm-offset-2 col-sm-10"</span>&gt; //列偏移</div><div class="line">      &lt;button <span class="built_in">type</span>=<span class="string">"submit"</span> class=<span class="string">"btn btn-default"</span>&gt;Sign <span class="keyword">in</span>&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>内联单选和多选框<br>通过将 .checkbox-inline 或 .radio-inline 类应用到一系列的多选框（checkbox）或单选框（radio）控件上，可以使这些控件排列在一行。</p>
+</li>
+<li>焦点状态<br>我们将某些表单控件的默认 outline 样式移除即outline:0;box-shadow: 0 0 8px rgba(82,168,236,.6);，然后对 :focus 状态赋予 box-shadow 属性。</li>
+<li>添加额外的图标,反馈图标（feedback icon）只能使用在文本输入框 <input class="form-control"> 元素上。<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;div class=<span class="string">"form-group has-success has-feedback"</span>&gt;</div><div class="line">  &lt;label class=<span class="string">"control-label"</span> <span class="keyword">for</span>=<span class="string">"inputSuccess2"</span>&gt;Input with success&lt;/label&gt;</div><div class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> class=<span class="string">"form-control"</span> id=<span class="string">"inputSuccess2"</span> aria-describedby=<span class="string">"inputSuccess2Status"</span>&gt;</div><div class="line">  &lt;span class=<span class="string">"glyphicon glyphicon-ok form-control-feedback"</span> aria-hidden=<span class="string">"true"</span>&gt;&lt;/span&gt;</div><div class="line">  &lt;span id=<span class="string">"inputSuccess2Status"</span> class=<span class="string">"sr-only"</span>&gt;(success)&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;button-按钮&quot;&gt;&lt;a href=&quot;#button-按钮&quot; class=&quot;headerlink&quot; title=&quot;button 按钮&quot;&gt;&lt;/a&gt;button 按钮&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;default button&lt;br&gt;.btn-primary:首选项 .btn-default .btn-info 一般信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;button sizes&lt;br&gt;.btn-lg .btn-default .btn-sm .btn-xs .btn-block(将其拉伸为父元素的100%宽度)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;disabled  and active state&lt;br&gt;1.anchor element disabled&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;a href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt; class=&lt;span class=&quot;string&quot;&gt;&quot;btn btn-large btn-primary disabled&quot;&lt;/span&gt;&amp;gt;Primary link&amp;lt;/a&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2.button element&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;button &lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; class=&lt;span class=&quot;string&quot;&gt;&quot;btn btn-default btn-lg active&quot;&lt;/span&gt;&amp;gt;Button&amp;lt;/button&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="bootstrap" scheme="http://niaogege.site/categories/bootstrap/"/>
+    
+    
+      <category term="bootstrap" scheme="http://niaogege.site/tags/bootstrap/"/>
+    
+  </entry>
   
   <entry>
     <title>前端成长必备：Js继承(1)</title>
@@ -540,9 +597,9 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
-    
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
