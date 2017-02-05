@@ -51,9 +51,9 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
       <category term="前端" scheme="http://niaogege.site/categories/js/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="js" scheme="http://niaogege.site/tags/js/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -62,16 +62,17 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
     <link href="http://niaogege.site/2017/02/03/bootstrap-one-table-and-form/"/>
     <id>http://niaogege.site/2017/02/03/bootstrap-one-table-and-form/</id>
     <published>2017-02-03T14:56:03.000Z</published>
-    <updated>2017-02-03T15:16:22.448Z</updated>
+    <updated>2017-02-05T04:23:15.954Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>bootstrap:Sleek, intuitive, and powerful front-end framework for faster and easier web development.(简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。)<br><a id="more"></a></p>
-<ul>
-<li>table<br>.table:defalt property<br>.table.striped:条纹状表格<br>.table-bordered:带边框的表格<br>.table-hover:鼠标悬停<br>.table-condensed:紧缩表格</li>
-</ul>
+<p>bootstrap:Sleek, intuitive, and powerful front-end framework for faster and easier web development.(简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。)</p>
 </blockquote>
+<a id="more"></a>
 <ul>
-<li>form<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"#"</span> class=<span class="string">"form-horizontal"</span>&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;label <span class="keyword">for</span>=<span class="string">'exampleInputEamil'</span>class=<span class="string">"col-lg-1 control-label"</span>&gt; Email &lt;/label&gt;</div><div class="line">				&lt;div class=<span class="string">'col-lg-11'</span>&gt;</div><div class="line">				&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"exampleInputEamil"</span> class=<span class="string">"form-control"</span> placeholder=<span class="string">"email address"</span>&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;label <span class="keyword">for</span>=<span class="string">'exampleInputPassword'</span> class=<span class="string">"col-lg-1 control-label"</span>&gt; Password &lt;/label&gt;</div><div class="line">				&lt;div class=<span class="string">'col-lg-11'</span>&gt;</div><div class="line">				&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"exampleInputPassword"</span> class=<span class="string">"form-control"</span> placeholder=<span class="string">"Password "</span>&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"col-lg-1 col-lg-offset-1"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"checkbox"</span>&gt;</div><div class="line">					&lt;label&gt;&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span>&gt;Remembe&lt;/label&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"col-lg-1 col-lg-offset-1"</span>&gt;</div><div class="line">				&lt;button class=<span class="string">'btn btn-default'</span>&gt;提交&lt;/button&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/form&gt;</div></pre></td></tr></table></figure>
+<li><p>table<br>.table:defalt property<br>.table.striped:条纹状表格<br>.table-bordered:带边框的表格<br>.table-hover:鼠标悬停<br>.table-condensed:紧缩表格</p>
+</li>
+<li><p>form</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"#"</span> class=<span class="string">"form-horizontal"</span>&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;label <span class="keyword">for</span>=<span class="string">'exampleInputEamil'</span>class=<span class="string">"col-lg-1 control-label"</span>&gt; Email &lt;/label&gt;</div><div class="line">				&lt;div class=<span class="string">'col-lg-11'</span>&gt;</div><div class="line">				&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"exampleInputEamil"</span> class=<span class="string">"form-control"</span> placeholder=<span class="string">"email address"</span>&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;label <span class="keyword">for</span>=<span class="string">'exampleInputPassword'</span> class=<span class="string">"col-lg-1 control-label"</span>&gt; Password &lt;/label&gt;</div><div class="line">				&lt;div class=<span class="string">'col-lg-11'</span>&gt;</div><div class="line">				&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> id=<span class="string">"exampleInputPassword"</span> class=<span class="string">"form-control"</span> placeholder=<span class="string">"Password "</span>&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"col-lg-1 col-lg-offset-1"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"checkbox"</span>&gt;</div><div class="line">					&lt;label&gt;&lt;input <span class="built_in">type</span>=<span class="string">'checkbox'</span>&gt;Remembe&lt;/label&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">			&lt;div class=<span class="string">"form-group"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"col-lg-1 col-lg-offset-1"</span>&gt;</div><div class="line">				&lt;button class=<span class="string">'btn btn-default'</span>&gt;提交&lt;/button&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div><div class="line">		&lt;/form&gt;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>.form-control:表单的宽度<br>.form-group:(纵向)表单上下加距离，为label/input外层加div的class<br>.form-inline:给form添加内联表单<br>.col-lg-offset-1:列偏移，往右移<br>.input-group-addon:与文本框融合</p>
@@ -80,7 +81,8 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;bootstrap:Sleek, intuitive, and powerful front-end framework for faster and easier web development.(简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。)&lt;br&gt;
+&lt;p&gt;bootstrap:Sleek, intuitive, and powerful front-end framework for faster and easier web development.(简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。)&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
@@ -538,9 +540,9 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
