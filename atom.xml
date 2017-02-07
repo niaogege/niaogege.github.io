@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-05T08:25:28.500Z</updated>
+  <updated>2017-02-07T15:25:22.348Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex-Box弹性盒模型初探</title>
+    <link href="http://niaogege.site/2017/02/07/flex-box%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B%E5%88%9D%E6%8E%A2/"/>
+    <id>http://niaogege.site/2017/02/07/flex-box弹性盒模型初探/</id>
+    <published>2017-02-07T15:13:19.000Z</published>
+    <updated>2017-02-07T15:25:22.348Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>弹性布局（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有效的方式来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。</p>
+</blockquote>
+<p>由于flexbox是一个整体模块，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之中有一些是在父容器上设置，而有一些则是在子容器上设置。<br><a id="more"></a></p>
+<h3 id="属性介绍"><a href="#属性介绍" class="headerlink" title="属性介绍"></a>属性介绍</h3><ul>
+<li>display: flex | inline-flex; (适用于父类容器元素上)</li>
+</ul>
+<p>box：将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（css3）<br>inline-box：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）<br>flexbox：将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）<br>inline-flexbox：将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）<br>flex：将对象作为弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）<br>inline-flex：将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）<br>注意:<br>1.css 列（CSS columns）在弹性盒子中不起作用<br>2.float, clear and vertical-align 在flex项目中不起作用</p>
+<ul>
+<li><p>flex-direction (适用于父类容器的元素上)<br>定义：设置或检索伸缩盒对象的子元素在父容器中的位置。<br>row：横向从左到右排列（左对齐），默认的排列方式。<br>row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。<br>column：纵向排列。<br>column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。</p>
+</li>
+<li><p>flex-wrap (适用于父类容器上)</p>
+</li>
+</ul>
+<p>设置或检索伸缩盒对象的子元素超出父容器时是否换行。<br>flex-wrap: nowrap(不换行) | wrap(换行) | wrap-reverse</p>
+<ul>
+<li>flex-flow (适用于父类容器上)<br>设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。<br>当弹性盒里一行上的所有子元素都不能伸缩或已经达到其最大值时，这一属性可协助对多余的空间进行分配。当元素溢出某行时，这一属性同样会在对齐上进行控制。<br>justify-content: flex-start | flex-end | center | space-between | space-around</li>
+<li>flex (适用于弹性盒模型子元素)<br>复合属性。设置或检索伸缩盒对象的子元素如何分配空间。</li>
+</ul>
+<p>如果缩写flex:1, 则其计算值为：1 1 0</p>
+<p>flex：none | [ flex-grow ] || [ flex-shrink ] || [ flex-basis ]<br>none：none关键字的计算值为: 0 0 auto<br>[ flex-grow ]：定义弹性盒子元素的扩展比率。<br>[ flex-shrink ]：定义弹性盒子元素的收缩比率。<br>[ flex-basis ]：定义弹性盒子元素的默认基准值。</p>
+<h4 id="常见的案例"><a href="#常见的案例" class="headerlink" title="常见的案例"></a>常见的案例</h4><p>常见3栏移动优先布局<br>css部分<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">.wrapper &#123;</div><div class="line">  display: flex;</div><div class="line">  flex-flow: row wrap;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* We tell all items to be 100% width */</div><div class="line">.header, .main, .nav, .aside, .footer &#123;</div><div class="line">  flex: 1 100%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* We rely on <span class="built_in">source</span> order <span class="keyword">for</span> mobile-first approach</div><div class="line"> * <span class="keyword">in</span> this <span class="keyword">case</span>:</div><div class="line"> * 1. header</div><div class="line"> * 2. nav</div><div class="line"> * 3. main</div><div class="line"> * 4. aside</div><div class="line"> * 5. footer</div><div class="line"> */</div><div class="line"></div><div class="line">/* Medium screens */</div><div class="line">@media all and (min-width: 600px) &#123;</div><div class="line">  /* We tell both sidebars to share a row */</div><div class="line">  .aside &#123; flex: 1 auto; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* Large screens */</div><div class="line">@media all and (min-width: 800px) &#123;</div><div class="line">  /* We invert order of first sidebar and main</div><div class="line">   * And tell the main element to take twice as much width as the other two sidebars </div><div class="line">   */</div><div class="line">  .main &#123; flex: 2 0px; &#125;</div><div class="line"></div><div class="line">  .aside-1 &#123; order: 1; &#125;</div><div class="line">  .main    &#123; order: 2; &#125;</div><div class="line">  .aside-2 &#123; order: 3; &#125;</div><div class="line">  .footer  &#123; order: 4; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>html部分<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class=<span class="string">"wrapper"</span>&gt;</div><div class="line">  &lt;header class=<span class="string">"header"</span>&gt;Header&lt;/header&gt;</div><div class="line">  &lt;article class=<span class="string">"main"</span>&gt;</div><div class="line">    &lt;p&gt;Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.&lt;/p&gt;  </div><div class="line">  &lt;/article&gt;</div><div class="line">  &lt;aside class=<span class="string">"aside aside-1"</span>&gt;Aside 1&lt;/aside&gt;</div><div class="line">  &lt;aside class=<span class="string">"aside aside-2"</span>&gt;Aside 2&lt;/aside&gt;</div><div class="line">  &lt;footer class=<span class="string">"footer"</span>&gt;Footer&lt;/footer&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;弹性布局（flexible box）模块（目前是w3c候选的推荐）旨在提供一个更加有效的方式来布置，对齐和分布在容器之间的各项内容，即使它们的大小是未知或者动态变化的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由于flexbox是一个整体模块，而不是单一的一个属性，它涉及到了很多东西，包括它的整个属性集。它们之中有一些是在父容器上设置，而有一些则是在子容器上设置。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://niaogege.site/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>Bootstrap-Two:0205 Button and Image-Study</title>
@@ -108,9 +160,9 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
       <category term="前端" scheme="http://niaogege.site/categories/js/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
-    
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="js" scheme="http://niaogege.site/tags/js/"/>
     
   </entry>
   
@@ -345,9 +397,9 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="javascript" scheme="http://niaogege.site/tags/javascript/"/>
-    
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
+    
+      <category term="javascript" scheme="http://niaogege.site/tags/javascript/"/>
     
   </entry>
   
