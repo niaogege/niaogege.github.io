@@ -129,7 +129,7 @@
     <link href="http://niaogege.site/2017/02/04/%E5%89%8D%E7%AB%AF%E6%88%90%E9%95%BF%E5%BF%85%E5%A4%87%EF%BC%9Ajs%E7%BB%A7%E6%89%BF-1/"/>
     <id>http://niaogege.site/2017/02/04/前端成长必备：js继承-1/</id>
     <published>2017-02-04T15:50:44.000Z</published>
-    <updated>2017-02-04T15:54:00.772Z</updated>
+    <updated>2017-02-07T15:30:51.700Z</updated>
     
     <content type="html"><![CDATA[<h4 id="1-apply-与call"><a href="#1-apply-与call" class="headerlink" title="1.apply()与call()"></a>1.apply()与call()</h4><p>函数 两个非继承而来的方法,用途是在特定的作用域中调用函数，实际上等于设置函数体内的this对象的值</p>
 <ul>
@@ -155,14 +155,10 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/js/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
     
   </entry>
   
