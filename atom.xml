@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-09T15:13:53.811Z</updated>
+  <updated>2017-02-10T14:53:44.954Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -16,11 +16,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>前端面试题（2）：知识点总结</title>
+    <link href="http://niaogege.site/2017/02/10/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%882%EF%BC%89%EF%BC%9A%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
+    <id>http://niaogege.site/2017/02/10/前端面试题（2）：知识点总结/</id>
+    <published>2017-02-10T13:49:28.000Z</published>
+    <updated>2017-02-10T14:53:44.954Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.box-sizing属性<br>box-sizing属性主要用来控制元素的盒模型的解析模式。默认值是content-box。<br>content-box：让元素维持W3C的标准盒模型。元素的宽度/高度由border + padding + content的宽度/高度决定，设置width/height属性指的是content部分的宽/高<br>border-box：让元素维持IE传统盒模型（IE6以下版本和IE6~7的怪异模式）。设置width/height属性指的是border + padding + content<br>标准浏览器下，按照W3C规范对盒模型解析，一旦修改了元素的边框或内距，就会影响元素的盒子尺寸，就不得不重新计算元素的盒子尺寸，从而影响整个页面的布局。<br>CSS3中新增了一种盒模型计算方式：box-sizing。盒模型默认的值是content-box, 新增的值是padding-box和border-box，几种盒模型计算元素宽高的区别如下：</p>
+<p>2.link 和@import 的区别是?<br>（1）link属于XHTML标签，而@import是CSS提供的;<br>（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;<br>（3）import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;<br>（4）link方式的样式的权重高于@import的权重.<br>example<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=’stylesheet’ href=’a.css’&gt;  或者</div><div class="line">&lt;style&gt;  </div><div class="line">@import url(’a.css’);  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>3.CSS3新增伪类举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　p:first-of-type 选择属于其父元素的首个 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</div><div class="line">　　p:last-of-type  选择属于其父元素的最后 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</div><div class="line">　　p:only-of-type  选择属于其父元素唯一的 &lt;p&gt; 元素的每个 &lt;p&gt; 元素。</div><div class="line">　　p:only-child    选择属于其父元素的唯一子元素的每个 &lt;p&gt; 元素。</div><div class="line">　　p:nth-child(2)  选择属于其父元素的第二个子元素的每个 &lt;p&gt; 元素。</div><div class="line">　　:enabled、:disabled 控制表单控件的禁用状态。</div><div class="line">　　:checked，单选框或复选框被选中。</div></pre></td></tr></table></figure></p>
+<p>4.(写)描述一段语义的html代码吧。<br>HTML5中新增加的很多标签（如：<code> article、nav、header和footer就是基于语义化设计原则</code>）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt; div id=&quot;header&quot;&gt; </div><div class="line">	&lt; h1&gt;标题&lt; /h1&gt; </div><div class="line">	&lt; h2&gt;专注Web前端技术&lt; /h2&gt; </div><div class="line">	&lt; /div&gt;</div></pre></td></tr></table></figure></p>
+<p>语义 HTML 具有以下特性：<br>文字包裹在元素中，用以反映内容。例如：<br>段落包含在 p 元素中。<br>顺序表包含在ol元素中。<br>从其他来源引用的大型文字块包含在blockquote元素中。<br>HTML 元素不能用作语义用途以外的其他目的。例如：<br>h1包含标题，但并非用于放大文本。<br>blockquote包含大段引述，但并非用于文本缩进。<br>空白段落元素 ( p) 并非用于跳行。<br>文本并不直接包含任何样式信息。例如：<br>不使用 font 或 center 等格式标记。<br>类或 ID 中不引用颜色或位置。</p>
+<p>5.对BFC规范的理解？<br> BFC(block formatting context)：块级格式化上下文，它是指一个独立的块级渲染区域，该区域拥有一套渲染规则来约束块级盒子的布局，且与区域外部无关。<br> 既然上文提到BFC是一块渲染区域，那这块渲染区域到底在哪，它又是有多大，这些由生成BFC的元素决定，CSS2.1中规定满足下列CSS声明之一的元素便会生成BFC。<br>+根元素<br>+float的值不为none<br>+overflow的值不为visible<br>+display的值为inline-block、table-cell、table-caption<br>+position的值为absolute或fixed<br>浏览器对于BFC这块区域的约束规则如下：<br>生成BFC元素的子元素会一个接一个的放置。垂直方向上他们的起点是一个包含块的顶部，两个相邻子元素之间的垂直距离取决于元素的margin特性。在BFC中相邻的块级元素外边距会折叠。<br>生成BFC元素的子元素中，每一个子元素做外边距与包含块的左边界相接触，（对于从右到左的格式化，右外边距接触右边界），即使浮动元素也是如此（尽管子元素的内容区域会由于浮动而压缩），除非这个子元素也创建了一个新的BFC（如它自身也是一个浮动元素）。<br>　　有道友对它做了分解，我们直接拿来：</p>
+<p>1.内部的Box会在垂直方向上一个接一个的放置<br>2.垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）<br>3.每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）<br>4.BFC的区域不会与float的元素区域重叠<br>5.计算BFC的高度时，浮动子元素也参与计算<br>6.BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.box-sizing属性&lt;br&gt;box-sizing属性主要用来控制元素的盒模型的解析模式。默认值是content-box。&lt;br&gt;content-box：让元素维持W3C的标准盒模型。元素的宽度/高度由border + padding + content的宽度/高度决定，设置width/height属性指的是content部分的宽/高&lt;br&gt;border-box：让元素维持IE传统盒模型（IE6以下版本和IE6~7的怪异模式）。设置width/height属性指的是border + padding + content&lt;br&gt;标准浏览器下，按照W3C规范对盒模型解析，一旦修改了元素的边框或内距，就会影响元素的盒子尺寸，就不得不重新计算元素的盒子尺寸，从而影响整个页面的布局。&lt;br&gt;CSS3中新增了一种盒模型计算方式：box-sizing。盒模型默认的值是content-box, 新增的值是padding-box和border-box，几种盒模型计算元素宽高的区别如下：&lt;/p&gt;
+&lt;p&gt;2.link 和@import 的区别是?&lt;br&gt;（1）link属于XHTML标签，而@import是CSS提供的;&lt;br&gt;（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;&lt;br&gt;（3）import只在IE5以上才能识别，而link是XHTML标签，无兼容问题;&lt;br&gt;（4）link方式的样式的权重高于@import的权重.&lt;br&gt;example&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link rel=’stylesheet’ href=’a.css’&amp;gt;  或者&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;style&amp;gt;  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;@import url(’a.css’);  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;/style&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端面试题" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="前端面试题" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端面试题（1）：知识点总结</title>
     <link href="http://niaogege.site/2017/02/09/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%881%EF%BC%89%EF%BC%9A%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
     <id>http://niaogege.site/2017/02/09/前端面试题（1）：知识点总结/</id>
     <published>2017-02-09T15:00:22.000Z</published>
-    <updated>2017-02-09T15:13:53.811Z</updated>
+    <updated>2017-02-10T14:11:46.926Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>div在容器中左右上下居中的代码<br>div上下左右居中第一种<br>.box{width:500px;height:500px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:red;}<br>div上下左右居中第二种<br>.wrapper{width:100vw;height:100vh;background:hsl(0,80%,90%);font-size:16px;}<br>.box{width:20rem;height:20rem;background:red;position:absolute;top:0;left:0;margin:auto;bottom:0;right:0;font-size:1.4rem;}<br>div上下左右居中第三种<br>.wrapper{width:100vw;height:100vh;background:hsl(0,80%,90%);font-size:16px;}<br>.box{width:30rem;height:30rem;background:red;position:absolute;left:50%;top:50%;margin-left:-15rem;margin-top:-15rem;}<a id="more"></a></li>
@@ -30,14 +61,11 @@
 <ul>
 <li>你如何对网站的文件和资源进行优化？</li>
 </ul>
-<p>期待的解决方案包括：<br>文件合并<br>文件最小化/文件压缩<br>使用 CDN 托管<br>缓存的使用（多个域名来提供缓存）<br>其他<br>请说出三种减少页面加载时间的方法。</p>
-<p>1.优化图片<br>2.图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方）<br>3.优化CSS（压缩合并css，如margin-top,margin-left…)<br>4.网址后加斜杠（如www.campr.com/目录，会判断这个“目录是什么文件类型，或者是目录。）<br>5.标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。<br>当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。）<br>6.减少http请求（合并文件，合并图片）。<br>你都使用哪些工具来测试代码的性能？</p>
-<p>Profiler, JSPerf（<a href="http://jsperf.com/nexttick-vs-setzerotimeout-vs-settimeout）" target="_blank" rel="external">http://jsperf.com/nexttick-vs-setzerotimeout-vs-settimeout）</a>, Dromaeo<br>什么是 FOUC（无样式内容闪烁）？你如何来避免 FOUC？</p>
-<p>FOUC - Flash Of Unstyled Content 文档样式闪烁</p>
-<p><style type="text/css" media="all">@import “../fouc.css”;</style><br>而引用CSS文件的@import就是造成这个问题的罪魁祸首。IE会先加载整个HTML文档的DOM，然后再去导入外部的CSS文件，因此，在页面DOM加载完成到CSS导入完成中间会有一段时间页面上的内容是没有样式的，这段时间的长短跟网速，电脑速度都有关系。<br>解决方法简单的出奇，只要在<head>之间加入一个<link>或者<script>元素就可以了。</p>
-<ul>
-<li>null和undefined的区别？</li>
-</ul>
+<p>期待的解决方案包括：<br>文件合并<br>文件最小化/文件压缩<br>使用 CDN 托管<br>缓存的使用（多个域名来提供缓存）<br>其他<br>请说出三种减少页面加载时间的方法。<br>1.优化图片<br>2.图像格式的选择（GIF：提供的颜色较少，可用在一些对颜色要求不高的地方）<br>3.优化CSS（压缩合并css，如margin-top,margin-left…)<br>4.网址后加斜杠（如www.campr.com/目录，会判断这个“目录是什么文件类型，或者是目录。）<br>5.标明高度和宽度（如果浏览器没有找到这两个参数，它需要一边下载图片一边计算大小，如果图片很多，浏览器需要不断地调整页面。这不但影响速度，也影响浏览体验。<br>当浏览器知道了高度和宽度参数后，即使图片暂时无法显示，页面上也会腾出图片的空位，然后继续加载后面的内容。从而加载时间快了，浏览体验也更好了。）<br>6.减少http请求（合并文件，合并图片）。</p>
+<hr>
+<p>你都使用哪些工具来测试代码的性能？<br>7ofiler, JSPerf（<a href="http://jsperf.com/nexttick-vs-setzerotimeout-vs-settimeout）" target="_blank" rel="external">http://jsperf.com/nexttick-vs-setzerotimeout-vs-settimeout）</a>, Dromaeo<br>什么是 FOUC（无样式内容闪烁）？你如何来避免 FOUC？<br>FOUC - Flash Of Unstyled Content 文档样式闪烁<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span> media=<span class="string">"all"</span>&gt;@import <span class="string">"../fouc.css"</span>;&lt;/style&gt; &lt;/code&gt;</div></pre></td></tr></table></figure></p>
+<p>而引用CSS文件的@import就是造成这个问题的罪魁祸首。IE会先加载整个HTML文档的DOM，然后再去导入外部的CSS文件，因此，在页面DOM加载完成到CSS导入完成中间会有一段时间页面上的内容是没有样式的，这段时间的长短跟网速，电脑速度都有关系。<br>解决方法简单的出奇，只要在<code><head></head></code>之间加入一个link或者script元素就可以了。</p>
+<p>null和undefined的区别？</p>
 <p>null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。</p>
 <p>当声明的变量还未被初始化时，变量的默认值为undefined。 null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
 <p>undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</p>
@@ -48,19 +76,15 @@
 <p>（1） 作为函数的参数，表示该函数的参数不是对象。</p>
 <p>（2） 作为对象原型链的终点。</p>
 <ul>
-<li><p>new操作符具体干了什么呢?</p>
-<p> 1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br> 2、属性和方法被加入到 this 引用的对象中。<br> 3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。</p>
+<li><p>new操作符具体干了什么呢?<br> 1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。<br> 2、属性和方法被加入到 this 引用的对象中。<br> 3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。<br>var obj  = {};<br>obj.<strong>proto</strong> = Base.prototype;<br>Base.call(obj); </p>
 </li>
-</ul>
-<p>var obj  = {};<br>obj.<strong>proto</strong> = Base.prototype;<br>Base.call(obj); </p>
-<ul>
 <li><p>js延迟加载的方式有哪些？</p>
 </li>
 <li><p>defer和async、动态创建DOM方式（创建script，插入到DOM中，加载完毕后callBack）、按需异步载入js<br>如何解决跨域问题?</p>
 </li>
 </ul>
 <p>jsonp、 document.domain+iframe、window.name、window.postMessage、服务器上设置代理页面</p>
-<p>jsonp的原理是动态插入script标签<br>具体参见：详解js跨域问题（<a href="https://segmentfault.com/a/1190000000718840）">https://segmentfault.com/a/1190000000718840）</a></p>
+<p>jsonp的原理是动态插入script标签<br>具体参见：详解js跨域问题（<a href="https://segmentfault.com/a/1190000000718840）" target="_blank" rel="external">https://segmentfault.com/a/1190000000718840）</a></p>
 <ul>
 <li>documen.write和 innerHTML的区别</li>
 </ul>
@@ -69,16 +93,17 @@
 <ul>
 <li>.call() 和 .apply() 的区别和作用？</li>
 </ul>
-<p>作用：动态改变某个类的某个方法的运行环境。 区别参见：JavaScript学习总结（四）function函数部分（<a href="https://segmentfault.com/a/1190000000660786#articleHeader15）">https://segmentfault.com/a/1190000000660786#articleHeader15）</a></p>
+<p>作用：动态改变某个类的某个方法的运行环境。 区别参见：JavaScript学习总结（四）function函数部分（<a href="https://segmentfault.com/a/1190000000660786#articleHeader15）" target="_blank" rel="external">https://segmentfault.com/a/1190000000660786#articleHeader15）</a></p>
+<hr>
 <ul>
 <li>哪些操作会造成内存泄漏？</li>
 </ul>
 <p>内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。<br>垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为 0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收。</p>
-<p>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。<br>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）<br>详见：详解js变量、作用域及内存（<a href="https://segmentfault.com/a/1190000000687844）">https://segmentfault.com/a/1190000000687844）</a></p>
+<p>setTimeout 的第一个参数使用字符串而非函数的话，会引发内存泄漏。<br>闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）<br>详见：详解js变量、作用域及内存（<a href="https://segmentfault.com/a/1190000000687844）" target="_blank" rel="external">https://segmentfault.com/a/1190000000687844）</a></p>
 <ul>
 <li>JavaScript中的作用域与变量声明提升？</li>
 </ul>
-<p>详见：详解JavaScript函数模式（<a href="https://segmentfault.com/a/1190000000758184#articleHeader5）">https://segmentfault.com/a/1190000000758184#articleHeader5）</a></p>
+<p>详见：详解JavaScript函数模式（<a href="https://segmentfault.com/a/1190000000758184#articleHeader5）" target="_blank" rel="external">https://segmentfault.com/a/1190000000758184#articleHeader5）</a></p>
 <ul>
 <li><p>如何判断当前脚本运行在浏览器还是node环境中？</p>
 </li>
@@ -92,12 +117,11 @@
 </li>
 </ul>
 <p>优雅降级：Web站点在所有新式浏览器中都能正常工作，如果用户使用的是老式浏览器，则代码会检查以确认它们是否能正常工作。由于IE独特的盒模型布局问题，针对不同版本的IE的hack实践过优雅降级了,为那些无法支持功能的浏览器增加候选方案，使之在旧式浏览器上以某种形式降级体验却不至于完全失效.</p>
-<p>渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。<br>详见：css学习归纳总结（一）（<a href="https://segmentfault.com/a/1190000000800711）">https://segmentfault.com/a/1190000000800711）</a></p>
+<p>渐进增强：从被所有浏览器支持的基本功能开始，逐步地添加那些只有新式浏览器才支持的功能,向页面增加无害于基础浏览器的额外样式和功能的。当浏览器支持时，它们会自动地呈现出来并发挥作用。<br>详见：css学习归纳总结（一）</p>
 <ul>
 <li>WEB应用从服务器主动推送Data到客户端有那些方式？</li>
 </ul>
-<p>Javascript数据推送</p>
-<p>Commet：基于HTTP长连接的服务器推送技术</p>
+<p>Javascript数据推送<br>Commet：基于HTTP长连接的服务器推送技术</p>
 <p>基于WebSocket的推送方案</p>
 <p>SSE（Server-Send Event）：服务器推送数据新方式</p>
 <ul>
@@ -113,19 +137,19 @@
 <ul>
 <li>你有哪些性能优化的方法？</li>
 </ul>
-<p>（详情请看雅虎14条性能优化原则）（<a href="https://segmentfault.com/blog/trigkit4/1190000000656717）。">https://segmentfault.com/blog/trigkit4/1190000000656717）。</a></p>
+<p>（详情请看雅虎14条性能优化原则）（<a href="https://segmentfault.com/blog/trigkit4/1190000000656717）。" target="_blank" rel="external">https://segmentfault.com/blog/trigkit4/1190000000656717）。</a></p>
 <p>  （1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
 <p>  （2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
 <p>  （3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
 <p>  （4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
 <p>  （5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
 <p>  （6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
-<p>  （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。<br>详情：<a href="http://segmentfault.com/blog/trigkit4/1190000000691919">http://segmentfault.com/blog/trigkit4/1190000000691919</a></p>
+<p>  （7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。<br>详情：<a href="http://segmentfault.com/blog/trigkit4/1190000000691919" target="_blank" rel="external">http://segmentfault.com/blog/trigkit4/1190000000691919</a></p>
 <ul>
 <li>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？</li>
 </ul>
 <p>分为4个步骤：<br>   （1），当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。这能使浏览器获得请求对应的IP地址。<br>   （2）， 浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文，一个同步-应答报文和一个应答报文，这三个报文在 浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。<br>   （3），一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP的GET请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示一个正确的响应。<br>   （4），此时，Web服务器提供资源服务，客户端开始下载资源。</p>
-<p>请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM<br>详情：从输入 URL 到浏览器接收的过程中发生了什么事情？（<a href="https://segmentfault.com/a/1190000000697254）">https://segmentfault.com/a/1190000000697254）</a></p>
+<p>请求返回后，便进入了我们关注的前端模块<br>简单来说，浏览器会解析HTML生成DOM Tree，其次会根据CSS生成CSS Rule Tree，而javascript又可以根据DOM API操作DOM<br>详情：从输入 URL 到浏览器接收的过程中发生了什么事情？（<a href="https://segmentfault.com/a/1190000000697254）" target="_blank" rel="external">https://segmentfault.com/a/1190000000697254）</a></p>
 <ul>
 <li>平时如何管理你的项目？</li>
 </ul>
@@ -143,7 +167,7 @@
 <li>javascript对象的几种创建方式</li>
 </ul>
 <p>1，工厂模式<br>2，构造函数模式<br>3，原型模式<br>4，混合构造函数和原型模式<br>5，动态原型模式<br>6，寄生构造函数模式<br>7，稳妥构造函数模式<br>javascript继承的6种方法</p>
-<p>1，原型链继承<br>2，借用构造函数继承<br>3，组合继承(原型+借用构造)<br>4，原型式继承<br>5，寄生式继承<br>6，寄生组合式继承<br>详情：JavaScript继承方式详解（<a href="https://segmentfault.com/a/1190000002440502）">https://segmentfault.com/a/1190000002440502）</a></p>
+<p>1，原型链继承<br>2，借用构造函数继承<br>3，组合继承(原型+借用构造)<br>4，原型式继承<br>5，寄生式继承<br>6，寄生组合式继承<br>详情：JavaScript继承方式详解（<a href="https://segmentfault.com/a/1190000002440502）" target="_blank" rel="external">https://segmentfault.com/a/1190000002440502）</a></p>
 <ul>
 <li>ajax过程</li>
 </ul>
@@ -152,7 +176,7 @@
 <p>(3)设置响应HTTP请求状态变化的函数.</p>
 <p>(4)发送HTTP请求.</p>
 <p>(5)获取异步调用返回的数据.</p>
-<p>(6)使用JavaScript和DOM实现局部刷新.<br>详情：JavaScript学习总结（七）Ajax和Http状态字（<a href="https://segmentfault.com/a/1190000000691919）">https://segmentfault.com/a/1190000000691919）</a></p>
+<p>(6)使用JavaScript和DOM实现局部刷新.<br>详情：JavaScript学习总结（七）Ajax和Http状态字（<a href="https://segmentfault.com/a/1190000000691919）" target="_blank" rel="external">https://segmentfault.com/a/1190000000691919）</a></p>
 <ul>
 <li>异步加载和延迟加载</li>
 </ul>
@@ -184,7 +208,7 @@
 <p>用构造函数和原型链的混合模式去实现继承，避免对象共享可以参考经典的extend()函数，很多前端框架都有封装的，就是用一个空函数当做中间变量<br>grunt， YUI compressor 和 google clojure用来进行代码压缩的用法。</p>
 <p>YUI Compressor 是一个用来压缩 JS 和 CSS 文件的工具，采用Java开发。</p>
 <p>使用方法：</p>
-<p>//压缩JS<br>java -jar yuicompressor-2.4.2.jar –type js –charset utf-8 -v src.js &gt; packed.js<br>//压缩CSS<br>java -jar yuicompressor-2.4.2.jar –type css –charset utf-8 -v src.css &gt; packed.css<br>详情请见：你需要掌握的前端代码性能优化工具（<a href="https://segmentfault.com/a/1190000002585760）">https://segmentfault.com/a/1190000002585760）</a></p>
+<p>//压缩JS<br>java -jar yuicompressor-2.4.2.jar –type js –charset utf-8 -v src.js &gt; packed.js<br>//压缩CSS<br>java -jar yuicompressor-2.4.2.jar –type css –charset utf-8 -v src.css &gt; packed.css<br>详情请见：你需要掌握的前端代码性能优化工具（<a href="https://segmentfault.com/a/1190000002585760）" target="_blank" rel="external">https://segmentfault.com/a/1190000002585760）</a></p>
 <p>Flash、Ajax各自的优缺点，在使用中如何取舍？</p>
 <p>1、Flash ajax对比<br>Flash适合处理多媒体、矢量图形、访问机器；对CSS、处理文本上不足，不容易被搜索。<br>Ajax对CSS、文本支持很好，支持搜索；多媒体、矢量图形、机器访问不足。<br>共同点：与服务器的无刷新传递消息、用户离线和在线状态、操作DOM<br>请解释一下 JavaScript 的同源策略。</p>
 <p>概念:同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2.0，其目的是防止某个文档或脚本从多个不同源装载。</p>
@@ -221,7 +245,7 @@
 </ul>
 <p>将脚本放在底部。<link>还是放在head中，用以保证在js加载前，能加载出正常显示的页面。<script>标签放在</body>前。<br>成组脚本：由于每个<script>标签下载时阻塞页面解析过程，所以限制页面的<script>总数也可以改善性能。适用于内联脚本和外部脚本。</p>
 <p>非阻塞脚本：等页面完成加载后，再加载js代码。也就是，在window.onload事件发出后开始下载代码。 （1）defer属性：支持IE4和fierfox3.5更高版本浏览器 （2）动态脚本元素：文档对象模型（DOM）允许你使用js动态创建HTML的几乎全部文档内容。代码如下：</p>
-<p><script><br>var script=document.createElement(“script”);<br>script.type=”text/javascript”;<br>script.src=”file.js”;<br>document.getElementsByTagName(“head”)[0].appendChild(script);<br></script><br>此技术的重点在于：无论在何处启动下载，文件额下载和运行都不会阻塞其他页面处理过程。即使在head里（除了用于下载文件的http链接）。</head></p>
+<p><script><br>var script=document.createElement(“script”);<br>script.type=”text/javascript”;<br>script.src=”file.js”;<br>document.getElementsByTagName(“head”)[0].appendChild(script);<br></script><br>此技术的重点在于：无论在何处启动下载，文件额下载和运行都不会阻塞其他页面处理过程。即使在head里（除了用于下载文件的http链接）。</p>
 <p>闭包相关问题？</p>
 <p>详情请见：详解js闭包（<a href="https://segmentfault.com/a/1190000000652891）" target="_blank" rel="external">https://segmentfault.com/a/1190000000652891）</a></p>
 <p>js事件处理程序问题？</p>
@@ -897,9 +921,9 @@ var f = pos - dis;&lt;/code&gt;
     
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="css" scheme="http://niaogege.site/tags/css/"/>
-    
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
+    
+      <category term="css" scheme="http://niaogege.site/tags/css/"/>
     
   </entry>
   
@@ -974,9 +998,9 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
