@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-18T08:46:47.624Z</updated>
+  <updated>2017-02-18T13:01:20.712Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Css特效：translate3d悬浮特效</title>
+    <link href="http://niaogege.site/2017/02/18/css%E7%89%B9%E6%95%88%EF%BC%9Atranslate3d%E6%82%AC%E6%B5%AE%E7%89%B9%E6%95%88/"/>
+    <id>http://niaogege.site/2017/02/18/css特效：translate3d悬浮特效/</id>
+    <published>2017-02-18T12:21:59.000Z</published>
+    <updated>2017-02-18T13:01:20.712Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">学习如逆水行舟，不进则退</blockquote><br>感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！<br><a id="more"></a></p>
+<h4 id="perspective"><a href="#perspective" class="headerlink" title="perspective"></a>perspective</h4><p><code style="color:white;background:black;">perspective</code>: 500;perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。</p>
+<h4 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h4><p><code style="color:white;background:black;">transform-style</code>:preserve-3d;使被转换的子元素保留其 3D 转换,当值为<code style="color:white;background:black;">flat</code>时，子元素将不保留其 3D 位置。</p>
+<h4 id="transform-translate3d-x-y-z"><a href="#transform-translate3d-x-y-z" class="headerlink" title="transform: translate3d(x,y,z)"></a>transform: translate3d(x,y,z)</h4><p>transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</p>
+<blockquote>
+<p>Css部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*&#123;margin: 0; padding: 0;&#125;</div><div class="line">ul,li&#123;list-style: none;&#125;</div><div class="line">.container&#123;perspective: 1300;-webkit-perspective:1300;&#125;</div><div class="line">.boxList&#123;position:absolute;width: 630px;height:630px;left:50%;margin-left:-315px; -webkit-transform-style: preserve-3d;transform-style: preserve-3d;/*animation: a1 2s 1;*/transition: all 2s;&#125;</div><div class="line">.boxList li&#123;float: left;width: 200px;height: 200px;margin:5px;background: darkcyan;-webkit-transition: all 0.3s;transition: all 0.3s;&#125;</div><div class="line">.on li:hover&#123;-webkit-transform: translate3d(0,10px,50px);transform: translate3d(0,10px,50px);background:deepskyblue;box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.5);&#125;</div><div class="line">.on&#123;-webkit-transform: rotateX(55deg) rotateY(0deg) rotateZ(35deg);transform: rotateX(55deg) rotateY(0deg) rotateZ(35deg);&#125;</div></pre></td></tr></table></figure></p>
+<p>Js部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var list=document.querySelector(&apos;.boxList&apos;);</div><div class="line">		window.onload=function()&#123;</div><div class="line">			setInterval(transition,1000)</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		function transition()&#123;</div><div class="line">			list.className=&apos;on boxList&apos;;</div><div class="line">		&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;学习如逆水行舟，不进则退&lt;/blockquote&gt;&lt;br&gt;感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://niaogege.site/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>myHeart：我心永恒</title>
@@ -492,18 +526,20 @@
     <link href="http://niaogege.site/2017/02/09/%E5%89%8D%E7%AB%AF%EF%BC%9Aaccordion%E6%89%8B%E9%A3%8E%E7%90%B4%E6%95%88%E6%9E%9C/"/>
     <id>http://niaogege.site/2017/02/09/前端：accordion手风琴效果/</id>
     <published>2017-02-09T14:50:59.000Z</published>
-    <updated>2017-02-09T14:58:43.424Z</updated>
+    <updated>2017-02-18T09:40:11.645Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="knowledge-浮动布局"><a href="#knowledge-浮动布局" class="headerlink" title="knowledge:浮动布局"></a>knowledge:浮动布局</h4><p><code>.wrapper li{width:240px;height:225px;overflow:hidden;float:left;}</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;li class=<span class="string">"big"</span>&gt;&lt;a href=<span class="string">"#"</span>&gt;</div><div class="line">				&lt;img src=<span class="string">"img/demo.jpg"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"info"</span>&gt;</div><div class="line">					&lt;h3 style=<span class="string">"color:#f62368"</span>&gt;聚美妆&lt;/h3&gt;</div><div class="line">					&lt;p&gt;聚美妆1/2周年庆&lt;/p&gt;</div><div class="line">					&lt;p class=<span class="string">"price"</span>&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;i&gt;折起&lt;/i&gt;&lt;/p&gt;	</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;i class=<span class="string">"line"</span>&gt;&lt;/i&gt;</div><div class="line">				&lt;i class=<span class="string">"mask"</span>&gt;&lt;/i&gt;</div><div class="line">			&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
+    <content type="html"><![CDATA[<p><img src="http://ojjsl7zpc.bkt.clouddn.com/accordion.gif?e=1487414162&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:eGY9hJOhUgXAFQoEigCtDsTI77M" alt="开到荼蘼"></p>
+<h4 id="knowledge-浮动布局"><a href="#knowledge-浮动布局" class="headerlink" title="knowledge:浮动布局"></a>knowledge:浮动布局</h4><p><code>.wrapper li{width:240px;height:225px;overflow:hidden;float:left;}</code><br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;li class=<span class="string">"big"</span>&gt;&lt;a href=<span class="string">"#"</span>&gt;</div><div class="line">				&lt;img src=<span class="string">"img/demo.jpg"</span>&gt;</div><div class="line">				&lt;div class=<span class="string">"info"</span>&gt;</div><div class="line">					&lt;h3 style=<span class="string">"color:#f62368"</span>&gt;聚美妆&lt;/h3&gt;</div><div class="line">					&lt;p&gt;聚美妆1/2周年庆&lt;/p&gt;</div><div class="line">					&lt;p class=<span class="string">"price"</span>&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;i&gt;折起&lt;/i&gt;&lt;/p&gt;	</div><div class="line">				&lt;/div&gt;</div><div class="line">				&lt;i class=<span class="string">"line"</span>&gt;&lt;/i&gt;</div><div class="line">				&lt;i class=<span class="string">"mask"</span>&gt;&lt;/i&gt;</div><div class="line">			&lt;/a&gt;</div><div class="line">			&lt;/li&gt;</div></pre></td></tr></table></figure></p>
 <h4 id="knowledge-遮罩层"><a href="#knowledge-遮罩层" class="headerlink" title="knowledge:遮罩层"></a>knowledge:遮罩层</h4><p><code>.wrapper .mask{position:absolute;top:0;height:225px;width:400px;opacity:0;background:#000;}<br>.wrapper:hover .mask{opacity:0.15;}<br></code></p>
 <h4 id="绝对定位position-absolute"><a href="#绝对定位position-absolute" class="headerlink" title="绝对定位position:absolute"></a>绝对定位position:absolute</h4><p><code>.wrapper li a img{position:absolute;bottom:0;right:-20px;height:150px;width:240px;}<br>.wrapper li a .info{position:absolute;left:0;top:0;width:120px;padding:4px 20px;}</code></p>
 <h4 id="原生js"><a href="#原生js" class="headerlink" title="原生js"></a>原生js</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">initList</span></span>()&#123;&#125;</div><div class="line">		var subject = document.getElementById(<span class="string">'subject'</span>)</div><div class="line">		var oLi= subject.getElementsByTagName(<span class="string">'li'</span>);</div><div class="line">		<span class="keyword">for</span>(var i=0;i&lt;oLi.length;i++)&#123;</div><div class="line">		oLi[i].index = i;</div><div class="line">		oLi[i].onmouseover =<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">			<span class="keyword">for</span>(var j=0;j&lt;oLi.length;j++)&#123;</div><div class="line">			oLi[j].className=<span class="string">""</span>;</div><div class="line">			&#125;</div><div class="line">			oLi[this.index].className = <span class="string">'big'</span>;</div><div class="line">		&#125;</div><div class="line">		&#125;</div><div class="line">		initList();</div></pre></td></tr></table></figure>
-<h4 id="jQuery-代码"><a href="#jQuery-代码" class="headerlink" title="jQuery 代码"></a>jQuery 代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> mouseover(e)&#123;</div><div class="line">           var list = $(<span class="string">'#subject li'</span>);</div><div class="line">           var target = $(e.target).parents(<span class="string">'li'</span>);</div><div class="line"></div><div class="line">           list.removeClass(<span class="string">'big'</span>);</div><div class="line">           target.addClass(<span class="string">'big'</span>);</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">           var outer = $(<span class="string">'#subject'</span>);</div><div class="line">           outer.find(<span class="string">'li'</span>).on(<span class="string">'mouseover'</span>, mouseover);</div><div class="line">       &#125;)()</div></pre></td></tr></table></figure>]]></content>
+<h4 id="jQuery-代码"><a href="#jQuery-代码" class="headerlink" title="jQuery 代码"></a>jQuery 代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> mouseover(e)&#123;</div><div class="line">           var list = $(<span class="string">'#subject li'</span>);</div><div class="line">           var target = $(e.target).parents(<span class="string">'li'</span>);</div><div class="line"></div><div class="line">           list.removeClass(<span class="string">'big'</span>);</div><div class="line">           target.addClass(<span class="string">'big'</span>);</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       (<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">           var outer = $(<span class="string">'#subject'</span>);</div><div class="line">           outer.find(<span class="string">'li'</span>).on(<span class="string">'mouseover'</span>, mouseover);</div><div class="line">       &#125;)()</div></pre></td></tr></table></figure>
+<h4 id="Css中的手风琴效果"><a href="#Css中的手风琴效果" class="headerlink" title="Css中的手风琴效果"></a>Css中的手风琴效果</h4>]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;knowledge-浮动布局&quot;&gt;&lt;a href=&quot;#knowledge-浮动布局&quot; class=&quot;headerlink&quot; title=&quot;knowledge:浮动布局&quot;&gt;&lt;/a&gt;knowledge:浮动布局&lt;/h4&gt;&lt;p&gt;&lt;code&gt;.wrapper li{width:240px;height:225px;overflow:hidden;float:left;}&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;li class=&lt;span class=&quot;string&quot;&gt;&quot;big&quot;&lt;/span&gt;&amp;gt;&amp;lt;a href=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;				&amp;lt;img src=&lt;span class=&quot;string&quot;&gt;&quot;img/demo.jpg&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;				&amp;lt;div class=&lt;span class=&quot;string&quot;&gt;&quot;info&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&amp;lt;h3 style=&lt;span class=&quot;string&quot;&gt;&quot;color:#f62368&quot;&lt;/span&gt;&amp;gt;聚美妆&amp;lt;/h3&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&amp;lt;p&amp;gt;聚美妆1/2周年庆&amp;lt;/p&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;					&amp;lt;p class=&lt;span class=&quot;string&quot;&gt;&quot;price&quot;&lt;/span&gt;&amp;gt;&amp;lt;strong&amp;gt;1&amp;lt;/strong&amp;gt;&amp;lt;i&amp;gt;折起&amp;lt;/i&amp;gt;&amp;lt;/p&amp;gt;	&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;				&amp;lt;/div&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;				&amp;lt;i class=&lt;span class=&quot;string&quot;&gt;&quot;line&quot;&lt;/span&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;				&amp;lt;i class=&lt;span class=&quot;string&quot;&gt;&quot;mask&quot;&lt;/span&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			&amp;lt;/a&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;			&amp;lt;/li&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://ojjsl7zpc.bkt.clouddn.com/accordion.gif?e=1487414162&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:eGY9hJOhUgXAFQoEigCtDsTI77M&quot; alt=&quot;开到荼蘼&quot;/&gt;&lt;/p&gt;
+&lt;h4 id=&quot;knowledge-浮动布局&quot;&gt;&lt;a href=&quot;#knowledge-浮动布局&quot; class=&quot;headerlink&quot; title=&quot;knowledge:浮动布局&quot;&gt;&lt;/a&gt;knowledge:浮动布局&lt;/h4&gt;&lt;p&gt;&lt;code&gt;.wrapper li{width:240px;height:225px;overflow:hidden;float:left;}&lt;/code&gt;&lt;br&gt;
     
     </summary>
     
@@ -1068,85 +1104,6 @@ var f = pos - dis;&lt;/code&gt;
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="css" scheme="http://niaogege.site/tags/css/"/>
-    
-      <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>伪元素：：Before和after的梯形效果</title>
-    <link href="http://niaogege.site/2017/01/08/%E4%BC%AA%E5%85%83%E7%B4%A0%EF%BC%9A%EF%BC%9Abefore%E5%92%8Cafter%E7%9A%84%E6%A2%AF%E5%BD%A2%E6%95%88%E6%9E%9C/"/>
-    <id>http://niaogege.site/2017/01/08/伪元素：：before和after的梯形效果/</id>
-    <published>2017-01-08T02:59:30.000Z</published>
-    <updated>2017-01-18T13:23:31.501Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="伪元素介绍"><a href="#伪元素介绍" class="headerlink" title="伪元素介绍"></a>伪元素介绍</h3><blockquote>
-<p>CSS 伪元素用于向某些选择器设置特殊效果</p>
-</blockquote>
-<p> 伪元素的语法：<br> selector:pseudo-element {property:value;}</p>
-<ul>
-<li>“:before” 伪元素可以在元素的内容前面插入新内容。</li>
-<li>“:after” 伪元素可以在元素的内容之后插入新内容。</li>
-</ul>
-<a id="more"></a>
-<h3 id="伪元素的梯形特效"><a href="#伪元素的梯形特效" class="headerlink" title="伪元素的梯形特效"></a>伪元素的梯形特效</h3><h4 id="实例一："><a href="#实例一：" class="headerlink" title="实例一："></a>实例一：</h4><pre><code>&lt;style&gt;
-#con_right_tit5{display: block;height:45px;position:absolute;font-size: 18px;line-height: 45px;background: #6e80be;color:white;padding: 0 38px 0 18px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;top:70px;}
-#con_right_tit5 a{color: white;}
-#con_right_tit5:hover{background: black;}
-#con_right_tit5::after{content: &quot;&quot;;border-left: solid 22px rgba(0, 0, 0, 0);border-top: rgb(249, 247, 246) 20px solid;position: absolute;right: 0;top: 0;}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;con_right_tit5&quot;&gt;教育资讯&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>其实，这里只是一个正方形盖在了div上面，border的边框其中还带有opacity:0,如</p>
-<h4 id="实例二："><a href="#实例二：" class="headerlink" title="实例二："></a>实例二：</h4><pre><code>&lt;style&gt;
-#con_right_tit5{display: block;height:45px;position:absolute;font-size: 18px;line-height: 45px;background: #6e80be;color:white;padding: 0 38px 0 18px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;top:70px;}
-#con_right_tit5 a{color: white;}
-#con_right_tit5:hover{background: black;}
-#con_right_tit5::after{content: &quot;&quot;;border-left: solid 22px yellow;border-top: red 20px solid;position: absolute;right: 0;top: 0;}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;con_right_tit5&quot;&gt;教育资讯&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><h3 id="优化与改进"><a href="#优化与改进" class="headerlink" title="优化与改进"></a>优化与改进</h3><blockquote>
-<p>至于为什么：：after里的边框border—left和border-top会是这种两个三角形组成的长方形，我也是搞不明白。不过，这里的三角形可以根据透明度（opacity属性）来调整相应的透明度</p>
-</blockquote>
-<h4 id="实例三："><a href="#实例三：" class="headerlink" title="实例三："></a>实例三：</h4><pre><code>&lt;style&gt;
-#con_right_tit5{display: block;height:45px;position:absolute;font-size: 18px;line-height: 45px;background: #6e80be;color:white;padding: 0 38px 0 18px;transition:all 0.5s ease-in-out;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;top:70px;}
-#con_right_tit5 a{color: white;}
-#con_right_tit5:hover{background: black;}
-#con_right_tit5::after{content: &quot;&quot;;border-left: solid 22px rgba(0,0,0,0.9);border-top: white 20px solid;position: absolute;right: 0;top: 0;}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=&quot;con_right_tit5&quot;&gt;教育资讯&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>最近访客</p>
-<div class="ds-recent-visitors" data-num-items="39" data-avatar-size="40" id="ds-recent-visitors"></div>
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;伪元素介绍&quot;&gt;&lt;a href=&quot;#伪元素介绍&quot; class=&quot;headerlink&quot; title=&quot;伪元素介绍&quot;&gt;&lt;/a&gt;伪元素介绍&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;CSS 伪元素用于向某些选择器设置特殊效果&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt; 伪元素的语法：&lt;br&gt; selector:pseudo-element {property:value;}&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;“:before” 伪元素可以在元素的内容前面插入新内容。&lt;/li&gt;
-&lt;li&gt;“:after” 伪元素可以在元素的内容之后插入新内容。&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
     
       <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
