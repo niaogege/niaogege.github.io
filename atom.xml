@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-18T13:21:29.883Z</updated>
+  <updated>2017-02-18T14:43:26.556Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Bootstrap-Three:下拉菜单、导航、分页</title>
+    <link href="http://niaogege.site/2017/02/18/Bootstrap-%E4%BA%8C-%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E3%80%81%E5%AF%BC%E8%88%AA%E3%80%81%E5%88%86%E9%A1%B5/"/>
+    <id>http://niaogege.site/2017/02/18/Bootstrap-二-下拉菜单、导航、分页/</id>
+    <published>2017-02-18T14:31:58.000Z</published>
+    <updated>2017-02-18T14:43:26.556Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote class="blockquote-center"><br>一鼓作气，再而衰，三而竭</blockquote></p>
+<h3 id="dropdown"><a href="#dropdown" class="headerlink" title="dropdown"></a>dropdown</h3><ul>
+<li>下拉菜单：3个元素，1.父级元素添加class为”dropdown” 2.给button添加动态交互的自定义属性：<code style="background:black;color:white">data-toggle</code>=”dropdown” 3.ul需要添加class为”dropdown-menu”</li>
+</ul>
+<hr>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;dropdown&quot;&gt;</div><div class="line">  &lt;button class=&quot;btn btn-default dropdown-toggle&quot; type=&quot;button&quot; id=&quot;dropdownMenu1&quot; data-toggle=&quot;dropdown&quot; aria-haspopup=&quot;true&quot; aria-expanded=&quot;true&quot;&gt;</div><div class="line">    Dropdown</div><div class="line">    &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;</div><div class="line">  &lt;/button&gt;</div><div class="line">  &lt;ul class=&quot;dropdown-menu&quot; aria-labelledby=&quot;dropdownMenu1&quot;&gt;</div><div class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li role=&quot;separator&quot; class=&quot;divider&quot;&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>下拉菜单样式<br>1.父级元素添加class为”open”，默认展开<br>2.默认左对齐，右对齐则为btn=”btn-blcok”,同时ul的class=”dropdown-menu-right”<br>3.li的标题突出。class=”dropdown-header”<br>4.分割线，给li添加class属性”divider”，内容居中用text-center</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;br&gt;一鼓作气，再而衰，三而竭&lt;/blockquote&gt;&lt;/p&gt;
+&lt;h3 id=&quot;dropdown&quot;&gt;&lt;a href=&quot;#dropdown&quot; class=&quot;headerlink&quot; title=&quot;dropdown&quot;&gt;&lt;/a&gt;dropdown&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;下拉菜单：3个元素，1.父级元素添加class为”dropdown” 2.给button添加动态交互的自定义属性：&lt;code style=&quot;background:black;color:white&quot;&gt;data-toggle&lt;/code&gt;=”dropdown” 3.ul需要添加class为”dropdown-menu”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="bootstrap" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/bootstrap/"/>
+    
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="bootstrap" scheme="http://niaogege.site/tags/bootstrap/"/>
+    
+  </entry>
   
   <entry>
     <title>Css特效：translate3d悬浮特效</title>
@@ -614,7 +654,7 @@
     <link href="http://niaogege.site/2017/02/05/bootstrap-two-0205-button-study/"/>
     <id>http://niaogege.site/2017/02/05/bootstrap-two-0205-button-study/</id>
     <published>2017-02-05T07:27:26.000Z</published>
-    <updated>2017-02-05T08:25:28.500Z</updated>
+    <updated>2017-02-18T14:33:11.259Z</updated>
     
     <content type="html"><![CDATA[<h4 id="button-按钮"><a href="#button-按钮" class="headerlink" title="button 按钮"></a>button 按钮</h4><ul>
 <li><p>default button<br>.btn-primary:首选项 .btn-default .btn-info 一般信息</p>
@@ -659,8 +699,12 @@
     
     </summary>
     
-      <category term="bootstrap" scheme="http://niaogege.site/categories/bootstrap/"/>
+      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
     
+      <category term="bootstrap" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/bootstrap/"/>
+    
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="bootstrap" scheme="http://niaogege.site/tags/bootstrap/"/>
     
@@ -1075,44 +1119,6 @@ var f = pos - dis;&lt;/code&gt;
       <category term="GIT" scheme="http://niaogege.site/tags/GIT/"/>
     
       <category term="版本控制工具" scheme="http://niaogege.site/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图片的一扫而过的闪影</title>
-    <link href="http://niaogege.site/2017/01/09/%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%80%E6%89%AB%E8%80%8C%E8%BF%87%E7%9A%84%E9%97%AA%E5%BD%B1/"/>
-    <id>http://niaogege.site/2017/01/09/图片的一扫而过的闪影/</id>
-    <published>2017-01-09T14:22:11.000Z</published>
-    <updated>2017-01-18T13:23:23.649Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>一些网站的logo采用的这种效果</p>
-</blockquote>
-<p><img src="http://ojjsl7zpc.bkt.clouddn.com/shine.gif?e=1484486283&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:lGv67YfM5nFvTyefJ0jMxSBtb5E"><br>这里用到的依然是伪元素，<code>:before</code>和<code>:after</code>，这里需要注意的一点的是用到了<code>position:absolute</code>，只有设定了位移，幻影才能随之漂浮！</p>
-<a id="more"></a>
-<h4 id="实例一"><a href="#实例一" class="headerlink" title="实例一"></a>实例一</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line"> .banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;position:relative;&#125;</div><div class="line"> .banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 300px;</div><div class="line">	height: 15px;outline:px solid red;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">	-webkit-animation: searchLights 1s ease-in 0.5s infinite;</div><div class="line">	-o-animation: searchLights 1.s ease-in 0.5s infinite;</div><div class="line">	animation: searchLights 1s ease-in 0.5s infinite;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>其实，就是一个：before加上css中的animation效果，这里我将<em>animation-duration</em>的时间改为0.8，即完成动画所花费的时间缩短了0.2s,but阴影的宽度加长了15px</p>
-<h4 id="示例二"><a href="#示例二" class="headerlink" title="示例二"></a>示例二</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">.banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;&#125;</div><div class="line">.banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">-webkit-animation: searchLights 0.8s ease-in 0.5s infinite;</div><div class="line"></div><div class="line">	-o-animation: searchLights 0.8.s ease-in 0.5s infinite;</div><div class="line">	animation: searchLights 0.8s ease-in 0.5s infinite;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h4 id="实例三"><a href="#实例三" class="headerlink" title="实例三"></a>实例三</h4><p> 这里的<u>animation: searchLights 0.8s ease-in 0.5s infinite</u>;中的<em>infinite</em>是无限次播放，把它去掉或者设置1次就能实现只闪一下的效果，并且还把animation: searchLights 0.8s ease-in 0.5s infinite;中的延时播放animation-delay:：0.5s去掉，就是一跳转就实现</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;title&gt;图片效果</div><div class="line">&lt;/title&gt;</div><div class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">.banner&#123;<span class="built_in">float</span>:left;width: 250px; padding-top:10px;display:line-block;&#125;</div><div class="line">.banner:before&#123;</div><div class="line"></div><div class="line">	content:<span class="string">""</span>;</div><div class="line">	position: absolute;</div><div class="line">	left: -600px;</div><div class="line">	top: -600px;</div><div class="line">	width: 200px;</div><div class="line">	height: 30px;</div><div class="line">	background-color: rgba(255,255,255,.6);</div><div class="line">	-webkit-transform: rotate(-45deg);</div><div class="line">	-moz-transform: rotate(-45deg);</div><div class="line">	-ms-transform: rotate(-45deg);</div><div class="line">	-o-transform: rotate(-45deg);</div><div class="line">	transform: rotate(-45deg);</div><div class="line">-webkit-animation: searchLights 0.8s ease-in  1;</div><div class="line">	-o-animation: searchLights 0.8.s ease-in .1;</div><div class="line">	animation: searchLights 0.8s ease-in  1;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-o-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@-moz-keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">@keyframes searchLights &#123;</div><div class="line">	0% &#123; left: -200px; top: 0; &#125;</div><div class="line">	to &#123; left: 220px; top: 100px; &#125;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;div class=<span class="string">"banner"</span>&gt;&lt;img src=<span class="string">"http://bbs.zizhuxuexi.cn/static/image/fg_hlximg/logo.png"</span> alt=<span class="string">"学习网"</span> /&gt;&lt;/div&gt; </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;一些网站的logo采用的这种效果&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;http://ojjsl7zpc.bkt.clouddn.com/shine.gif?e=1484486283&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:lGv67YfM5nFvTyefJ0jMxSBtb5E&quot;&gt;&lt;br&gt;这里用到的依然是伪元素，&lt;code&gt;:before&lt;/code&gt;和&lt;code&gt;:after&lt;/code&gt;，这里需要注意的一点的是用到了&lt;code&gt;position:absolute&lt;/code&gt;，只有设定了位移，幻影才能随之漂浮！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css" scheme="http://niaogege.site/tags/css/"/>
-    
-      <category term="伪元素" scheme="http://niaogege.site/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/"/>
     
   </entry>
   
