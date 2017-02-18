@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-18T13:01:20.712Z</updated>
+  <updated>2017-02-18T13:21:29.883Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -20,9 +20,13 @@
     <link href="http://niaogege.site/2017/02/18/css%E7%89%B9%E6%95%88%EF%BC%9Atranslate3d%E6%82%AC%E6%B5%AE%E7%89%B9%E6%95%88/"/>
     <id>http://niaogege.site/2017/02/18/css特效：translate3d悬浮特效/</id>
     <published>2017-02-18T12:21:59.000Z</published>
-    <updated>2017-02-18T13:01:20.712Z</updated>
+    <updated>2017-02-18T13:21:29.883Z</updated>
     
-    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">学习如逆水行舟，不进则退</blockquote><br>感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">学习如逆水行舟，不进则退</blockquote>
+
+<p>感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！</p>
+<hr>
+<a id="more"></a>
 <h4 id="perspective"><a href="#perspective" class="headerlink" title="perspective"></a>perspective</h4><p><code style="color:white;background:black;">perspective</code>: 500;perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。</p>
 <h4 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h4><p><code style="color:white;background:black;">transform-style</code>:preserve-3d;使被转换的子元素保留其 3D 转换,当值为<code style="color:white;background:black;">flat</code>时，子元素将不保留其 3D 位置。</p>
 <h4 id="transform-translate3d-x-y-z"><a href="#transform-translate3d-x-y-z" class="headerlink" title="transform: translate3d(x,y,z)"></a>transform: translate3d(x,y,z)</h4><p>transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</p>
@@ -34,7 +38,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;学习如逆水行舟，不进则退&lt;/blockquote&gt;&lt;br&gt;感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！&lt;br&gt;
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;学习如逆水行舟，不进则退&lt;/blockquote&gt;
+
+&lt;p&gt;感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！&lt;/p&gt;
+&lt;hr&gt;
     
     </summary>
     
