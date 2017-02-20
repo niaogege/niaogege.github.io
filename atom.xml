@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-02-19T15:10:03.517Z</updated>
+  <updated>2017-02-20T13:58:18.175Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://niaogege.site/2017/02/18/Bootstrap-%E4%BA%8C-%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E3%80%81%E5%AF%BC%E8%88%AA%E3%80%81%E5%88%86%E9%A1%B5/"/>
     <id>http://niaogege.site/2017/02/18/Bootstrap-二-下拉菜单、导航、分页/</id>
     <published>2017-02-18T14:31:58.000Z</published>
-    <updated>2017-02-19T15:10:03.517Z</updated>
+    <updated>2017-02-20T13:58:18.175Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center"><br>一鼓作气，再而衰，三而竭</blockquote></p>
 <h3 id="dropdown"><a href="#dropdown" class="headerlink" title="dropdown"></a>dropdown</h3><ul>
@@ -34,6 +34,8 @@
 </ul>
 <hr>
 <h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>  输入框组：1.input-group :输入框组，只针对输入框<br>  2.input-group-addon:给输入框组前后添加额外的元素<br>  3.input-group-btn:给输入框添加的额外元素是按钮<br>  4.给外层添加class为”input-group-btn”的包裹元素div,可以得到按钮组式的输入框组。不需要给父级元素添加class为”dropdown”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;col-lg-3&quot;&gt;</div><div class="line">				&lt;div class=&quot;input-group&quot;&gt;</div><div class="line">					&lt;div class=&quot;input-group-btn&quot;&gt;</div><div class="line">						&lt;button class=&quot;btn btn-info dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; type=&quot;button&quot;&gt;NIMa&lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/button&gt;</div><div class="line">						&lt;ul class=&quot;dropdown-menu&quot;&gt;</div><div class="line">							&lt;li&gt;&lt;a href=&quot;&quot; title=&quot;&quot;&gt;action&lt;/a&gt;&lt;/li&gt;</div><div class="line">							&lt;li&gt;&lt;a href=&quot;&quot; title=&quot;&quot;&gt;action&lt;/a&gt;&lt;/li&gt;</div><div class="line">							&lt;li&gt;&lt;a href=&quot;&quot; title=&quot;&quot;&gt;action&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;/ul&gt;</div><div class="line">					&lt;/div&gt;</div><div class="line">					&lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;按钮上输入框&quot;/&gt;</div><div class="line">				&lt;/div&gt;</div><div class="line">			&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="img"><a href="#img" class="headerlink" title="img"></a>img</h3><p><code style="background:black;color:white;">img</code>的class为img-rounded(圆角图)、img-circle(圆图)、img-thumbnail(缩略图)、img-responsive(响应式图片)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;img/map.jpg&quot; usemap=&quot;#planetmap&quot; alt=&quot;&quot;/&gt;</div><div class="line">&lt;map name=&quot;planetmap&quot;&gt;</div><div class="line">	&lt;area shape=&quot;rect&quot; coords=&quot;510,240,660,300&quot; style=&quot;border:1px solid black&quot; href=&quot;index2.html&quot;/&gt;</div><div class="line">	&lt;area shape=&quot;rect&quot; coords=&quot;900,240,1100,300&quot; style=&quot;border:1px solid black&quot; href=&quot;index2.html&quot;/&gt;</div><div class="line">&lt;/map&gt;</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
