@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-03-11T12:08:02.544Z</updated>
+  <updated>2017-03-11T14:23:58.841Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://niaogege.site/2017/03/11/jQuery-on%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
     <id>http://niaogege.site/2017/03/11/jQuery-on方法的使用详解/</id>
     <published>2017-03-11T11:13:30.000Z</published>
-    <updated>2017-03-11T12:08:02.544Z</updated>
+    <updated>2017-03-11T14:23:58.841Z</updated>
     
-    <content type="html"><![CDATA[<p>从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照<br> <img src="/images/xiamen.jpg" alt=""><br>  本文 <a href="http://blog.csdn.net/linshichen/article/details/51302683" target="_blank" rel="external"><strong>原文链接</strong></a> ，希望能帮到这些前端小白。用法：<strong>此方法可以在匹配元素上绑定一个或者多个事件处理函数。</strong> <strong>使用off()方法可以删除on()方法绑定的事件。</strong></p>
+    <content type="html"><![CDATA[<p>从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照<br> <img src="../images/xiamen.jpg" alt="厦门"><br>  本文 <a href="http://blog.csdn.net/linshichen/article/details/51302683" target="_blank" rel="external"><strong>原文链接</strong></a> ，希望能帮到这些前端小白。用法：<strong>此方法可以在匹配元素上绑定一个或者多个事件处理函数。</strong> <strong>使用off()方法可以删除on()方法绑定的事件。</strong></p>
 <hr>
 <a id="more"></a>
 <h3 id="语法结构一"><a href="#语法结构一" class="headerlink" title="语法结构一"></a>语法结构一</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).on(events,[selector],[data],fn)</div></pre></td></tr></table></figure>
@@ -45,7 +45,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照&lt;br&gt; &lt;img src=&quot;/images/xiamen.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;  本文 &lt;a href=&quot;http://blog.csdn.net/linshichen/article/details/51302683&quot;&gt;&lt;strong&gt;原文链接&lt;/strong&gt;&lt;/a&gt; ，希望能帮到这些前端小白。用法：&lt;strong&gt;此方法可以在匹配元素上绑定一个或者多个事件处理函数。&lt;/strong&gt; &lt;strong&gt;使用off()方法可以删除on()方法绑定的事件。&lt;/strong&gt;&lt;/p&gt;
+      &lt;p&gt;从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照&lt;br&gt; &lt;img src=&quot;../images/xiamen.jpg&quot; alt=&quot;厦门&quot;&gt;&lt;br&gt;  本文 &lt;a href=&quot;http://blog.csdn.net/linshichen/article/details/51302683&quot;&gt;&lt;strong&gt;原文链接&lt;/strong&gt;&lt;/a&gt; ，希望能帮到这些前端小白。用法：&lt;strong&gt;此方法可以在匹配元素上绑定一个或者多个事件处理函数。&lt;/strong&gt; &lt;strong&gt;使用off()方法可以删除on()方法绑定的事件。&lt;/strong&gt;&lt;/p&gt;
 &lt;hr&gt;
     
     </summary>
