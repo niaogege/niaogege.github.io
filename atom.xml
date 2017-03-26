@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-03-12T13:32:17.341Z</updated>
+  <updated>2017-03-26T15:55:16.417Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随笔：试用第一个月有感</title>
+    <link href="http://niaogege.site/2017/03/26/%E9%9A%8F%E7%AC%94%EF%BC%9A%E8%AF%95%E7%94%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
+    <id>http://niaogege.site/2017/03/26/随笔：试用第一个月有感/</id>
+    <published>2017-03-26T13:30:41.000Z</published>
+    <updated>2017-03-26T15:55:16.417Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">“我昨天一口气写了5个ajax请求”——然后童总点了一个赞</blockquote>
+
+<p>误打误撞，终于入行了，很激动也很紧张，上班的时候总是有种莫名的紧迫感，有太多的东西需要学习，有太多的东西自己以前根本没涉及到，所以，保守估计两年以后，我才敢保证自己，说自己是“前端攻城狮(Front-end develop engineer)”。<br>1.json/array和object,json对象<br>2.angularJS1使用<br>3.http协议和头部信息，后台数据交互<br>4.Ajax调用<br>5.复习巩固js，尤其是一些基础的用法，比如事件对象、事件冒泡</p>
+<hr>
+<a id="more"></a>
+<p>以上五点是半年的主攻方向，当然什么小的特效和js效果可以搞搞，但别花费太多的精力，五个主要知识点还没掌握，我个人认为其他的先别涉及，（项目需要的除外），精力有限，再怎么想学所有的技术也得一步步来，关键是急了无用，做到心中有数和自己现阶段的目标，总比现在莫名紧张的好。</p>
+<p>回首一个月的试用，每天都在逼迫自己写工作日志(工作需要)，但有时真的不知道该如何是好，比如我昨天搞视觉江苏会员中心样式修改和图片上传功能，然后今天还是如此，我总不能天天写一样的工作日志吧，其实每天的工作内容都是不一样的，只是属于大项目下的一个小小的分支，说明还是工作日志写的不详细呗。</p>
+
+<hr>
+<p></p><p>废话少说，进入正文。这一个我主要做了一下几项工作。</p><p></p>
+<h4 id="吉时通五福的收集"><a href="#吉时通五福的收集" class="headerlink" title="吉时通五福的收集"></a>吉时通五福的收集</h4><p>刚上班的第一天，就接到小明指派的工作任务，时间只有两天。具体任务就是跟支付宝集五福的功能差不多，给了我开发文档和需要介绍和psd，我就看那个开发文档看了半天，愣是不知道自己该干嘛，如何工作，没有一点头绪，到了第二天，小明问我进展如何，我慌了，我啥也没干啊，后来了问了大神才知道，第一步静态页面实现，第二步小明采用的是jQuery里UI的template方法，关于这个template，到现在我也是一知半解的，过两天再好好问问，主要是这段代码不晓得，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">var param = &#123;&#125;;</div><div class="line">param.access_token = res.userInfo.userTokenKey;</div><div class="line"> $.ajax(&#123;</div><div class="line">		type : &apos;post&apos;,</div><div class="line">		url : $.api.data,</div><div class="line">		data : param,</div><div class="line">		dataType : &apos;json&apos;,                                            </div><div class="line">	  success : function( json )&#123;</div><div class="line">			var data = &#123;&#125;;</div><div class="line">			data.list = json;</div><div class="line">			$.each( data.list.data, function(k,v)&#123;</div><div class="line">				  shareinfo.title = v.title;</div><div class="line">				  shareinfo.brief = v.brief;</div><div class="line">				  shareinfo.logo = v.logo;</div><div class="line">				  shareinfo.id = v.id;</div><div class="line">			&#125;)</div><div class="line">			var listTpl = template.compile( viewTpl.html ),</div><div class="line">				listHtml = listTpl( data );</div><div class="line">			$(&apos;.container-middle&apos;).html( listHtml );</div><div class="line">	  &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure></p>
+<p>ajax调用之后，为毛传参用这种方式，加一个param传参，还有请求成功后，传回来的数据json为什么是data.list =json;可以直接用Json的属性和子集，哎，有问题再去请教小明吧。</p>
+<hr>
+<h4 id="视觉江苏会员中心页面"><a href="#视觉江苏会员中心页面" class="headerlink" title="视觉江苏会员中心页面"></a>视觉江苏会员中心页面</h4><p>接手的项目没有一个是软差事，全都是要与后台对接的。好家伙，这次的会员中心也是如此，我刚是图片上传功能到现在还没明白，当点击上传时，发送一个ajax请求，然后，图片开始上传，填写相关的textarea信息，然后绑定到指定的图片id,当点击上传文稿时，再次发送一个表单请求，这时表单信息上传完毕。这里有个关于删除图片的功能，关键是理清逻辑，知道每一个步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var del_pic=$(this).data(&apos;pic_id&apos;);</div><div class="line">del_pic.click(</div><div class="line">if(!access_token)&#123;</div><div class="line">location.href=&quot;?goUrl=&quot;+goUrl;</div><div class="line">return;</div><div class="line">	$.ajax(&#123;</div><div class="line">		type:&apos;post&apos;,</div><div class="line">		url:&quot;接口地址?pic_id=&quot;+pic_id,</div><div class="line">		dataType:&apos;json&apos;,</div><div class="line">		data:&#123;pic_id:&apos;pic_id&apos;&#125;,</div><div class="line">		success:function(data)&#123;</div><div class="line">			var pic=data.pic_id.remove();//删除匹配的所有元素或者删除所对应的ID</div><div class="line">			$(ul li).remove(&apos;img[data-pic_id=pic_id]&apos;);//.remove(&apos;li[title=luobo]&apos;)remove方法通过传递参数来选择性的删除元素</div><div class="line">			pic.appendTo(&quot;父级元素&quot;);//或者采用empty()清空节点		</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>妈的，上传“欧文的图片”之后，发现一张更帅气的图片，所以要删除之前的重新上传，如何删除对应的之前的图片呢，这时第一张图片已经成功发送到了服务器，不然客户端怎么会实时显现，现在要删除第一张图，只能用ajax异步请求的而方法，删除对应id的图片。</p>
+<hr>
+<h4 id="海波tv直播视频以及相关样式的调整"><a href="#海波tv直播视频以及相关样式的调整" class="headerlink" title="海波tv直播视频以及相关样式的调整"></a>海波tv直播视频以及相关样式的调整</h4><p>还是蛮感谢封大神的，让我终于了解了什么是ajax，什么是请求，以及如何传参，如何和后台对接接口的事，现奉上一段代码，当时我脑袋就要炸了，不想用Js去写html结构，难度不难，只是当时很痛苦，现在想想还是得先写静态页面啊，这是基础。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">$.getJSON(url,function(json)&#123;</div><div class="line"></div><div class="line">		if(json[0])&#123;</div><div class="line">			var str = &quot;&quot;;</div><div class="line">			$.each(json,function(index,array)&#123;</div><div class="line">						    var pic = array.materail;</div><div class="line">							str += &apos;&lt;div class=\&quot;item\&quot; data-thread_id=&apos; + array.id+ &quot;&gt;&quot; + &apos;&lt;div class=\&quot;cur-date\&quot;&gt;&apos; ;</div><div class="line">							str += &apos;&lt;/div&gt;&lt;div class=\&quot;item-cont\&quot; style=\&quot;overflow: hidden;\&quot;&gt;&lt;div class=\&quot;item-left\&quot;&gt;&lt;span id=\&quot;this_time\&quot;&gt;&apos;+ array.format_create_time +&apos;&lt;/span&gt;&apos;;</div><div class="line">							str += &apos;&lt;/div&gt;&lt;div class=&quot;item-right&quot;&gt;&lt;div class=&quot;item-right-cont&quot;&gt;&lt;div class=&quot;right-cont-header&quot;&gt;&apos;;</div><div class="line">							str += &apos;&lt;span&gt;&apos;+ array.user_name +&apos;&lt;/span&gt;&lt;span  &gt;&lt;img class=&quot;dianzan&quot; src=&quot;http://yanan.tw.hdyun.hoge.cn//views//res/images/common/2.png&quot;&gt; &lt;span class=\&quot;info\&quot;&gt;&apos;+ array.ding +&apos;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&apos;;</div><div class="line">							str += &apos;&lt;p&gt;&apos;+ array.content +&apos;&lt;/p&gt;&lt;br&gt;&apos;;</div><div class="line">						if( pic )&#123;</div><div class="line">							$len = pic.length;</div><div class="line">							for(i=0; i &lt; $len ; i++)&#123;</div><div class="line">								 if(pic[i].type == &quot;video&quot;)&#123;</div><div class="line">										 str += &apos;&lt;video width=&quot;100%;&quot; webkit-playsinline=&quot;true&quot; controls=&quot;controls&quot; poster=&quot;&apos;+ pic[i].host + pic[i].dir + &apos;300X/&apos; + pic[i].filepath + pic[i].filename +&apos;&quot; src=&quot;&apos;+ pic[i].m3u8 +&apos;&quot;&gt;&lt;/video&gt;&apos;;</div><div class="line">									 &#125;else if ( pic[i].type == &quot;audio&quot; )&#123;</div><div class="line">										 str += &apos;&lt;audio controls=&quot;controls&quot; src=&quot;&apos;+ pic[i].p +&apos;&quot; &gt;&lt;/audio&gt;&apos;;</div><div class="line">									 &#125;else&#123;</div><div class="line">										 str += &apos;&lt;img style=&quot;max-width:250px;height:auto&quot; src=&quot;&apos;+ pic[i].host + pic[i].dir + pic[i].filepath + pic[i].filename +&apos;&quot;&gt;&apos;;</div><div class="line">									 &#125;</div><div class="line">								 &#125;</div><div class="line">						 &#125;</div><div class="line">						str += &apos;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;tip&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&apos;;</div><div class="line">				&#125;);</div><div class="line">			 $(&apos;.first-cont&apos;).html(str);</div><div class="line">	 &#125;)</div></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="学会总结与巩固"><a href="#学会总结与巩固" class="headerlink" title="学会总结与巩固"></a>学会总结与巩固</h4><ul>
+<li>$.each();</li>
+<li>自定义属性值的获取</li>
+<li>设置和获取cookie</li>
+<li>理解事件对象</li>
+<li>编写$.widget()插件</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;“我昨天一口气写了5个ajax请求”——然后童总点了一个赞&lt;/blockquote&gt;
+
+&lt;p&gt;误打误撞，终于入行了，很激动也很紧张，上班的时候总是有种莫名的紧迫感，有太多的东西需要学习，有太多的东西自己以前根本没涉及到，所以，保守估计两年以后，我才敢保证自己，说自己是“前端攻城狮(Front-end develop engineer)”。&lt;br&gt;1.json/array和object,json对象&lt;br&gt;2.angularJS1使用&lt;br&gt;3.http协议和头部信息，后台数据交互&lt;br&gt;4.Ajax调用&lt;br&gt;5.复习巩固js，尤其是一些基础的用法，比如事件对象、事件冒泡&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>GIT Three :Learn How to Use Git (三)</title>
@@ -1045,7 +1095,7 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
     <link href="http://niaogege.site/2017/01/22/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%9C%89%E6%97%B6%E5%80%99%E5%87%A0%E4%BB%B6%E8%B6%A3%E4%BA%8B%E8%83%BD%E8%AE%A9%E4%BD%A0-Recovery/"/>
     <id>http://niaogege.site/2017/01/22/随笔：有时候几件趣事能让你-Recovery/</id>
     <published>2017-01-22T14:35:30.000Z</published>
-    <updated>2017-01-22T14:41:45.528Z</updated>
+    <updated>2017-03-26T13:31:36.386Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>最近，身体有些不适，脑袋一直晕乎乎的，周六在家躺了一天，晚上尽量早点休息。大过年的，完全很淡定，心平气和，完全不像还有4天要过年的节奏。</p>
@@ -1062,56 +1112,10 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
     
     </summary>
     
+      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+    
     
       <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>原生Js打印效果</title>
-    <link href="http://niaogege.site/2017/01/16/%E5%8E%9F%E7%94%9Fjs%E6%89%93%E5%8D%B0%E6%95%88%E6%9E%9C/"/>
-    <id>http://niaogege.site/2017/01/16/原生js打印效果/</id>
-    <published>2017-01-16T14:32:10.000Z</published>
-    <updated>2017-01-18T13:23:43.220Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://ojjsl7zpc.bkt.clouddn.com/typewriter.gif?e=1484580861&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:9In0pZrZcnrbc80EJoST46IzsFA"></p>
-<h4 id="原生js打印效果，主要用到以下几个知识点："><a href="#原生js打印效果，主要用到以下几个知识点：" class="headerlink" title="原生js打印效果，主要用到以下几个知识点："></a>原生js打印效果，主要用到以下几个知识点：</h4><ul>
-<li><p>1.nbsp;半角的不断行的空白格（推荐使用）2.ensp;  半角的空格 3.emsp;  全角的空格,每个字符前面都加上&amp;</p>
-</li>
-<li><p>2.<code>string.charAt()</code>返回指定位置的字符</p>
-</li>
-<li><p>3.<code>indexOf()</code>,array.indexOf(item,start)返回某个指定的字符串在字符串中首次出现的位置</p>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>4.<code>substring()</code>,code.substring(0,pos)中的substring()用于提取字符串中介于两个指定下标之间的字符，substring()方法返回的子串包括 开始 处的字符，但不包括 结束 处的字符。</p>
-</li>
-<li><p>5.<code>classList.add()</code>,classList 属性返回元素的类名，作为 DOMTokenList 对象。该属性用于在元素中添加add，移除remove及切换toggle CSS 类。</p>
-</li>
-</ul>
-<h4 id="源代码如下"><a href="#源代码如下" class="headerlink" title="源代码如下:"></a>源代码如下:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;meta charset=<span class="string">"utf-8"</span>/&gt;</div><div class="line">		&lt;meta name=<span class="string">"Keywords"</span> content=<span class="string">""</span> /&gt;</div><div class="line">		&lt;meta name=<span class="string">"Description"</span> content=<span class="string">""</span> /&gt;</div><div class="line">		&lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"IE=edge,chrome=1"</span> /&gt;</div><div class="line">		&lt;meta name=<span class="string">"viewpoint"</span> content=<span class="string">"width=device-width,initial-scale=1,user-scalable= no"</span>/&gt;</div><div class="line">		&lt;title&gt;0116 printer&lt;/title&gt;</div><div class="line">		&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</div><div class="line">		.typewriter&#123;display:none;width:40em;line-height:1.6;border:1px solid <span class="comment">#2dcb70;padding:1em 3em;margin:5em auto;font-family:Microsoft Yahei;font-weight:normal;white-space:normal;-webkit-font-smoothing:antialiased;/*字符反锯齿*/;color:hsla(0,10%,20%,0.9);&#125;</span></div><div class="line">        .typewriter:after&#123;content:<span class="string">"_"</span>;animation:flash .6s steps(2,start) infinite;-webkit-animation:flash .6s steps(2,start) infinite;&#125;</div><div class="line">        .typewriter.gameover:after&#123;display:none;&#125;</div><div class="line">        @keyframes flash&#123;</div><div class="line">            0%&#123;visibility:visible;&#125;</div><div class="line">            100%&#123;visibility:hidden;&#125;</div><div class="line">        &#125;</div><div class="line">        @-webkit-keyframes flash&#123;</div><div class="line">            0%&#123;visibility:visible;&#125;</div><div class="line">            100%&#123;visibility:hidden;&#125;</div><div class="line">        &#125;</div><div class="line">		&lt;/style&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div class=<span class="string">"typewriter"</span>&gt;   &lt;!--1.&amp;nbsp; 半角的不断行的空白格（推荐使用）2.&amp;ensp;  半角的空格 3.&amp;emsp;  全角的空格--&gt;</div><div class="line">			1. Whatever is worth doing is worth doing well.&lt;br /&gt;</div><div class="line">			&amp;emsp;任何值得做的，就把它做好。&lt;br /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">			2. Happiness is a way station between too much and too little.&lt;br /&gt;</div><div class="line">			&amp;emsp;幸福是太多和太少之间的一站。&lt;br /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">			3. In love folly is always sweet.&lt;br /&gt;</div><div class="line">			&amp;emsp;恋爱中，干傻事总是让人感到十分美妙。&lt;br /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">			4. The hard part isn’t making the decision. It’s living with it.&lt;br /&gt;</div><div class="line">			&amp;emsp;做出决定并不困难，困难的是接受决定。&lt;br /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">			5. Your happy passer-by all knows, my distressed there is no place hides.&lt;br /&gt;</div><div class="line">			&amp;emsp;你的幸福路人皆知，我的狼狈无处遁形。&lt;br /&gt;&lt;br /&gt;</div><div class="line"></div><div class="line">			6. You may be out of my sight, but never out of my mind.&lt;br /&gt;</div><div class="line">			&amp;emsp;你也许已走出我的视线，但从未走出我的思念。</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">	&lt;script&gt;</div><div class="line">		(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">        var typewriter=document.querySelector(<span class="string">".typewriter"</span>),</div><div class="line">                code=typewriter.innerHTML,</div><div class="line">                pos=0,</div><div class="line">                len=code.length;</div><div class="line">        typewriter.innerHTML=<span class="string">""</span>;</div><div class="line">        typewriter.style.display=<span class="string">"block"</span>;</div><div class="line">        <span class="keyword">function</span> <span class="function"><span class="title">typewriting</span></span>()&#123;</div><div class="line">            pos++;</div><div class="line">            <span class="keyword">if</span>(pos &lt;= len)&#123;</div><div class="line">                switch(code.charAt(pos))  //charAt()返回指定位置的字符</div><div class="line">                &#123;</div><div class="line">                    <span class="keyword">case</span> <span class="string">"&lt;"</span>: //&lt;&gt;代码开始的字符</div><div class="line">                        pos = code.indexOf(<span class="string">"&gt;"</span>,pos);  //array.indexOf(item,start)返回某个指定的字符串在字符串中首次出现的位置</div><div class="line">                        <span class="built_in">break</span>;						</div><div class="line">                    <span class="keyword">case</span> <span class="string">"&amp;"</span>:  </div><div class="line">                        pos = code.indexOf(<span class="string">";"</span>,pos);</div><div class="line">                        <span class="built_in">break</span>;</div><div class="line">                &#125;</div><div class="line">                typewriter.innerHTML=code.substring(0,pos);//substring()用于提取字符串中介于两个指定下标之间的字符，substring() 方法返回的子串包括 开始 处的字符，但不包括 结束 处的字符。</div><div class="line">                <span class="built_in">set</span>Timeout(typewriting,100);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                typewriter.classList.add(<span class="string">"gameover"</span>);//classList 属性返回元素的类名，作为 DOMTokenList 对象。该属性用于在元素中添加，移除及切换 CSS 类。</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        typewriting();</div><div class="line">    &#125;)();</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://ojjsl7zpc.bkt.clouddn.com/typewriter.gif?e=1484580861&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:9In0pZrZcnrbc80EJoST46IzsFA&quot;&gt;&lt;/p&gt;
-&lt;h4 id=&quot;原生js打印效果，主要用到以下几个知识点：&quot;&gt;&lt;a href=&quot;#原生js打印效果，主要用到以下几个知识点：&quot; class=&quot;headerlink&quot; title=&quot;原生js打印效果，主要用到以下几个知识点：&quot;&gt;&lt;/a&gt;原生js打印效果，主要用到以下几个知识点：&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;1.nbsp;半角的不断行的空白格（推荐使用）2.ensp;  半角的空格 3.emsp;  全角的空格,每个字符前面都加上&amp;amp;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;2.&lt;code&gt;string.charAt()&lt;/code&gt;返回指定位置的字符&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;3.&lt;code&gt;indexOf()&lt;/code&gt;,array.indexOf(item,start)返回某个指定的字符串在字符串中首次出现的位置&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="特效" scheme="http://niaogege.site/tags/%E7%89%B9%E6%95%88/"/>
-    
-      <category term="javascript" scheme="http://niaogege.site/tags/javascript/"/>
     
   </entry>
   
