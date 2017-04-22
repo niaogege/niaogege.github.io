@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-03-26T15:59:58.849Z</updated>
+  <updated>2017-04-22T11:53:55.183Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -16,13 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>随笔：试用第二个月有感</title>
+    <link href="http://niaogege.site/2017/04/22/%E9%9A%8F%E7%AC%94-%E8%AF%95%E7%94%A8%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
+    <id>http://niaogege.site/2017/04/22/随笔-试用第二个月有感/</id>
+    <published>2017-04-22T04:08:44.000Z</published>
+    <updated>2017-04-22T11:53:55.183Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">“写代码半天，解决bug两天”——前端的坑太多了</blockquote><br>这一个月深入前端开发流程工作中，基本熟悉了业务开发的整个流程。随着试用期的往前推进，入坑的系数越来越高，真的，bug太多了，总结起来就是<span style="color:#5FBCD0">1.经验太欠缺，踩过的坑太少 2.平时总结太少，不会消化踩过的坑 3.前端领域太大太广，要学的东西太多。</span><i>所以，每周六或者周日是总结经验的好时机，一定要鞭策自己多总结，多回顾，多思考为什么会出现这么多bug，出现问题也不要急，慢慢来。</i></p>
+<hr>
+<a id="more"></a>
+<p>从4月1日到4月22日，三周的时间，刚翻看了工作日志，其实完成的工作内容难度系数不是很高，但本人做起来非常费事，很棘手，没办法，只能牺牲其他时间来弥补了。</p>
+<h4 id="项目一：虚拟朋友圈"><a href="#项目一：虚拟朋友圈" class="headerlink" title="项目一：虚拟朋友圈"></a>项目一：虚拟朋友圈</h4><p>大约是4月初接到的项目，我负责的内容就是前端开发，前面静态页面敲得很快，三个页面，大概一天的时间完成，后面是静态页面的一些交互效果，这些效果写了三天，大体就是模拟微信朋友圈的样式。其实在这时，我应该模拟Json对象，因为对很多效果我不知道是前台实现还是后台实现，比如，点完赞和评论，到底是不是实时显示，这个如果是后台实现的话就很简单了，有我就呈现，如果没有就不呈现呗。前端做的工作就是根据后台返回的数据进行展示，只是如何展示就看你怎么做了？</p>
+<h5 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h5><p>前台静态页面写完之后，有一个事自己忽略了。就是后台接口没有提供的话，自己可以提前模拟json对象。<br>JSON可以表示三种类型的值:<br>一是简单值，可以表示JSON字符串数值(eg:”hello world”)和null，js字符串与JSON字符串最大的区别是JSON字符串必须使用双引号;<br>二是JSON对象，一组无序的键值对儿;<br>三数组，一组有序的值的列表<br>JSON对象比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">id: &quot;24&quot;,</div><div class="line">status: &quot;已置顶&quot;,</div><div class="line">top: &quot;4&quot;,</div><div class="line">pub_time: &quot;2017-04-14 07:39:23&quot;,</div><div class="line">&#125;</div><div class="line">],</div><div class="line">liked: [</div><div class="line">&quot;四月鸟凉&quot;,</div><div class="line">]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<ul>
+<li>JSON对象和js对象字面量相比，首先JSON没有声明变量二JSON对象的属性必须加双引号</li>
+<li>数组，JSON数组没有变量和分号，这是就可以使用res[0]的用法了。</li>
+<li>JSON对象有两个方法，<code>stringfy()</code>:把js对象序列化JSON字符串，比如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var book = &#123;</div><div class="line">				title: &quot;js&quot;，</div><div class="line">				author: [&quot;chen peng&quot;],</div><div class="line">				edition: 3,</div><div class="line">				year: 2011</div><div class="line">&#125;;</div><div class="line"></div><div class="line">	var josnText =JSON.stringfy(book);</div><div class="line">    jsonText中的字符串如下：</div><div class="line">	&#123;&quot;title&quot;:&quot;js&quot;,&quot;author&quot;:[&quot;chen peng&quot;],&quot;edition&quot;:3,&quot;year&quot;:2011&#125;</div><div class="line"></div><div class="line">parse()把JSON字符串解析为原生js值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="template-js"><a href="#template-js" class="headerlink" title="template.js"></a><code>template.js</code></h5><p>高性能模板引擎 artTemplate.js</p>
+<ul>
+<li>核心方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">template(filename, data);</div><div class="line">// 将模板源代码编译成函数</div><div class="line">template.compile(source, options);</div><div class="line">// 将模板源代码编译成函数并立刻执行</div><div class="line">template.render(source, data, options);</div><div class="line"></div><div class="line">- 条件与循环</div><div class="line">&lt;code&gt;if else if else if</div><div class="line">each /each&lt;/code&gt;</div><div class="line">简介语法中双大括号老是报错，this is why</div><div class="line"></div><div class="line"></div><div class="line">- 实例</div><div class="line">&lt;code&gt;</div><div class="line">	var viewTpl = &#123;</div><div class="line">            html: &apos;&#123;&#123;if list&#125;&#125;&apos;+</div><div class="line">                  &apos;&#123;&#123;each list.data&#125;&#125;&apos;+</div><div class="line">                        &apos;&lt;div class=&quot;box&quot; &gt;&apos;+</div><div class="line">                              &apos;&#123;&#123;if list.data.index_pic&#125;&#125;&apos;+</div><div class="line">                                    &apos;&lt;img src=&quot;&#123;&#123;= $value.index_pic&#125;&#125;&quot;&gt;&apos;+</div><div class="line">                                    &apos;&lt;div class=&quot;share&quot;&gt;点击分享&lt;/div&gt;&apos;+</div><div class="line">                              &apos;&#123;&#123;else&#125;&#125;&apos;+</div><div class="line">                                    &apos;&lt;div class=&quot;null&quot;&gt;&lt;/div&gt;&apos;+</div><div class="line">                                    &apos;&lt;div class=&quot;share_null&quot;&gt;点击分享&lt;/div&gt;&apos;+</div><div class="line">                              &apos;&#123;&#123;/if&#125;&#125;&apos;+&apos;&apos;</div><div class="line">                        &apos;&lt;/div&gt;&apos;+</div><div class="line">                  &apos;&#123;&#123;/each&#125;&#125;&apos;+</div><div class="line">                  &apos;&#123;&#123;/if&#125;&#125;&apos;,</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">&lt;/code&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="jquery-UI的widget-组件化方法"><a href="#jquery-UI的widget-组件化方法" class="headerlink" title="jquery UI的widget()组件化方法"></a>jquery UI的widget()组件化方法</h5><p> $.widget(‘命名空间.插件名’, $.继承插件的命名空间.插件名,{ /<em> snip </em>/ });<br> 后面还会作进一步探讨！</p>
+<hr>
+<h4 id="项目二：签到日历查询"><a href="#项目二：签到日历查询" class="headerlink" title="项目二：签到日历查询"></a>项目二：签到日历查询</h4><p>也是需要和后台数据交互的内容，返回的json首先看是数组还是对象，如果是数组，则要json[0]，自己一定要有这样的意识。<br>签到日历用到的方法另外印象极其深刻的就是 map()方法已经相关数组方法比如split(‘-‘)和indexOf()</p>
+<h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var ary = [12,23,24,42,1];</div><div class="line">var res = ary.map(function (item,index,input) &#123;</div><div class="line">     return item*10;</div><div class="line">&#125;)</div><div class="line">console.log(res);//--&gt;[120,230,240,420,10];</div><div class="line">console.log(ary);//--&gt;[12,23,24,42,1]；</div></pre></td></tr></table></figure>
+<h5 id="array方法大汇总"><a href="#array方法大汇总" class="headerlink" title="array方法大汇总"></a>array方法大汇总</h5><p>MDN中列出了所有array中数组的方法<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="external">array方法大汇总</a></p>
+<h5 id="项目中用到的js"><a href="#项目中用到的js" class="headerlink" title="项目中用到的js"></a>项目中用到的js</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"> success : function( json )&#123;                                                	</div><div class="line">			var arr=[];</div><div class="line">			var arr0 =[];</div><div class="line">			var arr1 = [];</div><div class="line">			json[0].sign_info.map(function(v)&#123;</div><div class="line">				var year = v.sign_date.split(&apos;-&apos;)[0];</div><div class="line">				var month = v.sign_date.split(&apos;-&apos;)[1];</div><div class="line">				var day = v.sign_date.split(&apos;-&apos;)[2];</div><div class="line">				arr.push(day);</div><div class="line">				arr0.push(year);</div><div class="line">				arr1.push(month);</div><div class="line">			&#125;);</div><div class="line">			</div><div class="line">			$(&apos;.calender-content .calender-cell&apos;).each(function()&#123;</div><div class="line">				var id=$(this).attr(&apos;data-id&apos;);</div><div class="line">				var id0 = $(&apos;#calender-year&apos;).text();</div><div class="line">				var id1 = $(&apos;#calender-mon&apos;).text();</div><div class="line">//													</div><div class="line">				if(arr.indexOf(id)&gt;-1 &amp;&amp; id &amp;&amp; arr0.indexOf(id0)&gt;-1 &amp;&amp; arr1.indexOf(id1)&gt;-1 )&#123; </div><div class="line">					$(this).addClass(&apos;qiandao&apos;);</div><div class="line">				&#125;</div><div class="line">			&#125;); </div><div class="line">			</div><div class="line">			$(&apos;#con-attend&apos;).text(json[0].lasted);</div><div class="line">			$(&apos;.total-points&apos;).text(json[0].credit1);</div><div class="line">			var currDay= parseInt(arr[arr.length-1]);</div><div class="line">			if(currentDay === currDay)&#123;</div><div class="line">			$(&apos;.sign-img-qiandao&apos;).attr(&apos;src&apos;,&apos;images/qietu/已签@2x.png&apos;);</div><div class="line">			$(&apos;.sign-img-qiandao&apos;).attr(&apos;data-id&apos;,&apos;1&apos;);</div><div class="line">			$(&apos;.sign-img-qiandao&apos;).unbind();</div><div class="line">			&#125;;</div></pre></td></tr></table></figure>
+<hr>
+<p>最近脑子有点混乱，需要好好休息休息，好好总结，后面还有大把的时间，急什么啊？？？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;“写代码半天，解决bug两天”——前端的坑太多了&lt;/blockquote&gt;&lt;br&gt;这一个月深入前端开发流程工作中，基本熟悉了业务开发的整个流程。随着试用期的往前推进，入坑的系数越来越高，真的，bug太多了，总结起来就是&lt;span style=&quot;color:#5FBCD0&quot;&gt;1.经验太欠缺，踩过的坑太少 2.平时总结太少，不会消化踩过的坑 3.前端领域太大太广，要学的东西太多。&lt;/span&gt;&lt;i&gt;所以，每周六或者周日是总结经验的好时机，一定要鞭策自己多总结，多回顾，多思考为什么会出现这么多bug，出现问题也不要急，慢慢来。&lt;/i&gt;&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>随笔：试用第一个月有感</title>
     <link href="http://niaogege.site/2017/03/26/%E9%9A%8F%E7%AC%94%EF%BC%9A%E8%AF%95%E7%94%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
     <id>http://niaogege.site/2017/03/26/随笔：试用第一个月有感/</id>
     <published>2017-03-26T13:30:41.000Z</published>
-    <updated>2017-03-26T15:59:58.849Z</updated>
+    <updated>2017-04-22T09:43:01.739Z</updated>
     
-    <content type="html"><![CDATA[<blockquote class="blockquote-center">“我昨天一口气写了5个ajax请求”——然后童总点了一个赞</blockquote>
+    <content type="html"><![CDATA[<blockquote class="blockquote-center">“我昨天一口气写了5个ajax请求”</blockquote>
 
 <p>误打误撞，终于入行了，很激动也很紧张，上班的时候总是有种莫名的紧迫感，有太多的东西需要学习，有太多的东西自己以前根本没涉及到，所以，保守估计两年以后，我才敢保证自己，说自己是“前端攻城狮(Front-end develop engineer)”。<br>1.json/array和object,json对象<br>2.angularJS1使用<br>3.http协议和头部信息，后台数据交互<br>4.Ajax调用<br>5.复习巩固js，尤其是一些基础的用法，比如事件对象、事件冒泡</p>
 <hr>
@@ -51,7 +99,7 @@
     
     <summary type="html">
     
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;“我昨天一口气写了5个ajax请求”——然后童总点了一个赞&lt;/blockquote&gt;
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;“我昨天一口气写了5个ajax请求”&lt;/blockquote&gt;
 
 &lt;p&gt;误打误撞，终于入行了，很激动也很紧张，上班的时候总是有种莫名的紧迫感，有太多的东西需要学习，有太多的东西自己以前根本没涉及到，所以，保守估计两年以后，我才敢保证自己，说自己是“前端攻城狮(Front-end develop engineer)”。&lt;br&gt;1.json/array和object,json对象&lt;br&gt;2.angularJS1使用&lt;br&gt;3.http协议和头部信息，后台数据交互&lt;br&gt;4.Ajax调用&lt;br&gt;5.复习巩固js，尤其是一些基础的用法，比如事件对象、事件冒泡&lt;/p&gt;
 &lt;hr&gt;
@@ -1080,35 +1128,6 @@ window.color = ‘red’;<br>var o ={color:’blue’};<br>function sayColor(){<
     <summary type="html">
     
       &lt;h4 id=&quot;祝贺大家新春快乐，鸡年吉祥，恭喜发财！&quot;&gt;&lt;a href=&quot;#祝贺大家新春快乐，鸡年吉祥，恭喜发财！&quot; class=&quot;headerlink&quot; title=&quot;祝贺大家新春快乐，鸡年吉祥，恭喜发财！&quot;&gt;&lt;/a&gt;祝贺大家新春快乐，鸡年吉祥，恭喜发财！&lt;/h4&gt;&lt;p&gt;&lt;i
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔：有时候几件趣事能让你 Recovery</title>
-    <link href="http://niaogege.site/2017/01/22/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%9C%89%E6%97%B6%E5%80%99%E5%87%A0%E4%BB%B6%E8%B6%A3%E4%BA%8B%E8%83%BD%E8%AE%A9%E4%BD%A0-Recovery/"/>
-    <id>http://niaogege.site/2017/01/22/随笔：有时候几件趣事能让你-Recovery/</id>
-    <published>2017-01-22T14:35:30.000Z</published>
-    <updated>2017-03-26T13:31:36.386Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>最近，身体有些不适，脑袋一直晕乎乎的，周六在家躺了一天，晚上尽量早点休息。大过年的，完全很淡定，心平气和，完全不像还有4天要过年的节奏。</p>
-</blockquote>
-<h5 id="好在今天下午坐车的时候，被逗逼给乐醒了，恍然大悟，头脑也不晕了。这个可以有！"><a href="#好在今天下午坐车的时候，被逗逼给乐醒了，恍然大悟，头脑也不晕了。这个可以有！" class="headerlink" title="好在今天下午坐车的时候，被逗逼给乐醒了，恍然大悟，头脑也不晕了。这个可以有！"></a>好在今天下午坐车的时候，被逗逼给乐醒了，恍然大悟，头脑也不晕了。这个可以有！</h5><p><img src="http://ojjsl7zpc.bkt.clouddn.com/shufa4.jpg?e=1485099350&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:PN0LzD_6yrnQMtu3lepxjQVFq3w"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;最近，身体有些不适，脑袋一直晕乎乎的，周六在家躺了一天，晚上尽量早点休息。大过年的，完全很淡定，心平气和，完全不像还有4天要过年的节奏。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h5 id=&quot;好在今天下午坐车的时候，被逗逼给乐醒了，恍然大悟，头脑也不
     
     </summary>
     
