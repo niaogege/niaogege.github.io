@@ -419,12 +419,16 @@
 
       
         
-          
-            <blockquote class="blockquote-center">“经过三个月的打磨，光荣转正了！！Vue开始学起”——前端需要学习的东西太多了</blockquote>
+          <blockquote class="blockquote-center">“经过三个月的打磨，转正了！！ng继续加强学习”——前端需要学习的东西太多了</blockquote>
 
-<p>获得URL后面的参数以及值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function getQueryString()&#123;</div><div class="line">			var qs = (location.search.length &gt;0 ? location.search.substring(1) : &apos;&apos;),args=&#123;&#125;,</div><div class="line">			items =qs.length ? qs.split(&apos;&amp;&apos;) : [],item =null,name =null,value=null,</div><div class="line">			i =0,len =items.length;</div><div class="line">			for(i=0;i&lt;len;i++)&#123;</div><div class="line">				item =items[i].split(&apos;=&apos;);</div><div class="line">				name =decodeURIComponent(item[0]);</div><div class="line">				value =decodeURIComponent(item[1]);</div><div class="line">				if(name.length)&#123;</div><div class="line">					args[name] =value;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			return args;</div><div class="line">		&#125;</div><div class="line">		var INPUT =getQueryString();</div><div class="line">		var appId =INPUT[&apos;app&apos;];</div><div class="line">		console.log(appId);</div></pre></td></tr></table></figure></p>
-
-          
+<p>1.获得URL后面的参数以及值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function getQueryString()&#123;</div><div class="line">			var qs = (location.search.length &gt;0 ? location.search.substring(1) : &apos;&apos;),args=&#123;&#125;,</div><div class="line">			items =qs.length ? qs.split(&apos;&amp;&apos;) : [],item =null,name =null,value=null,</div><div class="line">			i =0,len =items.length;</div><div class="line">			for(i=0;i&lt;len;i++)&#123;</div><div class="line">				item =items[i].split(&apos;=&apos;);</div><div class="line">				name =decodeURIComponent(item[0]);</div><div class="line">				value =decodeURIComponent(item[1]);</div><div class="line">				if(name.length)&#123;</div><div class="line">					args[name] =value;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			return args;</div><div class="line">		&#125;</div><div class="line">		var INPUT =getQueryString();</div><div class="line">		var appId =INPUT[&apos;app&apos;];</div><div class="line">		console.log(appId);</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/30/随笔：试用期第三个月有感/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
