@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Test of My Blog]]></title>
+      <url>%2F2017%2F11%2F09%2Ftest-of-my-blog%2F</url>
+      <content type="text"></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[随笔：未来不迎，当时不杂，既过不恋]]></title>
       <url>%2F2017%2F11%2F05%2F%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%9C%AA%E6%9D%A5%E4%B8%8D%E8%BF%8E%EF%BC%8C%E5%BD%93%E6%97%B6%E4%B8%8D%E6%9D%82%EF%BC%8C%E6%97%A2%E8%BF%87%E4%B8%8D%E6%81%8B%2F</url>
       <content type="text"><![CDATA[‘未来不迎，当时不杂，既过不恋！’——Front_end]]></content>
