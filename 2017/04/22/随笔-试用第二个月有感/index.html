@@ -1,0 +1,1058 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="随笔," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/liliicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="“写代码半天，解决bug两天”——前端的坑太多了这一个月深入前端开发流程工作中，基本熟悉了业务开发的整个流程。随着试用期的往前推进，入坑的系数越来越高，真的，bug太多了，总结起来就是1.经验太欠缺，踩过的坑太少 2.平时总结太少，不会消化踩过的坑 3.前端领域太大太广，要学的东西太多。所以，每周六或者周日是总结经验的好时机，一定要鞭策自己多总结，多回顾，多思考为什么会出现这么多bug，出现问题也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="随笔：试用第二个月有感">
+<meta property="og:url" content="http://niaogege.site/2017/04/22/随笔-试用第二个月有感/index.html">
+<meta property="og:site_name" content="开到荼蘼">
+<meta property="og:description" content="“写代码半天，解决bug两天”——前端的坑太多了这一个月深入前端开发流程工作中，基本熟悉了业务开发的整个流程。随着试用期的往前推进，入坑的系数越来越高，真的，bug太多了，总结起来就是1.经验太欠缺，踩过的坑太少 2.平时总结太少，不会消化踩过的坑 3.前端领域太大太广，要学的东西太多。所以，每周六或者周日是总结经验的好时机，一定要鞭策自己多总结，多回顾，多思考为什么会出现这么多bug，出现问题也">
+<meta property="og:updated_time" content="2017-04-22T11:53:55.183Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="随笔：试用第二个月有感">
+<meta name="twitter:description" content="“写代码半天，解决bug两天”——前端的坑太多了这一个月深入前端开发流程工作中，基本熟悉了业务开发的整个流程。随着试用期的往前推进，入坑的系数越来越高，真的，bug太多了，总结起来就是1.经验太欠缺，踩过的坑太少 2.平时总结太少，不会消化踩过的坑 3.前端领域太大太广，要学的东西太多。所以，每周六或者周日是总结经验的好时机，一定要鞭策自己多总结，多回顾，多思考为什么会出现这么多bug，出现问题也">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6332298555788625000',
+      author: '鸟哥哥'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://niaogege.site/2017/04/22/随笔-试用第二个月有感/"/>
+
+
+
+
+
+  <title> 随笔：试用第二个月有感 | 开到荼蘼 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5c8875c34741910bdcebbf0b0dc5541c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=60320485";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">开到荼蘼</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">幸福就像花季，开到荼蘼</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+	  
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://niaogege.site/2017/04/22/随笔-试用第二个月有感/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="鸟哥哥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/cpp.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="开到荼蘼">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="开到荼蘼" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                随笔：试用第二个月有感
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-22T12:08:44+08:00">
+                2017-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/04/22/随笔-试用第二个月有感/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/22/随笔-试用第二个月有感/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><blockquote class="blockquote-center">“写代码半天，解决bug两天”——前端的坑太多了</blockquote><br>这一个月深入前端开发流程工作中，基本熟悉了业务开发的整个流程。随着试用期的往前推进，入坑的系数越来越高，真的，bug太多了，总结起来就是<span style="color:#5FBCD0">1.经验太欠缺，踩过的坑太少 2.平时总结太少，不会消化踩过的坑 3.前端领域太大太广，要学的东西太多。</span><i>所以，每周六或者周日是总结经验的好时机，一定要鞭策自己多总结，多回顾，多思考为什么会出现这么多bug，出现问题也不要急，慢慢来。</i></p>
+<hr>
+<a id="more"></a>
+<p>从4月1日到4月22日，三周的时间，刚翻看了工作日志，其实完成的工作内容难度系数不是很高，但本人做起来非常费事，很棘手，没办法，只能牺牲其他时间来弥补了。</p>
+<h4 id="项目一：虚拟朋友圈"><a href="#项目一：虚拟朋友圈" class="headerlink" title="项目一：虚拟朋友圈"></a>项目一：虚拟朋友圈</h4><p>大约是4月初接到的项目，我负责的内容就是前端开发，前面静态页面敲得很快，三个页面，大概一天的时间完成，后面是静态页面的一些交互效果，这些效果写了三天，大体就是模拟微信朋友圈的样式。其实在这时，我应该模拟Json对象，因为对很多效果我不知道是前台实现还是后台实现，比如，点完赞和评论，到底是不是实时显示，这个如果是后台实现的话就很简单了，有我就呈现，如果没有就不呈现呗。前端做的工作就是根据后台返回的数据进行展示，只是如何展示就看你怎么做了？</p>
+<h5 id="JSON对象"><a href="#JSON对象" class="headerlink" title="JSON对象"></a>JSON对象</h5><p>前台静态页面写完之后，有一个事自己忽略了。就是后台接口没有提供的话，自己可以提前模拟json对象。<br>JSON可以表示三种类型的值:<br>一是简单值，可以表示JSON字符串数值(eg:”hello world”)和null，js字符串与JSON字符串最大的区别是JSON字符串必须使用双引号;<br>二是JSON对象，一组无序的键值对儿;<br>三数组，一组有序的值的列表<br>JSON对象比如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">id: &quot;24&quot;,</div><div class="line">status: &quot;已置顶&quot;,</div><div class="line">top: &quot;4&quot;,</div><div class="line">pub_time: &quot;2017-04-14 07:39:23&quot;,</div><div class="line">&#125;</div><div class="line">],</div><div class="line">liked: [</div><div class="line">&quot;四月鸟凉&quot;,</div><div class="line">]</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<ul>
+<li>JSON对象和js对象字面量相比，首先JSON没有声明变量二JSON对象的属性必须加双引号</li>
+<li>数组，JSON数组没有变量和分号，这是就可以使用res[0]的用法了。</li>
+<li>JSON对象有两个方法，<code>stringfy()</code>:把js对象序列化JSON字符串，比如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var book = &#123;</div><div class="line">				title: &quot;js&quot;，</div><div class="line">				author: [&quot;chen peng&quot;],</div><div class="line">				edition: 3,</div><div class="line">				year: 2011</div><div class="line">&#125;;</div><div class="line"></div><div class="line">	var josnText =JSON.stringfy(book);</div><div class="line">    jsonText中的字符串如下：</div><div class="line">	&#123;&quot;title&quot;:&quot;js&quot;,&quot;author&quot;:[&quot;chen peng&quot;],&quot;edition&quot;:3,&quot;year&quot;:2011&#125;</div><div class="line"></div><div class="line">parse()把JSON字符串解析为原生js值</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="template-js"><a href="#template-js" class="headerlink" title="template.js"></a><code>template.js</code></h5><p>高性能模板引擎 artTemplate.js</p>
+<ul>
+<li>核心方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">template(filename, data);</div><div class="line">// 将模板源代码编译成函数</div><div class="line">template.compile(source, options);</div><div class="line">// 将模板源代码编译成函数并立刻执行</div><div class="line">template.render(source, data, options);</div><div class="line"></div><div class="line">- 条件与循环</div><div class="line">&lt;code&gt;if else if else if</div><div class="line">each /each&lt;/code&gt;</div><div class="line">简介语法中双大括号老是报错，this is why</div><div class="line"></div><div class="line"></div><div class="line">- 实例</div><div class="line">&lt;code&gt;</div><div class="line">	var viewTpl = &#123;</div><div class="line">            html: &apos;&#123;&#123;if list&#125;&#125;&apos;+</div><div class="line">                  &apos;&#123;&#123;each list.data&#125;&#125;&apos;+</div><div class="line">                        &apos;&lt;div class=&quot;box&quot; &gt;&apos;+</div><div class="line">                              &apos;&#123;&#123;if list.data.index_pic&#125;&#125;&apos;+</div><div class="line">                                    &apos;&lt;img src=&quot;&#123;&#123;= $value.index_pic&#125;&#125;&quot;&gt;&apos;+</div><div class="line">                                    &apos;&lt;div class=&quot;share&quot;&gt;点击分享&lt;/div&gt;&apos;+</div><div class="line">                              &apos;&#123;&#123;else&#125;&#125;&apos;+</div><div class="line">                                    &apos;&lt;div class=&quot;null&quot;&gt;&lt;/div&gt;&apos;+</div><div class="line">                                    &apos;&lt;div class=&quot;share_null&quot;&gt;点击分享&lt;/div&gt;&apos;+</div><div class="line">                              &apos;&#123;&#123;/if&#125;&#125;&apos;+&apos;&apos;</div><div class="line">                        &apos;&lt;/div&gt;&apos;+</div><div class="line">                  &apos;&#123;&#123;/each&#125;&#125;&apos;+</div><div class="line">                  &apos;&#123;&#123;/if&#125;&#125;&apos;,</div><div class="line">	&#125;;</div><div class="line"></div><div class="line">&lt;/code&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="jquery-UI的widget-组件化方法"><a href="#jquery-UI的widget-组件化方法" class="headerlink" title="jquery UI的widget()组件化方法"></a>jquery UI的widget()组件化方法</h5><p> $.widget(‘命名空间.插件名’, $.继承插件的命名空间.插件名,{ /<em> snip </em>/ });<br> 后面还会作进一步探讨！</p>
+<hr>
+<h4 id="项目二：签到日历查询"><a href="#项目二：签到日历查询" class="headerlink" title="项目二：签到日历查询"></a>项目二：签到日历查询</h4><p>也是需要和后台数据交互的内容，返回的json首先看是数组还是对象，如果是数组，则要json[0]，自己一定要有这样的意识。<br>签到日历用到的方法另外印象极其深刻的就是 map()方法已经相关数组方法比如split(‘-‘)和indexOf()</p>
+<h5 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var ary = [12,23,24,42,1];</div><div class="line">var res = ary.map(function (item,index,input) &#123;</div><div class="line">     return item*10;</div><div class="line">&#125;)</div><div class="line">console.log(res);//--&gt;[120,230,240,420,10];</div><div class="line">console.log(ary);//--&gt;[12,23,24,42,1]；</div></pre></td></tr></table></figure>
+<h5 id="array方法大汇总"><a href="#array方法大汇总" class="headerlink" title="array方法大汇总"></a>array方法大汇总</h5><p>MDN中列出了所有array中数组的方法<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="external">array方法大汇总</a></p>
+<h5 id="项目中用到的js"><a href="#项目中用到的js" class="headerlink" title="项目中用到的js"></a>项目中用到的js</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"> success : function( json )&#123;                                                	</div><div class="line">			var arr=[];</div><div class="line">			var arr0 =[];</div><div class="line">			var arr1 = [];</div><div class="line">			json[0].sign_info.map(function(v)&#123;</div><div class="line">				var year = v.sign_date.split(&apos;-&apos;)[0];</div><div class="line">				var month = v.sign_date.split(&apos;-&apos;)[1];</div><div class="line">				var day = v.sign_date.split(&apos;-&apos;)[2];</div><div class="line">				arr.push(day);</div><div class="line">				arr0.push(year);</div><div class="line">				arr1.push(month);</div><div class="line">			&#125;);</div><div class="line">			</div><div class="line">			$(&apos;.calender-content .calender-cell&apos;).each(function()&#123;</div><div class="line">				var id=$(this).attr(&apos;data-id&apos;);</div><div class="line">				var id0 = $(&apos;#calender-year&apos;).text();</div><div class="line">				var id1 = $(&apos;#calender-mon&apos;).text();</div><div class="line">//													</div><div class="line">				if(arr.indexOf(id)&gt;-1 &amp;&amp; id &amp;&amp; arr0.indexOf(id0)&gt;-1 &amp;&amp; arr1.indexOf(id1)&gt;-1 )&#123; </div><div class="line">					$(this).addClass(&apos;qiandao&apos;);</div><div class="line">				&#125;</div><div class="line">			&#125;); </div><div class="line">			</div><div class="line">			$(&apos;#con-attend&apos;).text(json[0].lasted);</div><div class="line">			$(&apos;.total-points&apos;).text(json[0].credit1);</div><div class="line">			var currDay= parseInt(arr[arr.length-1]);</div><div class="line">			if(currentDay === currDay)&#123;</div><div class="line">			$(&apos;.sign-img-qiandao&apos;).attr(&apos;src&apos;,&apos;images/qietu/已签@2x.png&apos;);</div><div class="line">			$(&apos;.sign-img-qiandao&apos;).attr(&apos;data-id&apos;,&apos;1&apos;);</div><div class="line">			$(&apos;.sign-img-qiandao&apos;).unbind();</div><div class="line">			&#125;;</div></pre></td></tr></table></figure>
+<hr>
+<p>最近脑子有点混乱，需要好好休息休息，好好总结，后面还有大把的时间，急什么啊？？？</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.jpg" alt="鸟哥哥 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="鸟哥哥 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/26/随笔：试用第一个月有感/" rel="next" title="随笔：试用第一个月有感">
+                <i class="fa fa-chevron-left"></i> 随笔：试用第一个月有感
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/30/随笔：试用期第三个月有感/" rel="prev" title="随笔：试用期第三个月有感">
+                随笔：试用期第三个月有感 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/22/随笔-试用第二个月有感/"
+           data-title="随笔：试用第二个月有感" data-url="http://niaogege.site/2017/04/22/随笔-试用第二个月有感/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cpp.png"
+               alt="鸟哥哥" />
+          <p class="site-author-name" itemprop="name">鸟哥哥</p>
+          <p class="site-description motion-element" itemprop="description">要有最朴素的生活和最遥远的梦想</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niaogege" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niaogege66" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/niaogege66" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/niaogege" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://niaogege.site/works/" title="作品集" target="_blank">作品集</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zizhuxuexi.cn/" title="自主学习网" target="_blank">自主学习网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.qdfuns.com/house.php" title="前端网" target="_blank">前端网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hoge.cn/" title="南京厚建软件" target="_blank">南京厚建软件</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#项目一：虚拟朋友圈"><span class="nav-number">1.</span> <span class="nav-text">项目一：虚拟朋友圈</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JSON对象"><span class="nav-number">1.1.</span> <span class="nav-text">JSON对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#template-js"><span class="nav-number">1.2.</span> <span class="nav-text">template.js</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jquery-UI的widget-组件化方法"><span class="nav-number">1.3.</span> <span class="nav-text">jquery UI的widget()组件化方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目二：签到日历查询"><span class="nav-number">2.</span> <span class="nav-text">项目二：签到日历查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#map"><span class="nav-number">2.1.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#array方法大汇总"><span class="nav-number">2.2.</span> <span class="nav-text">array方法大汇总</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#项目中用到的js"><span class="nav-number">2.3.</span> <span class="nav-text">项目中用到的js</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸟哥哥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+
+ </div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+ </script>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"niaogege"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1078 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="特效,animation,css3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/liliicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="有时候能看到这种效果的按钮，效果很棒，请看下图
+
+
+极客学院有专门课程讲解，我们来看一下源代码!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Goast Button,幽灵按钮特效">
+<meta property="og:url" content="http://niaogege.site/2017/01/15/goast-button-幽灵按钮特效/index.html">
+<meta property="og:site_name" content="开到荼蘼">
+<meta property="og:description" content="有时候能看到这种效果的按钮，效果很棒，请看下图
+
+
+极客学院有专门课程讲解，我们来看一下源代码!">
+<meta property="og:image" content="http://ojjsl7zpc.bkt.clouddn.com/goast.gif?e=1484484045&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:8GqBAdbwXR4FeVp8w3I18zlbCxE">
+<meta property="og:updated_time" content="2017-01-18T13:23:12.272Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Goast Button,幽灵按钮特效">
+<meta name="twitter:description" content="有时候能看到这种效果的按钮，效果很棒，请看下图
+
+
+极客学院有专门课程讲解，我们来看一下源代码!">
+<meta name="twitter:image" content="http://ojjsl7zpc.bkt.clouddn.com/goast.gif?e=1484484045&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:8GqBAdbwXR4FeVp8w3I18zlbCxE">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6332298555788625000',
+      author: '鸟哥哥'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://niaogege.site/2017/01/15/goast-button-幽灵按钮特效/"/>
+
+
+
+
+
+  <title> Goast Button,幽灵按钮特效 | 开到荼蘼 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5c8875c34741910bdcebbf0b0dc5541c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=60320485";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">开到荼蘼</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">幸福就像花季，开到荼蘼</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+	  
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://niaogege.site/2017/01/15/goast-button-幽灵按钮特效/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="鸟哥哥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/cpp.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="开到荼蘼">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="开到荼蘼" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Goast Button,幽灵按钮特效
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-15T19:42:24+08:00">
+                2017-01-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/15/goast-button-幽灵按钮特效/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/15/goast-button-幽灵按钮特效/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>有时候能看到这种效果的按钮，效果很棒，请看下图</p>
+</blockquote>
+<p><img src="http://ojjsl7zpc.bkt.clouddn.com/goast.gif?e=1484484045&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:8GqBAdbwXR4FeVp8w3I18zlbCxE"></p>
+<p>极客学院有<a href="http://www.jikexueyuan.com/course/410_1.html?ss=1" target="_blank" rel="external">专门课程</a>讲解，我们来看一下源代码!</p>
+<a id="more"></a>
+<h3 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"ZH-CN"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">&lt;meta name=<span class="string">"keywords"</span> content=<span class="string">""</span>/&gt;</div><div class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">""</span>/&gt;</div><div class="line">&lt;link rel=<span class="string">"shortcut icon"</span> href=<span class="string">""</span>&gt;</div><div class="line">&lt;title&gt;20170113 goast&lt;/title&gt;</div><div class="line">&lt;link <span class="built_in">type</span>=<span class="string">""</span> rel=<span class="string">"stylesheet"</span> href=<span class="string">"style/0113.css"</span>&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=<span class="string">"box"</span>&gt; </div><div class="line">		&lt;div class=<span class="string">"link link-miss"</span>&gt;</div><div class="line">			&lt;span class=<span class="string">"icon"</span>&gt;&lt;/span&gt;</div><div class="line">			&lt;a href=<span class="string">"#"</span> class=<span class="string">"button"</span> data-title=<span class="string">"My mission clear"</span>&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-top"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-left"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-bottom"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-right"</span>&gt;&lt;/span&gt;</div><div class="line">				MISSION</div><div class="line">			&lt;/a&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=<span class="string">"link link-play"</span>&gt;</div><div class="line">			&lt;span class=<span class="string">"icon"</span>&gt;&lt;/span&gt;</div><div class="line">			&lt;a href=<span class="string">"#"</span> class=<span class="string">"button"</span> data-title=<span class="string">"This is my palyground"</span>&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-top"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-left"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-bottom"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-right"</span>&gt;&lt;/span&gt;</div><div class="line">				PLAY</div><div class="line">			&lt;/a&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=<span class="string">"link link-touch"</span>&gt;</div><div class="line">			&lt;span class=<span class="string">"icon"</span>&gt;&lt;/span&gt;</div><div class="line">			&lt;a href=<span class="string">"#"</span> class=<span class="string">"button"</span> data-title=<span class="string">"Let's do something together"</span>&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-top"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-left"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-bottom"</span>&gt;&lt;/span&gt;</div><div class="line">				&lt;span class=<span class="string">"line line-right"</span>&gt;&lt;/span&gt;</div><div class="line">				TOUCH</div><div class="line">			&lt;/a&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class=<span class="string">"tip"</span>&gt;</div><div class="line">			&lt;em&gt;&lt;/em&gt; &lt;!--提示性文字--&gt;</div><div class="line">			&lt;span&gt;&lt;/span&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">	&lt;script src=<span class="string">"http://libs.baidu.com/jquery/1.11.1/jquery.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">	&lt;script src=<span class="string">"js/0113.js"</span>&gt;&lt;/script&gt;</div><div class="line">		</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h3 id="Css"><a href="#Css" class="headerlink" title="Css"></a>Css</h3><blockquote>
+<p>这里涉及部分css3属性，所以对于低版本的browser的支持效果不是很好</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">body&#123;background: <span class="comment">#333;font-family: 'Microsoft Yahei';&#125;</span></div><div class="line">a&#123;text-decoration:none;cursor:pointer;&#125;</div><div class="line">.box&#123;width:800px;height:280px;margin: 50px auto;&#125;</div><div class="line">.box .link&#123;width:205px;height:280px;margin:10px 20px;<span class="built_in">float</span>:left;position:relative;&#125;</div><div class="line"></div><div class="line">.link .icon&#123;width:100%;height:190px;display:block;transition:all 1s linear;-webkit-transition:all 1s linear;-moz-transition:all 1s linear;-ms-transition:all 1s linear;&#125;</div><div class="line">.link-miss .icon&#123;background: url(<span class="string">'../images/mission.png'</span>) no-repeat center center;&#125;</div><div class="line">.link-play .icon&#123;background: url(<span class="string">'../images/play.png'</span>) no-repeat center center;&#125;</div><div class="line">.link-touch .icon&#123;background: url(<span class="string">'../images/touch.png'</span>) no-repeat center center;&#125;</div><div class="line"></div><div class="line">.link .icon:hover&#123;-webkit-transform: rotate(360deg) scale(1.1); -o-transform: rotate(360deg) scale(1.1);-moz-transform: rotate(360deg) scale(1.1);-ms-transform: rotate(360deg) scale(1.1);&#125;</div><div class="line">.button&#123;display:block;font-size:16px;font-weight:bolder;border:2px solid rgba(255,255,255,.8);padding-left:20px;margin: 0 auto;width:180px;height:50px;line-height:50px;color: <span class="comment">#2dcb70;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background: url('../images/allow.png') /*设置背景指示图位移*/ no-repeat 130px 50%;position:relative;transition:all 0.3s ease;-webkit-transition:all 0.3s ease;-moz-transition:all 0.3s ease;-ms-transition:all 0.3s ease;&#125;</span></div><div class="line">.button:hover&#123; border:2px solid rgba(255,255,255,1);background-position:140px center;&#125;</div><div class="line">.button  .line&#123;display:block;position:absolute;background:none;transition:all 0.2s ease;-webkit-transition:all 0.2s ease;-moz-transition:all 0.2s ease;-ms-transition:all 0.2s ease;&#125;/*过渡效果必须放在初始值*/</div><div class="line">.button:hover .line&#123;background:<span class="comment">#fff;&#125; /*background:#fff背景色为白色*/</span></div><div class="line">/*1、高度不变 2宽度在变 3位置在变*/</div><div class="line">.button .line-top&#123;height:2px;width:0px;left:-110%;top:-2px;&#125;</div><div class="line">.button:hover .line-top&#123;width:100%;left:-2px;&#125;</div><div class="line">.button .line-bottom&#123;height:2px;width:0px;right:-110%;bottom:-2px;&#125;</div><div class="line">.button:hover .line-bottom&#123;width:100%;right:-2px;&#125;</div><div class="line">/*1、宽度不变 2高度在变 3位置在变*/</div><div class="line">.button .line-left&#123;width:2px;height:0;left:-2px;bottom:-110%;&#125;</div><div class="line">.button:hover .line-left&#123;height:100%;bottom:-2px;&#125;</div><div class="line">.button .line-right&#123;width:2px;height:0;right:-2px;top:-110%;&#125;</div><div class="line">.button:hover .line-right&#123;height:100%;top:-2px;&#125;</div><div class="line"></div><div class="line">.box .tip&#123;position:absolute;padding:0 14px;height:35px;line-height:</div><div class="line">35px;background: <span class="comment">#2dcb70;color:#fff;top:160px;font-size:16px;font-weight:normal;text-transform:none;/*uppercase;capitalize;lowercase转换不同文本的大小写*/margin:0 auto;border-radius:3px;opacity:0;/*透明度为0隐藏*/&#125;</span></div><div class="line">.tip em&#123;font-style:normal;&#125;</div><div class="line">.tip span&#123;width:0;height:0;overflow:hidden;left:50%;margin-left:-3px;</div><div class="line">	position:absolute;top:100%;border:7px solid transparent;border-top-color: <span class="comment">#2dcb70;/*倒三角*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="这里有必要提一下几个知识点："><a href="#这里有必要提一下几个知识点：" class="headerlink" title="这里有必要提一下几个知识点："></a>这里有必要提一下几个知识点：</h4><ul>
+<li><p><code>background</code>属性<br><br>eg:body{background: #00FF00 url(bgimage.gif) no-repeat fixed top;}<br><br>可能的值：<br>background-position 规定背景图像的位置。<br>background-size    规定背景图片的尺寸。<br>background-repeat 规定如何重复背景图像。<br>background-origin 规定背景图片的定位区域。<br>background-clip    规定背景的绘制区域。<br>background-attachment 规定背景图像是否固定或者随着页面的其余部分滚动。    </p>
+</li>
+<li><p><code>transition</code>属性<br><br>eg:div<br>{<br>width:100px;<br>transition: width 2s;<br>-moz-transition: width 2s; /<em> Firefox 4 </em>/<br>-webkit-transition: width 2s; /<em> Safari 和 Chrome </em>/<br>-o-transition: width 2s; /<em> Opera </em>/<br>}<br>语法:<br>transition-property    规定设置过渡效果的 CSS 属性的名称。<br>transition-duration    规定完成过渡效果需要多少秒或毫秒。<br>transition-timing-function    规定速度效果的速度曲线。<br>transition-delay    定义过渡效果何时开始。</p>
+<blockquote>
+<p>注意：<code>transition</code>属性必须设置在代码的初始值里</p>
+</blockquote>
+</li>
+<li><code>text-transform</code>属性<br><br>text-transform:转换不同文本的大小写，值有：uppercase(大写);capitalize(首字母大写);lowercase(小写)</li>
+</ul>
+<h3 id="Javascript"><a href="#Javascript" class="headerlink" title="Javascript"></a>Javascript</h3><blockquote>
+<p>这里用到jquery<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	$(<span class="string">'.link .button'</span>).hover(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		var title = $(this).attr(<span class="string">'data-title'</span>);</div><div class="line">		$(<span class="string">'em'</span>).text(title); //em承载的内容就是title</div><div class="line">		var pos = $(this).offset().left;</div><div class="line">		var dis = ($(<span class="string">'.tip'</span>).outerWidth() - $(this).outerWidth())/2;</div><div class="line">		var f = pos - dis;</div><div class="line">		$(<span class="string">'.tip'</span>).css(&#123;<span class="string">'left'</span>:f+<span class="string">'px'</span>&#125;).animate(&#123;<span class="string">'top'</span>:<span class="string">'190'</span>,<span class="string">'opacity'</span>:<span class="string">'1'</span>&#125;,300);;</div><div class="line">	&#125;,<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		$(<span class="string">'.tip'</span>).animate(&#123;<span class="string">'top'</span>:160,<span class="string">"opacity"</span>:<span class="string">'0'</span>&#125;,300);</div><div class="line">	&#125;);</div><div class="line">	</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li>1.位移的计算：<code>var pos = $(this).offset().left;<pre><code>var dis = ($(&apos;.tip&apos;).outerWidth() - $(this).outerWidth())/2;
+var f = pos - dis;&lt;/code&gt;
+</code></pre></code></li>
+<li>2.很多css3属性</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.jpg" alt="鸟哥哥 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="鸟哥哥 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/特效/" rel="tag"># 特效</a>
+          
+            <a href="/tags/animation/" rel="tag"># animation</a>
+          
+            <a href="/tags/css3/" rel="tag"># css3</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/11/GIT-one-how-to-use-git/" rel="next" title="GIT One :How to Use Git">
+                <i class="fa fa-chevron-left"></i> GIT One :How to Use Git
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/15/随笔：大海我的故乡/" rel="prev" title="随笔：大海我的故乡">
+                随笔：大海我的故乡 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/15/goast-button-幽灵按钮特效/"
+           data-title="Goast Button,幽灵按钮特效" data-url="http://niaogege.site/2017/01/15/goast-button-幽灵按钮特效/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cpp.png"
+               alt="鸟哥哥" />
+          <p class="site-author-name" itemprop="name">鸟哥哥</p>
+          <p class="site-description motion-element" itemprop="description">要有最朴素的生活和最遥远的梦想</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niaogege" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niaogege66" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/niaogege66" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/niaogege" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://niaogege.site/works/" title="作品集" target="_blank">作品集</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zizhuxuexi.cn/" title="自主学习网" target="_blank">自主学习网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.qdfuns.com/house.php" title="前端网" target="_blank">前端网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hoge.cn/" title="南京厚建软件" target="_blank">南京厚建软件</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Html"><span class="nav-number">1.</span> <span class="nav-text">Html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Css"><span class="nav-number">2.</span> <span class="nav-text">Css</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里有必要提一下几个知识点："><span class="nav-number">2.1.</span> <span class="nav-text">这里有必要提一下几个知识点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript"><span class="nav-number">3.</span> <span class="nav-text">Javascript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">4.</span> <span class="nav-text">总结：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸟哥哥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+
+ </div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+ </script>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"niaogege"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

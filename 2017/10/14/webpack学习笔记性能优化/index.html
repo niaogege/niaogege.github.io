@@ -1,0 +1,1058 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="webpack," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/liliicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="当你的才华还撑不你的野心时，那你应该静下心来学习！——鸟哥哥
+最近一周，经历的事情有点多，副主管离职了，甚是忐忑，后盾一个个离我而去，而后的问题只能靠自己搞定了。还记得公主（副主管）在职的时候总是搞笑说，‘有问题啊，重启电脑就好了，不行，再重启，呵呵呵’，很幽默很有活力的一位可爱程序员。从他身上还是能学到很多东西，虽然他是后端我是前端，他解决问题的方式比我多，动手能力也很强，关键是他喜欢思考问题，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack学习笔记之性能优化">
+<meta property="og:url" content="http://niaogege.site/2017/10/14/webpack学习笔记性能优化/index.html">
+<meta property="og:site_name" content="开到荼蘼">
+<meta property="og:description" content="当你的才华还撑不你的野心时，那你应该静下心来学习！——鸟哥哥
+最近一周，经历的事情有点多，副主管离职了，甚是忐忑，后盾一个个离我而去，而后的问题只能靠自己搞定了。还记得公主（副主管）在职的时候总是搞笑说，‘有问题啊，重启电脑就好了，不行，再重启，呵呵呵’，很幽默很有活力的一位可爱程序员。从他身上还是能学到很多东西，虽然他是后端我是前端，他解决问题的方式比我多，动手能力也很强，关键是他喜欢思考问题，">
+<meta property="og:updated_time" content="2017-10-15T06:50:01.292Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Webpack学习笔记之性能优化">
+<meta name="twitter:description" content="当你的才华还撑不你的野心时，那你应该静下心来学习！——鸟哥哥
+最近一周，经历的事情有点多，副主管离职了，甚是忐忑，后盾一个个离我而去，而后的问题只能靠自己搞定了。还记得公主（副主管）在职的时候总是搞笑说，‘有问题啊，重启电脑就好了，不行，再重启，呵呵呵’，很幽默很有活力的一位可爱程序员。从他身上还是能学到很多东西，虽然他是后端我是前端，他解决问题的方式比我多，动手能力也很强，关键是他喜欢思考问题，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6332298555788625000',
+      author: '鸟哥哥'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://niaogege.site/2017/10/14/webpack学习笔记性能优化/"/>
+
+
+
+
+
+  <title> Webpack学习笔记之性能优化 | 开到荼蘼 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5c8875c34741910bdcebbf0b0dc5541c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=60320485";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">开到荼蘼</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">幸福就像花季，开到荼蘼</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+	  
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://niaogege.site/2017/10/14/webpack学习笔记性能优化/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="鸟哥哥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/cpp.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="开到荼蘼">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="开到荼蘼" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                Webpack学习笔记之性能优化
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-14T22:18:08+08:00">
+                2017-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/14/webpack学习笔记性能优化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/14/webpack学习笔记性能优化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><blockquote class="blockquote-center" style="color:#2d9fb3;">当你的才华还撑不你的野心时，那你应该静下心来学习！<br>——鸟哥哥</blockquote></p>
+<p style="text-indent:20px;">最近一周，经历的事情有点多，副主管离职了，甚是忐忑，后盾一个个离我而去，而后的问题只能靠自己搞定了。还记得公主（副主管）在职的时候总是搞笑说，‘有问题啊，重启电脑就好了，不行，再重启，呵呵呵’，很幽默很有活力的一位可爱程序员。从他身上还是能学到很多东西，虽然他是后端我是前端，他解决问题的方式比我多，动手能力也很强，关键是他喜欢思考问题，这样做的后果是什么，考虑得比我周全，很佩服！</p><br><p style="text-indent:20px;">这周的工作还是<a href="https://github.com/niaogege/cnc""" target="_blank" rel="external">cnc</a>,主要做的两件事：1.项目所需依赖升级，最主要的是webpack1.3升级到最新版webpack3.6.1,当然还有vue-loader升级到13.0等等 2.vue组件懒加载，其他的都是优化代码，小修小补的，记得比较深的知识点就是关于js属性的可枚举属性和不可枚举属性，后面也要写一篇博客记录一下历程。今天这篇博客，主要是记录自己学习webpack过程，有一部分是整合前辈总结过的方法。我觉得这种比较偏业务的代码，最后的形式就是结合实例，很有说服力，且最好上图，图文并茂最好了。<br></p><p style="text-indent:20px;">目前亟待解决的知识点疑惑：1.正则表达式 RegExp;2.This/call/apply/bind模糊;3.prototype原型属性，进入正文…</p>
+
+<a id="more"></a>
+<p>项目刚开始跑的时候,run build之后，app.hash.js达到2M多，oh,WTF，那还玩个毛豆，正常访问肯定会有问题，特别是第一次访问，没有缓存的情况下，超慢的。为此，还出现app.hash.js因为文件太大，加之网站访问速度慢，文件被截取了，导致报错。为了干掉这个bug,只好去看看官方vue-cli和webpack,看看哪些地方能优化的。极力推荐<a href="https://jeffjade.com/2017/08/06/124-webpack-packge-optimization-for-volume/" target="_blank" rel="external">杨少侠的博文</a>,总结得很到位!大神！！</p>
+<h3 id="按需加载模块"><a href="#按需加载模块" class="headerlink" title="按需加载模块"></a>按需加载模块</h3><p>在vue官网<a href="https://router.vuejs.org/zh-cn/advanced/lazy-loading.html" target="_blank" rel="external">路由懒加载</a>这块，讲得很明白：</p>
+<blockquote>
+<p>当打包构建应用时，Javascript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了。结合 Vue 的异步组件和 Webpack 的代码分割(coding splitting)功能，轻松实现路由组件的懒加载。</p>
+</blockquote>
+<p>webpack(2.0以上) 也是内置对这方面的支持； 假如，你使用的是 Vue，将一个组件（以及其所有依赖）改为异步加载，所需要的只是把：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">import ASIDE from  &apos;components/common/xzAside&apos;</div></pre></td></tr></table></figure></p>
+<p>改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const ASIDE = () =&gt; import(/* webpackChunkName: &quot;xzAside&quot; */&apos;components/common/xzAside&apos;)</div></pre></td></tr></table></figure></p>
+<p>同时配合webpack.base.conf.js中的entry，把每个组件加载的名称标注好，<code>chunkFilename: ‘[name].chunk.js’,</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">    path: config.build.assetsRoot,</div><div class="line">    publicPath: process.env.NODE_ENV === &apos;production&apos; ? config.build.assetsPublicPath : config.dev.assetsPublicPath,</div><div class="line">    filename: &apos;[name].js&apos;,</div><div class="line">    // add chunk name. We can use lazy loading Component by import syntax</div><div class="line">    chunkFilename: &apos;[name].chunk.js&apos;,</div><div class="line">  &#125;,</div></pre></td></tr></table></figure></p>
+<p>最后的效果就是代码被分割成一块块的，而且对各个组件的大小一目了然。其中有一点需要注意，vue-loader超过13.0的版本不支持require方式引入js,作为采坑者，郁闷了一上午！！</p>
+<h3 id="Webpack3-新功能-Scope-Hoisting"><a href="#Webpack3-新功能-Scope-Hoisting" class="headerlink" title="Webpack3 新功能: Scope Hoisting"></a>Webpack3 新功能: Scope Hoisting</h3><p>本人在项目中实践过，效果感觉不明显，可能还需要其他的配置参数，Webpack在 3.0 版本，提供了一个新的功能：Scope Hoisting，又译作“作用域提升”。只需在配置文件中添加一个新的插件，就可以让 Webpack 打包出来的代码文件更小、运行的更快：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  plugins: [</div><div class="line">    new webpack.optimize.ModuleConcatenationPlugin()</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="引入-DllPlugin-和-DllReferencePlugin"><a href="#引入-DllPlugin-和-DllReferencePlugin" class="headerlink" title="引入 DllPlugin 和 DllReferencePlugin"></a>引入 DllPlugin 和 DllReferencePlugin</h3><p> 提供了以大幅度提高构建时间性能的方式拆分软件包的方法。其中原理是，将特定的第三方NPM包模块提前构建，然后通过页面引入。这不仅能够使得 vendor 文件可以大幅度减小，同时，也极大的提高了构件速度。鉴于篇幅，具体用法可参见<a href="https://github.com/nicejade/vue-boilerplate-template/" target="_blank" rel="external">DLLPlugin配置</a></p>
+<h3 id="合理配置-CommonsChunkPlugin"><a href="#合理配置-CommonsChunkPlugin" class="headerlink" title="合理配置 CommonsChunkPlugin"></a>合理配置 CommonsChunkPlugin</h3><p>推荐webpack-bundle-analyzer —— Webpack 插件和 CLI 实用程序，她可以将内容束展示为方便交互的直观树状图，让你明白你所构建包中真正引入的内容。<br>webpack的资源入口通常是以entry为单元进行编译提取，那么当多entry共存的时候，CommonsChunkPlugin的作用就会发挥出来，对所有依赖的chunk进行公共部分的提取，但是在这里可能很多人会误认为抽取公共部分指的是能抽取某个代码片段，其实并非如此，它是以module为单位进行提取。</p>
+<p>假设我们的页面中存在entry1，entry2，entry3三个入口，这些入口中可能都会引用如utils，loadash，fetch等这些通用模块，那么就可以考虑对这部分的共用部分机提取。通常提取方式有如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//有选择的提取公共代码</div><div class="line">new webpack.optimize.CommonsChunkPlugin(&apos;common.js&apos;,[&apos;entry1&apos;,&apos;entry2&apos;]);</div><div class="line">只提取entry1节点和entry2中的共用部分模块, 生成一个common.js</div><div class="line"></div><div class="line">//将entry下所有的模块的公共部分（可指定引用次数）提取到一个通用的chunk中</div><div class="line">new webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">    name: &apos;vendors&apos;,</div><div class="line">    minChunks: function (module, count) &#123;</div><div class="line">       return (</div><div class="line">          module.resource &amp;&amp;</div><div class="line">          /\.js$/.test(module.resource) &amp;&amp;</div><div class="line">          module.resource.indexOf(</div><div class="line">            path.join(__dirname, &apos;../node_modules&apos;)</div><div class="line">          ) === 0</div><div class="line">       )</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">提取所有node_modules中的模块至vendors中，也可以指定minChunks中的最小引用数；</div><div class="line"></div><div class="line">//抽取enry中的一些lib抽取到vendors中</div><div class="line">entry = &#123;</div><div class="line">    vendors: [&apos;fetch&apos;, &apos;loadash&apos;]</div><div class="line">&#125;;</div><div class="line">new webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">    name: &quot;vendors&quot;,</div><div class="line">    minChunks: Infinity</div><div class="line">&#125;);</div><div class="line">添加一个entry名叫为vendors，并把vendors设置为所需要的资源库，CommonsChunk会自动提取指定库至vendors中。</div></pre></td></tr></table></figure></p>
+<h3 id="其他野路子"><a href="#其他野路子" class="headerlink" title="其他野路子"></a>其他野路子</h3><h4 id="开启productionGzip：true"><a href="#开启productionGzip：true" class="headerlink" title="开启productionGzip：true"></a>开启productionGzip：true</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// Gzip off by default as many popular static hosts such as</div><div class="line">// Surge or Netlify already gzip all static assets for you.</div><div class="line">// Before setting to `true`, make sure to:</div><div class="line">// npm install --save-dev compression-webpack-plugin</div><div class="line">productionGzip: false,</div><div class="line">productionGzipExtensions: [&apos;js&apos;, &apos;css&apos;],</div></pre></td></tr></table></figure>
+<p>如果是nginx已经开启了gzip压缩的话，这可也可以开启，只需<code>gzip_static:on</code>,不过这个需要Nginx支持这个配置项：-with-http_gzip_static_module这个模块，实在不行，nginx服务器直接开启gzip压缩，大约能压缩三分之一，哇，不错！</p>
+<h4 id="devtool-‘cheap-module-source-map’"><a href="#devtool-‘cheap-module-source-map’" class="headerlink" title="devtool: ‘cheap-module-source-map’"></a>devtool: ‘cheap-module-source-map’</h4><p>生产环境调试工具用的，官方推荐是’#source-map’，其实你在开发环境如果自信的话可以不用，主要的作用就是报错的代码能看到在哪行那列</p>
+<h4 id="uglify丑化你的代码"><a href="#uglify丑化你的代码" class="headerlink" title="uglify丑化你的代码"></a>uglify丑化你的代码</h4><p>使用配置也非常简单，只需要将我们原来webpack中自带的uglifyPlugin配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">new webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">   exclude:/\.min\.js$/</div><div class="line">   mangle:true,</div><div class="line">   compress: &#123; warnings: false &#125;,</div><div class="line">   output: &#123; comments: false &#125;</div><div class="line">&#125;)</div><div class="line">修改成如下代码即可：</div><div class="line"></div><div class="line">const os = require(&apos;os&apos;);</div><div class="line">    const UglifyJsParallelPlugin = require(&apos;webpack-uglify-parallel&apos;);</div><div class="line"></div><div class="line">    new UglifyJsParallelPlugin(&#123;</div><div class="line">      workers: os.cpus().length,</div><div class="line">      mangle: true,</div><div class="line">      compressor: &#123;</div><div class="line">        warnings: false,</div><div class="line">        drop_console: true,</div><div class="line">        drop_debugger: true</div><div class="line">       &#125;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure></p>
+<h4 id="谷歌官方自带的cli配置"><a href="#谷歌官方自带的cli配置" class="headerlink" title="谷歌官方自带的cli配置"></a>谷歌官方自带的cli配置</h4><p> 由于使用官方推荐的vue-cli所以，webpack里的配置已经是帮你配好了，不过，自己也要知道这些插件分别对应什么作用，如何更改参数配置等</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.jpg" alt="鸟哥哥 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="鸟哥哥 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/03/Vue项目总结-前端/" rel="next" title="Vue2.0项目总结(前端)">
+                <i class="fa fa-chevron-left"></i> Vue2.0项目总结(前端)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/22/前端面试题（4）-知识点汇总/" rel="prev" title="前端面试题（4）: 知识点汇总">
+                前端面试题（4）: 知识点汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/10/14/webpack学习笔记性能优化/"
+           data-title="Webpack学习笔记之性能优化" data-url="http://niaogege.site/2017/10/14/webpack学习笔记性能优化/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cpp.png"
+               alt="鸟哥哥" />
+          <p class="site-author-name" itemprop="name">鸟哥哥</p>
+          <p class="site-description motion-element" itemprop="description">要有最朴素的生活和最遥远的梦想</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niaogege" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niaogege66" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/niaogege66" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/niaogege" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://niaogege.site/works/" title="作品集" target="_blank">作品集</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zizhuxuexi.cn/" title="自主学习网" target="_blank">自主学习网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.qdfuns.com/house.php" title="前端网" target="_blank">前端网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hoge.cn/" title="南京厚建软件" target="_blank">南京厚建软件</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#按需加载模块"><span class="nav-number">1.</span> <span class="nav-text">按需加载模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack3-新功能-Scope-Hoisting"><span class="nav-number">2.</span> <span class="nav-text">Webpack3 新功能: Scope Hoisting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入-DllPlugin-和-DllReferencePlugin"><span class="nav-number">3.</span> <span class="nav-text">引入 DllPlugin 和 DllReferencePlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合理配置-CommonsChunkPlugin"><span class="nav-number">4.</span> <span class="nav-text">合理配置 CommonsChunkPlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他野路子"><span class="nav-number">5.</span> <span class="nav-text">其他野路子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开启productionGzip：true"><span class="nav-number">5.1.</span> <span class="nav-text">开启productionGzip：true</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#devtool-‘cheap-module-source-map’"><span class="nav-number">5.2.</span> <span class="nav-text">devtool: ‘cheap-module-source-map’</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uglify丑化你的代码"><span class="nav-number">5.3.</span> <span class="nav-text">uglify丑化你的代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#谷歌官方自带的cli配置"><span class="nav-number">5.4.</span> <span class="nav-text">谷歌官方自带的cli配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸟哥哥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+
+ </div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+ </script>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"niaogege"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1062 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端面试题," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/liliicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="‘每一个不曾起舞的日子都是对生命的一种辜负！’——Front_end
+
+本文摘自seg，感觉总结得知识点很全，所以，就毫无顾忌的搬到自己的博客上，希望对即将参加前端面试的小伙伴有帮助！感谢原作者，版权归原作者所有哦。
+如何学前端的？你认为的前端都要做什么样的工作？你理解的前端工程师是什么？你认为前端工程师对于用户和公司有哪些作用？你最近遇到过什么技术挑战？你是如何解决的？项目中遇到的问题是如何解决">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试题（4）: 知识点汇总">
+<meta property="og:url" content="http://niaogege.site/2017/10/22/前端面试题（4）-知识点汇总/index.html">
+<meta property="og:site_name" content="开到荼蘼">
+<meta property="og:description" content="‘每一个不曾起舞的日子都是对生命的一种辜负！’——Front_end
+
+本文摘自seg，感觉总结得知识点很全，所以，就毫无顾忌的搬到自己的博客上，希望对即将参加前端面试的小伙伴有帮助！感谢原作者，版权归原作者所有哦。
+如何学前端的？你认为的前端都要做什么样的工作？你理解的前端工程师是什么？你认为前端工程师对于用户和公司有哪些作用？你最近遇到过什么技术挑战？你是如何解决的？项目中遇到的问题是如何解决">
+<meta property="og:updated_time" content="2017-11-05T14:45:03.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试题（4）: 知识点汇总">
+<meta name="twitter:description" content="‘每一个不曾起舞的日子都是对生命的一种辜负！’——Front_end
+
+本文摘自seg，感觉总结得知识点很全，所以，就毫无顾忌的搬到自己的博客上，希望对即将参加前端面试的小伙伴有帮助！感谢原作者，版权归原作者所有哦。
+如何学前端的？你认为的前端都要做什么样的工作？你理解的前端工程师是什么？你认为前端工程师对于用户和公司有哪些作用？你最近遇到过什么技术挑战？你是如何解决的？项目中遇到的问题是如何解决">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6332298555788625000',
+      author: '鸟哥哥'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://niaogege.site/2017/10/22/前端面试题（4）-知识点汇总/"/>
+
+
+
+
+
+  <title> 前端面试题（4）: 知识点汇总 | 开到荼蘼 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5c8875c34741910bdcebbf0b0dc5541c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=60320485";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">开到荼蘼</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">幸福就像花季，开到荼蘼</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+	  
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://niaogege.site/2017/10/22/前端面试题（4）-知识点汇总/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="鸟哥哥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/cpp.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="开到荼蘼">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="开到荼蘼" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端面试题（4）: 知识点汇总
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-22T17:10:17+08:00">
+                2017-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">前端面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/22/前端面试题（4）-知识点汇总/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/22/前端面试题（4）-知识点汇总/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center" style="color:hsl(0,60%,50%);">‘每一个不曾起舞的日子都是对生命的一种辜负！’<br>——Front_end</blockquote>
+
+<p>本文摘自seg，感觉总结得知识点很全，所以，就毫无顾忌的搬到自己的博客上，希望对即将参加前端面试的小伙伴有帮助！感谢原作者，版权归原作者所有哦。</p>
+<p>如何学前端的？<br>你认为的前端都要做什么样的工作？<br>你理解的前端工程师是什么？<br>你认为前端工程师对于用户和公司有哪些作用？<br>你最近遇到过什么技术挑战？你是如何解决的？<br>项目中遇到的问题是如何解决的？<br>平时都是怎么学习的？<br>实习了多久，在哪实习，实习的工作是什么？<br>实习过程中能不能完成公司给你的工作？工作量如何？<br>…<br>好了，前戏差不多了，现在开始划一下基础知识的重点。</p>
+<a id="more"></a>
+<p>知识点汇总</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>HTML5新特性，语义化<br>浏览器的标准模式和怪异模式<br>xhtml和html的区别<br>使用data-的好处<br>meta标签<br>canvas<br>HTML废弃的标签<br>IE6 bug，和一些定位写法<br>css js放置位置和原因<br>什么是渐进式渲染<br>html模板语言<br>meta viewport原理</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>盒模型，box-sizing<br>CSS3新特性，伪类，伪元素，锚伪类<br>CSS实现隐藏页面的方式<br>如何实现水平居中和垂直居中。<br>说说position，display<br>请解释*{box-sizing:border-box;}的作用，并说明使用它的好处<br>浮动元素引起的问题和解决办法？绝对定位和相对定位，元素浮动后的display值<br>link和@import引入css的区别<br>解释一下css3的flexbox，以及适用场景<br>inline和inline-block的区别<br>哪些是块级元素那些是行级元素，各有什么特点<br>grid布局<br>table布局的作用<br>实现两栏布局有哪些方法？<br>css dpi<br>你知道attribute和property的区别么<br>css布局问题？css实现三列布局怎么做？如果中间是自适应又怎么做？<br>流式布局如何实现，响应式布局如何实现<br>移动端布局方案<br>实现三栏布局（圣杯布局，双飞翼布局，flex布局）<br>清除浮动的原理<br>overflow:hidden有什么缺点？<br>padding百分比是相对于父级宽度还是自身的宽度<br>css3动画，transition和animation的区别，animation的属性，加速度，重力的模拟实现<br>CSS 3 如何实现旋转图片（transform: rotate）<br>sass less<br>对移动端开发了解多少？（响应式设计、Zepto；@media、viewport、JavaScript 正则表达式判断平台。）<br>什么是bfc，如何创建bfc？解决什么问题？<br>CSS中的长度单位（px,pt,rem,em,ex,vw,vh,vh,vmin,vmax）<br>CSS 选择器的优先级是怎样的？<br>雪碧图<br>svg<br>媒体查询的原理是什么？<br>CSS 的加载是异步的吗？表现在什么地方？<br>常遇到的浏览器兼容性问题有哪些？常用的hack的技巧<br>外边距合并<br>解释一下“::before”和“:after”中的双冒号和单冒号的区别</p>
+<h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><p>js的基本类型有哪些？引用类型有哪些？null和undefined的区别。<br>如何判断一个变量是Array类型？如何判断一个变量是Number类型？（都不止一种）<br>Object是引用类型嘛？引用类型和基本类型有什么区别？哪个是存在堆哪一个是存在栈上面的？<br>JS常见的dom操作api<br>解释一下事件冒泡和事件捕获<br>事件委托（手写例子），事件冒泡和捕获，如何阻止冒泡？如何组织默认事件？<br>对闭包的理解？什么时候构成闭包？闭包的实现方法？闭包的优缺点？<br>this有哪些使用场景？跟C,Java中的this有什么区别？如何改变this的值？<br>call，apply，bind<br>显示原型和隐式原型，手绘原型链，原型链是什么？为什么要有原型链<br>创建对象的多种方式<br>实现继承的多种方式和优缺点<br>new 一个对象具体做了什么<br>手写Ajax，XMLHttpRequest<br>变量提升<br>举例说明一个匿名函数的典型用例<br>指出JS的宿主对象和原生对象的区别，为什么扩展JS内置对象不是好的做法？有哪些内置对象和内置函数？<br>attribute和property的区别<br>document load和document DOMContentLoaded两个事件的区别<br>=== 和 == , [] === [], undefined === undefined,[] == [], undefined == undefined<br>typeof能够得到哪些值<br>什么是“use strict”,好处和坏处<br>函数的作用域是什么？js 的作用域有几种？<br>JS如何实现重载和多态<br>常用的数组api，字符串api<br>原生事件绑定（跨浏览器），dom0和dom2的区别？<br>给定一个元素获取它相对于视图窗口的坐标<br>如何实现图片滚动懒加载<br>js 的字符串类型有哪些方法？ 正则表达式的函数怎么使用？<br>深拷贝<br>编写一个通用的事件监听函数<br>web端cookie的设置和获取<br>setTimeout和promise的执行顺序<br>JavaScript 的事件流模型都有什么？<br>navigator对象，location和history<br>js的垃圾回收机制<br>内存泄漏的原因和场景<br>DOM事件的绑定的几种方式<br>DOM事件中target和currentTarget的区别<br>typeof 和 instanceof 区别，instanceof原理<br>js动画和css3动画比较<br>JavaScript 倒计时（setTimeout）<br>js处理异常<br>js的设计模式知道那些<br>轮播图的实现，以及轮播图组件开发，轮播10000张图片过程<br>websocket的工作原理和机制。<br>手指点击可以触控的屏幕时，是什么事件？<br>什么是函数柯里化？以及说一下JS的API有哪些应用到了函数柯里化的实现？(函数柯里化一些了解，以及在函数式编程的应用，最后说了一下JS中bind函数和数组的reduce方法用到了函数柯里化。)<br>JS代码调试</p>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><p>谈一谈 promise<br>所有的 ES6 特性你都知道吗？如果遇到一个东西不知道是 ES6 还是 ES5, 你该怎么区分它<br>es6的继承和es5的继承有什么区别<br>promise封装ajax<br>let const的优点<br>es6 generator 是什么，async/await 实现原理<br>ES6和node的commonjs模块化规范区别<br>箭头函数，以及它的this<br>计算机网络<br>HTTP协议头含有哪些重要的部分，HTTP状态码<br>网络url输入到输出怎么做？<br>性能优化为什么要减少 HTTP 访问次数？<br>Http请求的过程与原理<br>https（对是https）有几次握手和挥手？https的原理。<br>http有几次挥手和握手？TLS的中文名？TLS在哪一网络层？<br>TCP连接的特点，TCP连接如何保证安全可靠的？<br>为什么TCP连接需要三次握手，两次不可以吗，为什么<br>为什么tcp要三次握手四次挥手？<br>tcp的三次握手和四次挥手画图（当场画写ack 和 seq的值）？<br>tcp与udp的区别<br>get和post的区别？什么情况下用到？<br>http2 与http1 的区别？<br>websocket<br>什么是tcp流，什么是http流<br>babel是如何将es6代码编译成es5的<br>http2的持久连接和管线化<br>域名解析时是tcp还是udp<br>域名发散和域名收敛<br>Post一个file的时候file放在哪的？<br>HTTP Response的Header里面都有些啥？</p>
+<h3 id="浏览器相关"><a href="#浏览器相关" class="headerlink" title="浏览器相关"></a>浏览器相关</h3><p>跨域，为什么JS会对跨域做出限制<br>前端安全：xss，csrf…<br>浏览器怎么加载页面的？script脚本阻塞有什么解决方法？defer和async的区别？<br>浏览器强缓存和协商缓存<br>浏览器的全局变量有哪些<br>浏览器同一时间能够从一个域名下载多少资源<br>按需加载，不同页面的元素判断标准<br>web存储、cookies、localstroge等的使用和区别<br>浏览器的内核<br>如何实现缓存机制？（从200缓存，到cache到etag再到）<br>说一下200和304的理解和区别<br>什么是预加载、懒加载<br>一个 XMLHttpRequest 实例有多少种状态？<br>dns解析原理，输入网址后如何查找服务器<br>服务器如何知道你？<br>浏览器渲染过程<br>ie的某些兼容性问题<br>session<br>拖拽实现<br>拆解url的各部分</p>
+<h3 id="工程化"><a href="#工程化" class="headerlink" title="工程化"></a>工程化</h3><p>对webpack,gulp，grunt等有没有了解?对比。<br>webpack的入口文件怎么配置，多个入口怎么分割。<br>webpack的loader和plugins的区别<br>gulp的具体使用。<br>前端工程化的理解、如何自己实现一个文件打包，比如一个JS文件里同时又ES5 和ES6写的代码，如何编译兼容他们<br>模块化<br>对AMD,CMD,CommonJS有没有了解?<br>为什么要模块化？不用的时候和用RequireJs的时候代码大概怎么写？<br>说说有哪些模块化的库，有了解过模块化的发展的历史吗？<br>分别说说同步和异步模块化的应用场景，说下AMD异步模块化实现的原理？<br>如何将项目里面的所有的require的模块语法换成import的ES6的语法？<br>使用模块化加载时，模块加载的顺序是怎样的，如果不知道，根据已有的知识，你觉得顺序应该是怎么样的？</p>
+<h3 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h3><p>使用过哪些框架？<br>zepto 和 jquery 是什么关系，有什么联系么？<br>jquery源码如何实现选择器的，为什么$取得的对象要设计成数组的形式，这样设计的目的是什么<br>jquery如何绑定事件，有几种类型和区别<br>什么是MVVM，MVC，MVP<br>Vue和Angular的双向数据绑定原理<br>Vue，Angular组件间通信以及路由原理<br>react和vue的生命周期<br>react和vue的虚拟dom以及diff算法<br>vue的observer，watcher，compile<br>react和angular分别用在什么样的业务吗？性能方面和MVC层面上的区别<br>jQuery对象和JS的Element有什么区别<br>jQuery对象是怎么实现的<br>jQuery除了它封装了一些方法外，还有什么值得我们去学习和使用的？<br>jQuery的$(‘xxx’)做了什么事情<br>介绍一下bootstrap的栅格系统是如何实现的</p>
+<h3 id="Nodejs"><a href="#Nodejs" class="headerlink" title="Nodejs"></a>Nodejs</h3><p>对nodejs有没有了解<br>Express 和 koa 有什么关系，有什么区别？<br>nodejs适合做什么样的业务？<br>nodejs与php，java有什么区别<br>Nodejs中的Stream和Buffer有什么区别？<br>node的异步问题是如何解决的？<br>node是如何实现高并发的？<br>说一下 Nodejs 的 event loop 的原理</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>基本数据结构：（数组、队列、链表、堆、二叉树、哈希表等等）<br>8种排序算法，原理，以及适用场景和复杂度<br>说出越多越好的费波拉切数列的实现方法？<br>性能优化<br>cdn的用法是什么？什么时候用到？<br>浏览器的页面优化？<br>如何优化 DOM 操作的性能<br>单页面应用有什么SEO方案？<br>单页面应用首屏显示比较慢，原因是什么？有什么解决方案？</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>正则表达式<br>前端渲染和后端渲染的优缺点<br>数据库的四大特性，什么是原子性，表的关系<br>你觉得前端体系应该是怎样的？<br>一个静态资源要上线，里面有各种资源依赖，你如何平稳上线<br>如果要你去实现一个前端模板引擎，你会怎么做<br>知道流媒体查询吗？<br>SEO<br>mysql 和 mongoDB 有什么区别？<br>restful的method解释<br>数据库知识、操作系统知识<br>click在ios上有300ms延迟，原因及如何解决<br>移动端的适配，rem+媒体查询/meta头设置<br>移动端的手势和事件；<br>unicode，utf8，gbk编码的了解，乱码的解决</p>
+<h3 id="三面、四面常问的开放性问题"><a href="#三面、四面常问的开放性问题" class="headerlink" title="三面、四面常问的开放性问题"></a>三面、四面常问的开放性问题</h3><p>你都看过什么书？最近在看什么书？<br>用过什么框架？有没有看过什么框架的代码？<br>有没有学过设计模式？<br>说一说观察者模式吧！能不能写出来？<br>你最大的优点是什么？那你最大的缺点呢？<br>你大学期间做过最疯狂的事情是什么？<br>你除了写博客还有什么输出？<br>现在你的领导给你了一份工作，要求你一个星期完成，但你看了需求以后估计需要3周才能完成，你该怎么办？<br>平时关注的前端技术<br>如何规划自己的职业生涯<br>项目过程中，有遇到什么问题吗？怎么解决的？<br>最近在研究哪方面的东西？<br>请介绍一项你最热爱、最擅长的专业领域，并且介绍的学习规划。<br>请介绍你参与的印象最深刻的一个项目，为什么？并且介绍你在项目中的角色和发挥的作用。</p>
+<h3 id="HR面"><a href="#HR面" class="headerlink" title="HR面"></a>HR面</h3><p>你为什么要学习前端？<br>你平时的是怎么学习前端的？有什么输出？<br>你觉得自己最好的项目是什么？<br>身边比较佩服的人有什么值得你学习的？你为什么没有跟他们一样？<br>同事的什么问题会让你接受不了<br>压力最大的事情是什么？<br>和同学做过的最好的项目？<br>身边的朋友通常对你的评价是什么<br>喜欢什么样的工作氛围<br>如何看待加班<br>有没有对象<br>意向城市<br>其他的offer<br>为什么要录取你？<br>大学里花费时间最多的三件事情<br>周末都会干什么？<br>未来职业规划</p>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><p>面试的时候不要表现出自己想创业。敲黑板。<br>从来没有看过源码的话，建议从jQuery，zepto这之类的源码入手，后期可以了解Vue，React常见的功能的源码思路和实现。<br>项目经验描述的时候不用太太太详细，拣重点的讲。（因为我就一直说一直说，最后面试官评价插不上话评价减分。）</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>好好努力，注意平时多多总结，很多东西平时工作可能用到了但你就是讲不出原理，这时候怎么办？就只能硬着头皮多想，这时候也正好是你能力提升的时候了！！！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.jpg" alt="鸟哥哥 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="鸟哥哥 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端面试题/" rel="tag"># 前端面试题</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/14/webpack学习笔记性能优化/" rel="next" title="Webpack学习笔记之性能优化">
+                <i class="fa fa-chevron-left"></i> Webpack学习笔记之性能优化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/05/随笔：未来不迎，当时不杂，既过不恋/" rel="prev" title="随笔：未来不迎，当时不杂，既过不恋">
+                随笔：未来不迎，当时不杂，既过不恋 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/10/22/前端面试题（4）-知识点汇总/"
+           data-title="前端面试题（4）: 知识点汇总" data-url="http://niaogege.site/2017/10/22/前端面试题（4）-知识点汇总/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cpp.png"
+               alt="鸟哥哥" />
+          <p class="site-author-name" itemprop="name">鸟哥哥</p>
+          <p class="site-description motion-element" itemprop="description">要有最朴素的生活和最遥远的梦想</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niaogege" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niaogege66" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/niaogege66" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/niaogege" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://niaogege.site/works/" title="作品集" target="_blank">作品集</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zizhuxuexi.cn/" title="自主学习网" target="_blank">自主学习网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.qdfuns.com/house.php" title="前端网" target="_blank">前端网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hoge.cn/" title="南京厚建软件" target="_blank">南京厚建软件</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS"><span class="nav-number">3.</span> <span class="nav-text">JS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">4.</span> <span class="nav-text">ES6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器相关"><span class="nav-number">5.</span> <span class="nav-text">浏览器相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工程化"><span class="nav-number">6.</span> <span class="nav-text">工程化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#框架"><span class="nav-number">7.</span> <span class="nav-text">框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nodejs"><span class="nav-number">8.</span> <span class="nav-text">Nodejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构"><span class="nav-number">9.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">10.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三面、四面常问的开放性问题"><span class="nav-number">11.</span> <span class="nav-text">三面、四面常问的开放性问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HR面"><span class="nav-number">12.</span> <span class="nav-text">HR面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建议"><span class="nav-number">13.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">14.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸟哥哥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+
+ </div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+ </script>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"niaogege"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>

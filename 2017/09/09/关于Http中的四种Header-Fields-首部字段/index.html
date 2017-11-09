@@ -1,0 +1,1066 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="http,Content-Type,Post," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/liliicon.png?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="‘作为前端开发人员，掌握必要的Http协议中是 necessary,尤其是http首部’——Front_end世界上几乎所有的 HTTP 协议都是由 TCP / IP 协议来承载的。它是互联网相关的各类协议族的总称（通常所说的规则，就是协议）。从输入的 URL 里我们可以从中获取服务器端的 IP 地址与端口号，建立一条 TCP 连接。建立连接之后，在客户端和服务器端之间交换的报文，不会丢失，受损，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Http中的四种Header Fields(首部字段)">
+<meta property="og:url" content="http://niaogege.site/2017/09/09/关于Http中的四种Header-Fields-首部字段/index.html">
+<meta property="og:site_name" content="开到荼蘼">
+<meta property="og:description" content="‘作为前端开发人员，掌握必要的Http协议中是 necessary,尤其是http首部’——Front_end世界上几乎所有的 HTTP 协议都是由 TCP / IP 协议来承载的。它是互联网相关的各类协议族的总称（通常所说的规则，就是协议）。从输入的 URL 里我们可以从中获取服务器端的 IP 地址与端口号，建立一条 TCP 连接。建立连接之后，在客户端和服务器端之间交换的报文，不会丢失，受损，">
+<meta property="og:updated_time" content="2017-10-03T09:26:04.242Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Http中的四种Header Fields(首部字段)">
+<meta name="twitter:description" content="‘作为前端开发人员，掌握必要的Http协议中是 necessary,尤其是http首部’——Front_end世界上几乎所有的 HTTP 协议都是由 TCP / IP 协议来承载的。它是互联网相关的各类协议族的总称（通常所说的规则，就是协议）。从输入的 URL 里我们可以从中获取服务器端的 IP 地址与端口号，建立一条 TCP 连接。建立连接之后，在客户端和服务器端之间交换的报文，不会丢失，受损，">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6332298555788625000',
+      author: '鸟哥哥'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://niaogege.site/2017/09/09/关于Http中的四种Header-Fields-首部字段/"/>
+
+
+
+
+
+  <title> 关于Http中的四种Header Fields(首部字段) | 开到荼蘼 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5c8875c34741910bdcebbf0b0dc5541c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=60320485";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">开到荼蘼</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description">幸福就像花季，开到荼蘼</h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+	  
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://niaogege.site/2017/09/09/关于Http中的四种Header-Fields-首部字段/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="鸟哥哥">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/cpp.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="开到荼蘼">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="开到荼蘼" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于Http中的四种Header Fields(首部字段)
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T20:20:16+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/http/" itemprop="url" rel="index">
+                    <span itemprop="name">http</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/09/关于Http中的四种Header-Fields-首部字段/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/09/关于Http中的四种Header-Fields-首部字段/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><blockquote class="blockquote-center" style="color:hsl(0,60%,50%);">‘作为前端开发人员，掌握必要的Http协议中是 necessary,尤其是http首部’<br>——Front_end</blockquote><br>世界上几乎所有的 HTTP 协议都是由 TCP / IP 协议来承载的。它是互联网相关的各类协议族的总称（通常所说的规则，就是协议）。<br>从输入的 URL 里我们可以从中获取服务器端的 IP 地址与端口号，建立一条 TCP 连接。建立连接之后，在客户端和服务器端之间交换的报文，不会丢失，受损，或者失序。</p>
+<ul>
+<li>HTTP想要发送一条报文的时候，需要经过以下两个步骤：</li>
+<li>TCP三次握手建立起连接管道，HTTP报文会以流的形式通过该管道按顺序传输；</li>
+<li>TCP会将这些数据分别切割成数据块，并且封装在IP分组中，通过IP去传输；</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>前端要想获得大量的数据，发送http请求是必要的。发送请求和响应请求里面的字段信息在我刚入门的时候就想好好掌握，这不，最近项目中刚好用到 Content-type:  说明了实体主体内对象的媒体类型，或者显示此HTTP请求提交的内容类型。一般只有post提交时才需要设置该属性。或者也叫做MIME类型（Multipurpose Internet Mail Extensions:多用途因特网邮件扩展），在Http协议消息头中，使用Content-Type来表示具体请求中的媒体类型信息。<br>有关Content-Type属性值可以如下两种编码类型：<br>（1）“application/x-www-form-urlencoded”： 表单数据向服务器提交时所采用的编码类型，默认的缺省值就是“application/x-www-form-urlencoded”。 然而，在向服务器发送大量的文本、包含非ASCII字符的文本或二进制数据时这种编码方式效率很低。<br>（2）“multipart/form-data”： 在文件上载时，所使用的编码类型应当是“multipart/form-data”，它既可以发送文本数据，也支持二进制数据上载。<br>当提交为表单数据时，可以使用“application/x-www-form-urlencoded”；当提交的是文件时，就需要使用“multipart/form-data”编码类型。(后续会详细介绍Content-Type中的实例)本文参考《图解HTTP》</li>
+</ul>
+<h3 id="4种HTTP首部字段类型"><a href="#4种HTTP首部字段类型" class="headerlink" title="4种HTTP首部字段类型"></a>4种HTTP首部字段类型</h3><ul>
+<li>通用首部字段(General Header Fileld)<br>请求报文和响应报文双方都会使用的首部</li>
+<li>请求首部字段(Request Header Fileld)<br>从客户端向服务端发送请求报文时使用的首部，补充了请求的附加内容、客户端信息、相应内容以及优先级信息</li>
+<li>响应首部字段(Response Header Fileld)<br>从服务端向客户端发送请求报文时使用的首部,补充响应的附加内容，也会要求客户端附加额外的内容信息</li>
+<li>实体首部字段(Entity Header Fileld)<br>针对请求报文和响应报文的实体部分使用的首部，补充了资源内容更新时间与实体相关的信息</li>
+</ul>
+<h3 id="通用首部字段"><a href="#通用首部字段" class="headerlink" title="通用首部字段"></a>通用首部字段</h3><h4 id="Cache-control-操作缓存的工作机制"><a href="#Cache-control-操作缓存的工作机制" class="headerlink" title="Cache-control 操作缓存的工作机制"></a>Cache-control 操作缓存的工作机制</h4><p>  实例：Cache-Control:public, max-age=31536000<br>  Cache-Control:public(表明其他用户也可以利用缓存)，private(响应只以特定的用户作为对象)<br>  :no-cache:使用no-cache指令的目的是为了防止从缓存中返回过期的资源。客户端发送的请求中包含no-cache指令，那么缓存服务器不能对资源进行缓存。源服务器以后也将不再对缓存服务器请求中提出的资源有效性进行确认，且禁止对响应的资源进行缓存操作（不缓存过期的资源，缓存会向源服务器进行有效期确认后处理资源）<br>  :no-store:暗示请求和对应的响应中包换机密信息，该指令规定缓存不能再本地存储请求或响应的任一部分，（不缓存）<br>  ：max-age=604800(单位：秒)服务器返回的响应中包含max-age指令时，缓存服务器将不对资源的有效性在做确认，而max-age数值代表资源保存为缓存的最长时间，意识是说604800s（7天）之后走客户端缓存逻辑<br>  :no-transform:无论是在请求还是响应中，缓存都不能改变实体主体的媒体类型，防止缓存或代理压缩图片等类似操作</p>
+<h4 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h4><p>在http1.0中一个http在传输完成之后就会断开tcp链接，受到tcp慢启动的特点，每次建立http都会消耗大量的时间，所以各个浏览器定义了一个不标准的协议叫keep-alive，当然在http1.1中已经默认开启keep-alive，标识该请求在结束之后不会被断开，也就是下一个请求可以不用进行DNS查询，TCP三次握手，直接利用上一个通道进行传输。当服务器想明确断开连接时则指定Conection首部字段为Close<br> 两个作用：1.控制不在转发给代理的首部字段 2.管理持久连接</p>
+<h4 id="Pragma"><a href="#Pragma" class="headerlink" title="Pragma"></a>Pragma</h4><p>Pragma: no-cache<br>只用在客户端发送的请求中，客户端会要求所有的中间服务器不返回缓存的资源</p>
+<h4 id="Transfer-Encoding"><a href="#Transfer-Encoding" class="headerlink" title="Transfer-Encoding"></a>Transfer-Encoding</h4><p>首部字段Transfer-Encoding：chunked 规定传输报文主体时采用的编码方式，HTTP/1.1的传输编码方式仅对分块传输编码有效</p>
+<hr>
+<h3 id="请求首部字段"><a href="#请求首部字段" class="headerlink" title="请求首部字段"></a>请求首部字段</h3><h4 id="Accept"><a href="#Accept" class="headerlink" title="Accept"></a>Accept</h4><p>Accept首部字段可通知服务器用户代理能够处理的媒体类型以及媒体类型的相对优先级，若想给显示的媒体类型增加优先级，则使用q= 来额外表示权重，用分号进行分割，不指定权重q值时，默认权重q=1.0</p>
+<h4 id="Accept-Encoding"><a href="#Accept-Encoding" class="headerlink" title="Accept-Encoding"></a>Accept-Encoding</h4><p> Accept-Encoding:gzip,deflate<br> Accept-Encoding首部字段用来告知服务器用户代理支持的内容编码以及内容编码的优先级顺序，可一次性指定多种内容编码<br> Gzip:由文件压缩程序gzip生成的编码格式<br> Compress:由unix文件压缩程序compress生成的编码格式<br> deflate:组合使用zlib格式以及由deflate生成的编码格式<br> TE:gzip,deflate;q=0.5(传输编码)</p>
+<h4 id="Authorization-认证信息"><a href="#Authorization-认证信息" class="headerlink" title="Authorization 认证信息"></a>Authorization 认证信息</h4><p> 首部字段Authorrization是用来告知服务器用户代理的认证信息。通常，想要通过服务器认证的用户代理会在接收到返回的401状态码响应后把首部字段Authorrization加入请求中  </p>
+<h4 id="Referer"><a href="#Referer" class="headerlink" title="Referer"></a>Referer</h4><p> 首部字段referer会告知服务器请求的原始资源的URL</p>
+<h3 id="响应首部字段"><a href="#响应首部字段" class="headerlink" title="响应首部字段"></a>响应首部字段</h3><h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p>当客户端的cache-control过期了怎么办，是否必须向服务器请求资源呢？<br>HTTP的设计者们当然没有那么傻，这个时候就要用到协商缓存了。</p>
+<h5 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h5><p>在服务端第一次返回资源的时候，如果带上一个last-modified参数，也就是告知客户端，这个资源在这个时间我更新过了，下次你记得给我带过来，我验证一下在这个时间之后是否有被更新过，如果没有，那就返回304，你客户端直接取本地缓存即可，如果有更新，那会返回200，并且附上最新的last-modified值。</p>
+<h5 id="Etag"><a href="#Etag" class="headerlink" title="Etag"></a>Etag</h5><p>用Last-Modified有个问题，比如说我在一秒钟更新了多次资源，那这个资源只要第一次被缓存了，1秒钟更新再多次请求的时候还是会返回304。另外有些文件会被定时touch，这个时候文件内容可能没有变化，但是也会返回200。针对以上问题，出现了Etag，在第一次Response的时候，服务端会返回一个Etag，一般Etag是根据文件散列计算出来的，所以只要文件内容没变，该Etag也唯一，这样客户端下次请求的时候带上上次服务器返回的Etag给服务器校验，如果两次一样，服务器就会返回304。<br>首部字段Etag能告知客户端实体标识，它是一种可将资源以字符串的形式作唯一标志的方式，服务器会为每份资源分配对应的Etag值。资源被缓存时，Etag就会被分配唯一性标识。当中文版浏览器访问谷歌会返回中文版对应的资源，英文版浏览器则会返回英文版对应资源。两者的URL是一样的，所以仅凭Uri指定缓存的资源是相当困难的，etag分强Etage和弱Etag，强Etag不论实体发送多么细微的变化都会改变其值弱Etag只用于提示资源是否相同，只有资源发生了根本改变，产生差异时才会改变Etag值（最开始时附加W/）</p>
+<h4 id="vary"><a href="#vary" class="headerlink" title="vary"></a>vary</h4><p>对缓存进行控制，源服务器会向代理服务器传达试用本地缓存的命令<br>vary:Accept-Encoding</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.jpg" alt="鸟哥哥 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="鸟哥哥 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+            <a href="/tags/Content-Type/" rel="tag"># Content-Type</a>
+          
+            <a href="/tags/Post/" rel="tag"># Post</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/27/Vue中关于pagination分页和搜索之后的列表页组件/" rel="next" title="Vue中关于pagination分页和搜索之后的列表页组件">
+                <i class="fa fa-chevron-left"></i> Vue中关于pagination分页和搜索之后的列表页组件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/03/Vue项目总结-前端/" rel="prev" title="Vue2.0项目总结(前端)">
+                Vue2.0项目总结(前端) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/09/09/关于Http中的四种Header-Fields-首部字段/"
+           data-title="关于Http中的四种Header Fields(首部字段)" data-url="http://niaogege.site/2017/09/09/关于Http中的四种Header-Fields-首部字段/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cpp.png"
+               alt="鸟哥哥" />
+          <p class="site-author-name" itemprop="name">鸟哥哥</p>
+          <p class="site-description motion-element" itemprop="description">要有最朴素的生活和最遥远的梦想</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niaogege" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niaogege66" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/niaogege66" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/niaogege" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://niaogege.site/works/" title="作品集" target="_blank">作品集</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.zizhuxuexi.cn/" title="自主学习网" target="_blank">自主学习网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.qdfuns.com/house.php" title="前端网" target="_blank">前端网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hoge.cn/" title="南京厚建软件" target="_blank">南京厚建软件</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#4种HTTP首部字段类型"><span class="nav-number">1.</span> <span class="nav-text">4种HTTP首部字段类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用首部字段"><span class="nav-number">2.</span> <span class="nav-text">通用首部字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cache-control-操作缓存的工作机制"><span class="nav-number">2.1.</span> <span class="nav-text">Cache-control 操作缓存的工作机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Connection"><span class="nav-number">2.2.</span> <span class="nav-text">Connection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pragma"><span class="nav-number">2.3.</span> <span class="nav-text">Pragma</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transfer-Encoding"><span class="nav-number">2.4.</span> <span class="nav-text">Transfer-Encoding</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求首部字段"><span class="nav-number">3.</span> <span class="nav-text">请求首部字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Accept"><span class="nav-number">3.1.</span> <span class="nav-text">Accept</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Accept-Encoding"><span class="nav-number">3.2.</span> <span class="nav-text">Accept-Encoding</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Authorization-认证信息"><span class="nav-number">3.3.</span> <span class="nav-text">Authorization 认证信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Referer"><span class="nav-number">3.4.</span> <span class="nav-text">Referer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应首部字段"><span class="nav-number">4.</span> <span class="nav-text">响应首部字段</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协商缓存"><span class="nav-number">4.1.</span> <span class="nav-text">协商缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Last-Modified"><span class="nav-number">4.1.1.</span> <span class="nav-text">Last-Modified</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Etag"><span class="nav-number">4.1.2.</span> <span class="nav-text">Etag</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vary"><span class="nav-number">4.2.</span> <span class="nav-text">vary</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">鸟哥哥</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+
+ </div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+ </script>
+
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"niaogege"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="//cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/love.js"></script>
+
+</body>
+</html>
