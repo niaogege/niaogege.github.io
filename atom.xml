@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-12-03T13:10:24.368Z</updated>
+  <updated>2017-12-03T13:27:33.352Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -16,19 +16,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Test of My Blog</title>
+    <title>随笔：适应新角色</title>
     <link href="http://niaogege.site/2017/11/09/test-of-my-blog/"/>
     <id>http://niaogege.site/2017/11/09/test-of-my-blog/</id>
     <published>2017-11-09T03:02:09.000Z</published>
-    <updated>2017-12-03T13:10:24.368Z</updated>
+    <updated>2017-12-03T13:27:33.352Z</updated>
     
-    <content type="html"><![CDATA[<p>ceshicehsi</p>
+    <content type="html"><![CDATA[<p><blockquote class="blockquote-center" style="color:green;white-space:12px;">“简洁，快速，使巧劲”</blockquote><br>入职半个月，基本上没怎么码字，主要是熟悉环境以及适应新角色。<br>很多东西确实跟以前的做法和风格不太一致，不过好在自己之前做好心理准备，这些东西无法避免。刚融入新的环境，难免有碰撞，这时候如果老鸟能带一下菜鸟，俺应该表示感谢。感谢丁大佬。<br>最近因为工作的变动，估计又得折腾一阵子。其实，俺是真心想静下心来好好研究某些代码的。但只要自己想，谁又能阻止呢。。。。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;ceshicehsi&lt;/p&gt;
-
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot; style=&quot;color:green;white-space:12px;&quot;&gt;“简洁，快速，使巧劲”&lt;/blockquote&gt;&lt;br&gt;入职半个月，基本上没怎么码字，主要是熟悉环境以及适应新角色。&lt;br
     
     </summary>
     
@@ -269,11 +268,11 @@
       <category term="vue" scheme="http://niaogege.site/categories/vue/"/>
     
     
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+    
       <category term="js" scheme="http://niaogege.site/tags/js/"/>
     
       <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
-    
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
