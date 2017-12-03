@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-11-09T03:02:09.435Z</updated>
+  <updated>2017-12-03T13:10:24.368Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -20,12 +20,22 @@
     <link href="http://niaogege.site/2017/11/09/test-of-my-blog/"/>
     <id>http://niaogege.site/2017/11/09/test-of-my-blog/</id>
     <published>2017-11-09T03:02:09.000Z</published>
-    <updated>2017-11-09T03:02:09.435Z</updated>
+    <updated>2017-12-03T13:10:24.368Z</updated>
+    
+    <content type="html"><![CDATA[<p>ceshicehsi</p>
+]]></content>
     
     <summary type="html">
     
+      &lt;p&gt;ceshicehsi&lt;/p&gt;
+
+    
     </summary>
     
+      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -61,7 +71,7 @@
     <link href="http://niaogege.site/2017/10/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%884%EF%BC%89-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/"/>
     <id>http://niaogege.site/2017/10/22/前端面试题（4）-知识点汇总/</id>
     <published>2017-10-22T09:10:17.000Z</published>
-    <updated>2017-11-05T14:45:03.413Z</updated>
+    <updated>2017-11-05T14:45:03.414Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center" style="color:hsl(0,60%,50%);">‘每一个不曾起舞的日子都是对生命的一种辜负！’<br>——Front_end</blockquote>
 
@@ -106,7 +116,7 @@
     <link href="http://niaogege.site/2017/10/14/webpack%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     <id>http://niaogege.site/2017/10/14/webpack学习笔记性能优化/</id>
     <published>2017-10-14T14:18:08.000Z</published>
-    <updated>2017-10-15T06:50:01.292Z</updated>
+    <updated>2017-10-15T06:50:01.293Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center" style="color:#2d9fb3;">当你的才华还撑不你的野心时，那你应该静下心来学习！<br>——鸟哥哥</blockquote></p>
 <p style="text-indent:20px;">最近一周，经历的事情有点多，副主管离职了，甚是忐忑，后盾一个个离我而去，而后的问题只能靠自己搞定了。还记得公主（副主管）在职的时候总是搞笑说，‘有问题啊，重启电脑就好了，不行，再重启，呵呵呵’，很幽默很有活力的一位可爱程序员。从他身上还是能学到很多东西，虽然他是后端我是前端，他解决问题的方式比我多，动手能力也很强，关键是他喜欢思考问题，这样做的后果是什么，考虑得比我周全，很佩服！</p><br><p style="text-indent:20px;">这周的工作还是<a href="https://github.com/niaogege/cnc""" target="_blank" rel="external">cnc</a>,主要做的两件事：1.项目所需依赖升级，最主要的是webpack1.3升级到最新版webpack3.6.1,当然还有vue-loader升级到13.0等等 2.vue组件懒加载，其他的都是优化代码，小修小补的，记得比较深的知识点就是关于js属性的可枚举属性和不可枚举属性，后面也要写一篇博客记录一下历程。今天这篇博客，主要是记录自己学习webpack过程，有一部分是整合前辈总结过的方法。我觉得这种比较偏业务的代码，最后的形式就是结合实例，很有说服力，且最好上图，图文并茂最好了。<br></p><p style="text-indent:20px;">目前亟待解决的知识点疑惑：1.正则表达式 RegExp;2.This/call/apply/bind模糊;3.prototype原型属性，进入正文…</p>
@@ -151,7 +161,7 @@
     <link href="http://niaogege.site/2017/10/03/Vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93-%E5%89%8D%E7%AB%AF/"/>
     <id>http://niaogege.site/2017/10/03/Vue项目总结-前端/</id>
     <published>2017-10-03T09:27:00.000Z</published>
-    <updated>2017-10-05T15:35:41.714Z</updated>
+    <updated>2017-11-10T13:16:16.955Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center" style="color:#2d9fb3;">看到朋友圈里要么是风景要么是美食，我就知道我离他们不远了<br>——鸟哥哥</blockquote></p>
 <p style="text-indent:20px">前前后后大约一个多月的时间，中间几经波折，几经修改原型，也曾想过认怂，好在凭借自己坚韧的毅力和默默地坚持，终于算是完成了项目一稿（前期掉了好几斤肉…）。现在趁着国庆期间，好好总结中间踩过的坑。据说国庆之后的第四季度是公司最忙的时候，估计以后又要每天加班，与代码为伴了，有点可怜的feel。(加班没关系，身体最重要！虽然很年轻，但我也不能过度的耗损自己的身体。)<br><br>说重点，本项目是一个小型的关于文档操作的系统，技术栈主要采用<code style="background:#2d9fb3;color:white;">Vue2.0+Vuex+vue-router+ES6+vue-resource</code>。为什么选择了vue作为前端框架?一是可维护性，技术学习曲线，二是项目本身很小，采用ng这种重量级框架有点大材小用。最终选择Vue还是很感激涛哥（谢谢大神，后面在好好感激一番）</p>
@@ -259,11 +269,11 @@
       <category term="vue" scheme="http://niaogege.site/categories/vue/"/>
     
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="js" scheme="http://niaogege.site/tags/js/"/>
     
       <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -395,7 +405,7 @@
     <link href="http://niaogege.site/2017/08/06/ng%E4%B8%AD%E7%9A%84checkbox-%E5%92%8C-radio-%E5%8F%96%E5%80%BC%E9%97%AE%E9%A2%98/"/>
     <id>http://niaogege.site/2017/08/06/ng中的checkbox-和-radio-取值问题/</id>
     <published>2017-08-06T03:33:42.000Z</published>
-    <updated>2017-08-06T04:57:49.593Z</updated>
+    <updated>2017-08-06T04:57:49.594Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center" style="color:green;white-space:12px;">“多思考，多总结，多实践”</blockquote></p>
 <p></p><p style="color:hsl(0,1%,60%);font-size:12px;font-style:italic"><br>很多时候看到别人写的代码很优雅，或者竟然能用这种方法写出来。感觉很神奇！这时，如果自己再多想一下或者多多实践一下，或许看到的知识就是自己的了。上周五，部门会议说到每周五做个技术分享，对于平时不怎么思考的人来说，是时候好好做做技术总结了。</p><br>每周的周末都是最幸福的时候，可以睡懒觉，可以看电视，刷微博，好开心的feel，不过，还有一件事得做一下，即所谓的自我沉淀。本周沉淀的主题是关于 angular 中的单选和多选取值问题。这个问题困扰了我好久，到现在依然是懵懵懂懂的，特别感谢网易的小神<a href="https://nsne.github.io/" target="_blank" rel="external">涛哥</a>指点迷津，或许下一个时间段总结的时候懂得更加深刻一点！<p></p>
@@ -493,7 +503,7 @@
     <link href="http://niaogege.site/2017/07/09/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%80%BB%E7%BB%93%E6%9C%80%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/"/>
     <id>http://niaogege.site/2017/07/09/随笔：总结最近一个月的学习历程/</id>
     <published>2017-07-09T13:26:02.000Z</published>
-    <updated>2017-07-09T15:00:28.273Z</updated>
+    <updated>2017-07-09T15:00:28.274Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center">“一入前端深似海”<br></blockquote><br>最近一个月，基本上都在搞演播室预约。总共三个页面，整了快一个月了，开发进度有点慢，开发水平有点低。随着时间的流逝，后面开发的难度会越来越大。‘大鹏，你天天这样会早衰的’。看似一句玩笑话，背后却隐藏着很多。确实，最近，感觉开发效率在变低，虽然时间还是那么长，但产出不成正比。<br>所以，接下来的几周，我需要好好调整一下自己的节奏，不要因为外在的条条框框限制了自己的思路。</p>
 <p>最近，开发用到的一大技术仍然还是ng，虽然已经接触了两个月了，但我感觉仍然没入门，angular核心思想仍然没有领悟，四大核心：1.模块化和依赖注入 2.数据双向绑定 3.自定义指令 4.MVC.</p>
@@ -715,7 +725,7 @@
     <link href="http://niaogege.site/2017/03/11/jQuery-on%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
     <id>http://niaogege.site/2017/03/11/jQuery-on方法的使用详解/</id>
     <published>2017-03-11T11:13:30.000Z</published>
-    <updated>2017-07-22T12:13:02.499Z</updated>
+    <updated>2017-07-22T12:13:02.500Z</updated>
     
     <content type="html"><![CDATA[<p>从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照<br><br><img src="/images/072302.jpg" style="width:50%"><br><img src="/images/072303.jpg" style="width:50%"><br> 本文 <a href="http://blog.csdn.net/linshichen/article/details/51302683" target="_blank" rel="external"><strong>原文链接</strong></a> ，希望能帮到这些前端小白。用法：<strong>此方法可以在匹配元素上绑定一个或者多个事件处理函数。</strong> <strong>使用off()方法可以删除on()方法绑定的事件。</strong></p>
 <hr>
@@ -828,7 +838,7 @@
     <link href="http://niaogege.site/2017/02/18/css%E7%89%B9%E6%95%88%EF%BC%9Atranslate3d%E6%82%AC%E6%B5%AE%E7%89%B9%E6%95%88/"/>
     <id>http://niaogege.site/2017/02/18/css特效：translate3d悬浮特效/</id>
     <published>2017-02-18T12:21:59.000Z</published>
-    <updated>2017-02-18T13:21:29.883Z</updated>
+    <updated>2017-02-18T13:21:29.884Z</updated>
     
     <content type="html"><![CDATA[<blockquote class="blockquote-center">学习如逆水行舟，不进则退</blockquote>
 
