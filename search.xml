@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[Class(类):一段由掘金面试题引发的es6基础拷问]]></title>
+      <url>%2F2017%2F12%2F24%2FClass-%E7%B1%BB-%E4%B8%80%E6%AE%B5%E7%94%B1%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BC%95%E5%8F%91%E7%9A%84es6%E5%9F%BA%E7%A1%80%E8%80%83%E9%97%AE%2F</url>
+      <content type="text"><![CDATA[以下代码可以如何改进？发送答案及简历到前端组邮箱：291003932@qq.com 1234567891011121314151617181920212223242526272829303132class JuejinFrontendEnginnerSpecification implements Specification &#123; isSatisfiedBy (person) &#123; return person.isInteresting() &amp;&amp; person.canWriteBUG() &#125;&#125;class JuejinFrontendEnginner extends FrontendEngineer &#123; constructor (person) &#123; super(person) this.thingList = [ &apos;ES6+&apos;, &apos;Node.js v8+&apos;, &apos;Vue.js v2+&apos;, &apos;SSR&apos;, &apos;Chrome (Extension|Headless)&apos;, &apos;Weixin&apos;, &apos;Docker&apos;, ..., &apos;rm -rf /&apos;, &apos;escape&apos; ] &#125; doSomeInterestingThings () &#123; this.thingList.forEach(this.tryToPlay.bind(this)) &#125;&#125;const juejinFrontendEnginnerSpecification = new JuejinFrontendEnginnerSpecification()if (juejinFrontendEnginnerSpecification.isSatisfiedBy(you)) &#123; new JuejinFrontendEnginner(you).doSomeInterestingThings()&#125; 静候您的答案！]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Vue实例生命周期(instance Lifecycle Hooks)初探]]></title>
+      <url>%2F2017%2F12%2F24%2FVue%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-instance-lifecycle-hooks-%E5%88%9D%E6%8E%A2%2F</url>
+      <content type="text"><![CDATA[Each Vue instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their own code at specific stages. 每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码。Vue 官网]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[随笔：适应新角色]]></title>
       <url>%2F2017%2F11%2F09%2Ftest-of-my-blog%2F</url>
       <content type="text"><![CDATA[“简洁，快速，使巧劲”入职半个月，基本上没怎么码字，主要是熟悉环境以及适应新角色。很多东西确实跟以前的做法和风格不太一致，不过好在自己之前做好心理准备，这些东西无法避免。刚融入新的环境，难免有碰撞，这时候如果老鸟能带一下菜鸟，俺应该表示感谢。感谢丁大佬。最近因为工作的变动，估计又得折腾一阵子。其实，俺是真心想静下心来好好研究某些代码的。但只要自己想，谁又能阻止呢。。。。]]></content>

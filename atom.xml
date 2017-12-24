@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.site/"/>
-  <updated>2017-12-03T13:27:33.352Z</updated>
+  <updated>2017-12-24T13:52:06.307Z</updated>
   <id>http://niaogege.site/</id>
   
   <author>
@@ -14,6 +14,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Class(类):一段由掘金面试题引发的es6基础拷问</title>
+    <link href="http://niaogege.site/2017/12/24/Class-%E7%B1%BB-%E4%B8%80%E6%AE%B5%E7%94%B1%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BC%95%E5%8F%91%E7%9A%84es6%E5%9F%BA%E7%A1%80%E8%80%83%E9%97%AE/"/>
+    <id>http://niaogege.site/2017/12/24/Class-类-一段由面试题引发的es6基础考问/</id>
+    <published>2017-12-24T13:43:14.000Z</published>
+    <updated>2017-12-24T13:52:06.307Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>以下代码可以如何改进？发送答案及简历到前端组邮箱：291003932@qq.com</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">class JuejinFrontendEnginnerSpecification implements Specification &#123;</div><div class="line">  isSatisfiedBy (person) &#123;</div><div class="line">    return person.isInteresting() &amp;&amp; person.canWriteBUG()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class JuejinFrontendEnginner extends FrontendEngineer &#123;</div><div class="line">  constructor (person) &#123;</div><div class="line">    super(person)</div><div class="line">    this.thingList = [</div><div class="line">      &apos;ES6+&apos;,</div><div class="line">      &apos;Node.js v8+&apos;,</div><div class="line">      &apos;Vue.js v2+&apos;,</div><div class="line">      &apos;SSR&apos;,</div><div class="line">      &apos;Chrome (Extension|Headless)&apos;,</div><div class="line">      &apos;Weixin&apos;,</div><div class="line">      &apos;Docker&apos;,</div><div class="line">      ...,</div><div class="line">      &apos;rm -rf /&apos;,</div><div class="line">      &apos;escape&apos;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">  doSomeInterestingThings () &#123;</div><div class="line">    this.thingList.forEach(this.tryToPlay.bind(this))</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const juejinFrontendEnginnerSpecification = new JuejinFrontendEnginnerSpecification()</div><div class="line"></div><div class="line">if (juejinFrontendEnginnerSpecification.isSatisfiedBy(you)) &#123;</div><div class="line">  new JuejinFrontendEnginner(you).doSomeInterestingThings()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>静候您的答案！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;以下代码可以如何改进？发送答案及简历到前端组邮箱：291003932@qq.com&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;p
+    
+    </summary>
+    
+      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+    
+      <category term="ES6" scheme="http://niaogege.site/categories/js/ES6/"/>
+    
+    
+      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+    
+      <category term="ES6" scheme="http://niaogege.site/tags/ES6/"/>
+    
+      <category term="Class" scheme="http://niaogege.site/tags/Class/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue实例生命周期(instance Lifecycle Hooks)初探</title>
+    <link href="http://niaogege.site/2017/12/24/Vue%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-instance-lifecycle-hooks-%E5%88%9D%E6%8E%A2/"/>
+    <id>http://niaogege.site/2017/12/24/Vue实例生命周期-instance-lifecycle-hooks-初探/</id>
+    <published>2017-12-24T12:41:50.000Z</published>
+    <updated>2017-12-24T13:16:22.542Z</updated>
+    
+    <content type="html"><![CDATA[<p>Each Vue instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their own code at specific stages.</p>
+<blockquote>
+<p>每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码。<a href="https://cn.vuejs.org/v2/guide/instance.html#创建一个-Vue-的实例" target="_blank" rel="external"><strong>Vue 官网</strong></a></p>
+</blockquote>
+<a id="more"></a>
+<p><img src="/images/lifecycle.png" alt="vue instance-lifecycle-hooks"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Each Vue instance goes through a series of initialization steps when it’s created - for example, it needs to set up data observation, compile the template, mount the instance to the DOM, and update the DOM when data changes. Along the way, it also runs functions called lifecycle hooks, giving users the opportunity to add their own code at specific stages.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;每个 Vue 实例在被创建之前都要经过一系列的初始化过程。例如需要设置数据监听、编译模板、挂载实例到 DOM、在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，给予用户机会在一些特定的场景下添加他们自己的代码。&lt;a href=&quot;https://cn.vuejs.org/v2/guide/instance.html#创建一个-Vue-的实例&quot;&gt;&lt;strong&gt;Vue 官网&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+    
+      <category term="Vue" scheme="http://niaogege.site/categories/js/Vue/"/>
+    
+    
+      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+    
+      <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+    
+      <category term="lifecycle" scheme="http://niaogege.site/tags/lifecycle/"/>
+    
+  </entry>
   
   <entry>
     <title>随笔：适应新角色</title>
@@ -268,11 +341,11 @@
       <category term="vue" scheme="http://niaogege.site/categories/vue/"/>
     
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="js" scheme="http://niaogege.site/tags/js/"/>
     
       <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+    
+      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -829,76 +902,6 @@
       <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="bootstrap" scheme="http://niaogege.site/tags/bootstrap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Css特效：translate3d悬浮特效</title>
-    <link href="http://niaogege.site/2017/02/18/css%E7%89%B9%E6%95%88%EF%BC%9Atranslate3d%E6%82%AC%E6%B5%AE%E7%89%B9%E6%95%88/"/>
-    <id>http://niaogege.site/2017/02/18/css特效：translate3d悬浮特效/</id>
-    <published>2017-02-18T12:21:59.000Z</published>
-    <updated>2017-02-18T13:21:29.884Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote class="blockquote-center">学习如逆水行舟，不进则退</blockquote>
-
-<p>感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！</p>
-<hr>
-<a id="more"></a>
-<h4 id="perspective"><a href="#perspective" class="headerlink" title="perspective"></a>perspective</h4><p><code style="color:white;background:black;">perspective</code>: 500;perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。</p>
-<h4 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h4><p><code style="color:white;background:black;">transform-style</code>:preserve-3d;使被转换的子元素保留其 3D 转换,当值为<code style="color:white;background:black;">flat</code>时，子元素将不保留其 3D 位置。</p>
-<h4 id="transform-translate3d-x-y-z"><a href="#transform-translate3d-x-y-z" class="headerlink" title="transform: translate3d(x,y,z)"></a>transform: translate3d(x,y,z)</h4><p>transform 属性向元素应用 2D 或 3D 转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜。</p>
-<blockquote>
-<p>Css部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*&#123;margin: 0; padding: 0;&#125;</div><div class="line">ul,li&#123;list-style: none;&#125;</div><div class="line">.container&#123;perspective: 1300;-webkit-perspective:1300;&#125;</div><div class="line">.boxList&#123;position:absolute;width: 630px;height:630px;left:50%;margin-left:-315px; -webkit-transform-style: preserve-3d;transform-style: preserve-3d;/*animation: a1 2s 1;*/transition: all 2s;&#125;</div><div class="line">.boxList li&#123;float: left;width: 200px;height: 200px;margin:5px;background: darkcyan;-webkit-transition: all 0.3s;transition: all 0.3s;&#125;</div><div class="line">.on li:hover&#123;-webkit-transform: translate3d(0,10px,50px);transform: translate3d(0,10px,50px);background:deepskyblue;box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.5);&#125;</div><div class="line">.on&#123;-webkit-transform: rotateX(55deg) rotateY(0deg) rotateZ(35deg);transform: rotateX(55deg) rotateY(0deg) rotateZ(35deg);&#125;</div></pre></td></tr></table></figure></p>
-<p>Js部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var list=document.querySelector(&apos;.boxList&apos;);</div><div class="line">		window.onload=function()&#123;</div><div class="line">			setInterval(transition,1000)</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		function transition()&#123;</div><div class="line">			list.className=&apos;on boxList&apos;;</div><div class="line">		&#125;</div></pre></td></tr></table></figure></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote class=&quot;blockquote-center&quot;&gt;学习如逆水行舟，不进则退&lt;/blockquote&gt;
-
-&lt;p&gt;感觉每天如果不做笔记，自己要垮掉！学习是持久的事，不能只靠一时的激情来完成，其实，我大体也能感觉得到真正从事web前端后，工作压力肯定是非常大的！&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
-    
-    
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css" scheme="http://niaogege.site/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>myHeart：我心永恒</title>
-    <link href="http://niaogege.site/2017/02/14/myHeart%EF%BC%9A%E6%88%91%E5%BF%83%E6%B0%B8%E6%81%92/"/>
-    <id>http://niaogege.site/2017/02/14/myHeart：我心永恒/</id>
-    <published>2017-02-14T15:54:51.000Z</published>
-    <updated>2017-02-18T08:46:47.624Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天是情人节，微信/微博都在撒狗粮，看看myHeart吧</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://ojjsl7zpc.bkt.clouddn.com/myHeart.gif?e=1487392781&token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:53339dxMjMwHLm1k-RjUMaQHdFg"></h2><p>源代码如下：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</div><div class="line">    &lt;title&gt;情人节心跳动动画&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">       html, body&#123;</div><div class="line">          width: 100%;</div><div class="line">          height: 100%;</div><div class="line">          min-width: 500px;</div><div class="line">          min-height: 500px;</div><div class="line">          overflow: hidden;</div><div class="line">        &#125;</div><div class="line">        .heart &#123;</div><div class="line">          position: absolute;</div><div class="line">          width: 100px;</div><div class="line">          height: 90px;</div><div class="line">          top: 50%;</div><div class="line">          left: 50%;</div><div class="line">          margin-top: -45px;</div><div class="line">          margin-left: -50px;</div><div class="line">        &#125;</div><div class="line">        .heart:before,</div><div class="line">        .heart:after &#123;</div><div class="line">          position: absolute;</div><div class="line">          content: &quot;&quot;;</div><div class="line">          left: 50px;</div><div class="line">          top: 0;</div><div class="line">          width: 50px;</div><div class="line">          height: 80px;</div><div class="line">          background: #fc2e5a;</div><div class="line">          border-radius: 50px 50px 0 0;</div><div class="line">          transform: rotate(-45deg);</div><div class="line">          transform-origin: 0 100%;</div><div class="line">        &#125;</div><div class="line">        .heart:after &#123;</div><div class="line">          left: 0;</div><div class="line">          transform: rotate(45deg);</div><div class="line">          transform-origin :100% 100%;</div><div class="line">        &#125;</div><div class="line">        .heart1&#123;</div><div class="line">           animation: heart-anim 1s linear .4s infinite;</div><div class="line">        &#125;</div><div class="line">        .heart2&#123;</div><div class="line">           animation: pounding .5s linear infinite alternate;</div><div class="line">        &#125;</div><div class="line">        .heart1:after, .heart1:before&#123;</div><div class="line">          background-color: #ff7693;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        @keyframes pounding&#123;</div><div class="line">          0%&#123; transform: scale(1.5); &#125;</div><div class="line">          100%&#123; transform: scale(1); &#125;</div><div class="line">        &#125;</div><div class="line">		@-moz-keyframes pounding&#123;</div><div class="line">          0%&#123; transform: scale(1.5); &#125;</div><div class="line">          100%&#123; transform: scale(1); &#125;</div><div class="line">        &#125;</div><div class="line">		@-webkit-keyframes pounding&#123;</div><div class="line">          0%&#123; transform: scale(1.5); &#125;</div><div class="line">          100%&#123; transform: scale(1); &#125;</div><div class="line">        &#125;</div><div class="line">		@-ms-keyframes pounding&#123;</div><div class="line">          0%&#123; transform: scale(1.5); &#125;</div><div class="line">          100%&#123; transform: scale(1); &#125;</div><div class="line">        &#125;</div><div class="line">        @keyframes heart-anim &#123;</div><div class="line">          46% &#123;</div><div class="line"></div><div class="line">            transform: scale(1);</div><div class="line">          &#125;</div><div class="line">          50% &#123;</div><div class="line">            transform: scale(1.3);</div><div class="line">          &#125;</div><div class="line">          52% &#123;</div><div class="line">            transform: scale(1.5);</div><div class="line">          &#125;</div><div class="line">          55% &#123;</div><div class="line">            transform: scale(3);</div><div class="line">          &#125;</div><div class="line">          100% &#123;</div><div class="line">            opacity: 0;</div><div class="line">            transform: scale(50);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">		@-moz-keyframes heart-anim &#123;</div><div class="line">          46% &#123;</div><div class="line"></div><div class="line">            transform: scale(1);</div><div class="line">          &#125;</div><div class="line">          50% &#123;</div><div class="line">            transform: scale(1.3);</div><div class="line">          &#125;</div><div class="line">          52% &#123;</div><div class="line">            transform: scale(1.5);</div><div class="line">          &#125;</div><div class="line">          55% &#123;</div><div class="line">            transform: scale(3);</div><div class="line">          &#125;</div><div class="line">          100% &#123;</div><div class="line">            opacity: 0;</div><div class="line">            transform: scale(50);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">		@-webkit-keyframes heart-anim &#123;</div><div class="line">          46% &#123;</div><div class="line"></div><div class="line">            transform: scale(1);</div><div class="line">          &#125;</div><div class="line">          50% &#123;</div><div class="line">            transform: scale(1.3);</div><div class="line">          &#125;</div><div class="line">          52% &#123;</div><div class="line">            transform: scale(1.5);</div><div class="line">          &#125;</div><div class="line">          55% &#123;</div><div class="line">            transform: scale(3);</div><div class="line">          &#125;</div><div class="line">          100% &#123;</div><div class="line">            opacity: 0;</div><div class="line">            transform: scale(50);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">		@-ms-keyframes heart-anim &#123;</div><div class="line">          46% &#123;</div><div class="line"></div><div class="line">            transform: scale(1);</div><div class="line">          &#125;</div><div class="line">          50% &#123;</div><div class="line">            transform: scale(1.3);</div><div class="line">          &#125;</div><div class="line">          52% &#123;</div><div class="line">            transform: scale(1.5);</div><div class="line">          &#125;</div><div class="line">          55% &#123;</div><div class="line">            transform: scale(3);</div><div class="line">          &#125;</div><div class="line">          100% &#123;</div><div class="line">            opacity: 0;</div><div class="line">            transform: scale(50);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;img scr=&quot;http://ojjsl7zpc.bkt.clouddn.com/myHeart.gif?e=1487091193&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:nDhjIQhcA5hcRQ-bZFh3skYsOls&quot; alt=&quot;niaogege-myHeart&quot; /&gt;</div><div class="line">  &lt;p&gt;</div><div class="line">  情人节又到了，一大波男士在狠狠地吃狗粮！！</div><div class="line"> &lt;/p&gt;</div><div class="line">    &lt;!--外圈大心--&gt;</div><div class="line">   &lt;div class=&quot;heart heart1&quot;&gt;&lt;/div&gt;</div><div class="line">  &lt;!--里面小心--&gt;</div><div class="line">   &lt;div class=&quot;heart heart2&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天是情人节，微信/微博都在撒狗粮，看看myHeart吧&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://ojjsl7zpc.bkt.clouddn.com/myHeart.gif?e=1487392781&amp;token=NUT82f__mRq-ZGvkrbqw7Zxle80aB7nUArvrHibz:53339dxMjMwHLm1k-RjUMaQHdFg&quot; /&gt;&lt;/h2&gt;&lt;p&gt;源代码如下：&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/css/"/>
-    
-    
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="css" scheme="http://niaogege.site/tags/css/"/>
     
   </entry>
   
