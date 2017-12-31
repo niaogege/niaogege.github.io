@@ -4,9 +4,9 @@
   <subtitle>幸福就像花季，开到荼蘼</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://niaogege.site/"/>
+  <link href="http://niaogege.cn/"/>
   <updated>2017-12-26T14:43:33.587Z</updated>
-  <id>http://niaogege.site/</id>
+  <id>http://niaogege.cn/</id>
   
   <author>
     <name>鸟哥哥</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Class(类):一段由掘金面试题引发的es6基础拷问</title>
-    <link href="http://niaogege.site/2017/12/24/Class-%E7%B1%BB-%E4%B8%80%E6%AE%B5%E7%94%B1%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BC%95%E5%8F%91%E7%9A%84es6%E5%9F%BA%E7%A1%80%E8%80%83%E9%97%AE/"/>
-    <id>http://niaogege.site/2017/12/24/Class-类-一段由面试题引发的es6基础考问/</id>
+    <link href="http://niaogege.cn/2017/12/24/Class-%E7%B1%BB-%E4%B8%80%E6%AE%B5%E7%94%B1%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BC%95%E5%8F%91%E7%9A%84es6%E5%9F%BA%E7%A1%80%E8%80%83%E9%97%AE/"/>
+    <id>http://niaogege.cn/2017/12/24/Class-类-一段由面试题引发的es6基础考问/</id>
     <published>2017-12-24T13:43:14.000Z</published>
     <updated>2017-12-26T14:43:33.587Z</updated>
     
@@ -56,23 +56,23 @@
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
     
-      <category term="ES6" scheme="http://niaogege.site/categories/js/ES6/"/>
+      <category term="ES6" scheme="http://niaogege.cn/categories/js/ES6/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="ES6" scheme="http://niaogege.site/tags/ES6/"/>
+      <category term="ES6" scheme="http://niaogege.cn/tags/ES6/"/>
     
-      <category term="Class" scheme="http://niaogege.site/tags/Class/"/>
+      <category term="Class" scheme="http://niaogege.cn/tags/Class/"/>
     
   </entry>
   
   <entry>
     <title>Vue实例生命周期(instance Lifecycle Hooks)初探</title>
-    <link href="http://niaogege.site/2017/12/24/Vue%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-instance-lifecycle-hooks-%E5%88%9D%E6%8E%A2/"/>
-    <id>http://niaogege.site/2017/12/24/Vue实例生命周期-instance-lifecycle-hooks-初探/</id>
+    <link href="http://niaogege.cn/2017/12/24/Vue%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-instance-lifecycle-hooks-%E5%88%9D%E6%8E%A2/"/>
+    <id>http://niaogege.cn/2017/12/24/Vue实例生命周期-instance-lifecycle-hooks-初探/</id>
     <published>2017-12-24T12:41:50.000Z</published>
     <updated>2017-12-24T13:16:22.542Z</updated>
     
@@ -93,23 +93,23 @@
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
     
-      <category term="Vue" scheme="http://niaogege.site/categories/js/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/categories/js/Vue/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
-      <category term="lifecycle" scheme="http://niaogege.site/tags/lifecycle/"/>
+      <category term="lifecycle" scheme="http://niaogege.cn/tags/lifecycle/"/>
     
   </entry>
   
   <entry>
     <title>随笔：适应新角色</title>
-    <link href="http://niaogege.site/2017/11/09/test-of-my-blog/"/>
-    <id>http://niaogege.site/2017/11/09/test-of-my-blog/</id>
+    <link href="http://niaogege.cn/2017/11/09/test-of-my-blog/"/>
+    <id>http://niaogege.cn/2017/11/09/test-of-my-blog/</id>
     <published>2017-11-09T03:02:09.000Z</published>
     <updated>2017-12-03T13:27:33.352Z</updated>
     
@@ -122,17 +122,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>随笔：未来不迎，当时不杂，既过不恋</title>
-    <link href="http://niaogege.site/2017/11/05/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%9C%AA%E6%9D%A5%E4%B8%8D%E8%BF%8E%EF%BC%8C%E5%BD%93%E6%97%B6%E4%B8%8D%E6%9D%82%EF%BC%8C%E6%97%A2%E8%BF%87%E4%B8%8D%E6%81%8B/"/>
-    <id>http://niaogege.site/2017/11/05/随笔：未来不迎，当时不杂，既过不恋/</id>
+    <link href="http://niaogege.cn/2017/11/05/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%9C%AA%E6%9D%A5%E4%B8%8D%E8%BF%8E%EF%BC%8C%E5%BD%93%E6%97%B6%E4%B8%8D%E6%9D%82%EF%BC%8C%E6%97%A2%E8%BF%87%E4%B8%8D%E6%81%8B/"/>
+    <id>http://niaogege.cn/2017/11/05/随笔：未来不迎，当时不杂，既过不恋/</id>
     <published>2017-11-05T14:40:08.000Z</published>
     <updated>2017-11-05T14:53:22.786Z</updated>
     
@@ -149,17 +149,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>前端面试题（4）: 知识点汇总</title>
-    <link href="http://niaogege.site/2017/10/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%884%EF%BC%89-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/"/>
-    <id>http://niaogege.site/2017/10/22/前端面试题（4）-知识点汇总/</id>
+    <link href="http://niaogege.cn/2017/10/22/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%884%EF%BC%89-%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/"/>
+    <id>http://niaogege.cn/2017/10/22/前端面试题（4）-知识点汇总/</id>
     <published>2017-10-22T09:10:17.000Z</published>
     <updated>2017-11-05T14:45:03.414Z</updated>
     
@@ -194,17 +194,17 @@
     
     </summary>
     
-      <category term="前端面试题" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="前端面试题" scheme="http://niaogege.cn/categories/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
     
-      <category term="前端面试题" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+      <category term="前端面试题" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>Webpack学习笔记之性能优化</title>
-    <link href="http://niaogege.site/2017/10/14/webpack%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    <id>http://niaogege.site/2017/10/14/webpack学习笔记性能优化/</id>
+    <link href="http://niaogege.cn/2017/10/14/webpack%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <id>http://niaogege.cn/2017/10/14/webpack学习笔记性能优化/</id>
     <published>2017-10-14T14:18:08.000Z</published>
     <updated>2017-10-15T06:50:01.293Z</updated>
     
@@ -239,17 +239,17 @@
     
     </summary>
     
-      <category term="webpack" scheme="http://niaogege.site/categories/webpack/"/>
+      <category term="webpack" scheme="http://niaogege.cn/categories/webpack/"/>
     
     
-      <category term="webpack" scheme="http://niaogege.site/tags/webpack/"/>
+      <category term="webpack" scheme="http://niaogege.cn/tags/webpack/"/>
     
   </entry>
   
   <entry>
     <title>Vue2.0项目总结(前端)</title>
-    <link href="http://niaogege.site/2017/10/03/Vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93-%E5%89%8D%E7%AB%AF/"/>
-    <id>http://niaogege.site/2017/10/03/Vue项目总结-前端/</id>
+    <link href="http://niaogege.cn/2017/10/03/Vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93-%E5%89%8D%E7%AB%AF/"/>
+    <id>http://niaogege.cn/2017/10/03/Vue项目总结-前端/</id>
     <published>2017-10-03T09:27:00.000Z</published>
     <updated>2017-11-10T13:16:16.955Z</updated>
     
@@ -356,21 +356,21 @@
     
     </summary>
     
-      <category term="vue" scheme="http://niaogege.site/categories/vue/"/>
+      <category term="vue" scheme="http://niaogege.cn/categories/vue/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
   </entry>
   
   <entry>
     <title>关于Http中的四种Header Fields(首部字段)</title>
-    <link href="http://niaogege.site/2017/09/09/%E5%85%B3%E4%BA%8EHttp%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%A7%8DHeader-Fields-%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5/"/>
-    <id>http://niaogege.site/2017/09/09/关于Http中的四种Header-Fields-首部字段/</id>
+    <link href="http://niaogege.cn/2017/09/09/%E5%85%B3%E4%BA%8EHttp%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%A7%8DHeader-Fields-%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5/"/>
+    <id>http://niaogege.cn/2017/09/09/关于Http中的四种Header-Fields-首部字段/</id>
     <published>2017-09-09T12:20:16.000Z</published>
     <updated>2017-10-03T09:26:04.242Z</updated>
     
@@ -416,21 +416,21 @@
     
     </summary>
     
-      <category term="http" scheme="http://niaogege.site/categories/http/"/>
+      <category term="http" scheme="http://niaogege.cn/categories/http/"/>
     
     
-      <category term="http" scheme="http://niaogege.site/tags/http/"/>
+      <category term="http" scheme="http://niaogege.cn/tags/http/"/>
     
-      <category term="Content-Type" scheme="http://niaogege.site/tags/Content-Type/"/>
+      <category term="Content-Type" scheme="http://niaogege.cn/tags/Content-Type/"/>
     
-      <category term="Post" scheme="http://niaogege.site/tags/Post/"/>
+      <category term="Post" scheme="http://niaogege.cn/tags/Post/"/>
     
   </entry>
   
   <entry>
     <title>Vue中关于pagination分页和搜索之后的列表页组件</title>
-    <link href="http://niaogege.site/2017/08/27/Vue%E4%B8%AD%E5%85%B3%E4%BA%8Epagination%E5%88%86%E9%A1%B5%E5%92%8C%E6%90%9C%E7%B4%A2%E4%B9%8B%E5%90%8E%E7%9A%84%E5%88%97%E8%A1%A8%E9%A1%B5%E7%BB%84%E4%BB%B6/"/>
-    <id>http://niaogege.site/2017/08/27/Vue中关于pagination分页和搜索之后的列表页组件/</id>
+    <link href="http://niaogege.cn/2017/08/27/Vue%E4%B8%AD%E5%85%B3%E4%BA%8Epagination%E5%88%86%E9%A1%B5%E5%92%8C%E6%90%9C%E7%B4%A2%E4%B9%8B%E5%90%8E%E7%9A%84%E5%88%97%E8%A1%A8%E9%A1%B5%E7%BB%84%E4%BB%B6/"/>
+    <id>http://niaogege.cn/2017/08/27/Vue中关于pagination分页和搜索之后的列表页组件/</id>
     <published>2017-08-27T09:08:55.000Z</published>
     <updated>2017-08-27T09:17:36.755Z</updated>
     
@@ -444,23 +444,23 @@
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
     
-      <category term="Vue" scheme="http://niaogege.site/categories/js/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/categories/js/Vue/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
-      <category term="component" scheme="http://niaogege.site/tags/component/"/>
+      <category term="component" scheme="http://niaogege.cn/tags/component/"/>
     
   </entry>
   
   <entry>
     <title>Vuex中actions、mutations、state三大核心的理解</title>
-    <link href="http://niaogege.site/2017/08/20/Vuex%E4%B8%ADactions%E3%80%81mutations%E3%80%81state%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://niaogege.site/2017/08/20/Vuex中actions、mutations、state三大核心的理解/</id>
+    <link href="http://niaogege.cn/2017/08/20/Vuex%E4%B8%ADactions%E3%80%81mutations%E3%80%81state%E4%B8%89%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://niaogege.cn/2017/08/20/Vuex中actions、mutations、state三大核心的理解/</id>
     <published>2017-08-20T08:42:01.000Z</published>
     <updated>2017-08-20T08:53:56.936Z</updated>
     
@@ -477,23 +477,23 @@
     
     </summary>
     
-      <category term="Vue" scheme="http://niaogege.site/categories/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/categories/Vue/"/>
     
-      <category term="Vuex" scheme="http://niaogege.site/categories/Vue/Vuex/"/>
+      <category term="Vuex" scheme="http://niaogege.cn/categories/Vue/Vuex/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="Vue" scheme="http://niaogege.site/tags/Vue/"/>
+      <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
-      <category term="Vuex" scheme="http://niaogege.site/tags/Vuex/"/>
+      <category term="Vuex" scheme="http://niaogege.cn/tags/Vuex/"/>
     
   </entry>
   
   <entry>
     <title>Ng中的checkbox 和 Radio 取值问题</title>
-    <link href="http://niaogege.site/2017/08/06/ng%E4%B8%AD%E7%9A%84checkbox-%E5%92%8C-radio-%E5%8F%96%E5%80%BC%E9%97%AE%E9%A2%98/"/>
-    <id>http://niaogege.site/2017/08/06/ng中的checkbox-和-radio-取值问题/</id>
+    <link href="http://niaogege.cn/2017/08/06/ng%E4%B8%AD%E7%9A%84checkbox-%E5%92%8C-radio-%E5%8F%96%E5%80%BC%E9%97%AE%E9%A2%98/"/>
+    <id>http://niaogege.cn/2017/08/06/ng中的checkbox-和-radio-取值问题/</id>
     <published>2017-08-06T03:33:42.000Z</published>
     <updated>2017-08-06T04:57:49.594Z</updated>
     
@@ -519,25 +519,25 @@
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
     
-      <category term="Angular" scheme="http://niaogege.site/categories/js/Angular/"/>
+      <category term="Angular" scheme="http://niaogege.cn/categories/js/Angular/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="Angular" scheme="http://niaogege.site/tags/Angular/"/>
+      <category term="Angular" scheme="http://niaogege.cn/tags/Angular/"/>
     
-      <category term="checkbox" scheme="http://niaogege.site/tags/checkbox/"/>
+      <category term="checkbox" scheme="http://niaogege.cn/tags/checkbox/"/>
     
-      <category term="radio" scheme="http://niaogege.site/tags/radio/"/>
+      <category term="radio" scheme="http://niaogege.cn/tags/radio/"/>
     
   </entry>
   
   <entry>
     <title>jS:关于对象遍历和数组遍历的那些事</title>
-    <link href="http://niaogege.site/2017/07/22/jS-%E5%85%B3%E4%BA%8E%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86%E5%92%8C%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
-    <id>http://niaogege.site/2017/07/22/jS-关于对象遍历和数组遍历的那些事/</id>
+    <link href="http://niaogege.cn/2017/07/22/jS-%E5%85%B3%E4%BA%8E%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86%E5%92%8C%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
+    <id>http://niaogege.cn/2017/07/22/jS-关于对象遍历和数组遍历的那些事/</id>
     <published>2017-07-22T10:20:43.000Z</published>
     <updated>2017-07-22T16:19:49.016Z</updated>
     
@@ -577,21 +577,21 @@
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="Array" scheme="http://niaogege.site/tags/Array/"/>
+      <category term="Array" scheme="http://niaogege.cn/tags/Array/"/>
     
-      <category term="Object" scheme="http://niaogege.site/tags/Object/"/>
+      <category term="Object" scheme="http://niaogege.cn/tags/Object/"/>
     
   </entry>
   
   <entry>
     <title>随笔：总结最近一个月的学习历程</title>
-    <link href="http://niaogege.site/2017/07/09/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%80%BB%E7%BB%93%E6%9C%80%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/"/>
-    <id>http://niaogege.site/2017/07/09/随笔：总结最近一个月的学习历程/</id>
+    <link href="http://niaogege.cn/2017/07/09/%E9%9A%8F%E7%AC%94%EF%BC%9A%E6%80%BB%E7%BB%93%E6%9C%80%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%8E%86%E7%A8%8B/"/>
+    <id>http://niaogege.cn/2017/07/09/随笔：总结最近一个月的学习历程/</id>
     <published>2017-07-09T13:26:02.000Z</published>
     <updated>2017-07-09T15:00:28.274Z</updated>
     
@@ -615,17 +615,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>随笔：试用期第三个月有感</title>
-    <link href="http://niaogege.site/2017/05/30/%E9%9A%8F%E7%AC%94%EF%BC%9A%E8%AF%95%E7%94%A8%E6%9C%9F%E7%AC%AC%E4%B8%89%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
-    <id>http://niaogege.site/2017/05/30/随笔：试用期第三个月有感/</id>
+    <link href="http://niaogege.cn/2017/05/30/%E9%9A%8F%E7%AC%94%EF%BC%9A%E8%AF%95%E7%94%A8%E6%9C%9F%E7%AC%AC%E4%B8%89%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
+    <id>http://niaogege.cn/2017/05/30/随笔：试用期第三个月有感/</id>
     <published>2017-05-30T14:14:40.000Z</published>
     <updated>2017-06-18T12:05:10.655Z</updated>
     
@@ -648,17 +648,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>随笔：试用第二个月有感</title>
-    <link href="http://niaogege.site/2017/04/22/%E9%9A%8F%E7%AC%94-%E8%AF%95%E7%94%A8%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
-    <id>http://niaogege.site/2017/04/22/随笔-试用第二个月有感/</id>
+    <link href="http://niaogege.cn/2017/04/22/%E9%9A%8F%E7%AC%94-%E8%AF%95%E7%94%A8%E7%AC%AC%E4%BA%8C%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
+    <id>http://niaogege.cn/2017/04/22/随笔-试用第二个月有感/</id>
     <published>2017-04-22T04:08:44.000Z</published>
     <updated>2017-04-22T11:53:55.183Z</updated>
     
@@ -696,17 +696,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>随笔：试用第一个月有感</title>
-    <link href="http://niaogege.site/2017/03/26/%E9%9A%8F%E7%AC%94%EF%BC%9A%E8%AF%95%E7%94%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
-    <id>http://niaogege.site/2017/03/26/随笔：试用第一个月有感/</id>
+    <link href="http://niaogege.cn/2017/03/26/%E9%9A%8F%E7%AC%94%EF%BC%9A%E8%AF%95%E7%94%A8%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%9C%88%E6%9C%89%E6%84%9F/"/>
+    <id>http://niaogege.cn/2017/03/26/随笔：试用第一个月有感/</id>
     <published>2017-03-26T13:30:41.000Z</published>
     <updated>2017-04-22T09:43:01.739Z</updated>
     
@@ -746,17 +746,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>GIT Three :Learn How to Use Git (三)</title>
-    <link href="http://niaogege.site/2017/03/12/GIT-three-learn-how-to-use-git-%E4%B8%89/"/>
-    <id>http://niaogege.site/2017/03/12/GIT-three-learn-how-to-use-git-三/</id>
+    <link href="http://niaogege.cn/2017/03/12/GIT-three-learn-how-to-use-git-%E4%B8%89/"/>
+    <id>http://niaogege.cn/2017/03/12/GIT-three-learn-how-to-use-git-三/</id>
     <published>2017-03-12T11:23:59.000Z</published>
     <updated>2017-03-12T13:32:17.341Z</updated>
     
@@ -801,19 +801,19 @@
     
     </summary>
     
-      <category term="Git" scheme="http://niaogege.site/categories/Git/"/>
+      <category term="Git" scheme="http://niaogege.cn/categories/Git/"/>
     
     
-      <category term="GIT" scheme="http://niaogege.site/tags/GIT/"/>
+      <category term="GIT" scheme="http://niaogege.cn/tags/GIT/"/>
     
-      <category term="版本控制工具" scheme="http://niaogege.site/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+      <category term="版本控制工具" scheme="http://niaogege.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>jQuery().on方法的使用详解</title>
-    <link href="http://niaogege.site/2017/03/11/jQuery-on%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://niaogege.site/2017/03/11/jQuery-on方法的使用详解/</id>
+    <link href="http://niaogege.cn/2017/03/11/jQuery-on%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
+    <id>http://niaogege.cn/2017/03/11/jQuery-on方法的使用详解/</id>
     <published>2017-03-11T11:13:30.000Z</published>
     <updated>2017-07-22T12:13:02.500Z</updated>
     
@@ -845,21 +845,21 @@
     
     </summary>
     
-      <category term="js" scheme="http://niaogege.site/categories/js/"/>
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
     
-      <category term="jQuery" scheme="http://niaogege.site/categories/js/jQuery/"/>
+      <category term="jQuery" scheme="http://niaogege.cn/categories/js/jQuery/"/>
     
     
-      <category term="js" scheme="http://niaogege.site/tags/js/"/>
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
-      <category term="jQuery" scheme="http://niaogege.site/tags/jQuery/"/>
+      <category term="jQuery" scheme="http://niaogege.cn/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>随笔：厦门感想</title>
-    <link href="http://niaogege.site/2017/02/23/%E9%9A%8F%E7%AC%94%EF%BC%9A%E5%8E%A6%E9%97%A8%E6%84%9F%E6%83%B3/"/>
-    <id>http://niaogege.site/2017/02/23/随笔：厦门感想/</id>
+    <link href="http://niaogege.cn/2017/02/23/%E9%9A%8F%E7%AC%94%EF%BC%9A%E5%8E%A6%E9%97%A8%E6%84%9F%E6%83%B3/"/>
+    <id>http://niaogege.cn/2017/02/23/随笔：厦门感想/</id>
     <published>2017-02-23T14:54:59.000Z</published>
     <updated>2017-02-23T15:09:15.364Z</updated>
     
@@ -872,17 +872,17 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://niaogege.site/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="随笔，图片" scheme="http://niaogege.site/tags/%E9%9A%8F%E7%AC%94%EF%BC%8C%E5%9B%BE%E7%89%87/"/>
+      <category term="随笔，图片" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94%EF%BC%8C%E5%9B%BE%E7%89%87/"/>
     
   </entry>
   
   <entry>
     <title>Bootstrap-Three:下拉菜单、导航、分页</title>
-    <link href="http://niaogege.site/2017/02/18/Bootstrap-%E4%BA%8C-%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E3%80%81%E5%AF%BC%E8%88%AA%E3%80%81%E5%88%86%E9%A1%B5/"/>
-    <id>http://niaogege.site/2017/02/18/Bootstrap-二-下拉菜单、导航、分页/</id>
+    <link href="http://niaogege.cn/2017/02/18/Bootstrap-%E4%BA%8C-%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95%E3%80%81%E5%AF%BC%E8%88%AA%E3%80%81%E5%88%86%E9%A1%B5/"/>
+    <id>http://niaogege.cn/2017/02/18/Bootstrap-二-下拉菜单、导航、分页/</id>
     <published>2017-02-18T14:31:58.000Z</published>
     <updated>2017-02-20T13:58:18.175Z</updated>
     
@@ -912,14 +912,14 @@
     
     </summary>
     
-      <category term="前端" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://niaogege.cn/categories/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="bootstrap" scheme="http://niaogege.site/categories/%E5%89%8D%E7%AB%AF/bootstrap/"/>
+      <category term="bootstrap" scheme="http://niaogege.cn/categories/%E5%89%8D%E7%AB%AF/bootstrap/"/>
     
     
-      <category term="前端" scheme="http://niaogege.site/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="bootstrap" scheme="http://niaogege.site/tags/bootstrap/"/>
+      <category term="bootstrap" scheme="http://niaogege.cn/tags/bootstrap/"/>
     
   </entry>
   
