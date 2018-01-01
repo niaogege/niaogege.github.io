@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.cn/"/>
-  <updated>2017-12-31T13:11:53.978Z</updated>
+  <updated>2018-01-01T15:37:33.169Z</updated>
   <id>http://niaogege.cn/</id>
   
   <author>
@@ -16,11 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JS基础：call,apply,bind</title>
+    <link href="http://niaogege.cn/2018/01/01/JS%E5%9F%BA%E7%A1%80%EF%BC%9A%E2%80%98-call-apply-bind/"/>
+    <id>http://niaogege.cn/2018/01/01/JS基础：‘-call-apply-bind/</id>
+    <published>2018-01-01T13:55:44.000Z</published>
+    <updated>2018-01-01T15:37:33.169Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>一直憋了好久了，在搞不定，玩个毛！！</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="三者是什么东东"><a href="#三者是什么东东" class="headerlink" title="三者是什么东东"></a>三者是什么东东</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
+<li>改变函数内部的this</li>
+<li>注意是函数对象的方法，也就是说只有函数可也调用这些方法</li>
+</ul>
+<h4 id="Diff"><a href="#Diff" class="headerlink" title="Diff"></a>Diff</h4><ul>
+<li><p>arguments: 第一个参数都是需要绑定的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">call: test.call(this,agr1,arg2,arg3...)</div><div class="line">apply: test.apply(this,[agr1,arg2,arg3...])</div><div class="line">bind: test.bind(this) //bind只有一个参数即this</div></pre></td></tr></table></figure>
+</li>
+<li><p>exect 调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">call,apply： 调用后立即执行原函数。</div><div class="line">bind： 调用后返回已经绑定好this的函数。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>示例：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function foo(a,b)&#123;</div><div class="line">      console.log(a+b);</div><div class="line">  &#125;</div><div class="line">  foo.call(this,&apos;chen&apos;,dapeng&apos;);        </div><div class="line">  foo.apply(this, [&apos;chen&apos;,&apos;dapeng&apos;] ); </div><div class="line">  var test = foo.bind(this);//返回一个已经绑定this的函数</div><div class="line">  test(&apos;chen&apos;,&apos;peng&apos;);</div></pre></td></tr></table></figure>
+<h3 id="三者的作用是什么"><a href="#三者的作用是什么" class="headerlink" title="三者的作用是什么"></a>三者的作用是什么</h3><h4 id="处理伪数组-Processing-pseudo-array"><a href="#处理伪数组-Processing-pseudo-array" class="headerlink" title="处理伪数组(Processing pseudo array)"></a>处理伪数组(Processing pseudo array)</h4><p>比如：var arr = document.getElementsByTagName(‘li’)，你现在需要获取其中的第2,3,4三个元素，你会怎么做？<code>arr,slice(1,4)</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">console.log([].slice.apply(arr,[1,4])) //处理伪数组</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Tips:js中存在大量伪数组，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- function的arguments对象。</div><div class="line">- getElementsByName(),getElementsByTagName(),childNodes/children 等方法的返回值。</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="继承-inherit"><a href="#继承-inherit" class="headerlink" title="继承(inherit)"></a>继承(inherit)</h4><ul>
+<li>单继承</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function person (name) &#123;</div><div class="line">	this.name = name</div><div class="line">&#125;</div><div class="line">function man (name) &#123;</div><div class="line">	this.sex = &apos;woman&apos;;</div><div class="line">	person.call(this,name) //person 继承man</div><div class="line">&#125;</div><div class="line">var me = new man(&apos;chenpeng&apos;);</div><div class="line">var you = new person (&apos;dapeng&apos;);</div><div class="line">console.dir(me,&apos;me&apos;);</div><div class="line">console.dir(you,&apos;you&apos;);</div></pre></td></tr></table></figure>
+<ul>
+<li>多继承</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function person (name) &#123;</div><div class="line">	this.name = name;</div><div class="line">	console.log(`姓名：$&#123;name&#125;`)</div><div class="line">&#125;</div><div class="line">function man (sex) &#123;</div><div class="line">	this.sex = sex;</div><div class="line">	console.log(`性别：$&#123;sex&#125;`)</div><div class="line">&#125;</div><div class="line">function all (name,sex) &#123;</div><div class="line">	this.girlfriend = null;</div><div class="line">	person.apply(this,[name]);</div><div class="line">	man.apply(this,[sex])</div><div class="line">&#125;;</div><div class="line">var me = new all(&apos;chenpeng&apos;,&apos;man&apos;);</div><div class="line">console.dir(me,&apos;zheshime&apos;); //</div></pre></td></tr></table></figure>
+<ul>
+<li>bind(this 硬绑定)</li>
+</ul>
+<p>将一个对象强制且永久性绑定到函数的this上，使用call,apply或者其他的绑定方式都无法改变(除了new绑定，当然，可以手动撸一个new都无法改变的硬绑定)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var fun ;</div><div class="line">var obj = &#123;</div><div class="line">    a : 1,</div><div class="line">    foo : function()&#123;</div><div class="line">        var _this = this;            //平时有没有过这种写法？ 为了防止this指向问题</div><div class="line">                                     //将this赋值给一个变量,间接维持了this的安全性</div><div class="line">       fun = function()&#123;</div><div class="line">            console.log(_this.a);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.foo();</div><div class="line">fun();                 // 1</div><div class="line"></div><div class="line">var obj1 = &#123; a : 2&#125;</div><div class="line">obj.foo.call(obj1);    // 直接修改_this所绑定的值,boom了</div><div class="line">fun();</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;一直憋了好久了，在搞不定，玩个毛！！&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
+    
+    
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
+    
+      <category term="ES5" scheme="http://niaogege.cn/tags/ES5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>随笔: 我的2017(年度总结)</title>
     <link href="http://niaogege.cn/2017/12/31/%E9%9A%8F%E7%AC%94-%E6%88%91%E7%9A%842017-%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     <id>http://niaogege.cn/2017/12/31/随笔-我的2017-年度总结/</id>
     <published>2017-12-31T10:37:34.000Z</published>
-    <updated>2017-12-31T13:11:53.978Z</updated>
+    <updated>2017-12-31T13:19:44.509Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center" style="color:#2d9fb3;"><br>从年初的一无所有，<br>到年终的身无分文，<br>勿忘初心，<br>一年白忙！<br>——鸟哥哥</blockquote></p>
 <blockquote>
@@ -61,7 +123,7 @@
 <h3 id="房-House"><a href="#房-House" class="headerlink" title="房 (House)"></a>房 (House)</h3><p>2017年拿到了自己首套房的钥匙，把我老爸老妈激动地，但对于我来说，这只是一个开始，绿地的房子这么远，到建邺区20公里，太远了。以前可能我就是希望能有套房就可以啦，但我真的不想以后的家人和孩子住这么远，生活学习都不方便，我想尽自己所能提供给家人力所能及的物质保障，我自己盘算着2020年(新房三年之后才能交易)左右，把他卖掉，去市区附近买套，所以，最近2018年又是苦逼的一年，好好攒钱！<br><img src="/images/house.jpg" alt="南京绿地国际花都"></p>
 <h3 id="朋友-MakeFriends"><a href="#朋友-MakeFriends" class="headerlink" title="朋友 (MakeFriends)"></a>朋友 (MakeFriends)</h3><p>2017年，因为工作的缘故，结识了几个志同道合的朋友，尤其是认识了在网易做前端的涛哥，特别感谢涛哥，在我最最困难的8月份给予我技术上的保障，如果没有涛哥，我恐怕难以熬过那段艰难的岁月，谢涛哥，滴水之恩当涌泉相报！来南京，我将拿出一个月的薪水好好请你跟你的老伴搓一顿，希望2018年友谊长存，希望海峰、老丁、老袁、飞飞、吉祥、斌哥一切都好，也希望范爷、小仇、肖男、方超、阿壮、阿光、阿亮、维学、腾飞2018年身体健康，2018年大家都发大财！</p>
 <h3 id="腹肌-amp-amp-书法-（Abdominal-muscles-amp-amp-Calligraphy）"><a href="#腹肌-amp-amp-书法-（Abdominal-muscles-amp-amp-Calligraphy）" class="headerlink" title="腹肌&amp;&amp;书法 （Abdominal_muscles &amp;&amp; Calligraphy）"></a>腹肌&amp;&amp;书法 （Abdominal_muscles &amp;&amp; Calligraphy）</h3><p>2017年最初的目标是四块腹肌，年底了，勉勉强强也就2块吧。我很喜欢夜深人静地时候一个人练书法，很享受，听到自己的心跳，很棒。然后，手写累的时候就开始狂练腹肌，就是滚轮子，健腹轮。希望2018年自己能继续保持内心的纯真，忠于自己的内心！<br><img src="/images/shufa2.jpg" alt="书法"></p>
-<p>岁月流转，愿你归来仍是少年！<br>再见2017！<br>你好2018。<br>新年快乐！<br><img src="/images/shufa3.jpg" alt="祝你岁月无波澜，敬我余生不悲欢"></p>
+<p>岁月流转，愿你归来仍是少年！<br>再见2017！<br>你好2018。<br>新年快乐！</p>
 ]]></content>
     
     <summary type="html">
@@ -427,9 +489,9 @@
       <category term="vue" scheme="http://niaogege.cn/categories/vue/"/>
     
     
-      <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="js" scheme="http://niaogege.cn/tags/js/"/>
+    
+      <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
@@ -921,29 +983,6 @@
       <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
       <category term="jQuery" scheme="http://niaogege.cn/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随笔：厦门感想</title>
-    <link href="http://niaogege.cn/2017/02/23/%E9%9A%8F%E7%AC%94%EF%BC%9A%E5%8E%A6%E9%97%A8%E6%84%9F%E6%83%B3/"/>
-    <id>http://niaogege.cn/2017/02/23/随笔：厦门感想/</id>
-    <published>2017-02-23T14:54:59.000Z</published>
-    <updated>2017-02-23T15:09:15.364Z</updated>
-    
-    <content type="html"><![CDATA[<p>  最近几天主要忙着交接工作的事，周末还要陪着两位大佬去厦门走走，这也是够忙的。<br>今天早上体检，很高兴啊，自己体重降到了147斤，不错，继续保持，希望能降到140，身体质量指数(BMI22.1)。哈哈哈~<br>  明天是我在老公司的最后一天，只想平稳度过，好好享受余下的时光。很感谢公司的栽培，感谢李总、金老师、王老师、陆叔的厚爱，感谢小仇、范爷等闺蜜同事的关心和支持，内心很激动，有点舍不得，但，既然做了选择离开也是一件好事，希望公司越来越好，希望部门越来越能赚钱。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;  最近几天主要忙着交接工作的事，周末还要陪着两位大佬去厦门走走，这也是够忙的。&lt;br&gt;今天早上体检，很高兴啊，自己体重降到了147斤，不错，继续保持，希望能降到140，身体质量指数(BMI22.1)。哈哈哈~&lt;br&gt;  明天是我在老公司的最后一天，只想平稳度过，好好享受余
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔，图片" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94%EF%BC%8C%E5%9B%BE%E7%89%87/"/>
     
   </entry>
   
