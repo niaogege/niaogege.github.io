@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.cn/"/>
-  <updated>2018-01-01T15:37:33.169Z</updated>
+  <updated>2018-01-28T13:54:30.963Z</updated>
   <id>http://niaogege.cn/</id>
   
   <author>
@@ -20,28 +20,40 @@
     <link href="http://niaogege.cn/2018/01/01/JS%E5%9F%BA%E7%A1%80%EF%BC%9A%E2%80%98-call-apply-bind/"/>
     <id>http://niaogege.cn/2018/01/01/JS基础：‘-call-apply-bind/</id>
     <published>2018-01-01T13:55:44.000Z</published>
-    <updated>2018-01-01T15:37:33.169Z</updated>
+    <updated>2018-01-28T13:54:30.963Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>一直憋了好久了，在搞不定，玩个毛！！</p>
 </blockquote>
+<p>沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！</p>
 <a id="more"></a>
 <h3 id="三者是什么东东"><a href="#三者是什么东东" class="headerlink" title="三者是什么东东"></a>三者是什么东东</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>改变函数内部的this</li>
-<li>注意是函数对象的方法，也就是说只有函数可也调用这些方法</li>
+<li>注意是函数对象的方法，也就是说只有<strong>函数</strong>可也调用这些方法</li>
 </ul>
 <h4 id="Diff"><a href="#Diff" class="headerlink" title="Diff"></a>Diff</h4><ul>
 <li><p>arguments: 第一个参数都是需要绑定的this</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">call: test.call(this,agr1,arg2,arg3...)</div><div class="line">apply: test.apply(this,[agr1,arg2,arg3...])</div><div class="line">bind: test.bind(this) //bind只有一个参数即this</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">call: test.call(this,agr1,arg2,arg3...)</div><div class="line">apply: test.apply(this,[agr1,arg2,arg3...]) // apply的参数是一个个传递的，传递的是数组</div><div class="line">bind: test.bind(this) //bind返回一个函数</div></pre></td></tr></table></figure>
 </li>
 <li><p>exect 调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">call,apply： 调用后立即执行原函数。</div><div class="line">bind： 调用后返回已经绑定好this的函数。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">call,apply： 调用后立即执行原函数。</div><div class="line">bind： 调用后返回新的函数，在需要的时候去调用</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
-<p>示例：</p>
+<p>示例1：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function foo(a,b)&#123;</div><div class="line">      console.log(a+b);</div><div class="line">  &#125;</div><div class="line">  foo.call(this,&apos;chen&apos;,dapeng&apos;);        </div><div class="line">  foo.apply(this, [&apos;chen&apos;,&apos;dapeng&apos;] ); </div><div class="line">  var test = foo.bind(this);//返回一个已经绑定this的函数</div><div class="line">  test(&apos;chen&apos;,&apos;peng&apos;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>示例2：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">   function f(a,b,c) &#123;</div><div class="line">console.log(a,b,c);</div><div class="line">   &#125;</div><div class="line">   var extend = f.bind(null,&apos;extend_A&apos;);</div><div class="line">   f(&apos;A&apos;,&quot;B&quot;,&apos;C&apos;) // ABC</div><div class="line">   extend(&apos;A2&apos;,&apos;B2&apos;,&apos;C2&apos;) // extend_A A2 B2</div><div class="line">   extend(&apos;B1&apos;,&apos;C1&apos;); // exend_A B1 C1</div><div class="line">   f.call(null,&apos;extend_A2&apos;) // extend_A2 undefined undefined</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Demo 3:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function f (a) &#123;</div><div class="line">    this.b = a</div><div class="line">&#125;</div><div class="line">var o = &#123;&#125;</div><div class="line">f.call(o,55)</div><div class="line">console.log(o.b) // 55</div><div class="line">console.log(f.b) //undefined</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Demo 4:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var btn = document.getElementById(&apos;btn&apos;),</div><div class="line">text = document.getElementById(&apos;text&apos;);</div><div class="line">btn.onclick = function () &#123;</div><div class="line">  console.log(this.id)</div><div class="line">&#125;.bind(text)</div></pre></td></tr></table></figure></p>
+</blockquote>
 <h3 id="三者的作用是什么"><a href="#三者的作用是什么" class="headerlink" title="三者的作用是什么"></a>三者的作用是什么</h3><h4 id="处理伪数组-Processing-pseudo-array"><a href="#处理伪数组-Processing-pseudo-array" class="headerlink" title="处理伪数组(Processing pseudo array)"></a>处理伪数组(Processing pseudo array)</h4><p>比如：var arr = document.getElementsByTagName(‘li’)，你现在需要获取其中的第2,3,4三个元素，你会怎么做？<code>arr,slice(1,4)</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">console.log([].slice.apply(arr,[1,4])) //处理伪数组</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>Tips:js中存在大量伪数组，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- function的arguments对象。</div><div class="line">- getElementsByName(),getElementsByTagName(),childNodes/children 等方法的返回值。</div></pre></td></tr></table></figure></p>
@@ -65,6 +77,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;一直憋了好久了，在搞不定，玩个毛！！&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！&lt;/p&gt;
     
     </summary>
     
@@ -489,9 +502,9 @@
       <category term="vue" scheme="http://niaogege.cn/categories/vue/"/>
     
     
-      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
-    
       <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
       <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
