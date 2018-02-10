@@ -419,10 +419,19 @@
 
       
         
-          <blockquote>
-<p>一直憋了好久了，在搞不定，玩个毛！！</p>
-</blockquote>
-<p>沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！</p>
+          <p>沉下心来，多看看React以及ES6,要学习的东西太多，没时间挥霍！</p>
+<h3 id="三者是什么东东"><a href="#三者是什么东东" class="headerlink" title="三者是什么东东"></a>三者是什么东东</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
+<li>改变函数内部的this</li>
+<li>注意是函数对象的方法，也就是说只有<strong>函数</strong>可也调用这些方法</li>
+</ul>
+<h4 id="Diff"><a href="#Diff" class="headerlink" title="Diff"></a>Diff</h4><ul>
+<li><p>arguments: 第一个参数都是需要绑定的this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">call: test.call(this,agr1,arg2,arg3...)</div><div class="line">apply: test.apply(this,[agr1,arg2,arg3...]) // apply的参数是一个个传递的，传递的是数组</div><div class="line">bind: test.bind(this) //bind返回一个函数</div></pre></td></tr></table></figure>
+</li>
+<li><p>exect 调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">call,apply： 调用后立即执行原函数。</div><div class="line">bind： 调用后返回新的函数，在需要的时候去调用</div></pre></td></tr></table></figure>
+</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/01/01/JS基础：‘-call-apply-bind/#more" rel="contents">

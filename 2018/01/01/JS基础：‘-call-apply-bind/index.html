@@ -88,22 +88,37 @@
 
 
 
-<meta name="description" content="一直憋了好久了，在搞不定，玩个毛！！
+<meta name="description" content="沉下心来，多看看React以及ES6,要学习的东西太多，没时间挥霍！
+三者是什么东东作用
+改变函数内部的this
+注意是函数对象的方法，也就是说只有函数可也调用这些方法
 
-沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！">
+Diff
+arguments: 第一个参数都是需要绑定的this
+123call: test.call(this,agr1,arg2,arg3...)apply: test.apply(this,[agr1,arg2,arg3.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS基础：call,apply,bind">
 <meta property="og:url" content="http://niaogege.cn/2018/01/01/JS基础：‘-call-apply-bind/index.html">
 <meta property="og:site_name" content="开到荼蘼">
-<meta property="og:description" content="一直憋了好久了，在搞不定，玩个毛！！
+<meta property="og:description" content="沉下心来，多看看React以及ES6,要学习的东西太多，没时间挥霍！
+三者是什么东东作用
+改变函数内部的this
+注意是函数对象的方法，也就是说只有函数可也调用这些方法
 
-沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！">
-<meta property="og:updated_time" content="2018-01-28T13:54:30.963Z">
+Diff
+arguments: 第一个参数都是需要绑定的this
+123call: test.call(this,agr1,arg2,arg3...)apply: test.apply(this,[agr1,arg2,arg3.">
+<meta property="og:updated_time" content="2018-02-10T12:54:32.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS基础：call,apply,bind">
-<meta name="twitter:description" content="一直憋了好久了，在搞不定，玩个毛！！
+<meta name="twitter:description" content="沉下心来，多看看React以及ES6,要学习的东西太多，没时间挥霍！
+三者是什么东东作用
+改变函数内部的this
+注意是函数对象的方法，也就是说只有函数可也调用这些方法
 
-沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！">
+Diff
+arguments: 第一个参数都是需要绑定的this
+123call: test.call(this,agr1,arg2,arg3...)apply: test.apply(this,[agr1,arg2,arg3.">
 
 
 
@@ -425,11 +440,7 @@
       
 
       
-        <blockquote>
-<p>一直憋了好久了，在搞不定，玩个毛！！</p>
-</blockquote>
-<p>沉下心来，多看看React以及ES6,要学习的东西太多，没时间瞎扯！</p>
-<a id="more"></a>
+        <p>沉下心来，多看看React以及ES6,要学习的东西太多，没时间挥霍！</p>
 <h3 id="三者是什么东东"><a href="#三者是什么东东" class="headerlink" title="三者是什么东东"></a>三者是什么东东</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
 <li>改变函数内部的this</li>
 <li>注意是函数对象的方法，也就是说只有<strong>函数</strong>可也调用这些方法</li>
@@ -442,6 +453,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">call,apply： 调用后立即执行原函数。</div><div class="line">bind： 调用后返回新的函数，在需要的时候去调用</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<a id="more"></a>
 <blockquote>
 <p>示例1：</p>
 </blockquote>
@@ -457,7 +469,7 @@
 <blockquote>
 <p>Demo 4:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var btn = document.getElementById(&apos;btn&apos;),</div><div class="line">text = document.getElementById(&apos;text&apos;);</div><div class="line">btn.onclick = function () &#123;</div><div class="line">  console.log(this.id)</div><div class="line">&#125;.bind(text)</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="三者的作用是什么"><a href="#三者的作用是什么" class="headerlink" title="三者的作用是什么"></a>三者的作用是什么</h3><h4 id="处理伪数组-Processing-pseudo-array"><a href="#处理伪数组-Processing-pseudo-array" class="headerlink" title="处理伪数组(Processing pseudo array)"></a>处理伪数组(Processing pseudo array)</h4><p>比如：var arr = document.getElementsByTagName(‘li’)，你现在需要获取其中的第2,3,4三个元素，你会怎么做？<code>arr,slice(1,4)</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">console.log([].slice.apply(arr,[1,4])) //处理伪数组</div></pre></td></tr></table></figure></p>
+<h3 id="三者的作用是什么"><a href="#三者的作用是什么" class="headerlink" title="三者的作用是什么"></a>三者的作用是什么</h3><h4 id="处理伪数组-Processing-pseudo-array"><a href="#处理伪数组-Processing-pseudo-array" class="headerlink" title="处理伪数组(Processing pseudo array)"></a>处理伪数组(Processing pseudo array)</h4><p>比如：var arr = document.getElementsByTagName(‘li’)，你现在需要获取其中的第2,3,4三个元素，你会怎么做？<code>arr,slice(1,4)</code>,伪数组没有这些方法，我们’借用’Array的slice不就行了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,4,5];</div><div class="line">console.log([].slice.apply(arr,[1,4])) //处理伪数组</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>Tips:js中存在大量伪数组，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- function的arguments对象。</div><div class="line">- getElementsByName(),getElementsByTagName(),childNodes/children 等方法的返回值。</div></pre></td></tr></table></figure></p>
 </blockquote>
@@ -473,7 +485,9 @@
 <li>bind(this 硬绑定)</li>
 </ul>
 <p>将一个对象强制且永久性绑定到函数的this上，使用call,apply或者其他的绑定方式都无法改变(除了new绑定，当然，可以手动撸一个new都无法改变的硬绑定)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var fun ;</div><div class="line">var obj = &#123;</div><div class="line">    a : 1,</div><div class="line">    foo : function()&#123;</div><div class="line">        var _this = this;            //平时有没有过这种写法？ 为了防止this指向问题</div><div class="line">                                     //将this赋值给一个变量,间接维持了this的安全性</div><div class="line">       fun = function()&#123;</div><div class="line">            console.log(_this.a);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.foo();</div><div class="line">fun();                 // 1</div><div class="line"></div><div class="line">var obj1 = &#123; a : 2&#125;</div><div class="line">obj.foo.call(obj1);    // 直接修改_this所绑定的值,boom了</div><div class="line">fun();</div></pre></td></tr></table></figure></p>
-
+<p>下面用bind()优化上面的写法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var fun ;</div><div class="line">var obj = &#123;</div><div class="line">    a : 1,</div><div class="line">    foo : function()&#123;     </div><div class="line">        fun = function()&#123;</div><div class="line">            console.log(this.a)</div><div class="line">    &#125;.bind(this)</div><div class="line">&#125;</div><div class="line">var obj1 = &#123; a : 2&#125;</div><div class="line">obj.foo();</div><div class="line">fun();             // 1</div><div class="line">fun.call(obj1);    // 1  call ,apply等绑定 无法修改a的值</div></pre></td></tr></table></figure></p>
+<h3 id="取数组的最大值与最小值"><a href="#取数组的最大值与最小值" class="headerlink" title="取数组的最大值与最小值"></a>取数组的最大值与最小值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var arr = [1,2,3,44,-66,999]</div><div class="line">console.log(Math.max.apply(Math,arr)); // 999</div><div class="line">console.log(Math.min.apply(Math,arr)); // 66</div></pre></td></tr></table></figure>
+<h3 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3];</div><div class="line">var b = [4,5,6];</div><div class="line">Array.prototype.push.apply(a,b);    // 借用数组的push方法 等价 a.push(4,5,6);</div><div class="line">console.log(a);</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -751,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三者是什么东东"><span class="nav-number">1.</span> <span class="nav-text">三者是什么东东</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">1.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diff"><span class="nav-number">1.2.</span> <span class="nav-text">Diff</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三者的作用是什么"><span class="nav-number">2.</span> <span class="nav-text">三者的作用是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#处理伪数组-Processing-pseudo-array"><span class="nav-number">2.1.</span> <span class="nav-text">处理伪数组(Processing pseudo array)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承-inherit"><span class="nav-number">2.2.</span> <span class="nav-text">继承(inherit)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#三者是什么东东"><span class="nav-number">1.</span> <span class="nav-text">三者是什么东东</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">1.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Diff"><span class="nav-number">1.2.</span> <span class="nav-text">Diff</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三者的作用是什么"><span class="nav-number">2.</span> <span class="nav-text">三者的作用是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#处理伪数组-Processing-pseudo-array"><span class="nav-number">2.1.</span> <span class="nav-text">处理伪数组(Processing pseudo array)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承-inherit"><span class="nav-number">2.2.</span> <span class="nav-text">继承(inherit)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取数组的最大值与最小值"><span class="nav-number">3.</span> <span class="nav-text">取数组的最大值与最小值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并数组"><span class="nav-number">4.</span> <span class="nav-text">合并数组</span></a></li></ol></div>
             
 
           </div>
