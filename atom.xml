@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.cn/"/>
-  <updated>2018-02-10T13:53:25.566Z</updated>
+  <updated>2018-02-10T14:20:11.158Z</updated>
   <id>http://niaogege.cn/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>随笔：2018年愿景</title>
+    <link href="http://niaogege.cn/2018/02/10/%E9%9A%8F%E7%AC%94%EF%BC%9A2018%E5%B9%B4%E6%84%BF%E6%99%AF/"/>
+    <id>http://niaogege.cn/2018/02/10/随笔：2018年愿景/</id>
+    <published>2018-02-10T14:03:52.000Z</published>
+    <updated>2018-02-10T14:20:11.158Z</updated>
+    
+    <content type="html"><![CDATA[<p><blockquote class="blockquote-center" style="color:green;">“有时候正是人们认为的无用之人，成就无人敢想之事”<br>——Front_end</blockquote><br>最近身体不适，颓废了5天。说来都不信，因为长时间晚上练书法导致腰酸背痛，坐姿肯定有问题，躺了5天果然好多了。马上要放假了，可不管什么时候，我总感觉时间不够。晚上想不停地练书法，但是脸上老是不争气，会长痘，所以，最近，不管什么事情，都会在11点准时睡觉，这是我做的第一个改变。<br>第二个是，寒假期间，如何安排？除了走亲戚之外，其他就只能老老实实看学习规划了，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- NodeJS/express</div><div class="line">- React/Redux</div><div class="line">- D3/G2/G6数据可视化</div><div class="line">- mySql</div></pre></td></tr></table></figure></p>
+<p>以上四点将是我18年的重点攻克对象，所以，能不能去大厂，成败在此。<br>17年后面两个月心态不稳，浮躁的一逼，想来想去，核心技术没怎么长进，所以18年还需要继续奋斗。<br>第三个，尽量抽时间浪费在自己的兴趣爱好上，就是<strong>书法和健身</strong>。希望能遇到志同道合的朋友，这样就更完美了。其他的事，顺其自然吧，我相信缘分自由天空！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot; style=&quot;color:green;&quot;&gt;“有时候正是人们认为的无用之人，成就无人敢想之事”&lt;br&gt;——Front_end&lt;/blockquote&gt;&lt;br&gt;最近身体不适，颓废了5天。说来都不信，因为
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JS基础：call,apply,bind</title>
     <link href="http://niaogege.cn/2018/01/01/JS%E5%9F%BA%E7%A1%80%EF%BC%9A%E2%80%98-call-apply-bind/"/>
     <id>http://niaogege.cn/2018/01/01/JS基础：‘-call-apply-bind/</id>
     <published>2018-01-01T13:55:44.000Z</published>
-    <updated>2018-02-10T13:53:25.566Z</updated>
+    <updated>2018-02-10T14:01:41.385Z</updated>
     
     <content type="html"><![CDATA[<p>沉下心来，多看看React以及ES6,要学习的东西太多，没时间挥霍！</p>
 <h3 id="三者是什么东东"><a href="#三者是什么东东" class="headerlink" title="三者是什么东东"></a>三者是什么东东</h3><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><ul>
@@ -110,6 +134,10 @@
     </summary>
     
       <category term="js" scheme="http://niaogege.cn/categories/js/"/>
+    
+      <category term="ES5" scheme="http://niaogege.cn/categories/js/ES5/"/>
+    
+      <category term="ES6" scheme="http://niaogege.cn/categories/js/ES5/ES6/"/>
     
     
       <category term="js" scheme="http://niaogege.cn/tags/js/"/>
@@ -530,9 +558,9 @@
       <category term="vue" scheme="http://niaogege.cn/categories/vue/"/>
     
     
-      <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="js" scheme="http://niaogege.cn/tags/js/"/>
+    
+      <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
@@ -978,52 +1006,6 @@
       <category term="GIT" scheme="http://niaogege.cn/tags/GIT/"/>
     
       <category term="版本控制工具" scheme="http://niaogege.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jQuery().on方法的使用详解</title>
-    <link href="http://niaogege.cn/2017/03/11/jQuery-on%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://niaogege.cn/2017/03/11/jQuery-on方法的使用详解/</id>
-    <published>2017-03-11T11:13:30.000Z</published>
-    <updated>2017-07-22T12:13:02.500Z</updated>
-    
-    <content type="html"><![CDATA[<p>从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照<br><br><img src="/images/072302.jpg" style="width:50%"><br><img src="/images/072303.jpg" style="width:50%"><br> 本文 <a href="http://blog.csdn.net/linshichen/article/details/51302683" target="_blank" rel="external"><strong>原文链接</strong></a> ，希望能帮到这些前端小白。用法：<strong>此方法可以在匹配元素上绑定一个或者多个事件处理函数。</strong> <strong>使用off()方法可以删除on()方法绑定的事件。</strong></p>
-<hr>
-<a id="more"></a>
-<h3 id="语法结构一"><a href="#语法结构一" class="headerlink" title="语法结构一"></a>语法结构一</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).on(events,[selector],[data],fn)</div></pre></td></tr></table></figure>
-<ul>
-<li>events:一个或多个用空格分隔的事件类型和可选的命名空间。</li>
-<li>selector:可选。一个选择器字符串，用以过滤选定的元素，该选择器的子元素将调用处理程序。</li>
-<li>data:可选。作为event.data属性值传递给事件对象的额外数据对象以供事件处理函数处理。</li>
-<li>fn：该事件被触发时执行的函数。 false值也可以做一个函数的简写，返回false。</li>
-</ul>
-<hr>
-<h4 id="实例一"><a href="#实例一" class="headerlink" title="实例一"></a>实例一</h4><p><strong><em>利用 data 参数为绑定的事件处理函数传递数据</em></strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$(document).ready(<span class="function"><span class="title">function</span></span>()&#123; </div><div class="line">  var newtext=<span class="string">"这是新文本"</span> </div><div class="line">  $(<span class="string">"div"</span>).on(<span class="string">"click"</span>,&#123;<span class="string">"mytext"</span>:newtext&#125;,<span class="keyword">function</span>(e)&#123; </div><div class="line">    $(this).text(e.data.mytext); </div><div class="line">  &#125;) </div><div class="line">&#125;) </div><div class="line">``` </div><div class="line"></div><div class="line"><span class="comment">####  实例二</span></div><div class="line"></div><div class="line">通过通过选择器字符串来过滤匹配元素的子元素中哪些可以响应绑定的事件。下面的代码中，类名为children的元素和它的子元素可以调用绑定的事件</div><div class="line"></div><div class="line">``` bash</div><div class="line">$(document).ready(<span class="function"><span class="title">function</span></span>()&#123; </div><div class="line">  var newtext=<span class="string">"这是新文本"</span> </div><div class="line">  $(<span class="string">".parent"</span>).on(<span class="string">"click"</span>,<span class="string">".children"</span>,&#123;<span class="string">"mytext"</span>:newtext&#125;,<span class="keyword">function</span>(e)&#123; </div><div class="line">    $(this).text(e.data.mytext); </div><div class="line">  &#125;) </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="语法结构二"><a href="#语法结构二" class="headerlink" title="语法结构二"></a>语法结构二</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(selector).on(object,[selector],[data])</div></pre></td></tr></table></figure>
-<ul>
-<li>object:一个用字符串表示的，一个或多个空格分隔的事件类型和可选的命名空间，值表示事件绑定的处理函数<br>其他两个参数与之前的结构一样</li>
-</ul>
-<h4 id="实例一-1"><a href="#实例一-1" class="headerlink" title="实例一"></a>实例一</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(document).ready(<span class="function"><span class="title">function</span></span>()&#123; </div><div class="line">  var newtext=<span class="string">"这是新文本"</span> </div><div class="line">  $(<span class="string">"div"</span>).on(&#123;click:<span class="keyword">function</span>(e)&#123; </div><div class="line">    $(this).text(e.data.mytext); </div><div class="line">  &#125;&#125;,&#123;<span class="string">"mytext"</span>:newtext&#125;) </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p><strong><em>以上代码中，事件类型和事件处理函数以对象的形式绑定的。</em></strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;从厦门回来之后，两周没写博客了，主要是没时间，先放一张在厦门的靓照&lt;br&gt;&lt;br&gt;&lt;img src=&quot;/images/072302.jpg&quot; style=&quot;width:50%&quot;&gt;&lt;br&gt;&lt;img src=&quot;/images/072303.jpg&quot; style=&quot;width:50%&quot;&gt;&lt;br&gt; 本文 &lt;a href=&quot;http://blog.csdn.net/linshichen/article/details/51302683&quot;&gt;&lt;strong&gt;原文链接&lt;/strong&gt;&lt;/a&gt; ，希望能帮到这些前端小白。用法：&lt;strong&gt;此方法可以在匹配元素上绑定一个或者多个事件处理函数。&lt;/strong&gt; &lt;strong&gt;使用off()方法可以删除on()方法绑定的事件。&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="js" scheme="http://niaogege.cn/categories/js/"/>
-    
-      <category term="jQuery" scheme="http://niaogege.cn/categories/js/jQuery/"/>
-    
-    
-      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
-    
-      <category term="jQuery" scheme="http://niaogege.cn/tags/jQuery/"/>
     
   </entry>
   
