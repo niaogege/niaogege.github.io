@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://niaogege.cn/"/>
-  <updated>2018-02-10T14:20:11.158Z</updated>
+  <updated>2018-02-16T11:10:20.038Z</updated>
   <id>http://niaogege.cn/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随笔: 戊戌狗年，新年快乐</title>
+    <link href="http://niaogege.cn/2018/02/16/%E9%9A%8F%E7%AC%94-%E6%88%8A%E6%88%8C%E7%8B%97%E5%B9%B4%EF%BC%8C%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
+    <id>http://niaogege.cn/2018/02/16/随笔-戊戌狗年，新年快乐/</id>
+    <published>2018-02-16T11:00:06.000Z</published>
+    <updated>2018-02-16T11:10:20.038Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>戊戌狗年啦！
+</code></pre><h3 id="陈大鹏祝您："><a href="#陈大鹏祝您：" class="headerlink" title="陈大鹏祝您："></a>陈大鹏祝您：</h3><h4 id="新年快乐，身体健康，万事如意！"><a href="#新年快乐，身体健康，万事如意！" class="headerlink" title="新年快乐，身体健康，万事如意！"></a>新年快乐，身体健康，万事如意！</h4><a id="more"></a>
+<p><img src="/images/happynewyear.jpg" alt="新年快乐"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;戊戌狗年啦！
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;陈大鹏祝您：&quot;&gt;&lt;a href=&quot;#陈大鹏祝您：&quot; class=&quot;headerlink&quot; title=&quot;陈大鹏祝您：&quot;&gt;&lt;/a&gt;陈大鹏祝您：&lt;/h3&gt;&lt;h4 id=&quot;新年快乐，身体健康，万事如意！&quot;&gt;&lt;a href=&quot;#新年快乐，身体健康，万事如意！&quot; class=&quot;headerlink&quot; title=&quot;新年快乐，身体健康，万事如意！&quot;&gt;&lt;/a&gt;新年快乐，身体健康，万事如意！&lt;/h4&gt;
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://niaogege.cn/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>随笔：2018年愿景</title>
@@ -558,9 +584,9 @@
       <category term="vue" scheme="http://niaogege.cn/categories/vue/"/>
     
     
-      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
-    
       <category term="前端" scheme="http://niaogege.cn/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="js" scheme="http://niaogege.cn/tags/js/"/>
     
       <category term="Vue" scheme="http://niaogege.cn/tags/Vue/"/>
     
@@ -949,63 +975,6 @@
     
     
       <category term="随笔" scheme="http://niaogege.cn/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GIT Three :Learn How to Use Git (三)</title>
-    <link href="http://niaogege.cn/2017/03/12/GIT-three-learn-how-to-use-git-%E4%B8%89/"/>
-    <id>http://niaogege.cn/2017/03/12/GIT-three-learn-how-to-use-git-三/</id>
-    <published>2017-03-12T11:23:59.000Z</published>
-    <updated>2017-03-12T13:32:17.341Z</updated>
-    
-    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">读书的意义大概就是用生活所感去读书，用读书所得去生活吧</blockquote><br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="external"><strong><em>原文链接</em></strong></a></p>
-<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p>截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。</p>
-<hr>
-<a id="more"></a>
-<h4 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h4><ul>
-<li><code style="background:#2D9FB3;color:white;">$ git checkout -b dev </code>创建并切换到分支dev</li>
-<li>然后，用git branch命令查看当前分支：</li>
-<li>然后，我们就可以在dev分支上正常提交，比如对readme.txt做个修改，加上一行：</li>
-<li>现在，dev分支的工作完成，我们就可以切换回master分支：<code style="background:#2D9FB3;color:white;">git checkout master</code>才是指向提交的，所以，HEAD指向的就是当前分支。</li>
-<li>现在，我们把dev分支的工作成果合并到master分支上：<code style="background:#2D9FB3;color:white;">git merge dev</code> (git merge命令用于合并指定分支到当前分支)</li>
-</ul>
-<h4 id="分支合并时解决冲突"><a href="#分支合并时解决冲突" class="headerlink" title="分支合并时解决冲突"></a>分支合并时解决冲突</h4><p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，我们手动修改后保存<br>用带参数的git log也可以看到分支的合并情况：<br><code style="background:#2D9FB3;color:white;">$ git log –graph –pretty=oneline –abbrev-commit </code></p>
-<h4 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h4><p>通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
-<p>如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。<br>其他几步都一样，只是在合并分支时，请注意参数<code>–no-ff</code><br><code style="background:#2D9FB3;color:white;">$ git merge –no-ff -m “merge with no-ff” dev</code>合并后，我们用git log看看分支历史：<br><code>$ git log –graph –pretty=oneline –abbrev-commit</code>，强行删除分支用<code>git branch  -D dev</code></p>
-<p><strong>分支策略</strong>：</p><p style="font-family:'微软雅黑'">首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。</p><p></p>
-<h4 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h4><p>Git提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：<br><code style="background:#2D9FB3;color:white;">git stash</code>.原计划两个小时的bug修复只花了5分钟！现在，是时候接着回到dev分支干活了！用git stash list命令看看：工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；另一种方式是用<code style="background:#2D9FB3;color:white;">git stash pop</code>，恢复的同时把stash内容也删了。</p>
-<hr>
-<h4 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h4><ul>
-<li>要查看远程库的信息，用<code style="background:#2D9FB3;color:white;">git remote -v </code>;因此，多人协作的工作模式通常是这样：</li>
-<li>首先，可以试图用<code style="background:#2D9FB3;color:white;">git push origin branch-name</code>推送自己的修改；</li>
-<li>如果推送失败，则因为远程分支比你的本地更新，需要先用<code>git pull</code>试图合并；</li>
-<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
-<li>没有冲突或者解决掉冲突后，再用<code style="background:#2D9FB3;color:white;">git push origin branch-name</code>推送就能成功！</li>
-</ul>
-<h5 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h5><ul>
-<li>本地新建的分支如果不推送到远程，对其他人就是不可见的；</li>
-<li>从本地推送分支，使用<code style="background:#2D9FB3;color:white;">git push origin branch-name</code>，如果推送失败，先用git pull抓取远程的新提交；</li>
-<li>在本地创建和远程分支对应的分支，使用<code style="background:#2D9FB3;color:white;">git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致；</li>
-<li>建立本地分支和远程分支的关联，使用<code style="background:#2D9FB3;color:white;">git branch –set-upstream branch-name origin/branch-name</code>；</li>
-<li>从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;读书的意义大概就是用生活所感去读书，用读书所得去生活吧&lt;/blockquote&gt;&lt;br&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000&quot;&gt;&lt;strong&gt;&lt;em&gt;原文链接&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;分支管理&quot;&gt;&lt;a href=&quot;#分支管理&quot; class=&quot;headerlink&quot; title=&quot;分支管理&quot;&gt;&lt;/a&gt;分支管理&lt;/h3&gt;&lt;p&gt;截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。&lt;/p&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="http://niaogege.cn/categories/Git/"/>
-    
-    
-      <category term="GIT" scheme="http://niaogege.cn/tags/GIT/"/>
-    
-      <category term="版本控制工具" scheme="http://niaogege.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
