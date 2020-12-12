@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>前端进阶-vue-2</title>
+      <link href="/2020/12/12/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-vue-2/"/>
+      <url>/2020/12/12/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-vue-2/</url>
+      
+        <content type="html"><![CDATA[<ul><li>封装自己的vue组件</li><li></li></ul><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul><li><a href="https://juejin.cn/post/6844903636938522638" target="_blank" rel="noopener">vue中extend，mixins，extends，components,install的几个操作</a></li><li><a href="https://juejin.cn/post/6844904181443067912" target="_blank" rel="noopener">学习vue源码（5） 手写Vue.use、Vue.minxin、Vue.compile</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+          <category> es6 </category>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> javascript </tag>
+            
+            <tag> es6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端进阶-大杂烩-1</title>
       <link href="/2020/12/05/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-%E5%A4%A7%E6%9D%82%E7%83%A9-1/"/>
       <url>/2020/12/05/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-%E5%A4%A7%E6%9D%82%E7%83%A9-1/</url>
@@ -242,13 +275,39 @@
     
     
     <entry>
-      <title>前端进阶: webpack</title>
+      <title>前端进阶: webpack 配置项</title>
       <link href="/2020/07/18/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-webpack/"/>
       <url>/2020/07/18/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-webpack/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h3 id="output配置项"><a href="#output配置项" class="headerlink" title="output配置项"></a>output配置项</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: path.resolve(__dirname, <span class="string">'../src/component/index.js'</span>),</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'../dist'</span>), <span class="comment">// 输出的文件位置</span></span><br><span class="line">    filename: <span class="string">'main.js'</span>, <span class="comment">// 输出的文件名</span></span><br><span class="line">    libraryTarget: <span class="string">'umd'</span>, <span class="comment">// 输出格式</span></span><br><span class="line">    library: <span class="string">'cppVue'</span> <span class="comment">// 模块名称</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>按不同的模块方式生成</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">commonjs&#x2F;commonjs2: 将你的library暴露为CommonJS模块</span><br><span class="line">amd: 将你的library暴露为amd模块</span><br><span class="line">umd: 将你的library暴露为所有的模块定义下都可运行的方式</span><br></pre></td></tr></table></figure><blockquote><p>注意：commonjs和commonjs2几乎相同，只不过commonjs只包含exports，而commonjs2还包含module.exports，所以直接使用commonjs2即可。</p></blockquote><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul><li><a href="https://segmentfault.com/a/1190000017960583" target="_blank" rel="noopener">为什么自己写的组件库被引用总是报错——详解webpack的library和libraryTarget</a></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> webpack </category>
+          
+          <category> javascript </category>
+          
+          <category> es6 </category>
+          
+          <category> umd </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> es6 </tag>
+            
+            <tag> webpack </tag>
+            
+            <tag> umd </tag>
+            
+            <tag> output </tag>
+            
+        </tags>
       
     </entry>
     
