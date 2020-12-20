@@ -4,11 +4,44 @@
   
     
     <entry>
+      <title>我的2020年度总结</title>
+      <link href="/2020/12/20/%E6%88%91%E7%9A%842020%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+      <url>/2020/12/20/%E6%88%91%E7%9A%842020%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<p>  2020年一眨眼的功夫就没了，越来越觉得时间的重要性。人都是被逼出来的，我发现自己做事越来越专注，这是一种很好的趋势，希望自己能保持出。<br>  刚过去的2020年，是值得永远铭记的一年，两位至亲突然离世让我一时难以接受现实，总以为时间还很长很长。病魔说来就来，人在这方面太过于渺小，所以2021年给自己提出的小目标就是身体健康永远是摆在第一位的，活一天就要健健康康一天，工作丢了阔以再找，技能包在手，到哪里都不怕。</p><h2 id="工作和学习"><a href="#工作和学习" class="headerlink" title="工作和学习"></a>工作和学习</h2><p>  有一种感觉，到了2020年才感觉自己真正走进前端。以前总觉得很难理解的名词术语，现在慢慢开始理解了，刚开始第一遍不理解，过俩月，第二遍就理解加深一点，第三遍再去看的时候，是不是更加融会贯通一点，所以2021年给自己的目标是重学前端，从最基础的js/es6/css学起，到前端框架vue源码学习，前端工程化，如果有精力，nodejs这块，部署一个网站也是要学会和理解的。<br>  不能再像以前一样，埋头苦干业务，干五年和干一年都一个样，很没有意义。要着眼于未来，所以，哪怕是在忙，也要抽时间学习。学什么呢，什么不会就学什么，直到深刻领悟的地步。<br>  之前看过一篇文章，说程序员如何阅读源码，我觉得说得很有道理，原文是这么说的<br>    - 领悟思想：只需体会作者设计框架的初衷和目的<br>    - 把握设计：只需体会代码的接口和抽象类以及宏观的设计<br>    - 体会细节：是基于顶层的抽象接口设计，逐渐展开代码的画卷<br>  很有指导意义，希望能按照这几点，好好品读 vue/webpack/axios等生态相关库框架源码，并通过文字记录下来<br>  内心想进大厂看看，不想老了后悔，所以最近这几个月，好好苦读和学习吧。</p><p>  今年开始学习前端基础知识，写了几篇入门的文章，但总感觉有些东西还是不能立马说出来</p><ul><li>class 和 继承</li><li>手写系列，这部分现在让我说我感觉自己又忘了，不能深刻理解这很头疼啊</li><li>webpack初始化项目</li><li>vscode插件学习</li><li>自己的脚手架搭建</li><li>设计模式之装饰器学习</li></ul><p>我发现自己还是比较喜欢前端工程化，所以有时间就好好研究一下吧</p><h2 id="生活和书法"><a href="#生活和书法" class="headerlink" title="生活和书法"></a>生活和书法</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 总结 </category>
+          
+          <category> 前端 </category>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 总结 </tag>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端之装饰者模式以及装饰器</title>
       <link href="/2020/12/13/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%A3%85%E9%A5%B0%E5%99%A8/"/>
       <url>/2020/12/13/%E5%89%8D%E7%AB%AF%E4%B9%8B%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%A3%85%E9%A5%B0%E5%99%A8/</url>
       
-        <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="/images/Decorator2.jpeg" alt="Decorator"></p><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>给对象动态增加职责的方式称为装饰者模式。该模式能够在不改变对象自身的基础上，在程序运行期间给对象动态增加指责</p><h3 id="装饰函数"><a href="#装饰函数" class="headerlink" title="装饰函数"></a>装饰函数</h3><p>想要为函数增加额外功能，最简单粗暴的方式直接改写函数，但这很不友好，违反封闭-开放原则</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(<span class="number">1</span>)&#125;</span><br><span class="line"><span class="comment">// 改成</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">  alert(<span class="number">1</span>);</span><br><span class="line">  alert(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line">a()</span><br></pre></td></tr></table></figure><p>在不改变函数源代码的方式能给函数增加功能，这正是开放-封闭原则。通过保存原引用的方式改写函数</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(<span class="number">1</span>)&#125;</span><br><span class="line"><span class="keyword">var</span> _a = a</span><br><span class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  _a()</span><br><span class="line">  alert(<span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line">a()</span><br></pre></td></tr></table></figure><h3 id="编写装饰器"><a href="#编写装饰器" class="headerlink" title="编写装饰器"></a>编写装饰器</h3><p>class decorator 类装饰器<br>parameter decorator 参数装饰器<br>property decorator 属性装饰器<br>method decorator 方法装饰器</p><h3 id="ts项目的运用"><a href="#ts项目的运用" class="headerlink" title="ts项目的运用"></a>ts项目的运用</h3><ul><li><a href="https://www.tslang.cn/docs/handbook/decorators.html" target="_blank" rel="noopener">装饰器</a></li></ul><h3 id="Ts项目中的’vue-property-decorator’拆解"><a href="#Ts项目中的’vue-property-decorator’拆解" class="headerlink" title="Ts项目中的’vue-property-decorator’拆解"></a>Ts项目中的’vue-property-decorator’拆解</h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h3 id="ts报错信息"><a href="#ts报错信息" class="headerlink" title="ts报错信息"></a>ts报错信息</h3><ul><li><p>Unable to resolve signature of class decorator when called as an expression.<br>This expression is not callable.<br>  Type ‘void’ has no call signatures.</p></li><li><p>signature 签名</p></li></ul><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul><li><a href="https://zhuanlan.zhihu.com/p/271226380" target="_blank" rel="noopener">设计模式大冒险第二关：装饰者模式，煎饼果子的主场</a></li><li><a href="https://segmentfault.com/a/1190000022415199" target="_blank" rel="noopener">装饰者模式和TypeScript装饰器</a></li><li><a href="https://juejin.cn/post/6895350355219972109" target="_blank" rel="noopener">从Typescript装饰器浅谈装饰者模式</a></li><li><a href="https://www.softwhy.com/article-9203-1.html" target="_blank" rel="noopener">Object.seal &amp; Object.freeze</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p><img src= "/img/loading.gif" data-src="/images/Decorator2.jpeg" alt="Decorator"></p><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>给对象动态增加职责的方式称为装饰者模式。该模式能够在不改变对象自身的基础上，在程序运行期间给对象动态增加指责</p><h3 id="装饰函数"><a href="#装饰函数" class="headerlink" title="装饰函数"></a>装饰函数</h3><p>想要为函数增加额外功能，最简单粗暴的方式直接改写函数，但这很不友好，违反封闭-开放原则</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(<span class="number">1</span>)&#125;</span><br><span class="line"><span class="comment">// 改成</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">  alert(<span class="number">1</span>);</span><br><span class="line">  alert(<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line">a()</span><br></pre></td></tr></table></figure><p>在不改变函数源代码的方式能给函数增加功能，这正是开放-封闭原则。通过保存原引用的方式改写函数</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(<span class="number">1</span>)&#125;</span><br><span class="line"><span class="keyword">var</span> _a = a</span><br><span class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  _a()</span><br><span class="line">  alert(<span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line">a()</span><br></pre></td></tr></table></figure><h3 id="编写装饰器"><a href="#编写装饰器" class="headerlink" title="编写装饰器"></a>编写装饰器</h3><p>class decorator 类装饰器<br>method decorator 方法装饰器<br>property decorator 属性装饰器<br>parameter decorator 参数装饰器</p><p>装饰器是一种特殊类型的声明，它能够被附加到<em>类声明，方法， 访问符，属性或参数</em>上。 装饰器使用 @expression这种形式，expression求值后必须为一个函数，它会在运行时被调用，被装饰的声明信息做为参数传入。</p><h4 id="装饰器工厂"><a href="#装饰器工厂" class="headerlink" title="装饰器工厂"></a>装饰器工厂</h4><p>如果我们要定制一个修饰器如何应用到一个声明上，我们得写一个装饰器工厂函数。 装饰器工厂就是一个简单的函数，它返回一个表达式，以供装饰器在运行时调用。</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">thinFace</span>(<span class="params">name: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name, <span class="string">'开启瘦脸'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"thinFace(): called"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">increaseEye</span>(<span class="params">name: <span class="built_in">string</span></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name, <span class="string">'增大眼睛'</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target: <span class="built_in">string</span>, propertyKey: <span class="built_in">string</span>, descriptor: PropertyDescriptor</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"increaseEye(): called"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@thinFace</span>(<span class="string">'cpp'</span>)</span><br><span class="line"><span class="meta">@increaseEye</span>(<span class="string">'niaogege'</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> Girl &#123;&#125;</span><br><span class="line"><span class="comment">// 打印参数</span></span><br><span class="line"></span><br><span class="line">cpp 开启瘦脸</span><br><span class="line">niaogege 增大眼睛</span><br><span class="line">increaseEye(): called</span><br><span class="line">thinFace(): called</span><br></pre></td></tr></table></figure><p>在TypeScript里，当多个装饰器应用在一个声明上时会进行如下步骤的操作：</p><ul><li>由上至下依次对装饰器表达式求值。</li><li>求值的结果会被当作函数，由下至上依次调用(装饰器函数)。</li></ul><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="ts项目的运用"><a href="#ts项目的运用" class="headerlink" title="ts项目的运用"></a>ts项目的运用</h3><ul><li><a href="https://www.tslang.cn/docs/handbook/decorators.html" target="_blank" rel="noopener">装饰器</a></li></ul><h3 id="Ts项目中的’vue-property-decorator’拆解"><a href="#Ts项目中的’vue-property-decorator’拆解" class="headerlink" title="Ts项目中的’vue-property-decorator’拆解"></a>Ts项目中的’vue-property-decorator’拆解</h3><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h3 id="ts报错信息"><a href="#ts报错信息" class="headerlink" title="ts报错信息"></a>ts报错信息</h3><ul><li><p>Unable to resolve signature of class decorator when called as an expression.<br>This expression is not callable.<br>  Type ‘void’ has no call signatures.</p></li><li><p>signature 签名</p></li></ul><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul><li><a href="https://www.tslang.cn/docs/handbook/decorators.html" target="_blank" rel="noopener">ts中的装饰器</a></li><li><a href="https://zhuanlan.zhihu.com/p/271226380" target="_blank" rel="noopener">设计模式大冒险第二关：装饰者模式，煎饼果子的主场</a></li><li><a href="https://segmentfault.com/a/1190000022415199" target="_blank" rel="noopener">装饰者模式和TypeScript装饰器</a></li><li><a href="https://juejin.cn/post/6895350355219972109" target="_blank" rel="noopener">从Typescript装饰器浅谈装饰者模式</a></li><li><a href="https://www.softwhy.com/article-9203-1.html" target="_blank" rel="noopener">Object.seal &amp; Object.freeze</a></li></ul>]]></content>
       
       
       <categories>
@@ -24,9 +57,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> Decorator </tag>
             
@@ -59,9 +92,9 @@
             
             <tag> node </tag>
             
-            <tag> es6 </tag>
-            
             <tag> package.json </tag>
+            
+            <tag> es6 </tag>
             
         </tags>
       
@@ -123,11 +156,11 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
             
             <tag> vue </tag>
+            
+            <tag> javascript </tag>
             
         </tags>
       
@@ -156,11 +189,11 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
             
             <tag> vue </tag>
+            
+            <tag> javascript </tag>
             
         </tags>
       
@@ -189,9 +222,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> class </tag>
             
@@ -222,9 +255,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> webpack </tag>
             
@@ -255,11 +288,11 @@
       
         <tags>
             
+            <tag> node </tag>
+            
             <tag> vscode </tag>
             
             <tag> tool </tag>
-            
-            <tag> node </tag>
             
         </tags>
       
@@ -361,9 +394,9 @@
       
         <tags>
             
-            <tag> tool </tag>
-            
             <tag> node </tag>
+            
+            <tag> tool </tag>
             
             <tag> cli </tag>
             
@@ -396,9 +429,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> webpack </tag>
             
@@ -493,9 +526,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> http </tag>
             
@@ -528,9 +561,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> http </tag>
             
@@ -563,9 +596,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> http </tag>
             
@@ -598,9 +631,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> javascript </tag>
             
             <tag> http </tag>
             
@@ -633,11 +666,11 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
             
             <tag> vue </tag>
+            
+            <tag> javascript </tag>
             
         </tags>
       
@@ -666,11 +699,11 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> es6 </tag>
             
             <tag> vue </tag>
+            
+            <tag> javascript </tag>
             
         </tags>
       
