@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>前端进阶: js执行机制 | Niaogege</title><meta name="description" content="js执行是单线程的单线程是指Js引擎执行Js时只分了一个线程给他执行，也就是执行js时是单线程的。说白点就是一个时间点只能做一件事，这里只是说javascript,浏览器可不是单线程的，浏览器可是多进程的 js引擎JS引擎是浏览器的重要组成部分，主要用于读取并执行js。js引擎存在monitoring process进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去Event Queue"><meta name="keywords" content="单线程，微任务和宏任务"><meta name="author" content="chendapeng,291003932@qq.com"><meta name="copyright" content="chendapeng"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://niaogege.cn/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="前端进阶: js执行机制"><meta property="og:url" content="http://niaogege.cn/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/"><meta property="og:site_name" content="Niaogege"><meta property="og:description" content="js执行是单线程的单线程是指Js引擎执行Js时只分了一个线程给他执行，也就是执行js时是单线程的。说白点就是一个时间点只能做一件事，这里只是说javascript,浏览器可不是单线程的，浏览器可是多进程的 js引擎JS引擎是浏览器的重要组成部分，主要用于读取并执行js。js引擎存在monitoring process进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去Event Queue"><meta property="og:image" content="http://niaogege.cn/images/EventTable.png"><meta property="article:published_time" content="2020-12-26T08:26:59.000Z"><meta property="article:modified_time" content="2020-12-26T12:49:51.842Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="next" title="前端进阶: promise-2" href="http://niaogege.cn/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-promise-2/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: {"languages":{"author":"作者: chendapeng","link":"链接: ","source":"来源: Niaogege","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">26</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">30</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">40</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page" href="/phots/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> Messageboard</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js执行是单线程的"><span class="toc-number">1.</span> <span class="toc-text">js执行是单线程的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js引擎"><span class="toc-number">2.</span> <span class="toc-text">js引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浏览器"><span class="toc-number">3.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行栈"><span class="toc-number">4.</span> <span class="toc-text">执行栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宏任务和微任务"><span class="toc-number">5.</span> <span class="toc-text">宏任务和微任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js执行机制"><span class="toc-number">6.</span> <span class="toc-text">js执行机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#大概过程"><span class="toc-number">6.1.</span> <span class="toc-text">大概过程:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS引擎线程和事件触发线程"><span class="toc-number">6.2.</span> <span class="toc-text">JS引擎线程和事件触发线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#根据事件循环机制以及宏任务和微任务，重新梳理一下流程"><span class="toc-number">6.3.</span> <span class="toc-text">根据事件循环机制以及宏任务和微任务，重新梳理一下流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结合Promise实例看看执行机制"><span class="toc-number">7.</span> <span class="toc-text">结合Promise实例看看执行机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题之-了解v8引擎吗，一段js代码如何执行的"><span class="toc-number">8.</span> <span class="toc-text">面试题之 了解v8引擎吗，一段js代码如何执行的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考链接"><span class="toc-number">10.</span> <span class="toc-text">参考链接</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/EventTable.png)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Niaogege</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page" href="/phots/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fas fa-paper-plane"></i><span> Messageboard</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">前端进阶: js执行机制</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-12-26 16:26:59"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-12-26</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-12-26 20:49:51"><i class="fas fa-history fa-fw"></i> 更新于 2020-12-26</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/js/">js</a><i class="fas fa-angle-right post-meta__separator"></i><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/js/es6/">es6</a><i class="fas fa-angle-right post-meta__separator"></i><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/js/es6/%E5%8D%95%E7%BA%BF%E7%A8%8B/">单线程</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">2.3k</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 7 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="far fa-comments fa-fw post-meta__icon"></i><span>评论数:</span><a href="/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/" itemprop="commentCount"></span></a></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="js执行是单线程的"><a href="#js执行是单线程的" class="headerlink" title="js执行是单线程的"></a>js执行是单线程的</h3><p>单线程是指Js引擎执行Js时只分了一个线程给他执行，也就是执行js时是单线程的。说白点就是一个时间点只能做一件事，这里只是说javascript,浏览器可不是单线程的，浏览器可是多进程的</p>
+<h3 id="js引擎"><a href="#js引擎" class="headerlink" title="js引擎"></a>js引擎</h3><p>JS引擎是浏览器的重要组成部分，主要用于读取并执行js。js引擎存在monitoring process进程，会持续不断的检查主线程执行栈是否为空，一旦为空，就会去Event Queue那里检查是否有等待被调用的函数。</p>
+<p>各大浏览器的JS引擎:</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>Js引擎</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Chrome</td>
+<td><em>V8</em></td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>SpiderMonkey</td>
+</tr>
+<tr>
+<td>IE</td>
+<td>Chakra（查克拉）</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>Nitro/JavaScript Core</td>
+</tr>
+</tbody></table>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>浏览器（多进程）包含了Browser进程（浏览器的主进程）、第三方插件进程和GPU进程（浏览器渲染进程），其中GPU进程（多线程）和Web前端密切相关，包含以下线程</p>
+<ul>
+<li>GUI渲染线程</li>
+<li>JS引擎线程</li>
+<li>事件触发线程（和EventLoop密切相关）</li>
+<li>定时触发器线程</li>
+<li>异步HTTP请求线程</li>
+</ul>
+<blockquote>
+<p>GUI渲染线程和JS引擎线程是互斥的，为了防止DOM渲染的不一致性，其中一个线程执行时另一个线程会被挂起。</p>
+</blockquote>
+<h3 id="执行栈"><a href="#执行栈" class="headerlink" title="执行栈"></a>执行栈</h3><p>为了实现js执行时的单线程，js引擎维护一个<strong>执行栈(先进后出)</strong> FILO,(想象下桌子上的一摞书，最上面的先被拿走，最下面的后面才能拿走)</p>
+<h3 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h3><p>任务队列中分微任务和宏任务，且都是已经完成的<em>异步操作</em>. 这里要重点说明一下，<em>宏任务并非全是异步任务，主代码块就是属于宏任务的一种!!</em>如果当前的微任务没有执行完成时，是不会执行下一个宏任务的!</p>
+<ul>
+<li>宏任务是每次执行栈执行的代码（包括每次从事件队列中获取一个事件回调并放到执行栈中执行）</li>
+<li>浏览器为了能够使得JS引擎线程与GUI渲染线程有序切换，会在当前宏任务结束之后，下一个宏任务执行开始之前，对页面进行重新渲染（宏任务 &gt; 渲染  &gt; 宏任务 &gt; …）</li>
+<li>微任务是在当前宏任务执行结束之后立即执行的任务（在当前 宏任务执行之后，UI渲染之前执行的任务）。微任务的响应速度相比setTimeout（下一个宏任务）会更快，因为无需等待UI渲染。</li>
+<li>当前宏任务执行后，会将在它执行期间产生的所有微任务都执行一遍。</li>
+</ul>
+<p>理解：</p>
+<ul>
+<li>宏任务中的事件是由<strong>事件触发线程</strong>来维护的</li>
+<li>微任务中的所有任务是由<strong>JS引擎线程</strong>维护的</li>
+</ul>
+<blockquote>
+<p>宏任务必然是在微任务之后才执行的（因为微任务实际上是宏任务的其中一个步骤）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>macroTask宏任务</th>
+<th>浏览器</th>
+<th>node</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>I/O</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>setTimeout</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>setImmediate</td>
+<td>X</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>requestAnimationFrame</td>
+<td>✅</td>
+<td>X</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>microTask微任务</th>
+<th>浏览器</th>
+<th>node</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>process.nextTick</td>
+<td>X</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>MutationObserver</td>
+<td>✅</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Promise.then catch finally</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h3><p><img src= "/img/loading.gif" data-src="/images/eventLoop.png" alt="事件循环"></p>
+<h4 id="大概过程"><a href="#大概过程" class="headerlink" title="大概过程:"></a>大概过程:</h4><ul>
+<li><p>任务进入执行栈</p>
+</li>
+<li><p>js代码分同步任务和异步任务，所有同步任务都在<em>主线程</em>执行。所有异步任务进入 <em>EventTable(事件表)</em>，执行异步任务，当事件表中的异步任务执行完成之后，会在<em>事件队列(event queue)</em>中注册回调函数(函数移入event Queue)</p>
+</li>
+<li><p>主线程里的同步任务全部完成之后，会读取事件队列(event Queue)中的异步任务,进入主线程执行</p>
+</li>
+<li><p>js解析器会不断重复检查主线程执行栈是否为空，然后重复第三步，即<em>Event Loop(事件循环)</em></p>
+<blockquote>
+<p>js引擎存在monitoring process进程，会持续不断的检查主线程执行栈是否为空</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="JS引擎线程和事件触发线程"><a href="#JS引擎线程和事件触发线程" class="headerlink" title="JS引擎线程和事件触发线程"></a>JS引擎线程和事件触发线程</h4><p>浏览器页面初次渲染完毕后，JS引擎线程结合事件触发线程的工作流程如下：<br>（1）同步任务在JS引擎线程（主线程）上执行，形成执行栈（Execution Context Stack）。<br>（2）主线程之外，事件触发线程管理着一个任务队列（Task Queue）。只要异步任务有了运行结果，就在任务队列之中放置一个事件。<br>（3）执行栈中的同步任务执行完毕，系统就会读取任务队列，如果有异步任务需要执行，将其加到主线程的执行栈并执行相应的异步任务。</p>
+<p><img src= "/img/loading.gif" data-src="/images/macroTask.png" alt="执行过程"></p>
+<h4 id="根据事件循环机制以及宏任务和微任务，重新梳理一下流程"><a href="#根据事件循环机制以及宏任务和微任务，重新梳理一下流程" class="headerlink" title="根据事件循环机制以及宏任务和微任务，重新梳理一下流程"></a>根据事件循环机制以及宏任务和微任务，重新梳理一下流程</h4><ul>
+<li>执行一个宏任务（首次执行的主代码块 script 或者任务队列中的回调函数）</li>
+<li>执行过程中如果遇到微任务，就将它添加到微任务的任务队列中</li>
+<li>宏任务执行完毕后，立即执行当前微任务队列中的所有任务（依次执行）</li>
+<li>JS引擎线程挂起，GUI线程执行渲染</li>
+<li>GUI线程渲染完毕后挂起，JS引擎线程执行任务队列中的下一个宏任务</li>
+</ul>
+<h3 id="结合Promise实例看看执行机制"><a href="#结合Promise实例看看执行机制" class="headerlink" title="结合Promise实例看看执行机制"></a>结合Promise实例看看执行机制</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> first = <span class="function"><span class="params">()</span> =&gt;</span> <span class="function">(<span class="params"><span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">let</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">7</span>);</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line">            resolve(<span class="number">6</span>);</span><br><span class="line">        &#125;, <span class="number">0</span>)</span><br><span class="line">        resolve(<span class="number">1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    resolve(<span class="number">2</span>);</span><br><span class="line">    p.then(<span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(arg);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">first().then(<span class="function">(<span class="params">arg</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arg);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<p>第一轮 事件循环，先执行宏任务，即主script,即new Promise立即执行，打印3 ，然后执行p这个new Promise,输出7，发现setTimeout,将回调函数放入下一轮任务队列中，p的then,放入微任务队列，first的then放入微任务队列，执行打印4，宏任务执行结束<br>在执行微任务，先执行p.then打印1,在执行first.then打印2<br>第一轮 事件循环结束，开始第二轮事件循环，先执行宏任务里面，打印5， resolve(6)不会生效，因为Promise状态一旦改变就不会发生变化</p>
+<h3 id="面试题之-了解v8引擎吗，一段js代码如何执行的"><a href="#面试题之-了解v8引擎吗，一段js代码如何执行的" class="headerlink" title="面试题之 了解v8引擎吗，一段js代码如何执行的"></a>面试题之 了解v8引擎吗，一段js代码如何执行的</h3><ul>
+<li>在执行一段代码时，JS 引擎会首先创建一个执行栈，JS引擎会创建一个全局执行上下文，并push到执行栈中, 这个过程JS引擎会为这段代码中所有变量分配内存并赋一个初始值（undefined），在创建完成后，JS引擎会进入执行阶段，这个过程JS引擎会逐行的执行代码，即为之前分配好内存的变量逐个赋值(真实值)。</li>
+<li>如果这段代码中存在function的声明和调用，那么JS引擎会创建一个函数执行上下文，并push到执行栈中，其创建和执行过程跟全局执行上下文一样。但有特殊情况，即当函数中存在对其它函数的调用时，JS引擎会在父函数执行的过程中，将子函数的全局执行上下文push到执行栈，这也是为什么子函数能够访问到父函数内所声明的变量。<br>还有一种特殊情况是，在子函数执行的过程中，父函数已经return了，这种情况下，JS引擎会将父函数的上下文从执行栈中移除，与此同时，JS引擎会为还在执行的子函数上下文创建一个闭包，这个闭包里保存了父函数内声明的变量及其赋值，子函数仍然能够在其上下文中访问并使用这边变量/常量。当子函数执行完毕，JS引擎才会将子函数的上下文及闭包一并从执行栈中移除。</li>
+<li>last JS引擎是单线程的，那么它是如何处理高并发的呢？即当代码中存在异步调用时JS是如何执行的。比如setTimeout或fetch请求都是non-blocking的，当异步调用代码触发时，JS引擎会将需要异步执行的代码移出调用栈，直到等待到返回结果，JS引擎会立即将与之对应的回调函数push进任务队列中等待被调用，当调用(执行)栈中已经没有需要被执行的代码时，JS引擎会立刻将任务队列中的回调函数逐个push进调用栈并执行。这个过程我们也称之为事件循环。</li>
+</ul>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>浏览器（多进程）包含了GPU进程（浏览器渲染进程），其中GPU进程（多线程）包含一下几个线程1.GUI渲染线程2.JS引擎线程3.事件触发线程（和EventLoop密切相关）4.定时触发器线程5.异步HTTP请求线程</li>
+<li>javascript是一门单线程语言</li>
+<li>Event Loop是javascript的执行机制</li>
+</ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://juejin.cn/post/6844903561164242952" target="_blank" rel="noopener">深入理解JavaScript执行（单线程的JS）</a></li>
+<li><a href="https://juejin.cn/post/6844903667301089288" target="_blank" rel="noopener">图解JS执行机制</a></li>
+<li><a href="https://juejin.cn/post/6844903512845860872" target="_blank" rel="noopener">这一次，彻底弄懂 JavaScript 执行机制</a></li>
+<li><a href="https://juejin.cn/post/6844903843197616136" target="_blank" rel="noopener">你真的理解$nextTick么</a></li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:291003932@qq.com">chendapeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://niaogege.cn/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/">http://niaogege.cn/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-js%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://niaogege.cn" target="_blank">Niaogege</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/es6/">es6</a><a class="post-meta__tags" href="/tags/js/">js</a><a class="post-meta__tags" href="/tags/%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6/">执行机制</a></div><div class="post_share"><div class="social-share" data-image="/images/EventTable.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/images/wechat.jpg" alt="wechat" onclick="window.open('/images/wechat.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/images/alipay.jpg" alt="alipay" onclick="window.open('/images/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/12/26/%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6-promise-2/"><img class="next-cover" data-src="/images/promise_cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">前端进阶: promise-2</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/12/13/前端之装饰者模式以及装饰器/" title="前端之装饰者模式以及装饰器"><img class="relatedPosts_cover" data-src="/images/decorator.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-13</div><div class="relatedPosts_title">前端之装饰者模式以及装饰器</div></div></a></div><div class="relatedPosts_item"><a href="/2020/12/13/node包里的package-json文件/" title="node包里的package.json文件"><img class="relatedPosts_cover" data-src="/images/package.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-13</div><div class="relatedPosts_title">node包里的package.json文件</div></div></a></div><div class="relatedPosts_item"><a href="/2020/12/12/前端进阶-vue-2/" title="前端进阶-vue-2"><img class="relatedPosts_cover" data-src="/images/webpack-tool.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-12</div><div class="relatedPosts_title">前端进阶-vue-2</div></div></a></div><div class="relatedPosts_item"><a href="/2020/12/05/前端进阶-大杂烩-1/" title="前端进阶-大杂烩-1"><img class="relatedPosts_cover" data-src="/images/decorator.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-05</div><div class="relatedPosts_title">前端进阶-大杂烩-1</div></div></a></div><div class="relatedPosts_item"><a href="/2020/07/18/前端进阶-webpack/" title="前端进阶: webpack 配置项output"><img class="relatedPosts_cover" data-src="/images/webpack-tool.png"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-18</div><div class="relatedPosts_title">前端进阶: webpack 配置项output</div></div></a></div><div class="relatedPosts_item"><a href="/2020/11/14/基础-webpack搭建vue项目/" title="基础-基于webpack搭建vue项目"><img class="relatedPosts_cover" data-src="/images/vueWebpack.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-11-14</div><div class="relatedPosts_title">基础-基于webpack搭建vue项目</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var requestSetting = function (from,set) {
+  var from = from
+  var setting = set.split(',').filter(function(item){
+  return from.indexOf(item) > -1
+  });
+  setting = setting.length == 0 ? from :setting;
+  return setting
+}
+
+var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+window.valine = new Valine({
+  el:'#vcomment',
+  appId: 'oYe5q11f5IaMkDAihtsidxxc-gzGzoHsz',
+  appKey: 'bAcvgX39GRkG1blb90XakUSD',
+  placeholder: 'Please leave your footprints',
+  avatar: 'monsterid',
+  meta: guestInfo,
+  pageSize: '10',
+  lang: 'en',
+  recordIP: false,
+  serverURLs: '',
+  emojiCDN: '',
+  emojiMaps: "",
+  enableQQ: true,
+  requiredFields: requiredFields
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By chendapeng</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="http:niaogege.cn">blog</a>!</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" title="缩小字体"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="简繁转换">繁</button><button id="darkmode" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fas fa-comments"></i></a><button class="close" id="mobile-toc-button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script></body></html>
