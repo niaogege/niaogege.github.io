@@ -643,11 +643,11 @@
       
         <tags>
             
+            <tag> node </tag>
+            
             <tag> vscode </tag>
             
             <tag> tool </tag>
-            
-            <tag> node </tag>
             
         </tags>
       
@@ -749,9 +749,9 @@
       
         <tags>
             
-            <tag> tool </tag>
-            
             <tag> node </tag>
+            
+            <tag> tool </tag>
             
             <tag> cli </tag>
             
