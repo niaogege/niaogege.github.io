@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>数据结构进阶: 链表</title>
+      <link href="/2021/02/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%BF%9B%E9%98%B6-%E9%93%BE%E8%A1%A8/"/>
+      <url>/2021/02/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E8%BF%9B%E9%98%B6-%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<p>链表还是没啥数据概念，多做做点题目，理解理解链表</p><h2 id="两两交换链表中的节点"><a href="#两两交换链表中的节点" class="headerlink" title="两两交换链表中的节点"></a>两两交换链表中的节点</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p><p>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p><h4 id="示例-1"><a href="#示例-1" class="headerlink" title="示例 1"></a>示例 1</h4><p><img src= "/img/loading.gif" data-src="/images/linkedList/swap_ex1.jpg" alt="两两交换"></p><p>输入：head = [1,2,3,4]<br>输出：[2,1,4,3]</p><h4 id="示例-1-1"><a href="#示例-1-1" class="headerlink" title="示例 1"></a>示例 1</h4><p>输入：head = [1]<br>输出：[1]</p><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>对于不熟悉链表数据结构的同学还是画画流程图，图画好了基本能明白大概了</p><h4 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 两两交换</span></span><br><span class="line">swapPairs() &#123;</span><br><span class="line">  <span class="keyword">const</span> head = <span class="keyword">this</span>.head</span><br><span class="line">  <span class="keyword">if</span> (!head) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">let</span> helper = <span class="function"><span class="keyword">function</span>(<span class="params">node</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> tempNext = node.next</span><br><span class="line">    <span class="keyword">if</span> (tempNext) &#123;</span><br><span class="line">      <span class="keyword">const</span> tempNextNext = node.next.next</span><br><span class="line">      node.next.next = node</span><br><span class="line">      <span class="keyword">if</span> (tempNextNext) &#123;</span><br><span class="line">        node.next = helper(tempNextNext)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        node.next = <span class="literal">null</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> tempNext || node</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.head = helper(head);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'head'</span>, <span class="keyword">this</span>.head);</span><br><span class="line">  <span class="comment">// return res</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>代码位置 <a href="https://github.com/niaogege/webpack-learn/blob/linkedList/src/linkedList/main.js" target="_blank" rel="noopener">链表问题1</a></p></blockquote><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul><li><a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/submissions/" target="_blank" rel="noopener">两两交换链表中的节点</a></li><li><a href="https://juejin.cn/post/6847009772500156429#heading-8" target="_blank" rel="noopener">链表问题</a></li></ul><h2 id="环形链表一"><a href="#环形链表一" class="headerlink" title="环形链表一"></a>环形链表一</h2><p>给定一个链表，判断链表中是否有环。</p><p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p><p>如果链表中存在环，则返回 true 。 否则，返回 false 。</p><h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h3><p><img src= "/img/loading.gif" data-src="/images/linkedList/circularlinkedlist.png" alt="两两交换"></p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">-4</span>], pos = <span class="number">1</span></span><br><span class="line">输出：<span class="literal">true</span></span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure><h3 id="解法1-hash表"><a href="#解法1-hash表" class="headerlink" title="解法1 hash表"></a>解法1 hash表</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">hasCycle() &#123;</span><br><span class="line">  <span class="keyword">let</span> current = <span class="keyword">this</span>.head</span><br><span class="line">  <span class="keyword">if</span> (!current || !current.next) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">  <span class="keyword">while</span>(current.next !== <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (map.has(current)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    map.set(current, <span class="literal">true</span>)</span><br><span class="line">    current = current.next</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="解法2-数组"><a href="#解法2-数组" class="headerlink" title="解法2 数组"></a>解法2 数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hasCycle = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> current = head</span><br><span class="line">    <span class="keyword">const</span> arr = [];</span><br><span class="line">    <span class="keyword">while</span>(current !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr.includes(current)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        arr.push(current)</span><br><span class="line">      &#125;</span><br><span class="line">      current = current.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="解法3-快慢指针"><a href="#解法3-快慢指针" class="headerlink" title="解法3 快慢指针"></a>解法3 快慢指针</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;ListNode&#125;</span> <span class="variable">head</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> hasCycle = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> fast = head;</span><br><span class="line">    <span class="keyword">let</span> slow = head;</span><br><span class="line">    <span class="keyword">while</span>(slow &amp;&amp; fast &amp;&amp; fast.next) &#123;</span><br><span class="line">        fast = fast.next.next</span><br><span class="line">        slow = slow.next</span><br><span class="line">        <span class="keyword">if</span> (slow === fast) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul><li><a href="https://leetcode-cn.com/problems/linked-list-cycle" target="_blank" rel="noopener">判圈算法</a></li><li><a href="https://leetcode-cn.com/problems/linked-list-cycle/solution/shuang-jie-fa-floydsuan-fa-ha-xi-biao-javascriptsh/" target="_blank" rel="noopener">哈希表</a></li></ul><h2 id="环形链表二"><a href="#环形链表二" class="headerlink" title="环形链表二"></a>环形链表二</h2><p>给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p><p>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。注意，pos 仅仅是用于标识环的情况，并不会作为参数传递到函数中。</p><p>说明：不允许修改给定的链表。</p><h3 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1"></a>示例1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [<span class="number">3</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">-4</span>], pos = <span class="number">1</span></span><br><span class="line">输出：返回索引为 <span class="number">1</span> 的链表节点</span><br><span class="line">解释：链表中有一个环，其尾部连接到第二个节点。</span><br></pre></td></tr></table></figure><h3 id="解法1-hash"><a href="#解法1-hash" class="headerlink" title="解法1 hash"></a>解法1 hash</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;ListNode&#125;</span> <span class="variable">head</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;ListNode&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> detectCycle = <span class="function"><span class="keyword">function</span>(<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> current = head</span><br><span class="line">    <span class="keyword">if</span> (!current || !current.next) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">while</span>(current !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (map.has(current)) &#123;</span><br><span class="line">        <span class="keyword">return</span> current</span><br><span class="line">      &#125;</span><br><span class="line">      map.set(current, <span class="literal">true</span>)</span><br><span class="line">      current = current.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="解法2快慢指针"><a href="#解法2快慢指针" class="headerlink" title="解法2快慢指针"></a>解法2快慢指针</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">head</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> fast = head,</span><br><span class="line">        slow = head;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 快慢指针确定有环</span></span><br><span class="line">    <span class="keyword">while</span> (fast &amp;&amp; fast.next) &#123;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">        slow = slow.next;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 确定有环，开始找环的第一个节点</span></span><br><span class="line">        <span class="keyword">if</span> (fast === slow) &#123;</span><br><span class="line">            slow = head;</span><br><span class="line">            <span class="keyword">while</span> (slow !== fast) &#123;</span><br><span class="line">                slow = slow.next;</span><br><span class="line">                fast = fast.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> slow;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="参考链接-1"><a href="#参考链接-1" class="headerlink" title="参考链接"></a>参考链接</h3><ul><li><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/submissions/" target="_blank" rel="noopener">环形链表二</a></li><li><a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/142huan-xing-lian-biao-iishuang-zhi-zhen-ha-xi-bia/" target="_blank" rel="noopener">142.环形链表 II【双指针、哈希表】</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构 </category>
+          
+          <category> 链表 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+            <tag> 链表 </tag>
+            
+            <tag> leetCode </tag>
+            
+            <tag> 排序链表 </tag>
+            
+            <tag> 两两反向 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构基础: 集合Set</title>
       <link href="/2021/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80-%E9%9B%86%E5%90%88Set/"/>
       <url>/2021/02/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9F%BA%E7%A1%80-%E9%9B%86%E5%90%88Set/</url>
@@ -50,9 +85,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> promise </tag>
             
@@ -83,9 +118,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> Iterator </tag>
             
@@ -240,9 +275,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> Iterator </tag>
             
@@ -273,9 +308,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> generator </tag>
             
@@ -306,9 +341,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> promise </tag>
             
@@ -339,9 +374,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> 执行机制 </tag>
             
@@ -372,9 +407,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> promise </tag>
             
@@ -473,9 +508,9 @@
             
             <tag> node </tag>
             
-            <tag> es6 </tag>
-            
             <tag> package.json </tag>
+            
+            <tag> es6 </tag>
             
         </tags>
       
@@ -539,9 +574,9 @@
             
             <tag> es6 </tag>
             
-            <tag> vue </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> vue </tag>
             
         </tags>
       
@@ -572,9 +607,9 @@
             
             <tag> es6 </tag>
             
-            <tag> vue </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> vue </tag>
             
         </tags>
       
@@ -638,9 +673,9 @@
             
             <tag> es6 </tag>
             
-            <tag> webpack </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> webpack </tag>
             
         </tags>
       
@@ -669,11 +704,11 @@
       
         <tags>
             
+            <tag> node </tag>
+            
             <tag> vscode </tag>
             
             <tag> tool </tag>
-            
-            <tag> node </tag>
             
         </tags>
       
@@ -775,9 +810,9 @@
       
         <tags>
             
-            <tag> tool </tag>
-            
             <tag> node </tag>
+            
+            <tag> tool </tag>
             
             <tag> cli </tag>
             
@@ -812,9 +847,9 @@
             
             <tag> es6 </tag>
             
-            <tag> webpack </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> webpack </tag>
             
             <tag> umd </tag>
             
@@ -876,9 +911,9 @@
       
         <tags>
             
-            <tag> js </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> js </tag>
             
             <tag> promise </tag>
             
@@ -1049,9 +1084,9 @@
             
             <tag> es6 </tag>
             
-            <tag> vue </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> vue </tag>
             
         </tags>
       
@@ -1082,9 +1117,9 @@
             
             <tag> es6 </tag>
             
-            <tag> vue </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> vue </tag>
             
         </tags>
       
