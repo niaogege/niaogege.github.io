@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>前端安全-xss和csrf</title>
+      <link href="/2021/02/28/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8-xss%E5%92%8Ccsrf/"/>
+      <url>/2021/02/28/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8-xss%E5%92%8Ccsrf/</url>
+      
+        <content type="html"><![CDATA[<h2 id="csrf"><a href="#csrf" class="headerlink" title="csrf"></a>csrf</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>csrf: 跨站请求伪造 cross site Request <strong>forgery</strong> 或者检查xsrf: 指在挟持用户当前已经登录的web应用程序当中执行非本意操作的攻击方法<br>另一个是xss cross site script 跨站脚本攻击，两者区别是 xss利用用户对网站的信任，csrf利用的则是网站对用户网页浏览器的信任</p><blockquote><p>简单来说就是利用用户的登录态发起恶意请求</p></blockquote><h3 id="如何攻击的"><a href="#如何攻击的" class="headerlink" title="如何攻击的"></a>如何攻击的</h3><p><img src= "/img/loading.gif" data-src="https://user-gold-cdn.xitu.io/2018/8/8/1651a22ce6858fd9?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="csrf"></p><h3 id="如何防御"><a href="#如何防御" class="headerlink" title="如何防御"></a>如何防御</h3><p>遵循以下几种原则:<br>1.get请求不对数据进行修改<br>2.禁止第三方网站访问到用户cookie<br>3.阻止第三方网站请求接口<br>4.请求时附带验证信息，比如tocken或者验证码</p><p>具体措施</p><h4 id="SameSite"><a href="#SameSite" class="headerlink" title="SameSite"></a>SameSite</h4><p>对cookie设置SameSite属性，设置之后cookie信息不会随着跨域请求发送，很大程度上减少CSRF攻击</p><h4 id="验证referer"><a href="#验证referer" class="headerlink" title="验证referer"></a>验证referer</h4><p>在对需要防范csrf的请求中，我们阔以根据请求头中的referer属性来判断请求来源</p><h4 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h4><p>服务器下发随机token，前端每次发请求携带token，后端验证token的有效性</p><h4 id="防抓包"><a href="#防抓包" class="headerlink" title="防抓包"></a>防抓包</h4><p>使用https替换http(https还是通过http进行传输，只是信息经过tls协议加密，对传输的数据进行加密，当请求的信息被抓包工具抓包时，无法修改提交的数据)</p><h2 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h2><p>xss cross site script 跨站脚本攻击<br>通过在客户端注入可执行脚本的方式实行攻击</p><h3 id="主要方式"><a href="#主要方式" class="headerlink" title="主要方式"></a>主要方式</h3><ul><li><p>劫持Html ,通过script标签进行注入</p></li><li><p>在可执行的js中，通过拼接数据来执行恶意脚本 </p></li><li><p>在页面可执行的dom元素，添加可执行代码，比如javascript:xx</p></li><li><p>在onload/onClick事件中注入不受控制的代码</p></li></ul><h3 id="XSS分类"><a href="#XSS分类" class="headerlink" title="XSS分类"></a>XSS分类</h3><p>有存储型Xss 反射型Xss 以及DOM型Xss,跟前端有关的是DOM型Xss,其他防范主要在后端</p><h4 id="存储型Xss"><a href="#存储型Xss" class="headerlink" title="存储型Xss"></a>存储型Xss</h4><p>恶意脚本存储在后端数据库，然后又传输到前台页面，从而发生攻击。防范主要是通过文本转义</p><h4 id="反射型Xss"><a href="#反射型Xss" class="headerlink" title="反射型Xss"></a>反射型Xss</h4><p>恶意脚本不是存储在后端，而是出现在url里，防范主要是<br>区分两者主要看恶意代码的存储位置</p><h4 id="Dom型Xss"><a href="#Dom型Xss" class="headerlink" title="Dom型Xss"></a>Dom型Xss</h4><p>不需要跟后端交互，主要是通过劫持Html文件进行修改实现恶意代码的注入<br>在DOM api中通过 textContext/setAttribute来代替.innerHtml/docuemnt.write Vue中不建议用v-html</p><h3 id="防范"><a href="#防范" class="headerlink" title="防范"></a>防范</h3><h4 id="转义"><a href="#转义" class="headerlink" title="转义"></a>转义</h4><p>在存储型XSS和反射型XSS攻击中，这个是一个关键的防范方式，通过对不同类型的<strong>文本和数据</strong>做对应的转义和很好的防止大部分的XSS攻击</p><h4 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h4><p>通过在脚本增加 Content-security-Policy字段来实现</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content-security-policy: <span class="keyword">default</span>-src <span class="string">'self'</span></span><br></pre></td></tr></table></figure><p>在较严格的CSP模式下，具有以下作用<br>1.禁止加载外域代码<br>2.禁止内联脚本执行<br>3.禁止外域提交<br>4.禁止未授权的脚本执行<br>5.通过csp上报 便于修复</p><h4 id="httponly"><a href="#httponly" class="headerlink" title="httponly"></a>httponly</h4><p>cookie里的一个属性，主要防止cookie属性被改写，该属性主要是防止cookie被js获取，只能通过http传输和访问<br>httpOnly本质上不能防止xss攻击，主要是起到缓解作用，在恶意脚本执行之后无法获取cookie,防止下一步的攻击和用户数据泄露</p><h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><ul><li><a href="https://juejin.cn/post/6892938793901359112" target="_blank" rel="noopener">前端安全-XSS</a></li><li><a href="https://juejin.cn/post/6844903653757698062" target="_blank" rel="noopener">关于csrf,什么是csrf,怎么防范它?</a></li><li><a href="https://yuchengkai.cn/docs/frontend/#%E5%86%85%E7%BD%AE%E7%B1%BB%E5%9E%8B" target="_blank" rel="noopener">前端面试</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> xss </category>
+          
+          <category> csrf </category>
+          
+          <category> csp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> xss </tag>
+            
+            <tag> csrf </tag>
+            
+            <tag> csp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法基础: BFS和DFS</title>
       <link href="/2021/02/21/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80-BFS%E5%92%8CDFS/"/>
       <url>/2021/02/21/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80-BFS%E5%92%8CDFS/</url>
@@ -166,9 +199,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> promise </tag>
             
@@ -199,9 +232,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> Iterator </tag>
             
@@ -356,9 +389,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> Iterator </tag>
             
@@ -389,9 +422,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> generator </tag>
             
@@ -422,9 +455,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> promise </tag>
             
@@ -455,9 +488,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> 执行机制 </tag>
             
@@ -488,9 +521,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> promise </tag>
             
@@ -521,11 +554,11 @@
       
         <tags>
             
-            <tag> 随笔 </tag>
-            
             <tag> 总结 </tag>
             
             <tag> 前端 </tag>
+            
+            <tag> 随笔 </tag>
             
         </tags>
       
@@ -589,9 +622,9 @@
             
             <tag> node </tag>
             
-            <tag> package.json </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> package.json </tag>
             
         </tags>
       
@@ -653,9 +686,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -686,9 +719,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -785,11 +818,11 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> vscode </tag>
             
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
         </tags>
       
@@ -891,9 +924,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
             <tag> cli </tag>
             
@@ -992,9 +1025,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> js </tag>
+            
+            <tag> es6 </tag>
             
             <tag> promise </tag>
             
@@ -1163,9 +1196,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -1196,9 +1229,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
