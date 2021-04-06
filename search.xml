@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>数据结构和算法: 链表</title>
+      <link href="/2021/04/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8/"/>
+      <url>/2021/04/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95-%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>focus: 聚焦核心</title>
+      <link href="/2021/04/06/focus-%E8%81%9A%E7%84%A6%E6%A0%B8%E5%BF%83/"/>
+      <url>/2021/04/06/focus-%E8%81%9A%E7%84%A6%E6%A0%B8%E5%BF%83/</url>
+      
+        <content type="html"><![CDATA[<p>聚集核心,never give up!!!</p><h3 id="vue源码"><a href="#vue源码" class="headerlink" title="vue源码"></a>vue源码</h3><ul><li><input checked="" disabled="" type="checkbox"> mvvm模式</li><li><input checked="" disabled="" type="checkbox"> vue双向绑定原理</li><li><input checked="" disabled="" type="checkbox"> $nextTick</li><li><input checked="" disabled="" type="checkbox"> watch和computed</li><li><input checked="" disabled="" type="checkbox"> 依赖收集</li><li><input disabled="" type="checkbox"> slot应用及原理</li><li><input disabled="" type="checkbox"> 封装Vue.extends实例</li><li><input disabled="" type="checkbox"> 手写vue-router</li><li><input disabled="" type="checkbox"> 手写vuex</li></ul><h3 id="webpack相关原理"><a href="#webpack相关原理" class="headerlink" title="webpack相关原理"></a>webpack相关原理</h3><ul><li><input checked="" disabled="" type="checkbox"> 构建过程</li><li><input checked="" disabled="" type="checkbox"> 手写webpack</li><li><input checked="" disabled="" type="checkbox"> 手写loader和plugin</li><li><input disabled="" type="checkbox"> 热更新原理</li><li><input disabled="" type="checkbox"> 分包策略</li></ul><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul><li><input checked="" disabled="" type="checkbox"> 单例模式</li><li><input checked="" disabled="" type="checkbox"> 策略模式</li><li><input checked="" disabled="" type="checkbox"> 发布订阅模式</li><li><input checked="" disabled="" type="checkbox"> 工厂模式</li><li><input checked="" disabled="" type="checkbox"> 外观模式</li><li><input checked="" disabled="" type="checkbox"> 装饰器模式</li><li><input checked="" disabled="" type="checkbox"> 代理模式</li><li><input checked="" disabled="" type="checkbox"> 迭代器模式</li></ul><h3 id="ts理解"><a href="#ts理解" class="headerlink" title="ts理解"></a>ts理解</h3><h3 id="基本算法"><a href="#基本算法" class="headerlink" title="基本算法"></a>基本算法</h3><ul><li><input disabled="" type="checkbox"> 栈</li><li><input disabled="" type="checkbox"> 队列</li><li><input disabled="" type="checkbox"> 二叉树</li><li><input disabled="" type="checkbox"> 链表</li><li><input disabled="" type="checkbox"> 滑动窗口</li><li><input disabled="" type="checkbox"> DFS</li><li><input disabled="" type="checkbox"> BFS<h3 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h3></li></ul><h3 id="其他拓展"><a href="#其他拓展" class="headerlink" title="其他拓展"></a>其他拓展</h3><ul><li><input disabled="" type="checkbox"> js和bridge</li><li><input disabled="" type="checkbox"> webview</li><li><input disabled="" type="checkbox"> cli</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue进阶7-vue-router</title>
       <link href="/2021/04/04/vue%E8%BF%9B%E9%98%B67-vue-router/"/>
       <url>/2021/04/04/vue%E8%BF%9B%E9%98%B67-vue-router/</url>
@@ -1212,9 +1238,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -1311,11 +1337,11 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> vscode </tag>
             
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
         </tags>
       
@@ -1417,9 +1443,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
             <tag> cli </tag>
             
@@ -1689,9 +1715,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -1722,9 +1748,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
