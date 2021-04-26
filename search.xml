@@ -478,11 +478,11 @@
             
             <tag> http </tag>
             
-            <tag> tcp/udp </tag>
-            
             <tag> https </tag>
             
             <tag> http2 </tag>
+            
+            <tag> tcp/udp </tag>
             
         </tags>
       
@@ -1385,9 +1385,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -1484,11 +1484,11 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> vscode </tag>
             
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
         </tags>
       
@@ -1590,9 +1590,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
             <tag> cli </tag>
             
@@ -1862,9 +1862,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
@@ -1895,9 +1895,9 @@
       
         <tags>
             
-            <tag> es6 </tag>
-            
             <tag> vue </tag>
+            
+            <tag> es6 </tag>
             
             <tag> javascript </tag>
             
