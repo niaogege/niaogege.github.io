@@ -21,5 +21,10 @@ niaogege.cn
 ### 链表
 - 反转链表
 ```js
-
+var reverseList = function(head) {
+    var current = head
+    while(head) {
+      
+    }
+};
 ```
