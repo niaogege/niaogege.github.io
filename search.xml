@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>面试积累: 0510</title>
+      <link href="/2021/05/10/%E9%9D%A2%E8%AF%95%E7%A7%AF%E7%B4%AF-0510/"/>
+      <url>/2021/05/10/%E9%9D%A2%E8%AF%95%E7%A7%AF%E7%B4%AF-0510/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>面试官问： 你知道axios是怎么取消请求的嘛？里面的源码是怎么设计的<br>面试官问: 你常用的loader是什么？了解过里面的源码吗</p></blockquote><p>要对自己用过的东西有足够的了解，这样才能在面试者应对自如。比如说项目是用vue-cli3搭建的，那你就要知道vue-cli3是如何搭建脚手架的，大体流程是什么？源码说说看，而我又一次倒在了源码层面，上面俩个面试题，我答的出来怎么用，但是源码是怎么实现的，我却不知道，很沮丧，接下来，给自己的任务就是</p><p><img src= "/img/loading.gif" data-src="/images/axios/3.jpg" alt="axios"></p><ul><li>熟知axios基本使用，了解其设计思想，挖掘核心</li><li>vue-loader源码和设计</li><li>vue-cli3源码</li></ul><p>遇到的面试题主要还是常见的</p><ul><li>tcp三次握手和细节</li><li>前端性能优化，说出不一样的点</li><li>ts在你们项目是如何落地的</li><li>前端性能优化，说出亮点</li><li>Node Js，项目是如何部署的</li><li>如何优化目前的架构</li><li>单例模式设计</li><li>发布订阅模式应用</li><li>vuex</li><li>二分查找</li><li>元素距离中间css</li><li>Git rebase 和 Git pull区别</li><li>vue-router路由模式</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> interview </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>jsBridge相关</title>
       <link href="/2021/05/09/jsBridge%E7%9B%B8%E5%85%B3/"/>
       <url>/2021/05/09/jsBridge%E7%9B%B8%E5%85%B3/</url>
@@ -70,7 +95,7 @@
       <link href="/2021/05/03/axios%E5%B0%81%E8%A3%85%E4%B8%8E%E6%BA%90%E7%A0%81/"/>
       <url>/2021/05/03/axios%E5%B0%81%E8%A3%85%E4%B8%8E%E6%BA%90%E7%A0%81/</url>
       
-        <content type="html"><![CDATA[<h2 id="封装使用"><a href="#封装使用" class="headerlink" title="封装使用"></a>封装使用</h2><h2 id="源码解读"><a href="#源码解读" class="headerlink" title="源码解读"></a>源码解读</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://vue3js.cn/interview/vue/axios.html#%E4%B8%80%E3%80%81axios%E6%98%AF%E4%BB%80%E4%B9%88" target="_blank" rel="noopener">面试官：Vue项目中有封装过axios吗？主要是封装哪方面的</a></li><li><a href="https://vue3js.cn/interview/vue/axiosCode.html" target="_blank" rel="noopener">面试官：你了解axios的原理吗？有看过它的源码吗</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>明明之中，上天都有安排，我要是提前把这篇文章搞完，也不至于面试面得这么狼狈！！</p><h2 id="封装使用"><a href="#封装使用" class="headerlink" title="封装使用"></a>封装使用</h2><h2 id="源码解读"><a href="#源码解读" class="headerlink" title="源码解读"></a>源码解读</h2><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://juejin.cn/post/6844903824583294984" target="_blank" rel="noopener">Axios 源码解析</a></li><li><a href="https://vue3js.cn/interview/vue/axios.html#%E4%B8%80%E3%80%81axios%E6%98%AF%E4%BB%80%E4%B9%88" target="_blank" rel="noopener">面试官：Vue项目中有封装过axios吗？主要是封装哪方面的</a></li><li><a href="https://vue3js.cn/interview/vue/axiosCode.html" target="_blank" rel="noopener">面试官：你了解axios的原理吗？有看过它的源码吗</a></li></ul>]]></content>
       
       
       
@@ -420,9 +445,9 @@
       
         <tags>
             
-            <tag> diff </tag>
-            
             <tag> vNode </tag>
+            
+            <tag> diff </tag>
             
         </tags>
       
@@ -730,11 +755,11 @@
             
             <tag> http </tag>
             
-            <tag> tcp/udp </tag>
-            
             <tag> https </tag>
             
             <tag> http2 </tag>
+            
+            <tag> tcp/udp </tag>
             
         </tags>
       
