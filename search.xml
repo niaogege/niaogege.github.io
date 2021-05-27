@@ -8,7 +8,7 @@
       <link href="/2021/05/25/%E9%9D%A2%E8%AF%95%E7%A7%AF%E7%B4%AF-0524/"/>
       <url>/2021/05/25/%E9%9D%A2%E8%AF%95%E7%A7%AF%E7%B4%AF-0524/</url>
       
-        <content type="html"><![CDATA[<p>最近俩天有点惨，面试难度上来了,自己需要缓一缓，还是得坚持下</p><ul><li>babel原理</li><li>微宏任务，生成器函数属于哪一种队列</li><li>webpack chunk分割</li><li>各种图片的区别和压缩</li><li>如何取消一个promise</li><li>装饰器,设计一个装饰器</li><li>作用域和闭包</li><li>手写正则表达式</li><li>get post区别</li><li>手写题<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">找出数组中出现次数最多的数字，如[<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],打印出<span class="number">1</span>和<span class="number">2</span>，出现的次数是<span class="number">2</span>；[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>],打印<span class="number">5</span>，出现的次数是<span class="number">3</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>最近俩天有点惨，面试难度上来了,自己需要缓一缓，还是得坚持</p><ul><li>babel原理</li><li>微宏任务，生成器函数属于哪一种队列</li><li>webpack chunk分割</li><li>各种图片的区别和压缩</li><li>如何取消一个promise</li><li>装饰器,设计一个装饰器</li><li>作用域和闭包</li><li>手写正则表达式</li><li>get post区别</li><li>手写题<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">找出数组中出现次数最多的数字，如[<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],打印出<span class="number">1</span>和<span class="number">2</span>，出现的次数是<span class="number">2</span>；[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">5</span>],打印<span class="number">5</span>，出现的次数是<span class="number">3</span></span><br></pre></td></tr></table></figure>React和electron学起，不要荒废!!</li><li><a href="https://juejin.cn/post/6966626823912308772#heading-5" target="_blank" rel="noopener">写给前端的跨平台方案、跨端引擎的本质</a></li><li><a href="https://reactrouter.com/web/example/basic" target="_blank" rel="noopener">React Training的React Router完全教程</a></li><li><a href="https://juejin.cn/post/6844903686460686350" target="_blank" rel="noopener">[译]怎样学习React—从初级到高级路线图</a></li></ul>]]></content>
       
       
       
@@ -1943,11 +1943,11 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> vscode </tag>
             
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
         </tags>
       
@@ -2049,9 +2049,9 @@
       
         <tags>
             
-            <tag> node </tag>
-            
             <tag> tool </tag>
+            
+            <tag> node </tag>
             
             <tag> cli </tag>
             
