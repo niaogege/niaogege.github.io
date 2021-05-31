@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>react基础: hook学习</title>
+      <link href="/2021/05/31/react%E5%9F%BA%E7%A1%80-hook%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2021/05/31/react%E5%9F%BA%E7%A1%80-hook%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h2 id="简洁"><a href="#简洁" class="headerlink" title="简洁"></a>简洁</h2><p>Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。<br>Hook 是什么？ Hook 是一个特殊的函数，它可以让你 <strong>钩入</strong> React 的特性。例如，useState 是允许你在 React 函数组件中添加 state 的 Hook。稍后我们将学习其他 Hook。</p><p>什么时候我会用 Hook？ 如果你在编写函数组件并意识到需要向其添加一些 state，以前的做法是必须将其它转化为 class。现在你可以在现有的函数组件中使用 Hook。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;useState, useEffect&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, setcount] = useState(<span class="number">0</span>); </span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`You click <span class="subst">$&#123;count&#125;</span> times`</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">document</span>.title = <span class="string">`TIG`</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;p&gt; you click &#123;count&#125; &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;button onClick=&#123;() =&gt; setcount(count + 1)&#125;&gt;</span></span><br><span class="line"><span class="regexp">        Click Me</span></span><br><span class="line"><span class="regexp">      &lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure><p>state Hook 让我们在 React 函数组件上添加内部 state<br>Effect Hook 可以让你在函数组件中执行副作用操作</p><h2 id="useEffect"><a href="#useEffect" class="headerlink" title="useEffect"></a>useEffect</h2><p>默认情况下，effect 将在每轮渲染结束后执行，但你可以选择让它 在只有某些值改变的时候 才执行。<br>清除 effect<br>通常，组件卸载时需要清除 effect 创建的诸如订阅或计时器 ID 等资源。要实现这一点，useEffect 函数需返回一个清除函数。以下就是一个创建订阅的例子：</p><h3 id="通过跳过-Effect-进行性能优化"><a href="#通过跳过-Effect-进行性能优化" class="headerlink" title="通过跳过 Effect 进行性能优化"></a>通过跳过 Effect 进行性能优化</h3><p>如果某些特定值在两次重渲染之间没有发生变化，你可以通知 React 跳过对 effect 的调用，只要传递数组作为 useEffect 的第二个可选参数即可：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [count, setcount] = useState(<span class="number">0</span>);</span><br><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">document</span>.title = <span class="string">`You click <span class="subst">$&#123;count&#125;</span> times`</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">clean</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.title = <span class="string">`TIG`</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;, [count]) <span class="comment">// 尽在count更改时更新</span></span><br></pre></td></tr></table></figure><p>对于有清除操作的 effect 同样适用：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleStatusChange</span>(<span class="params">status</span>) </span>&#123;</span><br><span class="line">    setIsOnline(status.isOnline);</span><br><span class="line">  &#125;</span><br><span class="line">  ChatAPI.subscribeToFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ChatAPI.unsubscribeFromFriendStatus(props.friend.id, handleStatusChange);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;, [props.friend.id]); <span class="comment">// 仅在 props.friend.id 发生变化时，重新订阅</span></span><br></pre></td></tr></table></figure><h2 id="Hook-规则"><a href="#Hook-规则" class="headerlink" title="Hook 规则"></a>Hook 规则</h2><p>Hook 本质就是 JavaScript 函数，但是在使用它时需要遵循两条规则。我们提供了一个 linter 插件来强制执行这些规则：</p><ul><li>只在 React 函数中调用 Hook</li><li>只在最顶层使用Hook </li></ul><h3 id="useContext"><a href="#useContext" class="headerlink" title="useContext"></a>useContext</h3><p>跨层级传递数据到子孙组件</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> value = useContext(MyContext);</span><br></pre></td></tr></table></figure><p>接收一个 context 对象（React.createContext 的返回值）并返回该 context 的当前值。当前的 context 值由上层组件中距离当前组件最近的 &lt;MyContext.Provider&gt; 的 value prop 决定。</p><p>当组件上层最近的 &lt;MyContext.Provider&gt; 更新时，该 Hook 会触发重渲染，并使用最新传递给 MyContext provider 的 context value 值。即使祖先使用 React.memo 或 shouldComponentUpdate，也会在组件本身使用 useContext 时重新渲染。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> themes = &#123;</span><br><span class="line">  light: &#123;</span><br><span class="line">    foreground: <span class="string">"#000000"</span>,</span><br><span class="line">    background: <span class="string">"#eeeeee"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  dark: &#123;</span><br><span class="line">    foreground: <span class="string">"#ffffff"</span>,</span><br><span class="line">    background: <span class="string">"#222222"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> ThemeContext = React.createContext(themes.light);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">App</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;ThemeContext.Provider value=&#123;themes.dark&#125;&gt;</span><br><span class="line">      &lt;Toolbar /&gt;</span><br><span class="line">    &lt;<span class="regexp">/ThemeContext.Provider&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">function Toolbar(props) &#123;</span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;ThemedButton /</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">function ThemedButton() &#123;</span></span><br><span class="line"><span class="regexp">  const theme = useContext(ThemeContext);</span></span><br><span class="line"><span class="regexp">  return (</span></span><br><span class="line"><span class="regexp">    &lt;button style=&#123;&#123; background: theme.background, color: theme.foreground &#125;&#125;&gt;</span></span><br><span class="line"><span class="regexp">      I am styled by theme context!</span></span><br><span class="line"><span class="regexp">    &lt;/</span>button&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>react入门: 基础概念学习笔记</title>
       <link href="/2021/05/30/react%E5%85%A5%E9%97%A8-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>/2021/05/30/react%E5%85%A5%E9%97%A8-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
@@ -1869,9 +1894,9 @@
       
         <tags>
             
-            <tag> vue </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> vue </tag>
             
             <tag> javascript </tag>
             
@@ -2346,9 +2371,9 @@
       
         <tags>
             
-            <tag> vue </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> vue </tag>
             
             <tag> javascript </tag>
             
@@ -2379,9 +2404,9 @@
       
         <tags>
             
-            <tag> vue </tag>
-            
             <tag> es6 </tag>
+            
+            <tag> vue </tag>
             
             <tag> javascript </tag>
             
