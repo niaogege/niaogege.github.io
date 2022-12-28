@@ -42,6 +42,6 @@ jobs:
             echo $WELCOME
             mkdir -p $TARGET_DIR
           scp: |-
-            './public/*' => $TARGET_DIR/
+            './public' => $TARGET_DIR/
           last_ssh: |-
             echo $LASTSSH
