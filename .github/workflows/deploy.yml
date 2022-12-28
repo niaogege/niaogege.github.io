@@ -17,15 +17,15 @@ jobs:
     steps:
       - name: Checkout # 步骤1
         uses: actions/checkout@v1 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
-      - name: Use Node.js # 步骤2
-        uses: actions/setup-node@v1 # 作用：安装nodejs
-        with:
-          node-version: ${{ matrix.node-version }} # 版本
-      - run: npm install --frozen-lockfile
-      - name: install hexo-cli
-        run: npm install -g hexo-cli
-      - name: build
-        run: hexo -v && hexo clean && hexo g
+      # - name: Use Node.js # 步骤2
+      #   uses: actions/setup-node@v1 # 作用：安装nodejs
+      #   with:
+      #     node-version: ${{ matrix.node-version }} # 版本
+      # - run: npm install --frozen-lockfile
+      # - name: install hexo-cli
+      #   run: npm install -g hexo-cli
+      # - name: build
+      #   run: hexo -v && hexo clean && hexo g
 
       - name: Deploy Server
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
@@ -42,6 +42,6 @@ jobs:
             echo $WELCOME
             mkdir -p $TARGET_DIR
           scp: |-
-            './public' => $TARGET_DIR/
+            './public/*' => $TARGET_DIR/
           last_ssh: |-
             echo $LASTSSH
