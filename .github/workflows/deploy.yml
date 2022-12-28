@@ -22,8 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }} # 版本
       - run: npm install --frozen-lockfile
-      - name: Build
-        run: npm install -g hexo-cli && npm run build
+      - name: install hexo-cli
+        run: npm install -g hexo-cli
+      - name: build
+        run: hexo -v && npm run build
 
       - name: Deploy Server
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
