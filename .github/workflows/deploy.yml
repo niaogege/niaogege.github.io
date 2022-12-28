@@ -25,7 +25,7 @@ jobs:
       - name: install hexo-cli
         run: npm install -g hexo-cli
       - name: build
-        run: hexo -v && npm run build
+        run: hexo -v && hexo clean && hexo g
 
       - name: Deploy Server
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
