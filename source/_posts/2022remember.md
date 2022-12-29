@@ -26,7 +26,15 @@ tags: 2022
 
 ## 2023 年展望
 
-- kubenets 学习
+- kubernetes 学习
 - golang
 - vite 源码深入
 - react 源码深入
+
+## 其他
+
+年纪大了，但技术没有与之对应上，打铁还需自身硬，这样就不用太太担心被裁员的风险了！
+
+## 参考
+
+- [learn k8s](https://www.cnblogs.com/chiangchou/p/k8s-1.html)
