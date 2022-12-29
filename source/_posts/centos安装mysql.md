@@ -2,6 +2,7 @@
 title: centos安装mysql@5.7.40
 date: 2022-12-29 15:14:51
 tags: mysql
+featured_image: https://c2.im5i.com/2022/12/29/RDt5t.png
 ---
 
 > 根据网上的[一篇文章](https://juejin.cn/post/6845166890755555341#heading-12)修改而来，检验过了，安装过程丝婚顺利
