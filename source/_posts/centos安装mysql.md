@@ -5,7 +5,7 @@ tags: mysql
 featured_image: https://c2.im5i.com/2022/12/29/RDt5t.png
 ---
 
-> 根据网上的[一篇文章](https://juejin.cn/post/6845166890755555341#heading-12)修改而来，检验过了，安装过程丝婚顺利
+> 根据网上的[一篇文章](https://juejin.cn/post/6845166890755555341#heading-12)修改而来，检验过了，安装过程丝滑顺利
 
 ### 1.下载 MySql yum 包
 
@@ -147,3 +147,5 @@ exit
 ```bash
 >mysql: select now();
 ```
+
+mysql 基本命令[mySql](https://bythewayer.com/learn/server/DataBase/1)
