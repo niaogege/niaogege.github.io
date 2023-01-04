@@ -2,7 +2,7 @@
 title: centos安装mysql@5.7.40
 date: 2022-12-29 15:14:51
 tags: mysql
-featured_image: https://c2.im5i.com/2022/12/29/RDt5t.png
+featured_image: https://www.bythewayer.com/img/mysql1.webp
 ---
 
 > 根据网上的[一篇文章](https://juejin.cn/post/6845166890755555341#heading-12)修改而来，检验过了，安装过程丝滑顺利
@@ -21,7 +21,7 @@ rpm -Uvh mysql57-community-release-el7-10.noarch.rpm
 
 ### 3.安装 MySQL 服务端
 
-[![RDEaS.png](https://c2.im5i.com/2022/12/29/RDEaS.png)](https://cloudimge.com/image/RDEaS)
+![mysql-v](https://www.bythewayer.com/img/mysql-v.webp)
 
 ```bash
 yum -y install mysql-community-server --nogpgcheck
@@ -41,7 +41,7 @@ systemctl status mysqld.service
 
 ### 6.获取临时密码
 
-[![RDs2j.png](https://c2.im5i.com/2022/12/29/RDs2j.png)](https://cloudimge.com/image/RDs2j)
+![mysql_password](https://www.bythewayer.com/img/mysql_password.webp)
 
 ```bash
 grep 'temporary password' /var/log/mysqld.log
@@ -49,7 +49,7 @@ grep 'temporary password' /var/log/mysqld.log
 
 ### 7.通过临时密码登录 MySQL，进行修改密码操作
 
-[![RDbgL.png](https://c2.im5i.com/2022/12/29/RDbgL.png)](https://cloudimge.com/image/RDbgL)
+![mysql_login](https://www.bythewayer.com/img/mysql_login.webp)
 
 ```bash
 mysql -uroot -p

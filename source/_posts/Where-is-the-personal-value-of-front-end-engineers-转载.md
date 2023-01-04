@@ -6,8 +6,7 @@ tags: FE工程师价值
 
 转载: 前端技术砖家[前端工程师个人的价值在哪里（换一个人能不能做？）【前端晋升必看】](https://mp.weixin.qq.com/s/wq4dM_cRuAfXSTnaP1uGNQ)
 
-![YC0nZ.png](https://user-images.githubusercontent.com/17759553/210306505-e4b011f4-a1e3-4f30-b792-af034cc748e3.png)
-
+![fe_comeon](https://www.bythewayer.com/img/fe_comeon.webp)
 最近脉脉上这张图片在前端圈子中火了起来。这个故事中“毫无人性”的评委在晋升中对前端同学提出了两个置疑点：
 业务方向是产品经理决定的，即使前端高质量高效率的完成了前端需求，也不能左右业务结果，那“业务的价值和你有什么关系”？
 前端还原页面，属于前端基本功，难度并不高，换一个人也能做，那“你的价值在哪里”？
