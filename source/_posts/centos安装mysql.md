@@ -148,4 +148,10 @@ exit
 >mysql: select now();
 ```
 
+### 16.mysql 服务器常用命令
+
+```bash
+service mysqld start/stop/status/restart
+```
+
 mysql 基本命令[mySql](https://bythewayer.com/learn/server/DataBase/1)

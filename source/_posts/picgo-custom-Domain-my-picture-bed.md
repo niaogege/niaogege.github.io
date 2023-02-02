@@ -2,6 +2,7 @@
 title: picgo + custom Domain = my picture bed(搭建自己的图床)
 date: 2023-01-04 15:43:16
 tags: 图床 COS CDN
+featured_image: https://www.bythewayer.com/img/txcos.webp
 ---
 
 之前用的第三方云图床，发现很多时候还是加载太慢，所以干脆自己搭建一个图床。

@@ -2,6 +2,7 @@
 title: Where is the personal value of front-end engineers(转载)
 date: 2023-01-03 11:02:56
 tags: FE工程师价值
+featured_image: https://www.bythewayer.com/img/fe_comeon.webp
 ---
 
 转载: 前端技术砖家[前端工程师个人的价值在哪里（换一个人能不能做？）【前端晋升必看】](https://mp.weixin.qq.com/s/wq4dM_cRuAfXSTnaP1uGNQ)
